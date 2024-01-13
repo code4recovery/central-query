@@ -1,5 +1,9 @@
 # Fixing Time for Recovery
 
+*\*\*This document remains for historical context. It *may\* be of use to help understand the motivation and challenge behind this project. It is no longer being updated and might be removed in the future.
+
+The current README.md is in the projects' root directory.\*\*\*
+
 ## Problem
 
 Recovery meetings aren't tied to specific dates, instead they are defined by a day of the week (for example, Monday) and a local time (say, 5pm). Meetings today are managed locally through a spreadsheet, a website focused on the local community and nearby areas, or through a tool like the 12-Step-Meeting-List plugin. Regardless, all of the pieces are in the same timezone and the ordering of meetings is trivial.
