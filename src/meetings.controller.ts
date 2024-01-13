@@ -38,23 +38,6 @@ export const meetingsNext = async (
   }
 }
 
-// export const getNext = async (
-//   req: express.Request,
-//   res: express.Response,
-//   next: express.NextFunction,
-// ) => {
-//   const time = req.query.time as string
-//   Logger.debug(`Request params: ${time}`)
-//   const { ok, val } = await getNextTen(time)
-//   if (ok) {
-//     Logger.info(`fetch result being returned includes ${val.length} meetings.`)
-//     res.status(200).json(val)
-//   } else {
-//     Logger.error(`${JSON.stringify(val)}`)
-//     next(val)
-//   }
-// }
-
 export const byDay = async (
   req: express.Request,
   res: express.Response,

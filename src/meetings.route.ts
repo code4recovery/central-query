@@ -18,25 +18,4 @@ router.route("/next").get(
 
 router.route("/by-day").get(meetingsController.byDay)
 
-// router
-//   .route("/store-import")
-//   .post(
-//     TokenMiddleWare.extractAPIToken,
-//     query("apiToken").isString().isLength({ min: 64, max: 64 }),
-//     body("data").isArray(),
-//     verifyFieldsErrors,
-//     AuthorizationMiddleware.isTokenAuthorized,
-//     quickenController.recordQuickenImport,
-//   )
-
-// router
-//   .route("/most-recent-import")
-//   .get(
-//     TokenMiddleWare.extractAPIToken,
-//     query("apiToken").isString().isLength({ min: 64, max: 64 }),
-//     verifyFieldsErrors,
-//     AuthorizationMiddleware.isTokenAuthorized,
-//     quickenController.provideMostRecentQuickenImport,
-//   )
-
 export default router
