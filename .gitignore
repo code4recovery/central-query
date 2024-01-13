@@ -3,3 +3,4 @@ logs/
 dist/
 .env*
 Makefile
+src/coverage/*
