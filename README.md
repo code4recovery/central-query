@@ -12,7 +12,30 @@ The demo provides a venue for Code for Recovery to create a more advanced proof-
 
 ### Installation for dev work
 
-1. Ask for access to a MongoDB Collection of meeting data that is set up for testing and development (alternatively, you can create your own locally).
+1. Request access to a MongoDB Collection of meeting data that is set up for testing and development. Or create your own locally:
+
+   1. Set up a local instance of MongoDB
+   1. Create a database called `central-exp` or whatever you wish. The name can be set in `.env`
+   1. Create a sample collection called `meeting` with the following minimum fields in each record:
+
+      ```json
+      name: string // Some identifier
+      timezone: string // from the official ICANN tz identifier list
+      day: number // 1-7, week starts with Monday
+      startDateUTC: Date // Next meeting occurrence after update in the database.
+      ```
+
+      Notes:
+
+      a. This minimum data set supports proof of concept for server-side sorting. It is not sufficient for full testing of filtering. This will be updated when those features are added.
+
+      b. The approach to the weekday, which changes Central's format (0-6, Sunday start), arises due to limitations of MongoDB and Luxon.
+
+      c. `startDateUTC` is essential magical sauce as an input to the `meeting-view` logic, used to determine DST on the fly. For example, if a new meeting to be held on Mondays at 7pm in New York is entered on January 1st, 2024 at noon, `startDateUTC` should be captured as `2024-01-02T00:00:00.000+00:00`. However, if the same meeting was entered on Tuesday, January 2nd at noon, the correct `startDateUTC` would be `2024-01-09T00:00:00.00+00:00`.
+
+      d. [This gist](https://gist.github.com/tim-rohrer/5a18691f3ba206c6c6ce7a90514b0de0) provides sample code to determine `startDateUTC`.
+
+   1. Create the [view](#aggregation-pipeline-for-view) on the MongoDB server.
 
 1. Add a `.env` file containing:
 
@@ -30,7 +53,7 @@ The demo provides a venue for Code for Recovery to create a more advanced proof-
 
 1. Run the server, using `npm run build && npm run start` or `npm run start-dev` to execute a version that will reload upon saving code changes.
 
-Please note: This app uses "pure" ES modules and not the older commonjs modules. Please stick with is approach.
+Please note: This app uses "pure" ES modules and not the older CommonJS modules. Please stick with this approach.
 
 ### Issues
 
@@ -55,7 +78,7 @@ Currently, the requesting app must provide the weekday and offset as no defaults
 
 ### Events
 
-Ignore. These were added for testing, and will be removed.
+Ignore, unless testing server-side proof of concept. These were added for testing, and will eventually be removed after suitable e2e tests are added.
 
 ## Testing
 
@@ -92,6 +115,134 @@ This repo contains a Dockerfile used to build an image of the API server. Althou
 Prefer to use the [Udacity style guide](https://udacity.github.io/git-styleguide/) for commits. There are other practices which are similar and should be fine, so feel free to discuss options.
 
 Some, but not all, of the coding style choices are included in `.prettierrc`. This needs to be updated as we go along. For example, my `vscode` settings enforce two spaces for indents as I find it more readable with modern fonts. I'm also in the camp that agrees semi-colons are unnecessary. All of these style choices can be discussed, of course.
+
+## Aggregation Pipeline for View
+
+Using MongoDB's Compass app connected to the local database, create an aggregation against the `meeting` collection and then create the view `meeting-view` using Save->Create view.
+
+```json
+[
+  {
+    "$addFields": {
+      "adjustedUTC": {
+        "$dateFromParts": {
+          "year": {
+            "$year": {
+              "date": "$$NOW",
+              "timezone": "$timezone"
+            }
+          },
+          "month": {
+            "$month": {
+              "date": "$$NOW",
+              "timezone": "$timezone"
+            }
+          },
+          "day": {
+            "$dayOfMonth": {
+              "date": "$$NOW",
+              "timezone": "$timezone"
+            }
+          },
+          "hour": {
+            "$hour": {
+              "date": "$startDateUTC",
+              "timezone": "$timezone"
+            }
+          },
+          "minute": {
+            "$minute": {
+              "date": "$startDateUTC",
+              "timezone": "$timezone"
+            }
+          },
+          "timezone": "$timezone"
+        }
+      },
+      "nowWeekday": {
+        "$toInt": {
+          "$dateToString": {
+            "date": "$$NOW",
+            "format": "%u"
+          }
+        }
+      },
+      "rtcWeekday": {
+        "$toInt": {
+          "$dateToString": {
+            "date": "$startDateUTC",
+            "format": "%u"
+          }
+        }
+      },
+      "dayOfWeekStr": {
+        "$dateToString": {
+          "date": "$startDateUTC",
+          "format": "%u"
+        }
+      }
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "day": 1,
+      "name": 1,
+      "time": 1,
+      "timezone": 1,
+      "contact_1_email": 1,
+      "contact_1_name": 1,
+      "contact_2_email": 1,
+      "contact_2_name": 1,
+      "email": 1,
+      "group": 1,
+      "group_id": 1,
+      "notes": 1,
+      "slug": 1,
+      "types": 1,
+      "phone": 1,
+      "adjustedUTC": 1,
+      "startDateUTC": 1,
+      "sortRTCDay": {
+        "$cond": {
+          "if": {
+            "$gte": ["$rtcWeekday", "$nowWeekday"]
+          },
+          "then": {
+            "$subtract": ["$rtcWeekday", 7]
+          },
+          "else": "$rtcWeekday"
+        }
+      },
+      "sortRTCTime": {
+        "$dateToString": {
+          "date": "$adjustedUTC",
+          "format": "%H:%M"
+        }
+      },
+      "rtc": {
+        "$concat": [
+          "$dayOfWeekStr",
+          ":",
+          {
+            "$dateToString": {
+              "date": "$adjustedUTC",
+              "format": "%H:%M"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "$sort": {
+      "sortRTCDay": 1,
+      "sortRTCTime": 1,
+      "name": 1
+    }
+  }
+]
+```
 
 ## To-Do
 
