@@ -52,37 +52,3 @@ test("pipeline should reflect Sunday => Monday", () => {
     },
   ])
 })
-// test.skip("pipeline should reflect just starting time match and limit", () => {
-//   expect(
-//     pipelineFromQuery({ lowerRTC: "7:01:00", upperRTC: "7:03:00", limit: 25 }),
-//   ).toStrictEqual([
-//     {
-//       $match: {
-//         $and: [{ rtc: { $gte: "7:01:00" } }, { rtc: { $lte: "7:03:00" } }],
-//       },
-//     },
-//     {
-//       $limit: 25,
-//     },
-//   ])
-// })
-// test.skip("pipeline should reflect starting matches for start time and types = 'C', and limit", () => {
-//   expect(
-//     pipelineFromQuery({
-//       lowerRTC: "7:01:00",
-//       upperRTC: "7:03:00",
-//       limit: 25,
-//       types: ["C"],
-//     }),
-//   ).toStrictEqual([
-//     {
-//       $match: {
-//         $and: [{ rtc: { $gte: "7:01:00" } }, { rtc: { $lte: "7:03:00" } }],
-//         types: { $all: ["C"] },
-//       },
-//     },
-//     {
-//       $limit: 25,
-//     },
-//   ])
-// })
