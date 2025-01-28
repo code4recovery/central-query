@@ -14,8 +14,8 @@ The demo provides a venue for Code for Recovery to create a more advanced proof-
 
 1. Request access to a MongoDB Collection of meeting data that is set up for testing and development. Or create your own locally:
 
-   1. Set up a local instance of MongoDB
-   1. Create a database called `central-exp` or whatever you wish. The name can be set in `.env`
+   1. Set up a local instance of MongoDB.
+   1. Create a database called `central-exp` or whatever you wish; the name can be set in `.env`.
    1. Create a sample collection called `meeting` with the following minimum fields in each record:
 
       ```json
