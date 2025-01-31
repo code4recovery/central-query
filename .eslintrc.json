@@ -18,12 +18,8 @@
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
-  "plugins": ["@typescript-eslint", "node", "prettier"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["@typescript-eslint", "node"],
   "overrides": [
     {
       "files": "./src/*",
@@ -44,7 +40,6 @@
         "exceptAfterSingleLine": true
       }
     ],
-    "quotes": ["error", "double"],
-    "prettier/prettier": ["error"]
+    "quotes": ["error", "double"]
   }
 }
