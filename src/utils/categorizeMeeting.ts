@@ -48,16 +48,31 @@ export const COMMUNITIES = [
   "G",
 ]
 
-export function categorizedMeeting(meeting: { name: string; types: string[] }) {
+export type Community = (typeof COMMUNITIES)[keyof typeof COMMUNITIES]
+export type Feature = (typeof FEATURES)[keyof typeof FEATURES]
+export type Format = (typeof FORMATS)[keyof typeof FORMATS]
+export type Type = (typeof TYPE)[keyof typeof TYPE]
+
+export type Category = Community | Feature | Format | Type
+
+function intersection<T>(arr1: T[], arr2: T[]): T[] {
+  const set1 = new Set(arr1)
+  return arr2.filter((value) => set1.has(value))
+}
+
+export function categorizedMeeting(meeting: {
+  name: string
+  types?: Category[]
+}) {
   const { types } = meeting
 
   delete meeting.types
 
   return {
     ...meeting,
-    communities: types.filter((type) => COMMUNITIES.includes(type)),
-    features: types.filter((type) => FEATURES.includes(type)),
-    formats: types.filter((type) => FORMATS.includes(type)),
-    type: types.filter((type) => TYPE.includes(type)),
+    communities: intersection<Category>(types, COMMUNITIES),
+    features: intersection<Category>(types, FEATURES),
+    formats: intersection<Category>(types, FORMATS),
+    type: intersection<Category>(types, TYPE),
   }
 }
