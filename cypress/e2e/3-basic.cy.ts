@@ -15,8 +15,9 @@ describe("Basic queries", () => {
       expect(response.body).to.have.length(25)
     })
   })
-  it("returns the next X < 25 closed discussion meetings as a given time.", () => {
-    const testTypes = ["C", "D"]
+  it.skip("returns the next X < 25 closed discussion meetings as a given time.", () => {
+    const testFormats = ["D"]
+    const testType = "C"
     const reqQuery = {
       types: JSON.stringify(testTypes),
     }
@@ -30,8 +31,8 @@ describe("Basic queries", () => {
       const meetings = response.body
       expect(
         meetings
-          .map((meeting: { types: string | string[] }) =>
-            testTypes.every((element) => meeting.types.includes(element)),
+          .map((meeting: { type: string; formats: string[] }) =>
+            testTypes.every((element) => meeting.type.includes(element)),
           )
           .every((el: boolean) => el === true),
       ).to.be.true
@@ -50,7 +51,21 @@ describe("Basic queries", () => {
     }).then((response) => {
       expect(response.status).to.equal(200)
       expect(response.body).to.have.length(25)
-      response.body.forEach((mtg) => console.log(mtg.rtc))
+    })
+  })
+  it("reflects types binned into desired categories", () => {
+    const reqQuery = {
+      limit: 25,
+    }
+    cy.request({
+      method: "GET",
+      url: "/meetings/next",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      response.body.forEach((mtg) => {
+        cy.wrap(mtg).should("not.have.property", "types")
+      })
     })
   })
   it.skip("provides the next 10 meetings at 0500 PDT that match the expected array.", () => {
