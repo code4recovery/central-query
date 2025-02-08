@@ -1,8 +1,46 @@
-# Fixing Time for Recovery
+# Central Query
 
-*\*\*This document remains for historical context. It *may\* be of use to help understand the motivation and challenge behind this project. It is no longer being updated and might be removed in the future.
+## API Definition of Meeting
 
-The current README.md is in the projects' root directory.\*\*\*
+This API now provides a `Meeting` interface better aligned to the terms used by Meeting Guide.
+
+Here is the new interface. This should still be considered unstable:
+
+```
+interface Meeting {
+  slug: string
+  name: string
+  timezone: string
+  day: number
+  time: string
+  duration: Minutes
+  start?: DateTime
+  end?: DateTime
+  conference_provider?: string
+  conference_url?: string
+  conference_url_notes?: string
+  conference_phone?: string
+  conference_phone_notes?: string
+  notes?: string[]
+  languages: string[]
+  features: Feature[]
+  formats: Format[]
+  type: Type
+  communities: Community[]
+  group_id?: string
+  tags: string[]
+  search: string
+  edit_url?: string
+}
+```
+
+==================
+
+*\*\*The remainder of this document remains for historical context. It *may\* be of use to help understand the motivation and challenge behind this project. It is no longer being updated and might be removed in the future.
+
+The current README.md is in the projects' root directory.\*\*\*\
+
+## Fixing Time for Recovery
 
 ## Problem
 
