@@ -1,4 +1,4 @@
-export const TYPE = ["O", "C"]
+export const TYPE = ["O", "C"] // 2
 export const FORMATS = [
   "11",
   "12x12",
@@ -16,25 +16,29 @@ export const FORMATS = [
   "SP",
   "ST",
   "TR",
-]
+] // 16
 export const FEATURES = [
   "AL-AN",
+  "AL",
+  "ASL",
   "BA",
   "BRK",
   "CAN",
   "CF",
   "DB",
-  "DD",
   "X",
   "XB",
   "XT",
   "POA",
   "OUT",
   "FF",
-]
+  "RSL",
+  "TC",
+] // 15
 export const COMMUNITIES = [
   "M",
   "W",
+  "DD",
   "LGBTQ",
   "Y",
   "N",
@@ -43,10 +47,13 @@ export const COMMUNITIES = [
   "SEN",
   "POC",
   "P",
-  "NB",
+  "NDG",
   "L",
   "G",
-]
+  "BV-I",
+  "D-HOH",
+  "LO-I",
+] // 18
 
 export type Community = (typeof COMMUNITIES)[keyof typeof COMMUNITIES]
 export type Feature = (typeof FEATURES)[keyof typeof FEATURES]
