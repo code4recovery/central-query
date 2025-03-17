@@ -16,9 +16,9 @@ export const meetingsNext = async (
       ? (req.query.start as string)
       : new Date().toISOString()
   const hours =
-    req.query.hours != undefined ? parseInt(req.query.hours as string) : 2
+    req.query.hours != undefined ? parseInt(req.query.hours as string) : 1
   const limit =
-    req.query.limit != undefined ? parseInt(req.query.limit as string) : 25
+    req.query.limit != undefined ? parseInt(req.query.limit as string) : 100
   const types: string[] =
     req.query.types != undefined
       ? JSON.parse(req.query["types"] as string)
