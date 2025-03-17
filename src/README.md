@@ -34,6 +34,16 @@ interface Meeting {
 }
 ```
 
+## Endpoints
+
+### /meetings/next
+
+Gets the next hour of meetings based on the UTC time when the request is received. The controller limits the fetch to 100 meetings.
+
+To Do:
+
+- [ ] If the fetched results are <10 meetings, re-fetch for the next two hours.
+
 ==================
 
 *\*\*The remainder of this document remains for historical context. It *may\* be of use to help understand the motivation and challenge behind this project. It is no longer being updated and might be removed in the future.
@@ -117,12 +127,6 @@ As long as we've recorded the effective UTC of the first meeting in the series, 
 | :--------------- | :---- | :----- | :----------- | :---------------------------- |
 | America/New_York | 15:00 | Sunday | Mar 1, 2023  | 2023-03-05T20:00:00.000-00:00 |
 | America/New_York | 22:00 | Sunday | Mar 1, 2023  | 2023-03-06T03:00:00.000-00:00 |
-
-## Endpoints
-
-### /meetings/next
-
-Gets the next set of meetings based on the UTC time when the request is received.
 
 #### Filters/Options
 
