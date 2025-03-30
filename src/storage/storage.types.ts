@@ -29,7 +29,7 @@ export interface Meeting {
   formats: Format[]
   type: Type
   communities: Community[]
-  group_id?: string
+  groupID: string
   tags: string[]
   search: string
   edit_url?: string
@@ -38,4 +38,19 @@ export interface Meeting {
 export interface MeetingModel extends Meeting {
   _id?: ObjectId
   types?: string[]
+}
+
+// Use format of data in groups.json file to provide an interface for the group
+export interface Group {
+  name: string
+  recordID: string
+  accountID: string
+  createdAt: Date
+  updatedAt: Date
+  email?: string
+  website?: string
+}
+
+export interface GroupModel extends Group {
+  _id?: ObjectId
 }
