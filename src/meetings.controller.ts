@@ -1,7 +1,5 @@
 import express from "express"
 
-// import { currentTimestamp } from "../common/utils.js"
-// import DbOperationError from "./common/custom_errors/DbOperationError.js"
 import Logger from "./common/logger.js"
 import * as meetingsService from "./meetings.service.js"
 
@@ -53,5 +51,26 @@ export const byDay = async (
   } else {
     Logger.error(`${JSON.stringify(val)}`)
     next(val)
+  }
+}
+
+export const groupDetails = async (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction,
+) => {
+  const slug = req.params.slug as string
+  Logger.debug(
+    `Request params for getGroupDetails: ${JSON.stringify(req.params)}`,
+  )
+  const { ok, val } = await meetingsService.getGroupDetails(slug)
+  if (ok) {
+    Logger.info(
+      `fetch result being returned with group details: ${JSON.stringify(val)}`,
+    )
+    res.status(200).json(val)
+  } else {
+    Logger.error(`${JSON.stringify(val)}`)
+    next()
   }
 }
