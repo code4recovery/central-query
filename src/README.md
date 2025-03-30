@@ -2,11 +2,11 @@
 
 ## API Definition of Meeting
 
-This API now provides a `Meeting` interface better aligned to the terms used by Meeting Guide.
+This API now provides `Meeting` and `Group` interfaces better aligned to the terms used by Meeting Guide and, hopefully, Central.
 
-Here is the new interface. This should still be considered unstable:
+These should still be considered unstable:
 
-```
+```ts
 interface Meeting {
   slug: string
   name: string
@@ -27,10 +27,22 @@ interface Meeting {
   formats: Format[]
   type: Type
   communities: Community[]
-  group_id?: string
+  groupID: string
   tags: string[]
   search: string
   edit_url?: string
+}
+```
+
+```ts
+interface Group {
+  name: string
+  recordID: string
+  accountID: string
+  createdAt: Date
+  updatedAt: Date
+  email?: string
+  website?: string
 }
 ```
 
@@ -43,6 +55,10 @@ Gets the next hour of meetings based on the UTC time when the request is receive
 To Do:
 
 - [ ] If the fetched results are <10 meetings, re-fetch for the next two hours.
+
+### /meetings/:slug
+
+Uses the slug to determine and provide the associated group details.
 
 ==================
 
