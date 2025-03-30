@@ -1,0 +1,3322 @@
+[
+  {
+    "slug": "global-mens-meditation-6",
+    "name": "Global Men's Meditation",
+    "timezone": "America/Los_Angeles",
+    "day": 6,
+    "time": "08:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/117348350?pwd=aC8wd0tadTlpTVpQQWFMWVZ1OU1odz09",
+    "groupID": {
+      "$oid": "648e5056b291ed6c5135eff9"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T15:30:00.000Z"
+    },
+    "communities": [
+      "M"
+    ],
+    "features": [],
+    "formats": [
+      "MED"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "global-mens-meditation-1",
+    "name": "Global Men's Meditation",
+    "timezone": "America/Los_Angeles",
+    "day": 1,
+    "time": "08:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/117348350?pwd=aC8wd0tadTlpTVpQQWFMWVZ1OU1odz09",
+    "groupID": {
+      "$oid": "648e5056b291ed6c5135eff9"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T15:30:00.000Z"
+    },
+    "communities": [
+      "M"
+    ],
+    "features": [],
+    "formats": [
+      "MED"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "global-mens-meditation-4",
+    "name": "Global Men's Meditation",
+    "timezone": "America/Los_Angeles",
+    "day": 4,
+    "time": "08:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/117348350?pwd=aC8wd0tadTlpTVpQQWFMWVZ1OU1odz09",
+    "groupID": {
+      "$oid": "648e5056b291ed6c5135eff9"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T15:30:00.000Z"
+    },
+    "communities": [
+      "M"
+    ],
+    "features": [],
+    "formats": [
+      "MED"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "global-mens-meditation-5",
+    "name": "Global Men's Meditation",
+    "timezone": "America/Los_Angeles",
+    "day": 5,
+    "time": "08:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/117348350?pwd=aC8wd0tadTlpTVpQQWFMWVZ1OU1odz09",
+    "groupID": {
+      "$oid": "648e5056b291ed6c5135eff9"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T15:30:00.000Z"
+    },
+    "communities": [
+      "M"
+    ],
+    "features": [],
+    "formats": [
+      "MED"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "global-mens-meditation",
+    "name": "Global Men's Meditation",
+    "timezone": "America/Los_Angeles",
+    "day": 7,
+    "time": "08:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/117348350?pwd=aC8wd0tadTlpTVpQQWFMWVZ1OU1odz09",
+    "groupID": {
+      "$oid": "648e5056b291ed6c5135eff9"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T15:30:00.000Z"
+    },
+    "communities": [
+      "M"
+    ],
+    "features": [],
+    "formats": [
+      "MED"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "global-mens-meditation-2",
+    "name": "Global Men's Meditation",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "08:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/117348350?pwd=aC8wd0tadTlpTVpQQWFMWVZ1OU1odz09",
+    "groupID": {
+      "$oid": "648e5056b291ed6c5135eff9"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T15:30:00.000Z"
+    },
+    "communities": [
+      "M"
+    ],
+    "features": [],
+    "formats": [
+      "MED"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "global-mens-meditation-3",
+    "name": "Global Men's Meditation",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "08:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/117348350?pwd=aC8wd0tadTlpTVpQQWFMWVZ1OU1odz09",
+    "groupID": {
+      "$oid": "648e5056b291ed6c5135eff9"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T15:30:00.000Z"
+    },
+    "communities": [
+      "M"
+    ],
+    "features": [],
+    "formats": [
+      "MED"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-12",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 5,
+    "time": "08:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T14:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-11",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 4,
+    "time": "08:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T14:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-10",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 3,
+    "time": "08:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T14:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-5",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 5,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T02:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-9",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 2,
+    "time": "08:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T14:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-3",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 3,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T02:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-13",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 6,
+    "time": "08:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T14:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-4",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 4,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T02:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-6",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 6,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T02:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 7,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T02:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-7",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 7,
+    "time": "08:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T14:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-8",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 1,
+    "time": "08:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T14:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-2",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 2,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T02:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vaqueritos-virtual-1",
+    "name": "Vaqueritos Virtual",
+    "timezone": "America/Mexico_City",
+    "day": 1,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "Somos un grupo de A.A. que encontramos en las reuniones virtuales permanecer sobrios y unidos.\nGrupo de habla hispana que compartimos nuestra experiencia, fortaleza y esperanza.\n \nReuniones de Lunes a domingo 8am y 8pm Tiempo del centro de México.\nReuniones de  8am a 9:30am y 8pm a 9:30pm los 7 días de la semana \nAgenda:\n \n8am a 9:30am\nlunes: Plenitud Digital \nmartes: Texto Básico\nmiércoles: Lenguaje del corazón\njueves: Capacitación de Información al Publico\nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: Lo mejor de Bill\n \n8pm a 9:30pm\nlunes: Plenitud Digital\nmartes:12 Doce pasos \nmiércoles: Llegamos a creer \nJueves: Texto Básico \nViernes: Viviendo Sobrio\nSábado: 12 Tradiciones \nDomingo: 12 conceptos para el servicio mundial",
+    "conference_url": "https://us02web.zoom.us/j/5517029391",
+    "groupID": {
+      "$oid": "648e5060b291ed6c5135f006"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T02:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "warner-springs-aa-discussion",
+    "name": "Warner Springs AA Discussion",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "18:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us04web.zoom.us/j/975838159",
+    "groupID": {
+      "$oid": "648e5072b291ed6c5135f017"
+    },
+    "conference_url_notes": "ID: 975 838 159 Passcode: See Instructions below",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "LIT"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "aa-a-new-beginning-1",
+    "name": "AA A New Beginning",
+    "timezone": "America/New_York",
+    "day": 1,
+    "time": "21:00",
+    "duration": 60,
+    "notes": "We are an online community dedicated to recovery from alcoholism using the program of Alcoholics Anonymous. We believe in upholding the traditions of AA, and strive to help those who still suffer.\nWe have open chat, as well as open meeting of Alcoholics Anonymous and email meetings. Chat meetings take place at 9:00 PM EST.\nOur primary purpose is to stay sober and help others to recover from alcoholism.",
+    "groupID": {
+      "$oid": "648e5074b291ed6c5135f01b"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "aa-a-new-beginning-6",
+    "name": "AA A New Beginning",
+    "timezone": "America/New_York",
+    "day": 6,
+    "time": "21:00",
+    "duration": 60,
+    "notes": "We are an online community dedicated to recovery from alcoholism using the program of Alcoholics Anonymous. We believe in upholding the traditions of AA, and strive to help those who still suffer.\nWe have open chat, as well as open meeting of Alcoholics Anonymous and email meetings. Chat meetings take place at 9:00 PM EST.\nOur primary purpose is to stay sober and help others to recover from alcoholism.",
+    "groupID": {
+      "$oid": "648e5074b291ed6c5135f01b"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "aa-a-new-beginning-5",
+    "name": "AA A New Beginning",
+    "timezone": "America/New_York",
+    "day": 5,
+    "time": "21:00",
+    "duration": 60,
+    "notes": "We are an online community dedicated to recovery from alcoholism using the program of Alcoholics Anonymous. We believe in upholding the traditions of AA, and strive to help those who still suffer.\nWe have open chat, as well as open meeting of Alcoholics Anonymous and email meetings. Chat meetings take place at 9:00 PM EST.\nOur primary purpose is to stay sober and help others to recover from alcoholism.",
+    "groupID": {
+      "$oid": "648e5074b291ed6c5135f01b"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "aa-a-new-beginning-3",
+    "name": "AA A New Beginning",
+    "timezone": "America/New_York",
+    "day": 3,
+    "time": "21:00",
+    "duration": 60,
+    "notes": "We are an online community dedicated to recovery from alcoholism using the program of Alcoholics Anonymous. We believe in upholding the traditions of AA, and strive to help those who still suffer.\nWe have open chat, as well as open meeting of Alcoholics Anonymous and email meetings. Chat meetings take place at 9:00 PM EST.\nOur primary purpose is to stay sober and help others to recover from alcoholism.",
+    "groupID": {
+      "$oid": "648e5074b291ed6c5135f01b"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "aa-a-new-beginning",
+    "name": "AA A New Beginning",
+    "timezone": "America/New_York",
+    "day": 7,
+    "time": "21:00",
+    "duration": 60,
+    "notes": "We are an online community dedicated to recovery from alcoholism using the program of Alcoholics Anonymous. We believe in upholding the traditions of AA, and strive to help those who still suffer.\nWe have open chat, as well as open meeting of Alcoholics Anonymous and email meetings. Chat meetings take place at 9:00 PM EST.\nOur primary purpose is to stay sober and help others to recover from alcoholism.",
+    "groupID": {
+      "$oid": "648e5074b291ed6c5135f01b"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "aa-a-new-beginning-2",
+    "name": "AA A New Beginning",
+    "timezone": "America/New_York",
+    "day": 2,
+    "time": "21:00",
+    "duration": 60,
+    "notes": "We are an online community dedicated to recovery from alcoholism using the program of Alcoholics Anonymous. We believe in upholding the traditions of AA, and strive to help those who still suffer.\nWe have open chat, as well as open meeting of Alcoholics Anonymous and email meetings. Chat meetings take place at 9:00 PM EST.\nOur primary purpose is to stay sober and help others to recover from alcoholism.",
+    "groupID": {
+      "$oid": "648e5074b291ed6c5135f01b"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "aa-a-new-beginning-4",
+    "name": "AA A New Beginning",
+    "timezone": "America/New_York",
+    "day": 4,
+    "time": "21:00",
+    "duration": 60,
+    "notes": "We are an online community dedicated to recovery from alcoholism using the program of Alcoholics Anonymous. We believe in upholding the traditions of AA, and strive to help those who still suffer.\nWe have open chat, as well as open meeting of Alcoholics Anonymous and email meetings. Chat meetings take place at 9:00 PM EST.\nOur primary purpose is to stay sober and help others to recover from alcoholism.",
+    "groupID": {
+      "$oid": "648e5074b291ed6c5135f01b"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "1daat-living-sober-tuesdays",
+    "name": "1DAAT Living Sober Tuesday’s",
+    "timezone": "America/New_York",
+    "day": 2,
+    "time": "20:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/81279390644?pwd=N2lNZEJVcmNlczN6S1FvNUpTOGIwZz09",
+    "groupID": {
+      "$oid": "648e507bb291ed6c5135f028"
+    },
+    "conference_url_notes": "ID: 812 7939 0644 Password: 531646",
+    "conference_phone": "+13126266799,,81279390644#,,1#,531646#",
+    "conference_phone_notes": "‪+13126266799,,81279390644#,,1#,531646# US (Chicago) ‪+16468769923,,81279390644#,,1#,531646# US (New York)",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T00:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "BE",
+      "D",
+      "LIT",
+      "LS",
+      "SP"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "sundays-best",
+    "name": "Sunday's Best",
+    "timezone": "America/New_York",
+    "day": 7,
+    "time": "13:00",
+    "duration": 60,
+    "notes": "A meeting to help recover from alcohol - 1pm every Sunday. We open at 12:45pm\n \n\n\n ",
+    "conference_url": "https://zoom.us/s/9388375476",
+    "groupID": {
+      "$oid": "648e507db291ed6c5135f02b"
+    },
+    "conference_url_notes": "ID: 938 837 5476 Password: email sundaysbestbuffalony@gmail.com   ",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T17:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "life-after-10-tuesdays",
+    "name": "Life After 10 Tuesdays",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "18:00",
+    "duration": 60,
+    "notes": "Life After 10 meets every Tuesday at 6pm via Zoom. Before the stay at home mandate we met at Olive Lutheran Church, Ocean Park Blvd in Santa Monica\nFormat of the meeting is for the Speaker to read a paragraph in the Big Book of Alcoholics Anonymous and share for 15 minutes on what they read. Participants with 10 or more years can share for 3 minutes.. Birthday participants of any sobriety length can share for 3 minutes.\nDeaf/Hard of Hearing Interpreter. This is a closed meeting to alcoholics, Men, Women, & Non-Binary.   Meeting ends with 3 minutes of meditation.",
+    "conference_url": "https://us02web.zoom.us/j/468158814",
+    "groupID": {
+      "$oid": "648e507eb291ed6c5135f02e"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T01:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "young-peoples-participation",
+    "name": "Young Peoples' Participation",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "19:45",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://zoom.us/j/714438540",
+    "groupID": {
+      "$oid": "648e5081b291ed6c5135f032"
+    },
+    "conference_url_notes": "ID: 714 438 540",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T02:45:00.000Z"
+    },
+    "communities": [
+      "Y"
+    ],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "serenity-sundays",
+    "name": "Serenity Sundays",
+    "timezone": "America/Chicago",
+    "day": 7,
+    "time": "14:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/425855181",
+    "groupID": {
+      "$oid": "648e5082b291ed6c5135f036"
+    },
+    "conference_url_notes": "ID: 425 855 181 Password: email  sereneandwell@outlook.com",
+    "conference_phone": "+13126266799,,425855181#,,1#,2020#",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T19:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "30-at-night-5",
+    "name": "30 at night",
+    "timezone": "America/New_York",
+    "day": 5,
+    "time": "19:00",
+    "duration": 60,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e5084b291ed6c5135f03a"
+    },
+    "conference_phone": "1-701-802-5103",
+    "conference_phone_notes": "Access Code: 4993276",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T23:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "30-at-night-2",
+    "name": "30 at night",
+    "timezone": "America/New_York",
+    "day": 2,
+    "time": "19:00",
+    "duration": 60,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e5084b291ed6c5135f03a"
+    },
+    "conference_phone": "1-701-802-5103",
+    "conference_phone_notes": "Access Code: 4993276",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T23:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "30-at-night-4",
+    "name": "30 at night",
+    "timezone": "America/New_York",
+    "day": 4,
+    "time": "19:00",
+    "duration": 60,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e5084b291ed6c5135f03a"
+    },
+    "conference_phone": "1-701-802-5103",
+    "conference_phone_notes": "Access Code: 4993276",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T23:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "30-at-night-1",
+    "name": "30 at night",
+    "timezone": "America/New_York",
+    "day": 1,
+    "time": "19:00",
+    "duration": 60,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e5084b291ed6c5135f03a"
+    },
+    "conference_phone": "1-701-802-5103",
+    "conference_phone_notes": "Access Code: 4993276",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T23:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "30-at-night-6",
+    "name": "30 at night",
+    "timezone": "America/New_York",
+    "day": 6,
+    "time": "19:00",
+    "duration": 60,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e5084b291ed6c5135f03a"
+    },
+    "conference_phone": "1-701-802-5103",
+    "conference_phone_notes": "Access Code: 4993276",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T23:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "30-at-night",
+    "name": "30 at night",
+    "timezone": "America/New_York",
+    "day": 7,
+    "time": "19:00",
+    "duration": 60,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e5084b291ed6c5135f03a"
+    },
+    "conference_phone": "1-701-802-5103",
+    "conference_phone_notes": "Access Code: 4993276",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T23:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "30-at-night-3",
+    "name": "30 at night",
+    "timezone": "America/New_York",
+    "day": 3,
+    "time": "19:00",
+    "duration": 60,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e5084b291ed6c5135f03a"
+    },
+    "conference_phone": "1-701-802-5103",
+    "conference_phone_notes": "Access Code: 4993276",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T23:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "saturday-back-to-basics-bigbook-study",
+    "name": "Saturday Back to Basics Big Book Study",
+    "timezone": "America/Los_Angeles",
+    "day": 6,
+    "time": "08:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/128836722",
+    "groupID": {
+      "$oid": "648e508ab291ed6c5135f043"
+    },
+    "conference_url_notes": "ID: 128 836 722 Passcode: Email threeriversbigbook@gmail.com",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T15:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "pigboys",
+    "name": "Pigboys",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "19:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/891074477",
+    "groupID": {
+      "$oid": "648e508cb291ed6c5135f047"
+    },
+    "conference_url_notes": "ID: 891 074 477",
+    "conference_phone": "15095728728,,891074477#,,06101935#",
+    "conference_phone_notes": "509-572-8728  Access Code: 06101935",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T02:00:00.000Z"
+    },
+    "communities": [
+      "M"
+    ],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "just-for-today",
+    "name": "Just for Today",
+    "timezone": "America/Los_Angeles",
+    "day": 1,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us04web.zoom.us/j/74978391310?pwd=aVlNeTdWanpLdy9WTjRtSWpBRkFXUT09",
+    "groupID": {
+      "$oid": "648e508eb291ed6c5135f049"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "just-for-today-2",
+    "name": "Just for Today",
+    "timezone": "America/Los_Angeles",
+    "day": 5,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us04web.zoom.us/j/74978391310?pwd=aVlNeTdWanpLdy9WTjRtSWpBRkFXUT09",
+    "groupID": {
+      "$oid": "648e508eb291ed6c5135f049"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "just-for-today-1",
+    "name": "Just for Today",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us04web.zoom.us/j/74978391310?pwd=aVlNeTdWanpLdy9WTjRtSWpBRkFXUT09",
+    "groupID": {
+      "$oid": "648e508eb291ed6c5135f049"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-high-noon-gamble-5",
+    "name": "Vegas High Noon Gamble",
+    "timezone": "America/Los_Angeles",
+    "day": 6,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/7027772022",
+    "groupID": {
+      "$oid": "648e5099b291ed6c5135f057"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-high-noon-gamble-6",
+    "name": "Vegas High Noon Gamble",
+    "timezone": "America/Los_Angeles",
+    "day": 7,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/7027772022",
+    "groupID": {
+      "$oid": "648e5099b291ed6c5135f057"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-high-noon-gamble-4",
+    "name": "Vegas High Noon Gamble",
+    "timezone": "America/Los_Angeles",
+    "day": 5,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/7027772022",
+    "groupID": {
+      "$oid": "648e5099b291ed6c5135f057"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-high-noon-gamble-3",
+    "name": "Vegas High Noon Gamble",
+    "timezone": "America/Los_Angeles",
+    "day": 4,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/7027772022",
+    "groupID": {
+      "$oid": "648e5099b291ed6c5135f057"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-high-noon-gamble-2",
+    "name": "Vegas High Noon Gamble",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/7027772022",
+    "groupID": {
+      "$oid": "648e5099b291ed6c5135f057"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-high-noon-gamble-1",
+    "name": "Vegas High Noon Gamble",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/7027772022",
+    "groupID": {
+      "$oid": "648e5099b291ed6c5135f057"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-high-noon-gamble",
+    "name": "Vegas High Noon Gamble",
+    "timezone": "America/Los_Angeles",
+    "day": 1,
+    "time": "12:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/7027772022",
+    "groupID": {
+      "$oid": "648e5099b291ed6c5135f057"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T19:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-daily-reflections-5",
+    "name": "Vegas Daily Reflections",
+    "timezone": "America/Los_Angeles",
+    "day": 6,
+    "time": "10:00",
+    "duration": 60,
+    "notes": "\n",
+    "conference_url": "https://us04web.zoom.us/j/910965736",
+    "groupID": {
+      "$oid": "648e50a1b291ed6c5135f061"
+    },
+    "conference_url_notes": "password:  REFLECt",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T17:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-daily-reflections-1",
+    "name": "Vegas Daily Reflections",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "10:00",
+    "duration": 60,
+    "notes": "\n",
+    "conference_url": "https://us04web.zoom.us/j/910965736",
+    "groupID": {
+      "$oid": "648e50a1b291ed6c5135f061"
+    },
+    "conference_url_notes": "password:  REFLECt",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T17:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-daily-reflections",
+    "name": "Vegas Daily Reflections",
+    "timezone": "America/Los_Angeles",
+    "day": 1,
+    "time": "10:00",
+    "duration": 60,
+    "notes": "\n",
+    "conference_url": "https://us04web.zoom.us/j/910965736",
+    "groupID": {
+      "$oid": "648e50a1b291ed6c5135f061"
+    },
+    "conference_url_notes": "password:  REFLECt",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T17:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-daily-reflections-2",
+    "name": "Vegas Daily Reflections",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "10:00",
+    "duration": 60,
+    "notes": "\n",
+    "conference_url": "https://us04web.zoom.us/j/910965736",
+    "groupID": {
+      "$oid": "648e50a1b291ed6c5135f061"
+    },
+    "conference_url_notes": "password:  REFLECt",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T17:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-daily-reflections-4",
+    "name": "Vegas Daily Reflections",
+    "timezone": "America/Los_Angeles",
+    "day": 5,
+    "time": "10:00",
+    "duration": 60,
+    "notes": "\n",
+    "conference_url": "https://us04web.zoom.us/j/910965736",
+    "groupID": {
+      "$oid": "648e50a1b291ed6c5135f061"
+    },
+    "conference_url_notes": "password:  REFLECt",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T17:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-daily-reflections-3",
+    "name": "Vegas Daily Reflections",
+    "timezone": "America/Los_Angeles",
+    "day": 4,
+    "time": "10:00",
+    "duration": 60,
+    "notes": "\n",
+    "conference_url": "https://us04web.zoom.us/j/910965736",
+    "groupID": {
+      "$oid": "648e50a1b291ed6c5135f061"
+    },
+    "conference_url_notes": "password:  REFLECt",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T17:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-drama-queens-2",
+    "name": "Vegas Drama Queens",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "19:00",
+    "duration": 60,
+    "notes": "ZOOM into our daily women's meeting, format varies daily",
+    "conference_url": "https://us04web.zoom.us/j/410592740",
+    "groupID": {
+      "$oid": "648e50a9b291ed6c5135f06c"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T02:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-drama-queens-3",
+    "name": "Vegas Drama Queens",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "19:00",
+    "duration": 60,
+    "notes": "ZOOM into our daily women's meeting, format varies daily",
+    "conference_url": "https://us04web.zoom.us/j/410592740",
+    "groupID": {
+      "$oid": "648e50a9b291ed6c5135f06c"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T02:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-drama-queens-4",
+    "name": "Vegas Drama Queens",
+    "timezone": "America/Los_Angeles",
+    "day": 4,
+    "time": "19:00",
+    "duration": 60,
+    "notes": "ZOOM into our daily women's meeting, format varies daily",
+    "conference_url": "https://us04web.zoom.us/j/410592740",
+    "groupID": {
+      "$oid": "648e50a9b291ed6c5135f06c"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T02:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-drama-queens-6",
+    "name": "Vegas Drama Queens",
+    "timezone": "America/Los_Angeles",
+    "day": 6,
+    "time": "17:00",
+    "duration": 60,
+    "notes": "ZOOM into our daily women's meeting, format varies daily",
+    "conference_url": "https://us04web.zoom.us/j/410592740",
+    "groupID": {
+      "$oid": "648e50a9b291ed6c5135f06c"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T00:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-drama-queens-1",
+    "name": "Vegas Drama Queens",
+    "timezone": "America/Los_Angeles",
+    "day": 1,
+    "time": "19:00",
+    "duration": 60,
+    "notes": "ZOOM into our daily women's meeting, format varies daily",
+    "conference_url": "https://us04web.zoom.us/j/410592740",
+    "groupID": {
+      "$oid": "648e50a9b291ed6c5135f06c"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T02:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-drama-queens",
+    "name": "Vegas Drama Queens",
+    "timezone": "America/Los_Angeles",
+    "day": 7,
+    "time": "17:00",
+    "duration": 60,
+    "notes": "ZOOM into our daily women's meeting, format varies daily",
+    "conference_url": "https://us04web.zoom.us/j/410592740",
+    "groupID": {
+      "$oid": "648e50a9b291ed6c5135f06c"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T00:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-pandemic-at-the-disco-6",
+    "name": "Vegas PANDEMIC! at the disco",
+    "timezone": "America/Los_Angeles",
+    "day": 7,
+    "time": "00:00",
+    "duration": 60,
+    "notes": "ZOOM into our DAILY MIDNIGHT (PST) meeting in LAS VEGAS! Topic discussions\nrotating through daily reflections, burning desires and various meditations.",
+    "conference_url": "https://us04web.zoom.us/j/722570166",
+    "groupID": {
+      "$oid": "648e50b2b291ed6c5135f074"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T07:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-pandemic-at-the-disco-1",
+    "name": "Vegas PANDEMIC! at the disco",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "00:00",
+    "duration": 60,
+    "notes": "ZOOM into our DAILY MIDNIGHT (PST) meeting in LAS VEGAS! Topic discussions\nrotating through daily reflections, burning desires and various meditations.",
+    "conference_url": "https://us04web.zoom.us/j/722570166",
+    "groupID": {
+      "$oid": "648e50b2b291ed6c5135f074"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T07:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-pandemic-at-the-disco-3",
+    "name": "Vegas PANDEMIC! at the disco",
+    "timezone": "America/Los_Angeles",
+    "day": 4,
+    "time": "00:00",
+    "duration": 60,
+    "notes": "ZOOM into our DAILY MIDNIGHT (PST) meeting in LAS VEGAS! Topic discussions\nrotating through daily reflections, burning desires and various meditations.",
+    "conference_url": "https://us04web.zoom.us/j/722570166",
+    "groupID": {
+      "$oid": "648e50b2b291ed6c5135f074"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T07:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-pandemic-at-the-disco-5",
+    "name": "Vegas PANDEMIC! at the disco",
+    "timezone": "America/Los_Angeles",
+    "day": 6,
+    "time": "00:00",
+    "duration": 60,
+    "notes": "ZOOM into our DAILY MIDNIGHT (PST) meeting in LAS VEGAS! Topic discussions\nrotating through daily reflections, burning desires and various meditations.",
+    "conference_url": "https://us04web.zoom.us/j/722570166",
+    "groupID": {
+      "$oid": "648e50b2b291ed6c5135f074"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T07:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-pandemic-at-the-disco-2",
+    "name": "Vegas PANDEMIC! at the disco",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "00:00",
+    "duration": 60,
+    "notes": "ZOOM into our DAILY MIDNIGHT (PST) meeting in LAS VEGAS! Topic discussions\nrotating through daily reflections, burning desires and various meditations.",
+    "conference_url": "https://us04web.zoom.us/j/722570166",
+    "groupID": {
+      "$oid": "648e50b2b291ed6c5135f074"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T07:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-pandemic-at-the-disco",
+    "name": "Vegas PANDEMIC! at the disco",
+    "timezone": "America/Los_Angeles",
+    "day": 1,
+    "time": "00:00",
+    "duration": 60,
+    "notes": "ZOOM into our DAILY MIDNIGHT (PST) meeting in LAS VEGAS! Topic discussions\nrotating through daily reflections, burning desires and various meditations.",
+    "conference_url": "https://us04web.zoom.us/j/722570166",
+    "groupID": {
+      "$oid": "648e50b2b291ed6c5135f074"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T07:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-pandemic-at-the-disco-4",
+    "name": "Vegas PANDEMIC! at the disco",
+    "timezone": "America/Los_Angeles",
+    "day": 5,
+    "time": "00:00",
+    "duration": 60,
+    "notes": "ZOOM into our DAILY MIDNIGHT (PST) meeting in LAS VEGAS! Topic discussions\nrotating through daily reflections, burning desires and various meditations.",
+    "conference_url": "https://us04web.zoom.us/j/722570166",
+    "groupID": {
+      "$oid": "648e50b2b291ed6c5135f074"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T07:00:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-4",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 4,
+    "time": "08:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50b9b291ed6c5135f07d"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T12:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-5",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 5,
+    "time": "08:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50b9b291ed6c5135f07d"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T12:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-1",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 1,
+    "time": "08:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50b9b291ed6c5135f07d"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T12:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 7,
+    "time": "08:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50b9b291ed6c5135f07d"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T12:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-3",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 3,
+    "time": "08:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50b9b291ed6c5135f07d"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T12:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-6",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 6,
+    "time": "08:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50b9b291ed6c5135f07d"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T12:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-2",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 2,
+    "time": "08:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50b9b291ed6c5135f07d"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T12:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-15",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 7,
+    "time": "18:30",
+    "duration": 60,
+    "groupID": {
+      "$oid": "648e50b9b291ed6c5135f07d"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T22:30:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-8",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 1,
+    "time": "20:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50c6b291ed6c5135f087"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T00:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-7",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 7,
+    "time": "20:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50c6b291ed6c5135f087"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T00:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-12",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 5,
+    "time": "20:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50c6b291ed6c5135f087"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T00:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-11",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 4,
+    "time": "20:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50c6b291ed6c5135f087"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T00:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-13",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 6,
+    "time": "20:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50c6b291ed6c5135f087"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T00:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-9",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 2,
+    "time": "20:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50c6b291ed6c5135f087"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T00:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "solution-62-10",
+    "name": "Solution 62",
+    "timezone": "America/New_York",
+    "day": 3,
+    "time": "20:30",
+    "duration": 90,
+    "notes": null,
+    "groupID": {
+      "$oid": "648e50c6b291ed6c5135f087"
+    },
+    "conference_url": "https://us02web.zoom.us/j/6643761207?pwd=VEVobm1wL1pmMUMwY2ZlaEROL0RnZz09",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T00:30:00.000Z"
+    },
+    "communities": [],
+    "features": [
+      "POA"
+    ],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "wednesday-night-candlelight",
+    "name": "Wednesday Night Candlelight",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "20:30",
+    "duration": 60,
+    "notes": "A Wednesday night participation meeting at 8:30pm PST. This is an open meeting that is based on a step of the week. The format is we have a leader that shares for 10 minutes on the step and he/she then picks members to share for three minutes, sharing continues for the remainder of the meeting. The meeting is 1 hour long, every Wednesday 8:30pm PST.\n\nhttps://us02web.zoom.us/j/726415314\n\n \nEmail: candlelightaajp@gmail.com\n\nPublic Phone Number, if any: +16699009128,,726415314# US (San Jose)\nMeeting Access Code, if any: 726415314",
+    "conference_url": "https://us02web.zoom.us/j/726415314",
+    "groupID": {
+      "$oid": "648e50d3b291ed6c5135f090"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T03:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "SP"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-women-in-the-big-book-4",
+    "name": "Vegas Women In The Big Book",
+    "timezone": "America/Los_Angeles",
+    "day": 5,
+    "time": "17:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://zoom.us/j/469489051",
+    "groupID": {
+      "$oid": "648e50d6b291ed6c5135f093"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T00:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-women-in-the-big-book-3",
+    "name": "Vegas Women In The Big Book",
+    "timezone": "America/Los_Angeles",
+    "day": 4,
+    "time": "17:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://zoom.us/j/469489051",
+    "groupID": {
+      "$oid": "648e50d6b291ed6c5135f093"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T00:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-women-in-the-big-book-2",
+    "name": "Vegas Women In The Big Book",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "17:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://zoom.us/j/469489051",
+    "groupID": {
+      "$oid": "648e50d6b291ed6c5135f093"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T00:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-women-in-the-big-book-1",
+    "name": "Vegas Women In The Big Book",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "17:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://zoom.us/j/469489051",
+    "groupID": {
+      "$oid": "648e50d6b291ed6c5135f093"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T00:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-women-in-the-big-book",
+    "name": "Vegas Women In The Big Book",
+    "timezone": "America/Los_Angeles",
+    "day": 1,
+    "time": "17:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://zoom.us/j/469489051",
+    "groupID": {
+      "$oid": "648e50d6b291ed6c5135f093"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T00:00:00.000Z"
+    },
+    "communities": [
+      "W"
+    ],
+    "features": [],
+    "formats": [
+      "B",
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-quarantined",
+    "name": "Vegas Quarantined",
+    "timezone": "America/Los_Angeles",
+    "day": 1,
+    "time": "20:30",
+    "duration": 60,
+    "notes": "ZOOM in to our VEGAS Quarantined! meeting 7 days a week at\n8:30PM PST. Wednesday As Bill Sees It, Friday Big Book Study, Sunday\nSpeaker Meeting, and the rotating hosts pull topics from our regulars\nand visitors from around the world the rest of the nights.",
+    "conference_url": "https://us02web.zoom.us/j/554893205",
+    "groupID": {
+      "$oid": "648e50deb291ed6c5135f09a"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T03:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-quarantined-6",
+    "name": "Vegas Quarantined",
+    "timezone": "America/Los_Angeles",
+    "day": 7,
+    "time": "20:30",
+    "duration": 60,
+    "notes": "ZOOM in to our VEGAS Quarantined! meeting 7 days a week at\n8:30PM PST. Wednesday As Bill Sees It, Friday Big Book Study, Sunday\nSpeaker Meeting, and the rotating hosts pull topics from our regulars\nand visitors from around the world the rest of the nights.",
+    "conference_url": "https://us02web.zoom.us/j/554893205",
+    "groupID": {
+      "$oid": "648e50deb291ed6c5135f09a"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T03:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-quarantined-5",
+    "name": "Vegas Quarantined",
+    "timezone": "America/Los_Angeles",
+    "day": 6,
+    "time": "20:30",
+    "duration": 60,
+    "notes": "ZOOM in to our VEGAS Quarantined! meeting 7 days a week at\n8:30PM PST. Wednesday As Bill Sees It, Friday Big Book Study, Sunday\nSpeaker Meeting, and the rotating hosts pull topics from our regulars\nand visitors from around the world the rest of the nights.",
+    "conference_url": "https://us02web.zoom.us/j/554893205",
+    "groupID": {
+      "$oid": "648e50deb291ed6c5135f09a"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T03:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-quarantined-2",
+    "name": "Vegas Quarantined",
+    "timezone": "America/Los_Angeles",
+    "day": 3,
+    "time": "20:30",
+    "duration": 60,
+    "notes": "ZOOM in to our VEGAS Quarantined! meeting 7 days a week at\n8:30PM PST. Wednesday As Bill Sees It, Friday Big Book Study, Sunday\nSpeaker Meeting, and the rotating hosts pull topics from our regulars\nand visitors from around the world the rest of the nights.",
+    "conference_url": "https://us02web.zoom.us/j/554893205",
+    "groupID": {
+      "$oid": "648e50deb291ed6c5135f09a"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T03:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-quarantined-4",
+    "name": "Vegas Quarantined",
+    "timezone": "America/Los_Angeles",
+    "day": 5,
+    "time": "20:30",
+    "duration": 60,
+    "notes": "ZOOM in to our VEGAS Quarantined! meeting 7 days a week at\n8:30PM PST. Wednesday As Bill Sees It, Friday Big Book Study, Sunday\nSpeaker Meeting, and the rotating hosts pull topics from our regulars\nand visitors from around the world the rest of the nights.",
+    "conference_url": "https://us02web.zoom.us/j/554893205",
+    "groupID": {
+      "$oid": "648e50deb291ed6c5135f09a"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T03:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-quarantined-1",
+    "name": "Vegas Quarantined",
+    "timezone": "America/Los_Angeles",
+    "day": 2,
+    "time": "20:30",
+    "duration": 60,
+    "notes": "ZOOM in to our VEGAS Quarantined! meeting 7 days a week at\n8:30PM PST. Wednesday As Bill Sees It, Friday Big Book Study, Sunday\nSpeaker Meeting, and the rotating hosts pull topics from our regulars\nand visitors from around the world the rest of the nights.",
+    "conference_url": "https://us02web.zoom.us/j/554893205",
+    "groupID": {
+      "$oid": "648e50deb291ed6c5135f09a"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T03:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "vegas-quarantined-3",
+    "name": "Vegas Quarantined",
+    "timezone": "America/Los_Angeles",
+    "day": 4,
+    "time": "20:30",
+    "duration": 60,
+    "notes": "ZOOM in to our VEGAS Quarantined! meeting 7 days a week at\n8:30PM PST. Wednesday As Bill Sees It, Friday Big Book Study, Sunday\nSpeaker Meeting, and the rotating hosts pull topics from our regulars\nand visitors from around the world the rest of the nights.",
+    "conference_url": "https://us02web.zoom.us/j/554893205",
+    "groupID": {
+      "$oid": "648e50deb291ed6c5135f09a"
+    },
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T03:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "D"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "nz-daily-online-into-the-world-of-the-spirit-2",
+    "name": "NZ Daily Online into the World of the Spirit -1",
+    "timezone": "Pacific/Auckland",
+    "day": 2,
+    "time": "06:30",
+    "duration": 30,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/81730393987",
+    "groupID": {
+      "$oid": "648e50e5b291ed6c5135f0a2"
+    },
+    "conference_url_notes": "Passcode: Email aanz.wosdaily@gmail.com",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T17:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "ST"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "nz-daily-online-into-the-world-of-the-spirit-3",
+    "name": "NZ Daily Online into the World of the Spirit -1",
+    "timezone": "Pacific/Auckland",
+    "day": 3,
+    "time": "06:30",
+    "duration": 30,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/81730393987",
+    "groupID": {
+      "$oid": "648e50e5b291ed6c5135f0a2"
+    },
+    "conference_url_notes": "Passcode: Email aanz.wosdaily@gmail.com",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T17:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "ST"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "nz-daily-online-into-the-world-of-the-spirit-5",
+    "name": "NZ Daily Online into the World of the Spirit -1",
+    "timezone": "Pacific/Auckland",
+    "day": 5,
+    "time": "06:30",
+    "duration": 30,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/81730393987",
+    "groupID": {
+      "$oid": "648e50e5b291ed6c5135f0a2"
+    },
+    "conference_url_notes": "Passcode: Email aanz.wosdaily@gmail.com",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T17:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "ST"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "nz-daily-online-into-the-world-of-the-spirit-6",
+    "name": "NZ Daily Online into the World of the Spirit -1",
+    "timezone": "Pacific/Auckland",
+    "day": 6,
+    "time": "06:30",
+    "duration": 30,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/81730393987",
+    "groupID": {
+      "$oid": "648e50e5b291ed6c5135f0a2"
+    },
+    "conference_url_notes": "Passcode: Email aanz.wosdaily@gmail.com",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T17:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "ST"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "nz-daily-online-into-the-world-of-the-spirit",
+    "name": "NZ Daily Online into the World of the Spirit -1",
+    "timezone": "Pacific/Auckland",
+    "day": 7,
+    "time": "06:30",
+    "duration": 30,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/81730393987",
+    "groupID": {
+      "$oid": "648e50e5b291ed6c5135f0a2"
+    },
+    "conference_url_notes": "Passcode: Email aanz.wosdaily@gmail.com",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T17:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "ST"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "nz-daily-online-into-the-world-of-the-spirit-4",
+    "name": "NZ Daily Online into the World of the Spirit -1",
+    "timezone": "Pacific/Auckland",
+    "day": 4,
+    "time": "06:30",
+    "duration": 30,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/81730393987",
+    "groupID": {
+      "$oid": "648e50e5b291ed6c5135f0a2"
+    },
+    "conference_url_notes": "Passcode: Email aanz.wosdaily@gmail.com",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-19T17:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "ST"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "nz-daily-online-into-the-world-of-the-spirit-1",
+    "name": "NZ Daily Online into the World of the Spirit -1",
+    "timezone": "Pacific/Auckland",
+    "day": 1,
+    "time": "06:30",
+    "duration": 30,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/81730393987",
+    "groupID": {
+      "$oid": "648e50e5b291ed6c5135f0a2"
+    },
+    "conference_url_notes": "Passcode: Email aanz.wosdaily@gmail.com",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T17:30:00.000Z"
+    },
+    "communities": [],
+    "features": [],
+    "formats": [
+      "B",
+      "D",
+      "ST"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "aa-cuc-del-valle-6",
+    "name": "AA CUC del Valle",
+    "timezone": "America/Mexico_City",
+    "day": 6,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "  ",
+    "conference_url": "https://us05web.zoom.us/j/85484593436?pwd=VlBTcitRNUh6ZWUxRlowL2MwdWloZz09",
+    "groupID": {
+      "$oid": "648e50edb291ed6c5135f0ac"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-23T02:00:00.000Z"
+    },
+    "communities": [
+      "Y"
+    ],
+    "features": [],
+    "formats": [],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "aa-cuc-del-valle-1",
+    "name": "AA CUC del Valle",
+    "timezone": "America/Mexico_City",
+    "day": 1,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "  ",
+    "conference_url": "https://us05web.zoom.us/j/85484593436?pwd=VlBTcitRNUh6ZWUxRlowL2MwdWloZz09",
+    "groupID": {
+      "$oid": "648e50edb291ed6c5135f0ac"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-25T02:00:00.000Z"
+    },
+    "communities": [
+      "Y"
+    ],
+    "features": [],
+    "formats": [],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "aa-cuc-del-valle-5",
+    "name": "AA CUC del Valle",
+    "timezone": "America/Mexico_City",
+    "day": 5,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "  ",
+    "conference_url": "https://us05web.zoom.us/j/85484593436?pwd=VlBTcitRNUh6ZWUxRlowL2MwdWloZz09",
+    "groupID": {
+      "$oid": "648e50edb291ed6c5135f0ac"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T02:00:00.000Z"
+    },
+    "communities": [
+      "Y"
+    ],
+    "features": [],
+    "formats": [],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "aa-cuc-del-valle-2",
+    "name": "AA CUC del Valle",
+    "timezone": "America/Mexico_City",
+    "day": 2,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "  ",
+    "conference_url": "https://us05web.zoom.us/j/85484593436?pwd=VlBTcitRNUh6ZWUxRlowL2MwdWloZz09",
+    "groupID": {
+      "$oid": "648e50edb291ed6c5135f0ac"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-26T02:00:00.000Z"
+    },
+    "communities": [
+      "Y"
+    ],
+    "features": [],
+    "formats": [],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "aa-cuc-del-valle-4",
+    "name": "AA CUC del Valle",
+    "timezone": "America/Mexico_City",
+    "day": 4,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "  ",
+    "conference_url": "https://us05web.zoom.us/j/85484593436?pwd=VlBTcitRNUh6ZWUxRlowL2MwdWloZz09",
+    "groupID": {
+      "$oid": "648e50edb291ed6c5135f0ac"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-21T02:00:00.000Z"
+    },
+    "communities": [
+      "Y"
+    ],
+    "features": [],
+    "formats": [],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "aa-cuc-del-valle",
+    "name": "AA CUC del Valle",
+    "timezone": "America/Mexico_City",
+    "day": 7,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "  ",
+    "conference_url": "https://us05web.zoom.us/j/85484593436?pwd=VlBTcitRNUh6ZWUxRlowL2MwdWloZz09",
+    "groupID": {
+      "$oid": "648e50edb291ed6c5135f0ac"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T02:00:00.000Z"
+    },
+    "communities": [
+      "Y"
+    ],
+    "features": [],
+    "formats": [],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "aa-cuc-del-valle-3",
+    "name": "AA CUC del Valle",
+    "timezone": "America/Mexico_City",
+    "day": 3,
+    "time": "20:00",
+    "duration": 60,
+    "notes": "  ",
+    "conference_url": "https://us05web.zoom.us/j/85484593436?pwd=VlBTcitRNUh6ZWUxRlowL2MwdWloZz09",
+    "groupID": {
+      "$oid": "648e50edb291ed6c5135f0ac"
+    },
+    "languages": [
+      "ES"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-27T02:00:00.000Z"
+    },
+    "communities": [
+      "Y"
+    ],
+    "features": [],
+    "formats": [],
+    "type": [
+      "C"
+    ]
+  },
+  {
+    "slug": "better-with-age-2",
+    "name": "Better with Age",
+    "timezone": "America/New_York",
+    "day": 6,
+    "time": "10:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/88922985420",
+    "groupID": {
+      "$oid": "648e50f5b291ed6c5135f0b6"
+    },
+    "conference_url_notes": "ID:  889 2298 5420 Passcode: Email 2020betterwithage@gmail.com",
+    "conference_phone": "1-646-876-9923,,88922985420#",
+    "conference_phone_notes": "1-646-876-9923",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-22T14:30:00.000Z"
+    },
+    "communities": [
+      "SEN"
+    ],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "better-with-age",
+    "name": "Better with Age",
+    "timezone": "America/New_York",
+    "day": 1,
+    "time": "10:30",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/88922985420",
+    "groupID": {
+      "$oid": "648e50f5b291ed6c5135f0b6"
+    },
+    "conference_url_notes": "ID:  889 2298 5420 Passcode: Email 2020betterwithage@gmail.com",
+    "conference_phone": "1-646-876-9923,,88922985420#",
+    "conference_phone_notes": "1-646-876-9923",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-24T14:30:00.000Z"
+    },
+    "communities": [
+      "SEN"
+    ],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  },
+  {
+    "slug": "better-with-age-1",
+    "name": "Better with Age",
+    "timezone": "America/New_York",
+    "day": 4,
+    "time": "14:00",
+    "duration": 60,
+    "notes": null,
+    "conference_url": "https://us02web.zoom.us/j/88922985420",
+    "groupID": {
+      "$oid": "648e50f5b291ed6c5135f0b6"
+    },
+    "conference_url_notes": "ID:  889 2298 5420 Passcode: Email 2020betterwithage@gmail.com",
+    "conference_phone": "1-646-876-9923,,88922985420#",
+    "conference_phone_notes": "1-646-876-9923",
+    "languages": [
+      "EN"
+    ],
+    "startDateUTC": {
+      "$date": "2025-03-20T18:00:00.000Z"
+    },
+    "communities": [
+      "SEN"
+    ],
+    "features": [],
+    "formats": [
+      "D",
+      "DR"
+    ],
+    "type": [
+      "O"
+    ]
+  }
+]
