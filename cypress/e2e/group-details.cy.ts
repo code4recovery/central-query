@@ -8,7 +8,7 @@ describe("Group Details endpoint", () => {
       console.log(response.body)
       expect(response.status).to.equal(200)
       expect(response.body).to.have.property(
-        "email",
+        "groupEmail",
         "globalmensmeditation@gmail.com",
       )
     })

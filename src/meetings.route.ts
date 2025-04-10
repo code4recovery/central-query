@@ -18,6 +18,6 @@ router.route("/next").get(
 
 router.route("/by-day").get(meetingsController.byDay)
 
-router.route("/:slug").get(meetingsController.groupDetails)
+router.route("/:slug").get(meetingsController.withGroupContact)
 
 export default router

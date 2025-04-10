@@ -54,19 +54,19 @@ export const byDay = async (
   }
 }
 
-export const groupDetails = async (
+export const withGroupContact = async (
   req: express.Request,
   res: express.Response,
   next: express.NextFunction,
 ) => {
   const slug = req.params.slug as string
   Logger.debug(
-    `Request params for getGroupDetails: ${JSON.stringify(req.params)}`,
+    `Request params for withGroupContact: ${JSON.stringify(req.params)}`,
   )
-  const { ok, val } = await meetingsService.getGroupDetails(slug)
+  const { ok, val } = await meetingsService.getGroupContact(slug)
   if (ok) {
     Logger.info(
-      `fetch result being returned with group details: ${JSON.stringify(val)}`,
+      `fetch result being returned with group contact: ${JSON.stringify(val)}`,
     )
     res.status(200).json(val)
   } else {

@@ -63,18 +63,63 @@ Bugs and feature requests are tracked using GitHub Issues for the repo. Please c
 
 ### Meetings
 
-`/api/v1/meetings/next` returns the next set (default 25) of meetings based on a start time (default now).
+### `/api/v1/meetings/next`
+
+Gets the next hour of meetings based on the UTC time when the request is received. The controller limits the fetch to 100 meetings.
+
+To Do:
+
+- [ ] If the fetched results are <10 meetings, re-fetch for the next two hours.
 
 Options include:
 
-`limit`: A number representing how many meetings will be returned. Defaults to 25 if not included.
+`limit`: A number representing how many meetings will be returned. Defaults to 100 if not included.
 `start` (not fully implemented): A timestamp reflecting the start time for meetings to be returned. For example, to get the next meeting starting after 2300 UTC: `/api/v1/meetings/next?limit=1&start=20240113T230000Z`
 
 Note: The API adjusts the query to include meetings started within the past 10 minutes.
 
-`/api/v1/meetings/by-day?weekday=<1-7>&offset=<proper offset in minutes>`
+### `/api/v1/meetings/:slug`
 
-Currently, the requesting app must provide the weekday and offset as no defaults are coded.
+Uses the slug to determine and provide details from a meeting and associated group. See `MeetingGroup` interface.
+
+### `/api/v1/meetings/by-day?weekday=<1-7>&offset=<proper offset in minutes>`
+
+Currently, the requesting app must provide the weekday and offset as no defaults are coded. Consider this endpoint unstable.
+
+## Active interfaces
+
+This API provides the `Meeting` interface which is better aligned to the terms used by Meeting Guide and, hopefully, Central.
+
+These should still be considered unstable:
+
+```ts
+interface Meeting {
+  slug: string
+  name: string
+  timezone: string
+  day: number
+  time: string
+  duration: Minutes
+  languages: string[]
+  features: Feature[]
+  formats: Format[]
+  type: Type
+  communities: Community[]
+  groupID: string
+  tags: string[]
+  search: string
+  groupEmail?: string
+  groupWebsite?: string
+  groupNotes?: string
+  conference_provider?: string
+  conference_url?: string
+  conference_url_notes?: string
+  conference_phone?: string
+  conference_phone_notes?: string
+  notes?: string[]
+  edit_url?: string
+}
+```
 
 ### Events
 
