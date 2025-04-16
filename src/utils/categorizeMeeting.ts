@@ -1,3 +1,5 @@
+import { MeetingModel } from "../storage/storage.types"
+
 export const TYPE = ["O", "C"] // 2
 export const FORMATS = [
   "11",
@@ -67,10 +69,7 @@ function intersection<T>(arr1: T[], arr2: T[]): T[] {
   return arr2.filter((value) => set1.has(value))
 }
 
-export function categorizedMeeting(meeting: {
-  name: string
-  types?: Category[]
-}) {
+export function categorizedMeeting(meeting: MeetingModel) {
   const { types } = meeting
 
   delete meeting.types

@@ -63,8 +63,21 @@ const oiaaTypes = {
 
 test("Category bins created from all types list", () => {
   const meetingData = {
+    slug: "meeting-1",
     name: "Meeting 1",
     types: Object.getOwnPropertyNames(oiaaTypes),
+    timezone: "America/New_York",
+    day: 1,
+    time: "10:00",
+    duration: 60,
+    languages: ["English"],
+    features: [],
+    formats: [],
+    communities: [],
+    type: "O",
+    groupID: "group-1",
+    tags: [],
+    search: "",
   }
 
   const newMeetingData = categorizedMeeting(meetingData)
@@ -77,9 +90,21 @@ test("Category bins created from all types list", () => {
 
 test("Gracefully handles null `types`", () => {
   const meetingData = {
+    slug: "meeting-2",
     name: "Meeting 2",
+    timezone: "America/New_York",
+    day: 1,
+    time: "10:00",
+    duration: 60,
+    languages: ["English"],
+    features: [],
+    formats: [],
+    communities: [],
+    type: "O",
+    groupID: "group-1",
+    tags: [],
+    search: "",
   }
-
   const newMeetingData = categorizedMeeting(meetingData)
 
   expect(newMeetingData.type).toStrictEqual([])
