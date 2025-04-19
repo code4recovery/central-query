@@ -92,24 +92,19 @@ Currently, the requesting app must provide the weekday and offset as no defaults
 
 This API provides the `Meeting` interface which is better aligned to the terms used by Meeting Guide and, hopefully, Central.
 
-These should still be considered unstable:
-
 ```ts
 interface Meeting {
   slug: string
   name: string
   timezone: string
-  day: number
-  time: string
-  duration: Minutes
-  languages: string[]
+  timeUTC: string
+  rtc: string
   features: Feature[]
   formats: Format[]
   type: Type
   communities: Community[]
   groupID: string
-  tags: string[]
-  search: string
+  duration?: Minutes
   groupEmail?: string
   groupWebsite?: string
   groupNotes?: string
@@ -119,9 +114,10 @@ interface Meeting {
   conference_phone?: string
   conference_phone_notes?: string
   notes?: string[]
-  edit_url?: string
 }
 ```
+
+This should still be considered unstable.
 
 ### Events
 
@@ -170,8 +166,26 @@ Using MongoDB's Compass app connected to the local database, create an aggregati
 ```json
 [
   {
+    "$lookup": {
+      "from": "group",https://code4recovery.slack.com/files/U010NSRGL31/F08PFNSH7AL/screenshot_2025-04-18_at_8.46.03___am.png
     "$addFields": {
-      "adjustedUTC": {
+      "groupEmail": {
+        "$arrayElemAt": ["$groupInfo.email", 0]
+      },
+      "groupWebsite": {
+        "$arrayElemAt": ["$groupInfo.website", 0]
+      },
+      "groupPhone": {
+        "$arrayElemAt": ["$groupInfo.phone", 0]
+      },
+      "groupNotes": {
+        "$arrayElemAt": ["$groupInfo.notes", 0]
+      }
+    }
+  },
+  {
+    "$addFields": {
+      "timeUTC": {
         "$dateFromParts": {
           "year": {
             "$year": {
@@ -231,25 +245,7 @@ Using MongoDB's Compass app connected to the local database, create an aggregati
     }
   },
   {
-    "$project": {
-      "_id": 0,
-      "day": 1,
-      "name": 1,
-      "time": 1,
-      "timezone": 1,
-      "contact_1_email": 1,
-      "contact_1_name": 1,
-      "contact_2_email": 1,
-      "contact_2_name": 1,
-      "email": 1,
-      "group": 1,
-      "group_id": 1,
-      "notes": 1,
-      "slug": 1,
-      "types": 1,
-      "phone": 1,
-      "adjustedUTC": 1,
-      "startDateUTC": 1,
+    "$addFields": {
       "sortRTCDay": {
         "$cond": {
           "if": {
@@ -263,7 +259,7 @@ Using MongoDB's Compass app connected to the local database, create an aggregati
       },
       "sortRTCTime": {
         "$dateToString": {
-          "date": "$adjustedUTC",
+          "date": "$timeUTC",
           "format": "%H:%M"
         }
       },
@@ -273,7 +269,7 @@ Using MongoDB's Compass app connected to the local database, create an aggregati
           ":",
           {
             "$dateToString": {
-              "date": "$adjustedUTC",
+              "date": "$timeUTC",
               "format": "%H:%M"
             }
           }
@@ -282,10 +278,32 @@ Using MongoDB's Compass app connected to the local database, create an aggregati
     }
   },
   {
+    "$project": {
+      "_id": 0,
+      "startDateUTC": 0,
+      "time": 0,
+      "day": 0,
+      "archived": 0,
+      "accountID": 0,
+      "groupInfo": 0,
+      "createdAt": 0,
+      "updatedAt": 0,
+      "nowWeekday": 0,
+      "rtcWeekday": 0,
+      "dayOfWeekStr": 0
+    }
+  },
+  {
     "$sort": {
       "sortRTCDay": 1,
       "sortRTCTime": 1,
       "name": 1
+    }
+  },
+  {
+    "$project": {
+      "sortRTCDay": 0,
+      "sortRTCTime": 0
     }
   }
 ]

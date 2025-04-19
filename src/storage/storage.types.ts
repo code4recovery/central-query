@@ -8,21 +8,15 @@ import type {
 } from "../utils/categorizeMeeting"
 
 type Minutes = number
-interface Meeting {
+
+type MeetingBase = {
   slug: string
   name: string
   timezone: string
-  day: number
-  time: string
-  duration: Minutes
-  languages: string[]
-  features: Feature[]
-  formats: Format[]
-  type: Type
+  timeUTC: string
+  rtc: string
   communities: Community[]
-  groupID: string
-  tags: string[]
-  search: string
+  duration?: Minutes
   groupEmail?: string
   groupWebsite?: string
   groupNotes?: string
@@ -32,12 +26,19 @@ interface Meeting {
   conference_phone?: string
   conference_phone_notes?: string
   notes?: string[]
-  edit_url?: string
 }
-
-export interface MeetingModel extends Meeting {
+export interface MeetingModel extends MeetingBase {
   _id?: ObjectId
   types?: string[]
+  groupID: ObjectId
+}
+
+export interface Meeting extends MeetingBase {
+  features: Feature[]
+  formats: Format[]
+  type: Type
+  communities: Community[]
+  groupID: string
 }
 
 // Use format of data in groups.json file to provide an interface for the group
