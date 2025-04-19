@@ -3,7 +3,7 @@ import express from "express"
 import Logger from "./common/logger.js"
 import * as meetingsService from "./meetings.service.js"
 
-export const meetingsNext = async (
+export const meetings = async (
   req: express.Request,
   res: express.Response,
   next: express.NextFunction,
@@ -16,12 +16,12 @@ export const meetingsNext = async (
   const hours =
     req.query.hours != undefined ? parseInt(req.query.hours as string) : 1
   const limit =
-    req.query.limit != undefined ? parseInt(req.query.limit as string) : 100
+    req.query.limit != undefined ? parseInt(req.query.limit as string) : 1000
   const types: string[] =
     req.query.types != undefined
       ? JSON.parse(req.query["types"] as string)
       : undefined
-  const { ok, val } = await meetingsService.getNext({
+  const { ok, val } = await meetingsService.getMeetings({
     start,
     hours,
     limit,
@@ -72,5 +72,22 @@ export const withGroupContact = async (
   } else {
     Logger.error(`${JSON.stringify(val)}`)
     next()
+  }
+}
+
+export const byGroup = async (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction,
+) => {
+  const groupID = req.params.groupID as string
+  Logger.debug(`Request params for byGroup: ${JSON.stringify(req.params)}`)
+  const { ok, val } = await meetingsService.getByGroup(groupID)
+  if (ok) {
+    Logger.info(`fetch result being returned includes ${val.length} meetings.`)
+    res.status(200).json(val)
+  } else {
+    Logger.error(`${JSON.stringify(val)}`)
+    next(val)
   }
 }

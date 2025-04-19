@@ -7,7 +7,7 @@ describe("Basic queries", () => {
     }
     cy.request({
       method: "GET",
-      url: "/meetings/next",
+      url: "/meetings",
       qs: reqQuery,
       failOnStatusCode: false,
     }).then((response) => {
@@ -23,7 +23,7 @@ describe("Basic queries", () => {
     }
     cy.request({
       method: "GET",
-      url: "/meetings/next",
+      url: "/meetings",
       qs: reqQuery,
       failOnStatusCode: false,
     }).then((response) => {
@@ -45,7 +45,7 @@ describe("Basic queries", () => {
     }
     cy.request({
       method: "GET",
-      url: "/meetings/next",
+      url: "/meetings",
       qs: reqQuery,
       failOnStatusCode: false,
     }).then((response) => {
@@ -59,7 +59,7 @@ describe("Basic queries", () => {
     }
     cy.request({
       method: "GET",
-      url: "/meetings/next",
+      url: "/meetings",
       qs: reqQuery,
       failOnStatusCode: false,
     }).then((response) => {
@@ -87,7 +87,7 @@ describe("Basic queries", () => {
     }
     cy.request({
       method: "GET",
-      url: "/meetings/next",
+      url: "/meetings",
       qs: reqQuery,
       failOnStatusCode: false,
     }).then((response) => {

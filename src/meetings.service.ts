@@ -21,7 +21,7 @@ import {
 } from "./utils/dates.js"
 import { pipelineFromQuery } from "./utils/pipelineFromQuery.js"
 
-export const getNext = async (options: NextOptions) => {
+export const getMeetings = async (options: NextOptions) => {
   Logger.debug(`Time is now: ${options.start}`)
   const limits = lowerUpperLimits(options.start, options.hours)
   const result = (await meetingStore.query(
@@ -75,4 +75,15 @@ export const getGroupContact = async (slug: string) => {
     )}`,
   )
   return Ok(meetingWithGroupContact)
+}
+
+export const getByGroup = async (groupID: string) => {
+  Logger.debug(`Getting all meetings for group ${groupID}`)
+  const result = await meetingStore.byGroup(groupID)
+  if (!result) {
+    Logger.error(`Group with ID ${groupID} not found`)
+    return Err("Group not found")
+  }
+  Logger.debug(`Meetings for group ${groupID}: ${JSON.stringify(result)}`)
+  return Ok(result)
 }

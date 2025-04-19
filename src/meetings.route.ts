@@ -8,16 +8,18 @@ import * as meetingsController from "./meetings.controller.js"
 
 const router = Router()
 
-router.route("/next").get(
+router.route("/").get(
   // TokenMiddleWare.extractAPIToken,
   // query("apiToken").isString().isLength({ min: 64, max: 64 }),
   // verifyFieldsErrors,
   // AuthorizationMiddleware.isTokenAuthorized,
-  meetingsController.meetingsNext,
+  meetingsController.meetings,
 )
 
 router.route("/by-day").get(meetingsController.byDay)
 
 router.route("/:slug").get(meetingsController.withGroupContact)
+
+router.route("/by-group/:groupID").get(meetingsController.byGroup)
 
 export default router

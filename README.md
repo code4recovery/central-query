@@ -57,26 +57,28 @@ Please note: This app uses "pure" ES modules and not the older CommonJS modules.
 
 ### Issues
 
-Bugs and feature requests are tracked using GitHub Issues for the repo. Please consider coordinating via Slack prior to opening an issue or PR.
+Bugs and feature requests are tracked using GitHub Issues for the repo.
 
 ## Endpoints
 
 ### Meetings
 
-### `/api/v1/meetings/next`
+### `/api/v1/meetings`
 
-Gets the next hour of meetings based on the UTC time when the request is received. The controller limits the fetch to 100 meetings.
-
-To Do:
-
-- [ ] If the fetched results are <10 meetings, re-fetch for the next two hours.
+Gets meetings, accepting several query parameter options. If the `start` option is not provided, the API defaults to now based on the UTC time when the request is received. The controller limits the fetch to 100 meetings.
 
 Options include:
 
 `limit`: A number representing how many meetings will be returned. Defaults to 100 if not included.
 `start` (not fully implemented): A timestamp reflecting the start time for meetings to be returned. For example, to get the next meeting starting after 2300 UTC: `/api/v1/meetings/next?limit=1&start=20240113T230000Z`
+`hours`: A number used to limit the range of meetings returned by the endpoint. The default is 1.
 
 Note: The API adjusts the query to include meetings started within the past 10 minutes.
+
+To Do:
+
+- [ ] If the fetched results are <10 meetings, re-fetch for the next two hours.
+- [ ] Ensure API can handle fractional `hours` and then set default to 45 minutes.
 
 ### `/api/v1/meetings/:slug`
 
