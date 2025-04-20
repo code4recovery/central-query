@@ -15,12 +15,6 @@ const meetingView = useCollection("meeting-view")<MeetingModel>(
   configuredMongoDatabase,
 )
 
-export const getAllMeetings = async () =>
-  await meetingCollection.find({}).toArray()
-
-export const dayOfWeek = async (day: number) =>
-  await meetingCollection.find({ day: day }).toArray()
-
 const pipelineView = (pipeline: MongoDB.Document[]) =>
   meetingView.aggregate(pipeline)
 

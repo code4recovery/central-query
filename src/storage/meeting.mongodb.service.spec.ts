@@ -6,7 +6,6 @@ import { jest } from "@jest/globals"
 
 import {
   bySlug,
-  getAllMeetings,
   meetingCollection,
 } from "./meeting.mongodb.service.js"
 import {
@@ -40,11 +39,6 @@ beforeEach(async () => {
 afterAll(async () => {
   await mongoClient.close()
   jest.useRealTimers()
-})
-
-test("getAllMeetings returns all documents", async () => {
-  await testMeetingsCollection.insertMany(cleanedMeetingsTestData)
-  expect(await getAllMeetings()).toHaveLength(cleanedMeetingsTestData.length)
 })
 
 test("bySlug returns a single document", async () => {
