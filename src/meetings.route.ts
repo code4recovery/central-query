@@ -16,9 +16,13 @@ router.route("/").get(
   meetingsController.meetings,
 )
 
-router.route("/by-day").get(meetingsController.byDay)
+router.route("/:slug").get(meetingsController.bySlug)
 
-router.route("/:slug").get(meetingsController.withGroupContact)
+router
+  .route("/:slug/related-group-info")
+  .get(meetingsController.relatedGroupInfo)
+
+router.route("/by-day").get(meetingsController.byDay)
 
 router.route("/by-group/:groupID").get(meetingsController.byGroup)
 

@@ -30,8 +30,7 @@ const loadPipelineView = (pipeline: MongoDB.Document[]) =>
 export const query = async (queryPipeline: MongoDB.Document[]) =>
   loadPipelineView(queryPipeline)
 
-export const bySlug = async (slug: string) =>
-  meetingCollection.findOne({ slug })
+export const bySlug = async (slug: string) => meetingView.findOne({ slug })
 
 export const byDay = async (day: Weekdays) => {
   const searchDay = day.toString()
@@ -41,3 +40,6 @@ export const byDay = async (day: Weekdays) => {
     },
   ])
 }
+
+export const byGroup = async (groupID: string) =>
+  meetingCollection.find({ groupID: new MongoDB.ObjectId(groupID) }).toArray()

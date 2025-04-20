@@ -36,6 +36,42 @@ export const meetings = async (
   }
 }
 
+export const bySlug = async (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction,
+) => {
+  const slug = req.params.slug as string
+  Logger.debug(`Request params for bySlug: ${JSON.stringify(req.params)}`)
+  const { ok, val } = await meetingsService.getBySlug(slug)
+  if (ok) {
+    Logger.info(`fetch result being returned includes ${JSON.stringify(val)}.`)
+    res.status(200).json(val)
+  } else {
+    Logger.error(`${JSON.stringify(val)}`)
+    next()
+  }
+}
+
+export const relatedGroupInfo = async (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction,
+) => {
+  const slug = req.params.slug as string
+  Logger.debug(
+    `Request params for relatedGroupInfo: ${JSON.stringify(req.params)}`,
+  )
+  const { ok, val } = await meetingsService.getRelatedGroupInfo(slug)
+  if (ok) {
+    Logger.info(`fetch result being returned includes ${JSON.stringify(val)}.`)
+    res.status(200).json(val)
+  } else {
+    Logger.error(`${JSON.stringify(val)}`)
+    next()
+  }
+}
+
 export const byDay = async (
   req: express.Request,
   res: express.Response,
@@ -51,27 +87,6 @@ export const byDay = async (
   } else {
     Logger.error(`${JSON.stringify(val)}`)
     next(val)
-  }
-}
-
-export const withGroupContact = async (
-  req: express.Request,
-  res: express.Response,
-  next: express.NextFunction,
-) => {
-  const slug = req.params.slug as string
-  Logger.debug(
-    `Request params for withGroupContact: ${JSON.stringify(req.params)}`,
-  )
-  const { ok, val } = await meetingsService.getGroupContact(slug)
-  if (ok) {
-    Logger.info(
-      `fetch result being returned with group contact: ${JSON.stringify(val)}`,
-    )
-    res.status(200).json(val)
-  } else {
-    Logger.error(`${JSON.stringify(val)}`)
-    next()
   }
 }
 

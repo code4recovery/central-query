@@ -10,10 +10,7 @@ import {
 } from "./endpoint-options.types.js"
 import * as groupStore from "./storage/group.mongodb.service.js"
 import * as meetingStore from "./storage/meeting.mongodb.service.js"
-import {
-  MeetingGroup,
-  MeetingModel,
-} from "./storage/storage.types.js"
+import { MeetingModel } from "./storage/storage.types.js"
 import { categorizedMeeting } from "./utils/categorizeMeeting.js"
 import {
   dayLimits,
@@ -35,6 +32,39 @@ export const getMeetings = async (options: NextOptions) => {
   return Ok(meetings)
 }
 
+export const getBySlug = async (slug: string) => {
+  Logger.debug(`Getting meeting with slug ${slug}`)
+  const result = await meetingStore.bySlug(slug)
+  if (!result) {
+    Logger.error(`Meeting with slug ${slug} not found`)
+    return Err("Meeting not found")
+  }
+  Logger.debug(`Meeting with slug ${slug}: ${JSON.stringify(result)}`)
+  return Ok(categorizedMeeting(result))
+}
+
+export const getRelatedGroupInfo = async (slug: string) => {
+  const { err, val } = await getBySlug(slug)
+  if (err) {
+    Logger.error(`Meeting with slug ${slug} not found`)
+    return Err("Meeting not found")
+  }
+  const meeting = val as MeetingModel
+  const groupID = meeting.groupID.toString()
+  const groupInfo = await groupStore.byId(groupID)
+  Logger.debug(
+    `Group info for meeting with slug ${slug}: ${JSON.stringify(
+      groupInfo,
+    )} using groupID ${groupID}`,
+  )
+  const groupMeetings = await meetingStore.byGroup(groupID)
+
+  return Ok({
+    groupInfo,
+    groupMeetings: groupMeetings.map((mtg) => categorizedMeeting(mtg)),
+  })
+}
+
 export const getDay = async (options: DayOptions) => {
   Logger.debug(`Getting all meetings for day ${options.weekday}`)
   const limits = dayLimits(options.weekday, options.offset)
@@ -45,36 +75,6 @@ export const getDay = async (options: DayOptions) => {
   )
   Logger.debug(`meetingStore fetch ${result.length} meetings.`)
   return Ok(result)
-}
-
-export const getGroupContact = async (slug: string) => {
-  Logger.debug(`Getting the groupID for the meeting: ${slug}`)
-  const meetingResult = await meetingStore.bySlug(slug)
-  if (!meetingResult) {
-    Logger.error(`Meeting with slug ${slug} not found`)
-    return Err("Meeting not found")
-  }
-  Logger.debug(`Meeting for slug ${slug}: ${JSON.stringify(meetingResult)}`)
-  const groupID = meetingResult.groupID
-  const groupResult = await groupStore.byId(groupID)
-  if (!groupResult) {
-    Logger.error(`Group with ID ${groupID} not found`)
-    return Ok(null)
-  }
-  Logger.debug(
-    `Group details for meeting ${slug}: ${JSON.stringify(groupResult)}`,
-  )
-  const meetingWithGroupContact: MeetingGroup = {
-    ...meetingResult,
-    groupWebsite: groupResult.website,
-    groupEmail: groupResult.email,
-  }
-  Logger.debug(
-    `Meeting with group contact for slug ${slug}: ${JSON.stringify(
-      meetingWithGroupContact,
-    )}`,
-  )
-  return Ok(meetingWithGroupContact)
 }
 
 export const getByGroup = async (groupID: string) => {
