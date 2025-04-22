@@ -12,6 +12,7 @@ describe("bySlug endpoint", () => {
         "globalmensmeditation@gmail.com",
       )
       expect(response.body).to.have.property("features")
+      expect(response.body).not.to.have.property("accountID")
     })
   })
   it("returns a 404 for an non-existent slug", () => {
@@ -25,16 +26,21 @@ describe("bySlug endpoint", () => {
   })
 })
 describe("relatedGroupInfo endpoint", () => {
+  /** This test does not fully check for compliance with the interface; rather,
+   * it assumes that since the accountID is not present, the rest of the data is correct
+   * because the correct view in MongoDB is being used.
+   */
   it("provides the remaining group information and other group meetings for a legitimate slug", () => {
     cy.request({
       method: "GET",
       url: "/meetings/global-mens-meditation-6/related-group-info",
       failOnStatusCode: false,
     }).then((response) => {
-      console.log(response.body)
+      const { groupInfo, groupMeetings } = response.body
       expect(response.status).to.equal(200)
-      expect(response.body).to.have.property("groupInfo")
-      expect(response.body).to.have.property("groupMeetings")
+      expect(groupInfo).not.to.have.property("accountID")
+      expect(groupMeetings[0]).not.to.have.property("accountID")
+      console.log("Group Meetings", groupMeetings)
     })
   })
   it("returns a 404 for an non-existent slug", () => {

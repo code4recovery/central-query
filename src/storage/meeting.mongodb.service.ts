@@ -36,4 +36,4 @@ export const byDay = async (day: Weekdays) => {
 }
 
 export const byGroup = async (groupID: string) =>
-  meetingCollection.find({ groupID: new MongoDB.ObjectId(groupID) }).toArray()
+  meetingView.find({ groupID: new MongoDB.ObjectId(groupID) }).toArray()
