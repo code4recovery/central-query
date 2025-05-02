@@ -90,34 +90,13 @@ Currently, the requesting app must provide the weekday and offset as no defaults
 
 ## Active interfaces
 
-This API provides the `Meeting` interface which is better aligned to the terms used by Meeting Guide and, hopefully, Central.
+This API provides the `OnlineMeeting` interface (aliased as `Meeting`) which is better aligned to the terms used by Meeting Guide and, hopefully, Central.
 
-```ts
-interface Meeting {
-  slug: string
-  name: string
-  timezone: string
-  timeUTC: string
-  rtc: string
-  features: Feature[]
-  formats: Format[]
-  type: Type
-  communities: Community[]
-  groupID: string
-  duration?: Minutes
-  groupEmail?: string
-  groupWebsite?: string
-  groupNotes?: string
-  conference_provider?: string
-  conference_url?: string
-  conference_url_notes?: string
-  conference_phone?: string
-  conference_phone_notes?: string
-  notes?: string[]
-}
-```
+Additionally, `GroupDetails` provides group specifics, including other meeting.
 
-This should still be considered unstable.
+See the [specifics of the interfaces](src/endpoints.types.ts).
+
+These should still be considered unstable.
 
 ### Events
 
