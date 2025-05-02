@@ -40,6 +40,7 @@ describe("relatedGroupInfo endpoint", () => {
       expect(response.status).to.equal(200)
       expect(groupInfo).not.to.have.property("accountID")
       expect(groupMeetings[0]).not.to.have.property("accountID")
+      console.log("Group Info", groupInfo)
       console.log("Group Meetings", groupMeetings)
     })
   })

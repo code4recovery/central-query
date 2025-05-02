@@ -13,6 +13,7 @@ describe("Basic queries", () => {
     }).then((response) => {
       expect(response.status).to.equal(200)
       expect(response.body).to.have.length(25)
+      console.log(response.body)
     })
   })
   it.skip("returns the next X < 25 closed discussion meetings as a given time.", () => {
