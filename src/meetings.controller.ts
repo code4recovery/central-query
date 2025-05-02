@@ -72,6 +72,7 @@ export const relatedGroupInfo = async (
   }
 }
 
+/** The following functions are not fully implemented yet. */
 export const byDay = async (
   req: express.Request,
   res: express.Response,

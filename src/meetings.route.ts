@@ -22,8 +22,4 @@ router
   .route("/:slug/related-group-info")
   .get(meetingsController.relatedGroupInfo)
 
-router.route("/by-day").get(meetingsController.byDay)
-
-router.route("/by-group/:groupID").get(meetingsController.byGroup)
-
 export default router
