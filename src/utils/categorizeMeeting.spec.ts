@@ -1,10 +1,13 @@
+import { ObjectId } from "mongodb"
+
 import {
-  categorizedMeeting,
   COMMUNITIES,
   FEATURES,
   FORMATS,
   TYPE,
-} from "./categorizeMeeting"
+} from "../common/types"
+import { MeetingView } from "../storage/storage.types"
+import { categorizedMeeting } from "./categorizeMeeting"
 
 const oiaaTypes = {
   "11": "11th Step Meditation",
@@ -62,48 +65,41 @@ const oiaaTypes = {
 }
 
 test("Category bins created from all types list", () => {
-  const meetingData = {
+  const meetingData: MeetingView = {
     slug: "meeting-1",
     name: "Meeting 1",
     types: Object.getOwnPropertyNames(oiaaTypes),
     timezone: "America/New_York",
-    day: 1,
-    time: "10:00",
+    rtc: "1:10:00",
     duration: 60,
     languages: ["English"],
     features: [],
     formats: [],
     communities: [],
-    type: "O",
-    groupID: "group-1",
-    tags: [],
-    search: "",
+    groupID: new ObjectId("123456789012345678901234"),
   }
 
   const newMeetingData = categorizedMeeting(meetingData)
 
-  expect(newMeetingData.type.sort()).toStrictEqual(TYPE.sort())
+  expect(newMeetingData.type).toStrictEqual(TYPE)
   expect(newMeetingData.communities.sort()).toStrictEqual(COMMUNITIES.sort())
   expect(newMeetingData.features.sort()).toStrictEqual(FEATURES.sort())
   expect(newMeetingData.formats.sort()).toStrictEqual(FORMATS.sort())
 })
 
 test("Gracefully handles null `types`", () => {
-  const meetingData = {
+  const meetingData: MeetingView = {
     slug: "meeting-2",
     name: "Meeting 2",
     timezone: "America/New_York",
-    day: 1,
-    time: "10:00",
+    rtc: "1:10:00",
     duration: 60,
     languages: ["English"],
     features: [],
     formats: [],
     communities: [],
     type: "O",
-    groupID: "group-1",
-    tags: [],
-    search: "",
+    groupID: new ObjectId("123456789012345678901234"),
   }
   const newMeetingData = categorizedMeeting(meetingData)
 

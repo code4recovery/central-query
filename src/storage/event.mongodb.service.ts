@@ -11,7 +11,7 @@ interface EventModel {
 
 export const getAllEvents = async () => await eventView.find({}).toArray()
 
-const eventView = useCollection("events-view")<EventModel>(
+const eventView = useCollection<EventModel>("events-view")(
   configuredMongoDatabase,
 )
 

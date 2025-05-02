@@ -13,7 +13,7 @@ import {
   mongoClient,
   useCollection,
 } from "./mongodb-storage-service.js"
-import { MeetingModel } from "./storage.types.js"
+import { MeetingView } from "./storage.types.js"
 
 const meetingsTestData = JSON.parse(
   fs.readFileSync("cypress/fixtures/meetings.json", "utf-8"),
@@ -25,7 +25,7 @@ const cleanedMeetingsTestData = meetingsTestData.map((meeting) => {
   return meeting
 })
 
-const testMeetingsCollection = useCollection("meeting")<MeetingModel>(
+const testMeetingsCollection = useCollection<MeetingView>("meeting")(
   configuredMongoDatabase,
 )
 

@@ -5,18 +5,24 @@ import {
   configuredMongoDatabase,
   useCollection,
 } from "./mongodb-storage-service.js"
-import { MeetingModel } from "./storage.types.js"
+import { MeetingView } from "./storage.types.js"
 
-export const meetingCollection = useCollection("meeting")<MeetingModel>(
+export const meetingCollection = useCollection<MeetingView>("meeting")(
   configuredMongoDatabase,
 )
 
-const meetingView = useCollection("meeting-view")<MeetingModel>(
+const meetingView = useCollection<MeetingView>("meeting-view")(
+  configuredMongoDatabase,
+)
+
+const meetingViewSorted = useCollection<MeetingView>("meeting-view-sorted-rtc")(
   configuredMongoDatabase,
 )
 
 const pipelineView = (pipeline: MongoDB.Document[]) =>
-  meetingView.aggregate(pipeline)
+  meetingViewSorted.aggregate(
+    pipeline,
+  ) as MongoDB.AggregationCursor<MeetingView>
 
 const loadPipelineView = (pipeline: MongoDB.Document[]) =>
   pipelineView(pipeline).toArray()
@@ -26,6 +32,7 @@ export const query = async (queryPipeline: MongoDB.Document[]) =>
 
 export const bySlug = async (slug: string) => meetingView.findOne({ slug })
 
+/** The following are not fully implemented yet. */
 export const byDay = async (day: Weekdays) => {
   const searchDay = day.toString()
   return loadPipelineView([

@@ -7,7 +7,7 @@ import {
   mongoClient,
   useCollection,
 } from "./mongodb-storage-service.js"
-import { GroupModel } from "./storage.types.js"
+import { GroupView } from "./storage.types.js"
 
 const groupsTestData = JSON.parse(
   fs.readFileSync("cypress/fixtures/groups.json", "utf-8"),
@@ -16,7 +16,7 @@ const cleanedGroupsTestData = groupsTestData.map((group) => {
   group._id = new ObjectId(group._id.$oid)
   return group
 })
-const testGroupsCollection = useCollection("group")<GroupModel>(
+const testGroupsCollection = useCollection<GroupView>("group")(
   configuredMongoDatabase,
 )
 

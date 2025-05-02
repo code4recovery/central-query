@@ -40,8 +40,8 @@ const configuredMongoDatabase =
   useAppProvidedDatabaseNameWithMongoDB(mongoClient)
 
 const useCollection =
-  (collName: string) =>
-  <TSchema extends MongoDB.Document>(database: MongoDB.Db) =>
+  <TSchema extends MongoDB.Document = MongoDB.Document>(collName: string) =>
+  (database: MongoDB.Db) =>
     database.collection<TSchema>(collName)
 
-export { mongoClient, configuredMongoDatabase, useCollection }
+export { configuredMongoDatabase, mongoClient, useCollection }

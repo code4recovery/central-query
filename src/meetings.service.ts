@@ -8,17 +8,32 @@ import {
   DayOptions,
   NextOptions,
 } from "./endpoint-options.types.js"
+import {
+  Group,
+  GroupDetails,
+  Meeting,
+} from "./endpoints.types.js"
 import * as groupStore from "./storage/group.mongodb.service.js"
 import * as meetingStore from "./storage/meeting.mongodb.service.js"
-import { MeetingModel } from "./storage/storage.types.js"
+import { MeetingView } from "./storage/storage.types.js"
 import { categorizedMeeting } from "./utils/categorizeMeeting.js"
 import {
+  convertRTCtoUTC,
   dayLimits,
   lowerUpperLimits,
 } from "./utils/dates.js"
 import { pipelineFromQuery } from "./utils/pipelineFromQuery.js"
 
-export const getMeetings = async (options: NextOptions) => {
+const preparedMeetings = (meetings: MeetingView[]): Meeting[] =>
+  meetings.map(categorizedMeeting).map(({ groupID, ...rest }) => ({
+    ...rest,
+    groupID: groupID.toString(),
+    timeUTC: convertRTCtoUTC(rest.rtc).toString(),
+  }))
+
+export const getMeetings = async (
+  options: NextOptions,
+): Promise<Ok<Meeting[]>> => {
   Logger.debug(`Time is now: ${options.start}`)
   const limits = lowerUpperLimits(options.start, options.hours)
   const result = (await meetingStore.query(
@@ -26,13 +41,15 @@ export const getMeetings = async (options: NextOptions) => {
       ...options,
       rtcRanges: limits,
     }),
-  )) as MeetingModel[]
+  )) as MeetingView[]
   Logger.debug(`meetingStore fetch ${result.length} meetings.`)
-  const meetings = result.map((meeting) => categorizedMeeting(meeting))
-  return Ok(meetings)
+
+  return Ok(preparedMeetings(result))
 }
 
-export const getBySlug = async (slug: string) => {
+export const getBySlug = async (
+  slug: string,
+): Promise<Ok<Meeting> | Err<string>> => {
   Logger.debug(`Getting meeting with slug ${slug}`)
   const result = await meetingStore.bySlug(slug)
   if (!result) {
@@ -40,7 +57,14 @@ export const getBySlug = async (slug: string) => {
     return Err("Meeting not found")
   }
   Logger.debug(`Meeting with slug ${slug}: ${JSON.stringify(result)}`)
-  return Ok(categorizedMeeting(result))
+
+  const meeting = {
+    ...categorizedMeeting(result),
+    timeUTC: convertRTCtoUTC(result.rtc).toString(),
+    groupID: result.groupID.toString(),
+  } as Meeting
+
+  return Ok(meeting)
 }
 
 export const getRelatedGroupInfo = async (slug: string) => {
@@ -49,7 +73,7 @@ export const getRelatedGroupInfo = async (slug: string) => {
     Logger.error(`Meeting with slug ${slug} not found`)
     return Err("Meeting not found")
   }
-  const meeting = val as MeetingModel
+  const meeting = val as Meeting
   const groupID = meeting.groupID.toString()
   const groupInfo = await groupStore.byId(groupID)
   Logger.debug(
@@ -58,13 +82,19 @@ export const getRelatedGroupInfo = async (slug: string) => {
     )} using groupID ${groupID}`,
   )
   const groupMeetings = await meetingStore.byGroup(groupID)
+  Logger.debug(
+    `Group meetings for group with ID ${groupID}: ${JSON.stringify(
+      groupMeetings,
+    )}`,
+  )
 
   return Ok({
-    groupInfo,
-    groupMeetings: groupMeetings.map((mtg) => categorizedMeeting(mtg)),
-  })
+    groupInfo: groupInfo as Group, // ToDo: Confirm that `_id` should be removed or if not, add to the interface
+    groupMeetings: preparedMeetings(groupMeetings) as Meeting[],
+  } as GroupDetails)
 }
 
+/** The following functions are not fully implemented yet. */
 export const getDay = async (options: DayOptions) => {
   Logger.debug(`Getting all meetings for day ${options.weekday}`)
   const limits = dayLimits(options.weekday, options.offset)
