@@ -47,7 +47,8 @@ export const nextOccurrence = (dayOfWeek: Weekdays, dateTime: DateTime) => {
   return dateTime.set({ ordinal: newOrdinalDate })
 }
 
-const rtc = (time: DateTime) => time.weekday + ":" + time.toFormat("HH:mm")
+const rtcFromTimestamp = (time: DateTime) =>
+  time.weekday + ":" + time.toFormat("HH:mm")
 
 export const lowerUpperLimits = (time: string, hours: number) => {
   const rqstTime = DateTime.fromISO(time).toUTC()
@@ -55,16 +56,18 @@ export const lowerUpperLimits = (time: string, hours: number) => {
   const upper = rqstTime.plus({ hours })
   let ranges: RTCRange[] = []
   if (lower.weekday === upper.weekday) {
-    ranges = [{ lowerRTC: rtc(lower), upperRTC: rtc(upper) }]
+    ranges = [
+      { lowerRTC: rtcFromTimestamp(lower), upperRTC: rtcFromTimestamp(upper) },
+    ]
   } else {
     ranges = [
       {
-        lowerRTC: rtc(lower),
+        lowerRTC: rtcFromTimestamp(lower),
         upperRTC: `${lower.weekday}:24:00`,
       },
       {
         lowerRTC: `${upper.weekday}:00:00`,
-        upperRTC: rtc(upper),
+        upperRTC: rtcFromTimestamp(upper),
       },
     ]
   }
@@ -114,4 +117,31 @@ export const dayLimits = (weekday: number, offset: number) => {
       upperRTC: `${endDay}:${hour}:${mins}`,
     },
   ]
+}
+
+const dayOffsetFromWeekday = (timeStamp: DateTime, weekday: Weekdays) => {
+  const dayOfWeek = timeStamp.weekday
+  const offset = weekday - dayOfWeek
+  return offset >= 0 ? offset : offset + 7
+}
+
+export const convertRTCtoUTC = (rtc: string) => {
+  const [rtcWeekDay, hour, mins] = rtc.split(":")
+  const now = DateTime.utc()
+
+  const todayAtRTCTime = now.set({
+    hour: Number(hour),
+    minute: Number(mins),
+    second: 0,
+    millisecond: 0,
+  })
+
+  const hasRTCTimePassedForToday = todayAtRTCTime < now
+  const weekday = hasRTCTimePassedForToday
+    ? Number(rtcWeekDay) + 7
+    : Number(rtcWeekDay)
+
+  return todayAtRTCTime.plus({
+    days: dayOffsetFromWeekday(todayAtRTCTime, weekday),
+  })
 }
