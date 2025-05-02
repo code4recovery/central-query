@@ -1,7 +1,7 @@
 import * as MongoDB from "mongodb"
 
 import Logger from "../common/logger.js"
-import { PipelineFields } from "../endpoint-options.types"
+import { PipelineFields } from "../endpoint-options.types.js"
 
 export const pipelineFromQuery = (query: PipelineFields) => {
   const pipeline: MongoDB.Document[] = []

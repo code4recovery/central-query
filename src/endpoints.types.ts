@@ -1,4 +1,4 @@
-import { OptionalEndpointData } from "./common/types"
+import { OptionalEndpointData } from "./common/types.js"
 
 // Use format of data in groups.json file to provide an interface for the group
 export type Group = {

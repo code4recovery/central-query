@@ -1,11 +1,6 @@
 import { ObjectId } from "mongodb"
 
-import {
-  COMMUNITIES,
-  FEATURES,
-  FORMATS,
-  TYPE,
-} from "../common/types"
+import { COMMUNITIES, FEATURES, FORMATS, TYPE } from "../common/types.js"
 import { MeetingView } from "../storage/storage.types"
 import { categorizedMeeting } from "./categorizeMeeting"
 

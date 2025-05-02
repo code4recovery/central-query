@@ -1,6 +1,6 @@
 import { DateTime } from "luxon"
 
-import { RTCRange } from "../endpoint-options.types"
+import { RTCRange } from "../endpoint-options.types.js"
 
 export enum Weekdays {
   MONDAY = 1,

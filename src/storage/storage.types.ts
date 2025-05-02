@@ -1,6 +1,6 @@
 import { type ObjectId } from "mongodb"
 
-import { OptionalStorageData } from "../common/types"
+import { OptionalStorageData } from "../common/types.js"
 
 export interface MeetingView extends OptionalStorageData {
   groupID: ObjectId

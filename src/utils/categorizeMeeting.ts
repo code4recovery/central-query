@@ -5,8 +5,8 @@ import {
   FORMATS,
   Type,
   TYPE,
-} from "../common/types"
-import { MeetingView } from "../storage/storage.types"
+} from "../common/types.js"
+import { MeetingView } from "../storage/storage.types.js"
 
 function intersection<T>(arr1: T[], arr2: T[]): T[] {
   const set1 = new Set(arr1)
