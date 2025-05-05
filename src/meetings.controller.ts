@@ -8,7 +8,10 @@ export const meetings = async (
   res: express.Response,
   next: express.NextFunction,
 ) => {
+  Logger.debug(`Request params for meetings: ${JSON.stringify(req.params)}`)
+  Logger.debug(`Request query for meetings: ${req.query}`)
   Logger.debug(`query = ${JSON.stringify(req.query)}`)
+
   const start =
     req.query.start != undefined
       ? (req.query.start as string)
@@ -17,22 +20,21 @@ export const meetings = async (
     req.query.hours != undefined ? parseInt(req.query.hours as string) : 1
   const limit =
     req.query.limit != undefined ? parseInt(req.query.limit as string) : 1000
-  const type: string =
-    req.query.type != undefined
-      ? JSON.parse(req.query["type"] as string)
-      : undefined
-  const formats: string[] =
-    req.query.formats != undefined
-      ? JSON.parse(req.query["formats"] as string)
-      : undefined
-  const features: string[] =
-    req.query.features != undefined
-      ? JSON.parse(req.query["features"] as string)
-      : undefined
-  const communities: string[] =
-    req.query.communities != undefined
-      ? JSON.parse(req.query["communities"] as string)
-      : undefined
+
+  const parseQueryParam = <T>(param: string | undefined): T | undefined => {
+    if (!param) return undefined
+    try {
+      return JSON.parse(param) as T
+    } catch {
+      return param as unknown as T // Handle plain strings
+    }
+  }
+
+  const type = parseQueryParam<string>(req.query.type as string)
+  const formats = parseQueryParam<string[]>(req.query.formats as string)
+  const features = parseQueryParam<string[]>(req.query.features as string)
+  const communities = parseQueryParam<string[]>(req.query.communities as string)
+
   const { ok, val } = await meetingsService.getMeetings({
     start,
     hours,
@@ -42,6 +44,7 @@ export const meetings = async (
     features,
     communities,
   })
+
   if (ok) {
     Logger.info(`fetch result includes ${val.length} meetings.`)
     res.status(200).json(val)
