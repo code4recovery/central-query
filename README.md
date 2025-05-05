@@ -72,6 +72,10 @@ Options include:
 `limit`: A number representing how many meetings will be returned. Defaults to 100 if not included.
 `start` (not fully implemented): A timestamp reflecting the start time for meetings to be returned. For example, to get the next meeting starting after 2300 UTC: `/api/v1/meetings/next?limit=1&start=20240113T230000Z`
 `hours`: A number used to limit the range of meetings returned by the endpoint. The default is 1.
+`features`: An array of features
+`formats`: An array of formats
+`communities`: An array of communities
+`type`: A string, either O (for Open) or C (for Closed)
 
 Note: The API adjusts the query to include meetings started within the past 10 minutes.
 
@@ -95,6 +99,8 @@ This API provides the `OnlineMeeting` interface (aliased as `Meeting`) which is 
 Additionally, `GroupDetails` provides group specifics, including other meeting.
 
 See the [specifics of the interfaces](src/endpoints.types.ts).
+
+The draft `MeetingsOptions` [interface](src/endpoint-options.types.ts) has been implemented for experimentation.
 
 These should still be considered unstable.
 

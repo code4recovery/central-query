@@ -5,8 +5,18 @@ import { PipelineFields } from "../endpoint-options.types.js"
 
 export const pipelineFromQuery = (query: PipelineFields) => {
   const pipeline: MongoDB.Document[] = []
-  const { rtcRanges, limit, types } = query
+  const { rtcRanges, limit, formats, features, communities, type } = query
+
   let match: Record<string, unknown> = {}
+
+  // Merge formats, features, communities, and type into a single `types` array
+  const mergedTypes = [
+    ...(formats || []),
+    ...(features || []),
+    ...(communities || []),
+    ...(type ? [type] : []),
+  ]
+
   if (rtcRanges.length === 1) {
     match = {
       $and: [
@@ -33,10 +43,10 @@ export const pipelineFromQuery = (query: PipelineFields) => {
     }
   }
 
-  if (types != undefined) {
+  if (mergedTypes.length > 0) {
     match = {
       ...match,
-      types: { $all: types },
+      types: { $all: mergedTypes },
     }
   }
 

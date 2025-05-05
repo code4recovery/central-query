@@ -16,12 +16,14 @@ describe("Basic queries", () => {
       console.log(response.body)
     })
   })
-  it.skip("returns the next X < 25 closed discussion meetings as a given time.", () => {
-    const testFormats = ["D"]
-    const testType = "C"
+  it("returns the next X < 25 open discussion Big Book meetings as a given time.", () => {
+    const testFormats = ["D", "B"]
+    const testType = "O"
     const reqQuery = {
-      types: JSON.stringify(testTypes),
+      formats: JSON.stringify(testFormats),
+      type: JSON.stringify(testType),
     }
+    console.log("The query: ", reqQuery)
     cy.request({
       method: "GET",
       url: "/meetings",
@@ -30,12 +32,13 @@ describe("Basic queries", () => {
     }).then((response) => {
       expect(response.status).to.equal(200)
       const meetings = response.body
+      console.log(meetings)
       expect(
-        meetings
-          .map((meeting: { type: string; formats: string[] }) =>
-            testTypes.every((element) => meeting.type.includes(element)),
-          )
-          .every((el: boolean) => el === true),
+        meetings.every(
+          (meeting: { type: string; formats: string[] }) =>
+            testFormats.every((format) => meeting.formats.includes(format)) &&
+            meeting.type === testType,
+        ),
       ).to.be.true
     })
   })
@@ -67,6 +70,46 @@ describe("Basic queries", () => {
       response.body.forEach((mtg) => {
         cy.wrap(mtg).should("not.have.property", "types")
       })
+    })
+  })
+  it.only("provides meetings over the next four hours.", () => {
+    const now = new Date()
+    console.log("The time is now: ", now)
+    const fourHoursLater = new Date(now)
+    fourHoursLater.setHours(now.getHours() + 4)
+    console.log("Four hours later: ", fourHoursLater)
+    const reqQuery = {
+      start: now.toISOString(),
+      hours: 4,
+    }
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+      console.log(meetings)
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+          const meetingTime = new Date(now)
+          meetingTime.setUTCDate(
+            now.getUTCDate() + ((rtcWeekday - now.getUTCDay() + 7) % 7),
+          )
+          meetingTime.setUTCHours(rtcHour, rtcMinute, 0, 0)
+          console.log(meetingTime, meeting)
+          const isMeetingInFuture = meetingTime.getTime() >= now.getTime()
+          const isMeetingWithinFourHours =
+            meetingTime.getTime() <= fourHoursLater.getTime()
+          console.log(isMeetingInFuture, isMeetingWithinFourHours)
+          return isMeetingInFuture && isMeetingWithinFourHours
+        }),
+      ).to.be.true
     })
   })
   it.skip("provides the next 10 meetings at 0500 PDT that match the expected array.", () => {

@@ -4,9 +4,13 @@ interface BasicFilter {
   limit?: number
   types?: string[]
 }
-export interface NextOptions extends BasicFilter {
+export interface MeetingsOptions extends BasicFilter {
   start: ISOString
   hours: number
+  formats?: string[]
+  features?: string[]
+  communities?: string[]
+  type?: string
 }
 
 export interface DayOptions extends BasicFilter {
@@ -19,6 +23,6 @@ export type RTCRange = {
   upperRTC: string
 }
 
-export interface PipelineFields extends BasicFilter {
+export interface PipelineFields extends MeetingsOptions {
   rtcRanges: RTCRange[]
 }
