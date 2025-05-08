@@ -21,7 +21,11 @@ export const getMeetings = async (
   options: MeetingsOptions,
 ): Promise<Ok<Meeting[]>> => {
   Logger.debug(`Time is now: ${options.start}`)
-  const limits = lowerUpperLimits(options.start, options.hours)
+  Logger.debug(`Hours is: ${options.hours}`)
+  const limits = options.start
+    ? lowerUpperLimits(options.start, options.hours)
+    : []
+  Logger.debug(`Limits: ${JSON.stringify(limits)}`)
   const result = (await meetingStore.query(
     pipelineFromQuery({
       ...options,
