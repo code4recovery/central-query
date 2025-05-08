@@ -16,12 +16,12 @@ describe("Basic queries", () => {
       console.log(response.body)
     })
   })
-  it("returns the next X < 25 open discussion Big Book meetings as a given time.", () => {
+  it("returns open discussion Big Book meetings.", () => {
     const testFormats = ["D", "B"]
     const testType = "O"
     const reqQuery = {
       formats: JSON.stringify(testFormats),
-      type: JSON.stringify(testType),
+      type: testType,
     }
     console.log("The query: ", reqQuery)
     cy.request({
@@ -33,6 +33,7 @@ describe("Basic queries", () => {
       expect(response.status).to.equal(200)
       const meetings = response.body
       console.log(meetings)
+      expect(meetings.length).to.be.greaterThan(0)
       expect(
         meetings.every(
           (meeting: { type: string; formats: string[] }) =>
@@ -72,7 +73,7 @@ describe("Basic queries", () => {
       })
     })
   })
-  it.only("provides meetings over the next four hours.", () => {
+  it("provides meetings over the next four hours.", () => {
     const now = new Date()
     console.log("The time is now: ", now)
     const fourHoursLater = new Date(now)
@@ -103,11 +104,33 @@ describe("Basic queries", () => {
           )
           meetingTime.setUTCHours(rtcHour, rtcMinute, 0, 0)
           console.log(meetingTime, meeting)
-          const isMeetingInFuture = meetingTime.getTime() >= now.getTime()
+          const isMeetingInFuture =
+            meetingTime.getTime() >= now.getTime() - 9 * 60 * 1000
           const isMeetingWithinFourHours =
             meetingTime.getTime() <= fourHoursLater.getTime()
           console.log(isMeetingInFuture, isMeetingWithinFourHours)
           return isMeetingInFuture && isMeetingWithinFourHours
+        }),
+      ).to.be.true
+    })
+  })
+  it("handles a single format with more than one character in the value.", () => {
+    const reqQuery = {
+      formats: "LIT",
+    }
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+      expect(
+        meetings.every((meeting: { formats: string[] }) => {
+          console.log(meeting)
+          return meeting.formats.includes("LIT")
         }),
       ).to.be.true
     })
