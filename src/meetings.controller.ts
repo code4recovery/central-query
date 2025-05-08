@@ -12,32 +12,55 @@ export const meetings = async (
   Logger.debug(`Request query for meetings: ${req.query}`)
   Logger.debug(`query = ${JSON.stringify(req.query)}`)
 
-  const start =
-    req.query.start != undefined
-      ? (req.query.start as string)
-      : new Date().toISOString()
-  const hours =
-    req.query.hours != undefined ? parseInt(req.query.hours as string) : 1
-  const limit =
-    req.query.limit != undefined ? parseInt(req.query.limit as string) : 1000
+  const start = req.query.start as string
 
-  const parseQueryParam = <T>(param: string | undefined): T | undefined => {
-    if (!param) return undefined
-    try {
-      return JSON.parse(param) as T
-    } catch {
-      return param as unknown as T // Handle plain strings
-    }
+  const parseQueryParam = <T>(param: string | undefined): T | undefined =>
+    param
+      ? (() => {
+          try {
+            const parsed = JSON.parse(param)
+            return Array.isArray(parsed)
+              ? (parsed as T)
+              : (param as unknown as T) // Handle arrays and plain strings
+          } catch {
+            return param as unknown as T // Handle plain strings
+          }
+        })()
+      : undefined
+
+  const queryParams = [
+    "type",
+    "formats",
+    "features",
+    "communities",
+    "hours",
+  ].reduce(
+    (acc, key) => ({
+      ...acc,
+      [key]: parseQueryParam(req.query[key] as string),
+    }),
+    {} as Record<string, unknown>,
+  )
+
+  const { type, formats, features, communities, hours } = queryParams as {
+    type?: string
+    formats?: string[]
+    features?: string[]
+    communities?: string[]
+    hours?: number
   }
 
-  const type = parseQueryParam<string>(req.query.type as string)
-  const formats = parseQueryParam<string[]>(req.query.formats as string)
-  const features = parseQueryParam<string[]>(req.query.features as string)
-  const communities = parseQueryParam<string[]>(req.query.communities as string)
+  const validatedHours = typeof hours === "number" && !isNaN(hours) ? hours : 1
+
+  const limit = req.query.limit
+    ? parseInt(req.query.limit as string)
+    : [start, validatedHours].every((param) => param === undefined)
+    ? 300
+    : 1000
 
   const { ok, val } = await meetingsService.getMeetings({
     start,
-    hours,
+    hours: validatedHours,
     limit,
     type,
     formats,
