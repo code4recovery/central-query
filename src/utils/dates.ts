@@ -1,5 +1,6 @@
 import { DateTime } from "luxon"
 
+import Logger from "../common/logger.js"
 import { RTCRange } from "../endpoint-options.types.js"
 
 export enum Weekdays {
@@ -51,9 +52,13 @@ const rtcFromTimestamp = (time: DateTime) =>
   time.weekday + ":" + time.toFormat("HH:mm")
 
 export const lowerUpperLimits = (time: string, hours: number) => {
+  Logger.debug(`lowerUpperLimits Params: time = ${time}, hours = ${hours}`)
   const rqstTime = DateTime.fromISO(time).toUTC()
   const lower = rqstTime.minus({ minutes: 9 })
   const upper = rqstTime.plus({ hours })
+  Logger.debug(
+    `lowerUpperLimits set: lower = ${lower.toString()}, upper = ${upper.toString()}`,
+  )
   let ranges: RTCRange[] = []
   if (lower.weekday === upper.weekday) {
     ranges = [
