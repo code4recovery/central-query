@@ -1,6 +1,29 @@
 /** These test are designed to provide data for comparison with OIAA website.
  * Ensure the faked time of the MongoDB server is off. */
+import { DateTime } from "luxon"
+
 describe("Basic queries", () => {
+  it.only("provides a default the next hours of meetings when not query string parameters are received.", () => {
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      expect(response.body.length).to.be.greaterThan(0)
+      expect(
+        response.body.every((meeting: { timeUTC: string }) => {
+          const meetingTime = DateTime.fromISO(meeting.timeUTC)
+          const now = DateTime.utc()
+          const isWithinNextHours = meetingTime <= now.plus({ hours: 1 })
+          const isWithinPast10Minutes =
+            meetingTime >= now.minus({ minutes: 10 })
+          return isWithinNextHours && isWithinPast10Minutes
+        }),
+      ).to.be.true
+      console.log(response.body)
+    })
+  })
   it("provides the next x=limit meetings. Use to manually compare to OIAA website listing.", () => {
     const reqQuery = {
       limit: 25,
@@ -74,15 +97,16 @@ describe("Basic queries", () => {
     })
   })
   it("provides meetings over the next four hours.", () => {
-    const now = new Date()
-    console.log("The time is now: ", now)
-    const fourHoursLater = new Date(now)
-    fourHoursLater.setHours(now.getHours() + 4)
-    console.log("Four hours later: ", fourHoursLater)
+    const now = DateTime.utc()
+    console.log("The time is now: ", now.toISO())
+    const fourHoursLater = now.plus({ hours: 4 })
+    console.log("Four hours later: ", fourHoursLater.toISO())
+
     const reqQuery = {
-      start: now.toISOString(),
+      start: now.toISO(),
       hours: 4,
     }
+
     cy.request({
       method: "GET",
       url: "/meetings",
@@ -93,22 +117,34 @@ describe("Basic queries", () => {
       const meetings = response.body
       expect(meetings.length).to.be.greaterThan(0)
       console.log(meetings)
+
       expect(
         meetings.every((meeting: { rtc: string }) => {
           const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
             .split(":")
             .map(Number)
-          const meetingTime = new Date(now)
-          meetingTime.setUTCDate(
-            now.getUTCDate() + ((rtcWeekday - now.getUTCDay() + 7) % 7),
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 }) // Handle week wrap-around
+
+          console.log("Meeting time: ", meetingTime.toISO())
+
+          const isMeetingInFuture = meetingTime >= now.minus({ minutes: 9 })
+          const isMeetingWithinFourHours = meetingTime <= fourHoursLater
+
+          console.log("Is meeting in future: ", isMeetingInFuture)
+          console.log(
+            "Is meeting within four hours: ",
+            isMeetingWithinFourHours,
           )
-          meetingTime.setUTCHours(rtcHour, rtcMinute, 0, 0)
-          console.log(meetingTime, meeting)
-          const isMeetingInFuture =
-            meetingTime.getTime() >= now.getTime() - 9 * 60 * 1000
-          const isMeetingWithinFourHours =
-            meetingTime.getTime() <= fourHoursLater.getTime()
-          console.log(isMeetingInFuture, isMeetingWithinFourHours)
+
           return isMeetingInFuture && isMeetingWithinFourHours
         }),
       ).to.be.true

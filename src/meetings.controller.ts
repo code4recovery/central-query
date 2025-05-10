@@ -12,7 +12,9 @@ export const meetings = async (
   Logger.debug(`Request query for meetings: ${req.query}`)
   Logger.debug(`query = ${JSON.stringify(req.query)}`)
 
-  const start = req.query.start as string
+  const start = req.query.start
+    ? (req.query.start as string)
+    : new Date().toISOString()
 
   const parseQueryParam = <T>(param: string | undefined): T | undefined =>
     param
