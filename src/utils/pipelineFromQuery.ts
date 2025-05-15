@@ -3,8 +3,70 @@ import * as MongoDB from "mongodb"
 import Logger from "../common/logger.js"
 import { MeetingsOptions } from "../endpoint-options.types.js"
 
-export const pipelineFromQuery = (query: MeetingsOptions | MeetingsOptions) => {
-  const pipeline: MongoDB.Document[] = []
+const normalizeToArray = (input: string | string[] | undefined): string[] => {
+  if (!input) return []
+  if (Array.isArray(input)) return input
+  try {
+    const parsed = JSON.parse(input)
+    if (Array.isArray(parsed)) return parsed
+  } catch {
+    // not JSON, fall through
+  }
+  return [input]
+}
+
+const buildRtcMatch = (
+  rtcRanges: { lowerRTC: string; upperRTC?: string }[],
+) => {
+  if (!rtcRanges || rtcRanges.length === 0) return {}
+  if (rtcRanges.length === 1) {
+    const { lowerRTC, upperRTC } = rtcRanges[0]
+    return {
+      rtc: {
+        ...(lowerRTC ? { $gte: lowerRTC } : {}),
+        ...(upperRTC !== undefined ? { $lte: upperRTC } : {}),
+      },
+    }
+  }
+  return {
+    $or: rtcRanges.map(({ lowerRTC, upperRTC }) => ({
+      rtc: {
+        ...(lowerRTC ? { $gte: lowerRTC } : {}),
+        ...(upperRTC !== undefined ? { $lte: upperRTC } : {}),
+      },
+    })),
+  }
+}
+
+const buildTypesMatch = (
+  formats: string | string[] | undefined,
+  features: string | string[] | undefined,
+  communities: string | string[] | undefined,
+  type: string | undefined,
+) => {
+  const mergedTypes = [
+    ...normalizeToArray(formats),
+    ...normalizeToArray(features),
+    ...normalizeToArray(communities),
+  ]
+  if (type) mergedTypes.push(type)
+  return mergedTypes.length > 0 ? { types: { $all: mergedTypes } } : {}
+}
+
+const mergeMatches = (
+  rtcMatch: Record<string, unknown>,
+  typesMatch: Record<string, unknown>,
+) => {
+  if (Object.keys(rtcMatch).length && Object.keys(typesMatch).length) {
+    if (rtcMatch.$or) {
+      return { $and: [rtcMatch, typesMatch] }
+    }
+    return { ...rtcMatch, ...typesMatch }
+  }
+  return Object.keys(rtcMatch).length ? rtcMatch : typesMatch
+}
+
+export const pipelineFromQuery = (query: MeetingsOptions) => {
   const { rtcRanges, limit, formats, features, communities, type } = query
 
   Logger.debug(`Formats: ${formats}`)
@@ -15,65 +77,14 @@ export const pipelineFromQuery = (query: MeetingsOptions | MeetingsOptions) => {
   Logger.debug(`Limit: ${limit}`)
   Logger.debug(`Query: ${JSON.stringify(query)}`)
 
-  let match: Record<string, unknown> = {}
+  const rtcMatch = buildRtcMatch(rtcRanges)
+  const typesMatch = buildTypesMatch(formats, features, communities, type)
+  const match = mergeMatches(rtcMatch, typesMatch)
 
-  const normalizeToArray = (input: string | string[] | undefined): string[] => {
-    if (!input) return []
-    if (Array.isArray(input)) return input
-    try {
-      const parsed = JSON.parse(input)
-      if (Array.isArray(parsed)) return parsed
-    } catch {
-      // not JSON, fall through
-    }
-    return [input]
-  }
+  const pipeline: MongoDB.Document[] = []
+  if (Object.keys(match).length) pipeline.push({ $match: match })
+  if (limit !== undefined) pipeline.push({ $limit: limit })
 
-  // Merge formats, features, communities, and type into a single `types` array to comply with the database schema
-  const mergedTypes = [
-    ...normalizeToArray(formats),
-    ...normalizeToArray(features),
-    ...normalizeToArray(communities),
-  ]
-  if (type) mergedTypes.push(type)
-  Logger.debug(`Merged types: ${mergedTypes}`)
-
-  if (rtcRanges && rtcRanges.length > 0) {
-    if (rtcRanges.length === 1) {
-      const rtcMatch: Record<string, string> = {
-        $gte: rtcRanges[0].lowerRTC,
-      }
-      if (rtcRanges[0].upperRTC !== undefined) {
-        rtcMatch.$lte = rtcRanges[0].upperRTC
-      }
-      match = { rtc: rtcMatch }
-    } else {
-      match = {
-        $or: rtcRanges.map((range) => {
-          const rtcMatch: Record<string, string> = { $gte: range.lowerRTC }
-          if (range.upperRTC !== undefined) {
-            rtcMatch.$lte = range.upperRTC
-          }
-          return { rtc: rtcMatch }
-        }),
-      }
-    }
-  }
-
-  let updatedMatch: Record<string, unknown>
-  if (mergedTypes.length > 0) {
-    if (match.$or) {
-      updatedMatch = { $and: [match, { types: { $all: mergedTypes } }] }
-    } else {
-      updatedMatch = { ...match, types: { $all: mergedTypes } }
-    }
-  } else {
-    updatedMatch = match
-  }
-
-  pipeline.push({ $match: updatedMatch })
-
-  if (limit != undefined) pipeline.push({ $limit: limit })
   Logger.debug(`pipeline built: ${JSON.stringify(pipeline)}`)
   return pipeline
 }
