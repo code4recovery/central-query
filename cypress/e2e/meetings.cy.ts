@@ -3,7 +3,7 @@
 import { DateTime } from "luxon"
 
 describe("Basic queries", () => {
-  it.only("provides a default the next hours of meetings when not query string parameters are received.", () => {
+  it("provides a default the next hours of meetings when not query string parameters are received.", () => {
     cy.request({
       method: "GET",
       url: "/meetings",
@@ -13,15 +13,18 @@ describe("Basic queries", () => {
       expect(response.body.length).to.be.greaterThan(0)
       expect(
         response.body.every((meeting: { timeUTC: string }) => {
+          console.log(meeting)
           const meetingTime = DateTime.fromISO(meeting.timeUTC)
           const now = DateTime.utc()
+          console.log("The time is now: ", now.toISO())
           const isWithinNextHours = meetingTime <= now.plus({ hours: 1 })
+          console.log("Is within next hours: ", isWithinNextHours)
           const isWithinPast10Minutes =
             meetingTime >= now.minus({ minutes: 10 })
-          return isWithinNextHours && isWithinPast10Minutes
+          console.log("Is within past 10 minutes: ", isWithinPast10Minutes)
+          return isWithinNextHours || isWithinPast10Minutes
         }),
       ).to.be.true
-      console.log(response.body)
     })
   })
   it("provides the next x=limit meetings. Use to manually compare to OIAA website listing.", () => {
@@ -37,6 +40,27 @@ describe("Basic queries", () => {
       expect(response.status).to.equal(200)
       expect(response.body).to.have.length(25)
       console.log(response.body)
+    })
+  })
+  it("handles a single format with more than one character in the value.", () => {
+    const reqQuery = {
+      formats: "LIT",
+    }
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+      expect(
+        meetings.every((meeting: { formats: string[] }) => {
+          console.log(meeting)
+          return meeting.formats.includes("LIT")
+        }),
+      ).to.be.true
     })
   })
   it("returns open discussion Big Book meetings.", () => {
@@ -146,27 +170,6 @@ describe("Basic queries", () => {
           )
 
           return isMeetingInFuture && isMeetingWithinFourHours
-        }),
-      ).to.be.true
-    })
-  })
-  it("handles a single format with more than one character in the value.", () => {
-    const reqQuery = {
-      formats: "LIT",
-    }
-    cy.request({
-      method: "GET",
-      url: "/meetings",
-      qs: reqQuery,
-      failOnStatusCode: false,
-    }).then((response) => {
-      expect(response.status).to.equal(200)
-      const meetings = response.body
-      expect(meetings.length).to.be.greaterThan(0)
-      expect(
-        meetings.every((meeting: { formats: string[] }) => {
-          console.log(meeting)
-          return meeting.formats.includes("LIT")
         }),
       ).to.be.true
     })

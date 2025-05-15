@@ -85,14 +85,11 @@ test("pipeline should reflect correct types for the query when rtcRanges are pre
   expect(pipelineFromQuery(testRanges)).toStrictEqual([
     {
       $match: {
-        $and: [
-          { rtc: { $gte: "7:23:00", $lte: "7:24:00" } },
-          {
-            types: {
-              $all: ["D", "B", "BE", "M", "O"],
-            },
-          },
-        ],
+        rtc: { $gte: "7:23:00", $lte: "7:24:00" },
+
+        types: {
+          $all: ["D", "B", "BE", "M", "O"],
+        },
       },
     },
   ])

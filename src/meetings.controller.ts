@@ -2,66 +2,57 @@ import express from "express"
 
 import Logger from "./common/logger.js"
 import * as meetingsService from "./meetings.service.js"
+import { parsedQueryParams } from "./utils/queryParser.js"
 
 export const meetings = async (
   req: express.Request,
   res: express.Response,
   next: express.NextFunction,
 ) => {
-  Logger.debug(`Request params for meetings: ${JSON.stringify(req.params)}`)
-  Logger.debug(`Request query for meetings: ${req.query}`)
-  Logger.debug(`query = ${JSON.stringify(req.query)}`)
-
-  const start = req.query.start
-    ? (req.query.start as string)
-    : new Date().toISOString()
-
-  const parseQueryParam = <T>(param: string | undefined): T | undefined =>
-    param
-      ? (() => {
-          try {
-            const parsed = JSON.parse(param)
-            return Array.isArray(parsed)
-              ? (parsed as T)
-              : (param as unknown as T) // Handle arrays and plain strings
-          } catch {
-            return param as unknown as T // Handle plain strings
-          }
-        })()
-      : undefined
-
-  const queryParams = [
-    "type",
-    "formats",
-    "features",
-    "communities",
-    "hours",
-  ].reduce(
-    (acc, key) => ({
-      ...acc,
-      [key]: parseQueryParam(req.query[key] as string),
-    }),
-    {} as Record<string, unknown>,
+  const queryParams = parsedQueryParams(
+    req.query as Record<string, string>,
+    ["type", "formats", "features", "communities", "hours", "start"],
+    { hours: "number" },
   )
 
-  const { type, formats, features, communities, hours } = queryParams as {
-    type?: string
-    formats?: string[]
-    features?: string[]
-    communities?: string[]
-    hours?: number
-  }
+  const { type, formats, features, communities, hours, start } =
+    queryParams as {
+      type?: string
+      formats?: string[]
+      features?: string[]
+      communities?: string[]
+      hours?: number
+      start?: string
+    }
 
-  const validatedHours = typeof hours === "number" && !isNaN(hours) ? hours : 1
+  Logger.debug(`Parsed query params: ${JSON.stringify(queryParams)}`)
+
+  // A start time is required for the meetings endpoint
+  const validatedStart = start || new Date().toISOString()
+  Logger.debug(`Hours: ${hours}, ${typeof hours}`)
+  const onlyStartDefined =
+    Object.keys(queryParams).filter((k) => queryParams[k] !== undefined)
+      .length === 1 && queryParams.start !== undefined
+
+  const noneDefined = Object.keys(queryParams).every(
+    (k) => queryParams[k] === undefined,
+  )
+
+  const validatedHours =
+    typeof hours === "number" && !isNaN(hours)
+      ? hours
+      : (onlyStartDefined || noneDefined) && validatedStart
+      ? 1
+      : undefined
 
   const limit = req.query.limit
     ? parseInt(req.query.limit as string)
-    : [start, validatedHours].every((param) => param === undefined)
+    : [validatedStart, validatedHours].every((param) => param === undefined)
     ? 300
     : 1000
 
   const { ok, val } = await meetingsService.getMeetings({
-    start,
+    start: validatedStart,
     hours: validatedHours,
     limit,
     type,

@@ -51,28 +51,37 @@ export const nextOccurrence = (dayOfWeek: Weekdays, dateTime: DateTime) => {
 const rtcFromTimestamp = (time: DateTime) =>
   time.weekday + ":" + time.toFormat("HH:mm")
 
-export const lowerUpperLimits = (time: string, hours: number) => {
+export const lowerUpperLimits = (time: string, hours: number | undefined) => {
   Logger.debug(`lowerUpperLimits Params: time = ${time}, hours = ${hours}`)
   const rqstTime = DateTime.fromISO(time).toUTC()
   const lower = rqstTime.minus({ minutes: 9 })
-  const upper = rqstTime.plus({ hours })
+  const upper = hours !== undefined ? rqstTime.plus({ hours }) : undefined
   Logger.debug(
-    `lowerUpperLimits set: lower = ${lower.toString()}, upper = ${upper.toString()}`,
+    `lowerUpperLimits set: lower = ${lower.toString()}, upper = ${upper?.toString()}`,
   )
+
   let ranges: RTCRange[] = []
-  if (lower.weekday === upper.weekday) {
+
+  if (hours !== undefined && lower.weekday === upper!.weekday) {
     ranges = [
-      { lowerRTC: rtcFromTimestamp(lower), upperRTC: rtcFromTimestamp(upper) },
+      { lowerRTC: rtcFromTimestamp(lower), upperRTC: rtcFromTimestamp(upper!) },
     ]
-  } else {
+  } else if (hours !== undefined) {
     ranges = [
       {
         lowerRTC: rtcFromTimestamp(lower),
         upperRTC: `${lower.weekday}:24:00`,
       },
       {
-        lowerRTC: `${upper.weekday}:00:00`,
-        upperRTC: rtcFromTimestamp(upper),
+        lowerRTC: `${upper!.weekday}:00:00`,
+        upperRTC: rtcFromTimestamp(upper!),
+      },
+    ]
+  } else {
+    ranges = [
+      {
+        lowerRTC: rtcFromTimestamp(lower),
+        upperRTC: undefined, // If hours is not defined, upperRTC is not set, and the pipeline should skip adding $lte
       },
     ]
   }

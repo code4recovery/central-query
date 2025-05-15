@@ -1,5 +1,4 @@
 import fs from "fs"
-import { ObjectId } from "mongodb"
 
 /** TODO: Replace this file with Integration test through Cypress, otherwise update from server-side-demo */
 import { jest } from "@jest/globals"
@@ -7,6 +6,7 @@ import { jest } from "@jest/globals"
 import {
   bySlug,
   meetingCollection,
+  query,
 } from "./meeting.mongodb.service.js"
 import {
   configuredMongoDatabase,
@@ -15,17 +15,23 @@ import {
 } from "./mongodb-storage-service.js"
 import { MeetingView } from "./storage.types.js"
 
-const meetingsTestData = JSON.parse(
-  fs.readFileSync("cypress/fixtures/meetings.json", "utf-8"),
+const testData = JSON.parse(
+  fs.readFileSync(
+    "cypress/fixtures/test-data.meeting-view-sorted-rtc.json",
+    "utf-8",
+  ),
 )
 
 // Copilot: Process meetingsTestData and groupsTestData to strip out $oid and associated braces
-const cleanedMeetingsTestData = meetingsTestData.map((meeting) => {
-  meeting.groupID = new ObjectId(meeting.groupID.$oid)
-  return meeting
-})
+// const cleanedMeetingsTestData = meetingsTestData.map((meeting) => {
+//   meeting.groupID = meeting.groupID.$oid
+//   return meeting
+// })
 
-const testMeetingsCollection = useCollection<MeetingView>("meeting")(
+const meetingView = useCollection<MeetingView>("meeting-view")(
+  configuredMongoDatabase,
+)
+const meetingViewSorted = useCollection<MeetingView>("meeting-view-sorted-rtc")(
   configuredMongoDatabase,
 )
 
@@ -33,7 +39,7 @@ async function resetDatabase() {
   await meetingCollection.deleteMany({})
 }
 
-beforeEach(async () => {
+beforeAll(async () => {
   await resetDatabase()
 })
 afterAll(async () => {
@@ -42,10 +48,20 @@ afterAll(async () => {
 })
 
 test("bySlug returns a single document", async () => {
-  await testMeetingsCollection.insertMany(cleanedMeetingsTestData)
-
-  const result = await bySlug("global-mens-meditation-6")
+  await meetingView.insertMany(testData)
+  const result = await bySlug("vegas-women-in-the-big-book-1")
 
   expect(result).not.toBeNull()
-  expect(result!.name).toBe("Global Men's Meditation")
+  expect(result!.name).toBe("Vegas Women In The Big Book")
+})
+
+test("query returns multiple documents", async () => {
+  await meetingViewSorted.insertMany(testData)
+  const result = await query([
+    { $match: { rtc: { $gte: "2:14:48" } } },
+    { $limit: 25 },
+  ])
+
+  expect(result).not.toBeNull()
+  expect(result.length).toBe(25)
 })

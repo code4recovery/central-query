@@ -26,12 +26,12 @@ export const getMeetings = async (
     ? lowerUpperLimits(options.start, options.hours)
     : []
   Logger.debug(`Limits: ${JSON.stringify(limits)}`)
-  const result = (await meetingStore.query(
-    pipelineFromQuery({
-      ...options,
-      rtcRanges: limits,
-    }),
-  )) as MeetingView[]
+  const pipeline = pipelineFromQuery({
+    ...options,
+    rtcRanges: limits,
+  })
+  Logger.debug(`Pipeline: ${JSON.stringify(pipeline)}, ${typeof pipeline}`)
+  const result = await meetingStore.query(pipeline)
   Logger.debug(`meetingStore fetch ${result.length} meetings.`)
 
   return Ok(preparedMeetings(result))
