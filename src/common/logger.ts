@@ -27,11 +27,11 @@ winston.addColors(colors)
 const timeZoned = () => {
   return new Date().toLocaleString("en-US", {
     timeZone: "UTC",
+    hour12: false,
   })
 }
 
 const format = winston.format.combine(
-  // winston.format.timestamp({ format: timeZoned }),  "YYYY-MM-DD HH:mm:ss:ms"
   winston.format.timestamp({ format: timeZoned }),
   winston.format.colorize({ all: true }),
   // winston.format.json(),
