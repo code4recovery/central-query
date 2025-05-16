@@ -11,11 +11,19 @@ export const meetings = async (
 ) => {
   const queryParams = parsedQueryParams(
     req.query as Record<string, string>,
-    ["type", "formats", "features", "communities", "hours", "start"],
+    [
+      "type",
+      "formats",
+      "features",
+      "communities",
+      "hours",
+      "start",
+      "languages",
+    ],
     { hours: "number" },
   )
 
-  const { type, formats, features, communities, hours, start } =
+  const { type, formats, features, communities, hours, start, languages } =
     queryParams as {
       type?: string
       formats?: string[]
@@ -23,6 +31,7 @@ export const meetings = async (
       communities?: string[]
       hours?: number
       start?: string
+      languages?: string[]
     }
 
   Logger.debug(`Parsed query params: ${JSON.stringify(queryParams)}`)
@@ -59,6 +68,7 @@ export const meetings = async (
     formats,
     features,
     communities,
+    languages,
   })
 
   if (ok) {
