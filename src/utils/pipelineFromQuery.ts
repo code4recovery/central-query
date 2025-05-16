@@ -67,19 +67,41 @@ const mergeMatches = (
 }
 
 export const pipelineFromQuery = (query: MeetingsOptions) => {
-  const { rtcRanges, limit, formats, features, communities, type } = query
+  const { rtcRanges, limit, formats, features, communities, type, languages } =
+    query
 
   Logger.debug(`Formats: ${formats}`)
   Logger.debug(`Features: ${features}`)
   Logger.debug(`Communities: ${communities}`)
   Logger.debug(`Type: ${type}`)
+  Logger.debug(`Languages: ${languages}`)
   Logger.debug(`RTC Ranges: ${rtcRanges}`)
   Logger.debug(`Limit: ${limit}`)
   Logger.debug(`Query: ${JSON.stringify(query)}`)
 
   const rtcMatch = buildRtcMatch(rtcRanges)
   const typesMatch = buildTypesMatch(formats, features, communities, type)
-  const match = mergeMatches(rtcMatch, typesMatch)
+  let match = mergeMatches(rtcMatch, typesMatch)
+
+  // Add languages to the match if provided
+  const normalizedLanguages = normalizeToArray(languages)
+  if (normalizedLanguages.length > 0) {
+    // If match is an $and, add languages as a new clause
+    if (match.$and) {
+      match = {
+        $and: [
+          ...((match.$and as object[]) || []),
+          { languages: { $all: normalizedLanguages } },
+        ],
+      }
+    } else if (Object.keys(match).length > 0) {
+      // Add languages directly to the existing match
+      match = { ...match, languages: { $all: normalizedLanguages } }
+    } else {
+      // No match yet, create one with languages
+      match = { languages: { $all: normalizedLanguages } }
+    }
+  }
 
   const pipeline: MongoDB.Document[] = []
   if (Object.keys(match).length) pipeline.push({ $match: match })

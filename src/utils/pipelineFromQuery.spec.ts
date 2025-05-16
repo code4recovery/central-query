@@ -141,3 +141,78 @@ test("pipeline should be correct when types are present and RTC transitions from
     },
   ])
 })
+
+test("pipeline should reflect languages filter", () => {
+  const testOptions: MeetingsOptions = {
+    languages: ["en", "fr"],
+  }
+
+  expect(pipelineFromQuery(testOptions)).toStrictEqual([
+    {
+      $match: {
+        languages: { $all: ["en", "fr"] },
+      },
+    },
+  ])
+})
+test("pipeline should reflect correct languages when rtcRanges are present", () => {
+  const testQueryOptions: MeetingsOptions = {
+    rtcRanges: [
+      {
+        lowerRTC: "7:23:00",
+        upperRTC: "7:24:00",
+      },
+    ],
+    languages: ["en"],
+  }
+
+  expect(pipelineFromQuery(testQueryOptions)).toStrictEqual([
+    {
+      $match: {
+        rtc: { $gte: "7:23:00", $lte: "7:24:00" },
+        languages: { $all: ["en"] },
+      },
+    },
+  ])
+})
+test("pipeline should reflect correct languages when types are present", () => {
+  const testQueryOptions: MeetingsOptions = {
+    formats: ["D", "B", "BE"],
+    communities: ["M"],
+    type: "O",
+    languages: ["en"],
+  }
+
+  expect(pipelineFromQuery(testQueryOptions)).toStrictEqual([
+    {
+      $match: {
+        types: { $all: ["D", "B", "BE", "M", "O"] },
+        languages: { $all: ["en"] },
+      },
+    },
+  ])
+})
+test("pipeline should reflect correct languages when types and rtcRanges are present", () => {
+  const testQueryOptions: MeetingsOptions = {
+    rtcRanges: [
+      {
+        lowerRTC: "7:23:00",
+        upperRTC: "7:24:00",
+      },
+    ],
+    formats: ["D", "B", "BE"],
+    communities: ["M"],
+    type: "O",
+    languages: ["en"],
+  }
+
+  expect(pipelineFromQuery(testQueryOptions)).toStrictEqual([
+    {
+      $match: {
+        rtc: { $gte: "7:23:00", $lte: "7:24:00" },
+        types: { $all: ["D", "B", "BE", "M", "O"] },
+        languages: { $all: ["en"] },
+      },
+    },
+  ])
+})
