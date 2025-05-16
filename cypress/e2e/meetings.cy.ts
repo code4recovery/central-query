@@ -174,46 +174,4 @@ describe("Basic queries", () => {
       ).to.be.true
     })
   })
-  it.skip("provides the next 10 meetings at 0500 PDT that match the expected array.", () => {
-    const expectedMeetings = [
-      "`As Bill Sees It` Cavan Lunchtime Meeting",
-      "1st Things 1st",
-      "757 Breakfast Club Online",
-      "AA Acceptance and Gratitude",
-      "AA Breakfast Club",
-      "AA Women Listening to God",
-      "AA-Alive",
-      "Agnes Water",
-      "Castleknock Dublin",
-      "Daily reflections",
-    ]
-    const now = new Date("2023-09-10T05:00:00-07:00")
-    const reqQuery = {
-      time: now.toISOString(),
-    }
-    cy.request({
-      method: "GET",
-      url: "/meetings",
-      qs: reqQuery,
-      failOnStatusCode: false,
-    }).then((response) => {
-      expect(response.status).to.equal(200)
-      expect(response.body).to.have.length(10)
-      expect(response.body).to.equal(expectedMeetings)
-    })
-  })
-  it.skip("handles more generic queries", () => {
-    const reqQuery = {
-      weekday: "TUESDAY",
-      timezone: "America/New_York",
-    }
-    cy.request({
-      method: "GET",
-      url: "/meetings",
-      qs: reqQuery,
-      failOnStatusCode: false,
-    }).then((response) => {
-      expect(response.status).to.equal(200)
-    })
-  })
 })
