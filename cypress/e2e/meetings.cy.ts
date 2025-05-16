@@ -174,4 +174,29 @@ describe("Basic queries", () => {
       ).to.be.true
     })
   })
+  it("handles languages query string parameter.", () => {
+    const reqQuery = {
+      languages: JSON.stringify(["EN", "ES"]),
+    }
+    console.log("The query: ", reqQuery)
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+      console.log(meetings)
+      expect(
+        meetings.every((meeting: { languages: string[] }) => {
+          console.log(meeting)
+          return meeting.languages.some((lang) =>
+            reqQuery.languages.includes(lang),
+          )
+        }),
+      ).to.be.true
+    })
+  })
 })
