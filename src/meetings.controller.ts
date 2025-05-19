@@ -3,10 +3,7 @@ import express from "express"
 import Logger from "./common/logger.js"
 import * as meetingsService from "./meetings.service.js"
 import { parsedQueryParams } from "./utils/queryParser.js"
-import {
-  arrayToUpper,
-  toUpper,
-} from "./utils/stringUtils.js"
+import { arrayToUpper, toUpper } from "./utils/stringUtils.js"
 
 export const meetings = async (
   req: express.Request,
@@ -72,7 +69,7 @@ export const meetings = async (
     formats: arrayToUpper(formats),
     features: arrayToUpper(features),
     communities: arrayToUpper(communities),
-    languages: arrayToUpper(languages),
+    languages: languages,
   })
 
   if (ok) {
