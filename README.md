@@ -2,56 +2,32 @@
 
 ## Overview
 
-Central Query (working name subject to change) is a set of endpoints to query a MongoDB database containing meeting data. The current iteration pulls meeting name using a copy of the OIAA database as a demo of the capability.
+Central Query provides a set of endpoints to query a MongoDB database containing meeting data. The current iteration uses a copy of the OIAA database as a demo of the capability.
 
 ## Motivation
 
-The demo provides a venue for Code for Recovery to create a more advanced proof-of-concept providing centralized management of meetings for entities around the globe.
+This project serves as a proof-of-concept for Code for Recovery, demonstrating centralized management of meetings for entities around the globe.
 
 ## Contributing
 
-### Installation for dev work
+### Installation for Development
 
-1. Request access to a MongoDB Collection of meeting data that is set up for testing and development. Or create your own locally:
-
-   1. Set up a local instance of MongoDB.
-   1. Create a database called `central-exp` or whatever you wish; the name can be set in `.env`.
-   1. Create a sample collection called `meeting` with the following minimum fields in each record:
-
-      ```json
-      name: string // Some identifier
-      timezone: string // from the official ICANN tz identifier list
-      day: number // 1-7, week starts with Monday
-      startDateUTC: Date // Next meeting occurrence after update in the database.
-      ```
-
-      Notes:
-
-      a. This minimum data set supports proof of concept for server-side sorting. It is not sufficient for full testing of filtering. This will be updated when those features are added.
-
-      b. The approach to the weekday, which changes Central's format (0-6, Sunday start), arises due to limitations of MongoDB and Luxon.
-
-      c. `startDateUTC` is essential magical sauce as an input to the `meeting-view` logic, used to determine DST on the fly. For example, if a new meeting to be held on Mondays at 7pm in New York is entered on January 1st, 2024 at noon, `startDateUTC` should be captured as `2024-01-02T00:00:00.000+00:00`. However, if the same meeting was entered on Tuesday, January 2nd at noon, the correct `startDateUTC` would be `2024-01-09T00:00:00.00+00:00`.
-
-      d. [This gist](https://gist.github.com/tim-rohrer/5a18691f3ba206c6c6ce7a90514b0de0) provides sample code to determine `startDateUTC`.
-
-   1. Create the [view](#aggregation-pipeline-for-view) on the MongoDB server.
-
-1. Add a `.env` file containing:
+1. Request access to a MongoDB collection of meeting data set up for testing and development.
+2. Add a `.env` file containing:
 
    ```sh
    NODE_ENV=development
    MONGO_DB_NAME=central-exp
-   #LOCAL MONGODB Server example
-   #MONGO_URI=mongodb://root:example@localhost:27017/?authSource=admin&readPreference=primary&directConnection=true&ssl=false
+   # Example for local MongoDB server:
+   # MONGO_URI=mongodb://root:example@localhost:27017/?authSource=admin&readPreference=primary&directConnection=true&ssl=false
    MONGO_URI=mongodb+srv://<username>:<password>@<databaseURL>
    ```
 
-1. Clone the repo, and run `npm install` inside the root folder.
+3. Clone the repo, and run `npm install` inside the root folder.
 
-1. Run `npm run test` to see the results of the unit tests.
+4. Run `npm run test` to see the results of the unit tests.
 
-1. Run the server, using `npm run build && npm run start` or `npm run start-dev` to execute a version that will reload upon saving code changes.
+5. Run the server, using `npm run build && npm run start` or `npm run start-dev` to execute a version that will reload upon saving code changes.
 
 Please note: This app uses "pure" ES modules and not the older CommonJS modules. Please stick with this approach.
 
@@ -65,17 +41,18 @@ Bugs and feature requests are tracked using GitHub Issues for the repo.
 
 ### `/api/v1/meetings`
 
-Gets meetings, accepting several query parameter options. If the `start` option is not provided, the API defaults to now based on the UTC time when the request is received. The controller limits the fetch to 100 meetings.
+Gets meetings, accepting several query parameter options. If the `start` option is not provided, the API defaults to **now** based on the UTC time when the request is received. If no other parameters are passed, the controller limits the fetch to the next hour of meetings. (Note: This is a bug. See [this issue](https://github.com/code4recovery/central-query/issues/1) for details.)
 
 Options include:
 
-`limit`: A number representing how many meetings will be returned. Defaults to 100 if not included.
-`start` (not fully implemented): A timestamp reflecting the start time for meetings to be returned. For example, to get the next meeting starting after 2300 UTC: `/api/v1/meetings/next?limit=1&start=20240113T230000Z`
-`hours`: A number used to limit the range of meetings returned by the endpoint. The default is 1.
-`features`: An array of features
-`formats`: An array of formats
-`communities`: An array of communities
-`type`: A string, either O (for Open) or C (for Closed)
+- `communities`: An array element of communities
+- `features`: An array element of features
+- `formats`: An array element of formats
+- `hours`: A number used to limit the range of meetings returned by the endpoint. The default is 1.
+- `languages`: An Array element of alpha2 language codes based on ISO 639-1
+- `limit`: A number representing how many meetings will be returned. Defaults to 1000 if not included. (Note: It is unclear if this option useful to a client, and it may be deprecated.)
+- `start`: A timestamp reflecting the start time for meetings to be returned. For example, to get the next meeting starting after 2300 UTC: `/api/v1/meetings/next?limit=1&start=20240113T230000Z`
+- `type`: A string, either O (for Open) or C (for Closed)
 
 Note: The API adjusts the query to include meetings started within the past 10 minutes.
 
@@ -88,15 +65,11 @@ To Do:
 
 Uses the slug to determine and provide details from a meeting and associated group. See `MeetingGroup` interface.
 
-### `/api/v1/meetings/by-day?weekday=<1-7>&offset=<proper offset in minutes>`
-
-Currently, the requesting app must provide the weekday and offset as no defaults are coded. Consider this endpoint unstable.
-
 ## Active interfaces
 
 This API provides the `OnlineMeeting` interface (aliased as `Meeting`) which is better aligned to the terms used by Meeting Guide and, hopefully, Central.
 
-Additionally, `GroupDetails` provides group specifics, including other meeting.
+Additionally, `GroupDetails` provides group specifics, including other meetings.
 
 See the [specifics of the interfaces](src/endpoints.types.ts).
 
