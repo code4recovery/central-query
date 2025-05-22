@@ -36,7 +36,7 @@ test("convertRTCtoUTC works correctly when meeting schedule already has passed f
  * When the RTC is 1:01:00
  * Then convertRTCtoUTC should return 2025-05-05T01:00:00Z
  */
-test("convertRTCtoUTC converts RTC to UTC on Tuesday", () => {
+test("convertRTCtoUTC works correctly when meeting scheduled is previous day", () => {
   setMockTime("2025-04-29T00:00:00.000Z")
 
   expect(convertRTCtoUTC("1:01:00")).toEqual(
@@ -49,7 +49,7 @@ test("convertRTCtoUTC converts RTC to UTC on Tuesday", () => {
  * Then convertRTCtoUTC should return 2025-04-30T01:00:00Z
  */
 test("convertRTCtoUTC works correctly for a meeting scheduled on Monday when it is currently Wednesday", () => {
-  setMockTime("2025-04-30T00:00:00.000Z")
+  setMockTime("2025-04-30T02:00:00.000Z")
 
   expect(convertRTCtoUTC("1:01:00")).toEqual(
     DateTime.fromISO("2025-05-05T01:00:00Z").toUTC(),
@@ -68,6 +68,18 @@ test("convertRTCtoUTC works correctly for a meeting scheduled on Monday when it 
   )
 })
 
+/** Given Sunday, 27 April, at noon UTC
+ * When the RTC is 4:01:00
+ * Then convertRTCtoUTC should return 2025-05-01T01:00:00Z
+ */
+test("convertRTCtoUTC works correctly for a meeting scheduled on Thursday when it is currently Sunday at noon UTC", () => {
+  setMockTime("2025-04-27T12:00:00.000Z")
+
+  expect(convertRTCtoUTC("4:01:00")).toEqual(
+    DateTime.fromISO("2025-05-01T01:00:00Z").toUTC(),
+  )
+})
+
 /** Given Thursday, May 1, 2025, at 01:00 UTC
  * When the RTC is 4:01:00
  * Then convertRTCtoUTC should return 2025-05-01T01:00:00Z
@@ -77,5 +89,29 @@ test("convertRTCtoUTC works correctly for a meeting is scheduled on Monday for n
 
   expect(convertRTCtoUTC("4:01:00")).toEqual(
     DateTime.fromISO("2025-05-01T01:00:00Z").toUTC(),
+  )
+})
+
+/** Given Monday, 28 April, at 00:00 UTC
+ * When the RTC is 7:01:00 (Sunday at 01:00 UTC)
+ * Then convertRTCtoUTC should return the next Sunday, 2025-05-04T01:00:00Z
+ */
+test("convertRTCtoUTC works correctly for a meeting scheduled on Sunday when it is currently Monday (week wrap-around)", () => {
+  setMockTime("2025-04-28T00:00:00.000Z")
+
+  expect(convertRTCtoUTC("7:01:00")).toEqual(
+    DateTime.fromISO("2025-05-04T01:00:00Z").toUTC(),
+  )
+})
+
+/** Given Monday, 28 April, at exactly 01:01:00 UTC
+ * When the RTC is 1:01:00
+ * Then convertRTCtoUTC should return 2025-04-28T01:01:00Z
+ */
+test("convertRTCtoUTC works correctly when the current time exactly matches the RTC", () => {
+  setMockTime("2025-04-28T01:00:00.000Z")
+
+  expect(convertRTCtoUTC("1:01:00")).toEqual(
+    DateTime.fromISO("2025-04-28T01:00:00Z").toUTC(),
   )
 })
