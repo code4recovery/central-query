@@ -133,29 +133,15 @@ export const dayLimits = (weekday: number, offset: number) => {
   ]
 }
 
-const dayOffsetFromWeekday = (timeStamp: DateTime, weekday: Weekdays) => {
-  const dayOfWeek = timeStamp.weekday
-  const offset = weekday - dayOfWeek
-  return offset >= 0 ? offset : offset + 7
-}
+export const convertRTCtoUTC = (
+  rtc: string,
+  now: DateTime = DateTime.utc(),
+) => {
+  const [rtcWeekDay, hour, mins] = rtc.split(":").map(Number)
+  const base = now.set({ second: 0, millisecond: 0 })
 
-export const convertRTCtoUTC = (rtc: string) => {
-  const [rtcWeekDay, hour, mins] = rtc.split(":")
-  const now = DateTime.utc()
+  const daysToAdd = (rtcWeekDay - base.weekday + 7) % 7
+  const candidate = base.plus({ days: daysToAdd }).set({ hour, minute: mins })
 
-  const todayAtRTCTime = now.set({
-    hour: Number(hour),
-    minute: Number(mins),
-    second: 0,
-    millisecond: 0,
-  })
-
-  const hasRTCTimePassedForToday = todayAtRTCTime < now
-  const weekday = hasRTCTimePassedForToday
-    ? Number(rtcWeekDay) + 7
-    : Number(rtcWeekDay)
-
-  return todayAtRTCTime.plus({
-    days: dayOffsetFromWeekday(todayAtRTCTime, weekday),
-  })
+  return candidate < base ? candidate.plus({ days: 7 }) : candidate
 }
