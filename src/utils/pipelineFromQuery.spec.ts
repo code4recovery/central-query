@@ -216,3 +216,63 @@ test("pipeline should reflect correct languages when types and rtcRanges are pre
     },
   ])
 })
+test("pipeline should reflect nameQuery as a case-insensitive regex match", () => {
+  const testOptions: MeetingsOptions = {
+    nameQuery: "serenity",
+  }
+
+  expect(pipelineFromQuery(testOptions)).toStrictEqual([
+    {
+      $match: {
+        name: { $regex: "serenity", $options: "i" },
+      },
+    },
+  ])
+})
+
+test("pipeline should combine nameQuery with rtcRanges", () => {
+  const testOptions: MeetingsOptions = {
+    rtcRanges: [
+      {
+        lowerRTC: "1:00:00",
+        upperRTC: "1:30:00",
+      },
+    ],
+    nameQuery: "step",
+  }
+
+  expect(pipelineFromQuery(testOptions)).toStrictEqual([
+    {
+      $match: {
+        rtc: { $gte: "1:00:00", $lte: "1:30:00" },
+      },
+    },
+    {
+      $match: {
+        name: { $regex: "step", $options: "i" },
+      },
+    },
+  ])
+})
+
+test("pipeline should combine nameQuery with types and languages", () => {
+  const testOptions: MeetingsOptions = {
+    formats: ["D"],
+    languages: ["en"],
+    nameQuery: "hope",
+  }
+
+  expect(pipelineFromQuery(testOptions)).toStrictEqual([
+    {
+      $match: {
+        types: { $all: ["D"] },
+        languages: { $all: ["en"] },
+      },
+    },
+    {
+      $match: {
+        name: { $regex: "hope", $options: "i" },
+      },
+    },
+  ])
+})

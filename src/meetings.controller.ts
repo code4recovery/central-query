@@ -20,20 +20,30 @@ export const meetings = async (
       "hours",
       "start",
       "languages",
+      "nameQuery",
     ],
     { hours: "number" },
   )
 
-  const { type, formats, features, communities, hours, start, languages } =
-    queryParams as {
-      type?: string
-      formats?: string[]
-      features?: string[]
-      communities?: string[]
-      hours?: number
-      start?: string
-      languages?: string[]
-    }
+  const {
+    type,
+    formats,
+    features,
+    communities,
+    hours,
+    start,
+    languages,
+    nameQuery,
+  } = queryParams as {
+    type?: string
+    formats?: string[]
+    features?: string[]
+    communities?: string[]
+    hours?: number
+    start?: string
+    languages?: string[]
+    nameQuery?: string
+  }
 
   Logger.debug(`Parsed query params: ${JSON.stringify(queryParams)}`)
 
@@ -70,6 +80,7 @@ export const meetings = async (
     features: arrayToUpper(features),
     communities: arrayToUpper(communities),
     languages: languages,
+    nameQuery,
   })
 
   if (ok) {

@@ -22,6 +22,7 @@ export const getMeetings = async (
 ): Promise<Ok<Meeting[]>> => {
   Logger.debug(`Time is now: ${options.start}`)
   Logger.debug(`Hours is: ${options.hours}`)
+  Logger.debug(`Getting meetings with options: ${JSON.stringify(options)}`)
   const limits = options.start
     ? lowerUpperLimits(options.start, options.hours)
     : []

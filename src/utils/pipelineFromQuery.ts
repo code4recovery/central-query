@@ -67,14 +67,23 @@ const mergeMatches = (
 }
 
 export const pipelineFromQuery = (query: MeetingsOptions) => {
-  const { rtcRanges, limit, formats, features, communities, type, languages } =
-    query
+  const {
+    rtcRanges,
+    limit,
+    formats,
+    features,
+    communities,
+    type,
+    languages,
+    nameQuery,
+  } = query
 
   Logger.debug(`Formats: ${formats}`)
   Logger.debug(`Features: ${features}`)
   Logger.debug(`Communities: ${communities}`)
   Logger.debug(`Type: ${type}`)
   Logger.debug(`Languages: ${languages}`)
+  Logger.debug(`NameQuery: ${nameQuery}`)
   Logger.debug(`RTC Ranges: ${rtcRanges}`)
   Logger.debug(`Limit: ${limit}`)
   Logger.debug(`Query: ${JSON.stringify(query)}`)
@@ -86,7 +95,6 @@ export const pipelineFromQuery = (query: MeetingsOptions) => {
   // Add languages to the match if provided
   const normalizedLanguages = normalizeToArray(languages)
   if (normalizedLanguages.length > 0) {
-    // If match is an $and, add languages as a new clause
     if (match.$and) {
       match = {
         $and: [
@@ -95,16 +103,24 @@ export const pipelineFromQuery = (query: MeetingsOptions) => {
         ],
       }
     } else if (Object.keys(match).length > 0) {
-      // Add languages directly to the existing match
       match = { ...match, languages: { $all: normalizedLanguages } }
     } else {
-      // No match yet, create one with languages
       match = { languages: { $all: normalizedLanguages } }
     }
   }
 
   const pipeline: MongoDB.Document[] = []
   if (Object.keys(match).length) pipeline.push({ $match: match })
+
+  // Add nameQuery as a case-insensitive regex match if present
+  if (nameQuery) {
+    pipeline.push({
+      $match: {
+        name: { $regex: nameQuery, $options: "i" },
+      },
+    })
+  }
+
   if (limit !== undefined) pipeline.push({ $limit: limit })
 
   Logger.debug(`pipeline built: ${JSON.stringify(pipeline)}`)
