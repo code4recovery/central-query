@@ -13,6 +13,7 @@ export interface MeetingsOptions extends BasicFilter {
   communities?: string[]
   type?: string
   languages?: string[]
+  nameQuery?: string
 }
 
 export interface DayOptions extends BasicFilter {
