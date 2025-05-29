@@ -199,4 +199,63 @@ describe("Basic queries", () => {
       ).to.be.true
     })
   })
+  it("returns meetings whose name matches nameQuery (case-insensitive, partial match)", () => {
+    const reqQuery = {
+      nameQuery: "serenity",
+    }
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+      console.log(meetings.length)
+      expect(meetings.length).to.be.greaterThan(0)
+      meetings.forEach((meeting: { name: string }) => {
+        expect(meeting.name.toLowerCase()).to.include("serenity")
+      })
+    })
+  })
+
+  it("returns no meetings if nameQuery does not match any meeting name", () => {
+    const reqQuery = {
+      nameQuery: "unlikelytobefound123",
+    }
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      expect(response.body.length).to.equal(0)
+    })
+  })
+
+  it("returns meetings matching nameQuery combined with other filters", () => {
+    const reqQuery = {
+      nameQuery: "step",
+      formats: "D",
+      type: "O",
+    }
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+      meetings.forEach(
+        (meeting: { name: string; formats: string[]; type: string }) => {
+          expect(meeting.name.toLowerCase()).to.include("step")
+          expect(meeting.formats).to.include("D")
+          expect(meeting.type).to.equal("O")
+        },
+      )
+    })
+  })
 })
