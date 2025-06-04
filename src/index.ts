@@ -1,4 +1,6 @@
 import * as dotenv from "dotenv"
+import { readFileSync } from "fs"
+import { join } from "path"
 
 import Logger from "./common/logger.js"
 import app from "./server.js"
@@ -7,15 +9,20 @@ import {
   mongoClient,
 } from "./storage/mongodb-storage-service.js"
 
+// Read version from package.json
+const { version } = JSON.parse(
+  readFileSync(join(process.cwd(), "package.json"), "utf-8"),
+)
+
 dotenv.config()
 const port = 5000
 
 try {
   app.listen(port, () => {
     Logger.info(
-      `Server listening on port ${port} with database connected to ${configuredMongoDatabase.namespace}.`,
+      `Server v${version} listening on port ${port} with database connected to ${configuredMongoDatabase.namespace}.`,
     )
-    console.log(`listening on port ${port}`)
+    console.log(`listening on port ${port} (v${version})`)
   })
 } catch (error) {
   console.error(error)
