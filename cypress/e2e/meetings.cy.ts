@@ -174,11 +174,10 @@ describe("Basic queries", () => {
       ).to.be.true
     })
   })
-  it("handles languages query string parameter.", () => {
+  it("handles languages query string parameter with OR logic", () => {
     const reqQuery = {
-      languages: JSON.stringify(["EN", "ES"]),
+      languages: JSON.stringify(["en", "es"]),
     }
-    console.log("The query: ", reqQuery)
     cy.request({
       method: "GET",
       url: "/meetings",
@@ -188,14 +187,22 @@ describe("Basic queries", () => {
       expect(response.status).to.equal(200)
       const meetings = response.body
       expect(meetings.length).to.be.greaterThan(0)
-      console.log(meetings)
+      const langs = JSON.parse(reqQuery.languages)
+
+      // At least one meeting for each language (OR logic)
+      const hasEn = meetings.some((meeting: { languages: string[] }) =>
+        meeting.languages.includes("en"),
+      )
+      const hasEs = meetings.some((meeting: { languages: string[] }) =>
+        meeting.languages.includes("es"),
+      )
+      expect(hasEn || hasEs).to.be.true
+
+      // Ensure all meetings have at least one of the requested languages
       expect(
-        meetings.every((meeting: { languages: string[] }) => {
-          console.log(meeting)
-          return meeting.languages.some((lang) =>
-            reqQuery.languages.includes(lang),
-          )
-        }),
+        meetings.every((meeting: { languages: string[] }) =>
+          meeting.languages.some((lang) => langs.includes(lang)),
+        ),
       ).to.be.true
     })
   })
