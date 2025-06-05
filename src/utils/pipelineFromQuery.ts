@@ -92,27 +92,25 @@ export const pipelineFromQuery = (query: MeetingsOptions) => {
   const typesMatch = buildTypesMatch(formats, features, communities, type)
   let match = mergeMatches(rtcMatch, typesMatch)
 
-  // Add languages to the match if provided
   const normalizedLanguages = normalizeToArray(languages)
   if (normalizedLanguages.length > 0) {
     if (match.$and) {
       match = {
         $and: [
           ...((match.$and as object[]) || []),
-          { languages: { $all: normalizedLanguages } },
+          { languages: { $in: normalizedLanguages } },
         ],
       }
     } else if (Object.keys(match).length > 0) {
-      match = { ...match, languages: { $all: normalizedLanguages } }
+      match = { ...match, languages: { $in: normalizedLanguages } }
     } else {
-      match = { languages: { $all: normalizedLanguages } }
+      match = { languages: { $in: normalizedLanguages } }
     }
   }
 
   const pipeline: MongoDB.Document[] = []
   if (Object.keys(match).length) pipeline.push({ $match: match })
 
-  // Add nameQuery as a case-insensitive regex match if present
   if (nameQuery) {
     pipeline.push({
       $match: {

@@ -142,7 +142,7 @@ test("pipeline should be correct when types are present and RTC transitions from
   ])
 })
 
-test("pipeline should reflect languages filter", () => {
+test("pipeline should reflect languages filter using `or` logic", () => {
   const testOptions: MeetingsOptions = {
     languages: ["en", "fr"],
   }
@@ -150,11 +150,12 @@ test("pipeline should reflect languages filter", () => {
   expect(pipelineFromQuery(testOptions)).toStrictEqual([
     {
       $match: {
-        languages: { $all: ["en", "fr"] },
+        languages: { $in: ["en", "fr"] },
       },
     },
   ])
 })
+
 test("pipeline should reflect correct languages when rtcRanges are present", () => {
   const testQueryOptions: MeetingsOptions = {
     rtcRanges: [
@@ -170,7 +171,7 @@ test("pipeline should reflect correct languages when rtcRanges are present", () 
     {
       $match: {
         rtc: { $gte: "7:23:00", $lte: "7:24:00" },
-        languages: { $all: ["en"] },
+        languages: { $in: ["en"] },
       },
     },
   ])
@@ -187,7 +188,7 @@ test("pipeline should reflect correct languages when types are present", () => {
     {
       $match: {
         types: { $all: ["D", "B", "BE", "M", "O"] },
-        languages: { $all: ["en"] },
+        languages: { $in: ["en"] },
       },
     },
   ])
@@ -211,7 +212,7 @@ test("pipeline should reflect correct languages when types and rtcRanges are pre
       $match: {
         rtc: { $gte: "7:23:00", $lte: "7:24:00" },
         types: { $all: ["D", "B", "BE", "M", "O"] },
-        languages: { $all: ["en"] },
+        languages: { $in: ["en"] },
       },
     },
   ])
@@ -266,7 +267,7 @@ test("pipeline should combine nameQuery with types and languages", () => {
     {
       $match: {
         types: { $all: ["D"] },
-        languages: { $all: ["en"] },
+        languages: { $in: ["en"] },
       },
     },
     {
