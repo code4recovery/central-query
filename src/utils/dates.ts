@@ -51,43 +51,75 @@ export const nextOccurrence = (dayOfWeek: Weekdays, dateTime: DateTime) => {
 const rtcFromTimestamp = (time: DateTime) =>
   time.weekday + ":" + time.toFormat("HH:mm")
 
-export const lowerUpperLimits = (time: string, hours: number | undefined) => {
+export const lowerUpperLimits = (
+  time: string,
+  hours: number = 168,
+): RTCRange[] => {
   Logger.debug(`lowerUpperLimits Params: time = ${time}, hours = ${hours}`)
+
   const rqstTime = DateTime.fromISO(time).toUTC()
   const lower = rqstTime.minus({ minutes: 9 })
-  const upper = hours !== undefined ? rqstTime.plus({ hours }) : undefined
+  const upper =
+    hours === 168
+      ? rqstTime.plus({ hours }).minus({ minutes: 10 })
+      : rqstTime.plus({ hours })
+
   Logger.debug(
-    `lowerUpperLimits set: lower = ${lower.toString()}, upper = ${upper?.toString()}`,
+    `lowerUpperLimits set: lower = ${lower.toString()}, upper = ${upper.toString()}`,
   )
 
-  let ranges: RTCRange[] = []
+  return createRTCRanges(lower, upper, hours)
+}
 
-  if (hours !== undefined && lower.weekday === upper!.weekday) {
-    ranges = [
-      { lowerRTC: rtcFromTimestamp(lower), upperRTC: rtcFromTimestamp(upper!) },
-    ]
-  } else if (hours !== undefined) {
-    ranges = [
-      {
-        lowerRTC: rtcFromTimestamp(lower),
-        upperRTC: `${lower.weekday}:24:00`,
-      },
-      {
-        lowerRTC: `${upper!.weekday}:00:00`,
-        upperRTC: rtcFromTimestamp(upper!),
-      },
-    ]
-  } else {
-    ranges = [
-      {
-        lowerRTC: rtcFromTimestamp(lower),
-        upperRTC: undefined, // If hours is not defined, upperRTC is not set, and the pipeline should skip adding $lte
-      },
-    ]
+const createRTCRanges = (
+  lower: DateTime,
+  upper: DateTime,
+  hours: number,
+): RTCRange[] => {
+  if (isSameDay(lower, upper)) {
+    return createSameDayRange(lower, upper)
   }
 
-  return ranges
+  if (isWeeklyRange(hours)) {
+    return createWeeklyRange(lower, upper)
+  }
+
+  return createCrossDayRange(lower, upper)
 }
+
+const isSameDay = (lower: DateTime, upper: DateTime): boolean =>
+  lower.day === upper.day
+
+const isWeeklyRange = (hours: number): boolean => hours === 168
+
+const createSameDayRange = (lower: DateTime, upper: DateTime): RTCRange[] => [
+  {
+    lowerRTC: rtcFromTimestamp(lower),
+    upperRTC: rtcFromTimestamp(upper),
+  },
+]
+
+const createWeeklyRange = (lower: DateTime, upper: DateTime): RTCRange[] => [
+  {
+    lowerRTC: rtcFromTimestamp(lower),
+    upperRTC: "7:24:00",
+  },
+  {
+    lowerRTC: "1:00:00",
+    upperRTC: rtcFromTimestamp(upper),
+  },
+]
+
+const createCrossDayRange = (lower: DateTime, upper: DateTime): RTCRange[] => [
+  {
+    lowerRTC: rtcFromTimestamp(lower),
+    upperRTC: `${lower.weekday}:24:00`,
+  },
+  {
+    lowerRTC: `${upper.weekday}:00:00`,
+    upperRTC: rtcFromTimestamp(upper),
+  },
+]
 
 const zeroPad = (num: number, places: number) =>
   String(num).padStart(places, "0")
