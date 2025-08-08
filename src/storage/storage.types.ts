@@ -20,3 +20,13 @@ export interface GroupView {
   phone?: string
   notes?: string
 }
+
+export interface ActiveType {
+  code: string
+  desc: string
+}
+
+export interface ActiveLanguage {
+  English: string
+  alpha2: string
+}

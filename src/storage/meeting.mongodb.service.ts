@@ -5,7 +5,7 @@ import {
   configuredMongoDatabase,
   useCollection,
 } from "./mongodb-storage-service.js"
-import { MeetingView } from "./storage.types.js"
+import { ActiveLanguage, ActiveType, MeetingView } from "./storage.types.js"
 
 export const meetingCollection = useCollection<MeetingView>("meeting")(
   configuredMongoDatabase,
@@ -44,3 +44,19 @@ export const byDay = async (day: Weekdays) => {
 
 export const byGroup = async (groupID: string) =>
   meetingView.find({ groupID: new MongoDB.ObjectId(groupID) }).toArray()
+
+const meetingLanguages = useCollection<ActiveLanguage>("unique-languages-view")(
+  configuredMongoDatabase,
+)
+
+const meetingTypes = useCollection<ActiveType>("unique-types-view")(
+  configuredMongoDatabase,
+)
+
+export const getActiveTypes = async () => {
+  return meetingTypes.find({}).toArray()
+}
+
+export const getActiveLanguages = async () => {
+  return meetingLanguages.find({}).toArray()
+}

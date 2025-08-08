@@ -1,4 +1,5 @@
 import { OptionalEndpointData } from "./common/types.js"
+import { ActiveLanguage, ActiveType } from "./storage/storage.types.js"
 
 // Use format of data in groups.json file to provide an interface for the group
 export type Group = {
@@ -25,3 +26,8 @@ export interface OnlineMeeting extends OptionalEndpointData {
 }
 
 export type Meeting = OnlineMeeting
+
+export interface MeetingFacets {
+  categories: ActiveType[]
+  languages: ActiveLanguage[]
+}
