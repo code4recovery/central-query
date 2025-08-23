@@ -62,25 +62,14 @@ export type Type = (typeof TYPE)[number]
 
 export type Category = Community | Feature | Format | Type
 
-export interface ActiveCommunity {
-  code: Community
+export interface ActiveCategory<T extends string> {
+  code: T
   desc: string
 }
-
-export interface ActiveFeature {
-  code: Feature
-  desc: string
-}
-
-export interface ActiveFormat {
-  code: Format
-  desc: string
-}
-
-export interface ActiveType {
-  code: Type
-  desc: string
-}
+export type ActiveCommunity = ActiveCategory<Community>
+export type ActiveFeature = ActiveCategory<Feature>
+export type ActiveFormat = ActiveCategory<Format>
+export type ActiveType = ActiveCategory<Type>
 
 type Categories = {
   communities: Community[]
