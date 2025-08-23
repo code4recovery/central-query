@@ -53,10 +53,14 @@ const meetingTypes = useCollection<ActiveType>("unique-types-view")(
   configuredMongoDatabase,
 )
 
-export const getActiveTypes = async () => {
-  return meetingTypes.find({}).toArray()
+export const getActiveTypes = async (): Promise<ActiveType[]> => {
+  return meetingTypes.find({}, { projection: { _id: 0 } }).toArray() as Promise<
+    ActiveType[]
+  >
 }
 
-export const getActiveLanguages = async () => {
-  return meetingLanguages.find({}).toArray()
+export const getActiveLanguages = async (): Promise<ActiveLanguage[]> => {
+  return meetingLanguages
+    .find({}, { projection: { _id: 0 } })
+    .toArray() as Promise<ActiveLanguage[]>
 }
