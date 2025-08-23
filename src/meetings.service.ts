@@ -15,14 +15,15 @@ import {
   TYPE,
 } from "./common/types.js"
 import { MeetingsOptions } from "./endpoint-options.types.js"
-import { Group, GroupDetails, Meeting } from "./endpoints.types.js"
+import {
+  Group,
+  GroupDetails,
+  Meeting,
+  MeetingFacets,
+} from "./endpoints.types.js"
 import * as groupStore from "./storage/group.mongodb.service.js"
 import * as meetingStore from "./storage/meeting.mongodb.service.js"
-import {
-  ActiveLanguage,
-  ActiveType,
-  MeetingView,
-} from "./storage/storage.types.js"
+import { ActiveType, MeetingView } from "./storage/storage.types.js"
 import { categorizedMeeting, intersection } from "./utils/categorizeMeeting.js"
 import { convertRTCtoUTC, lowerUpperLimits } from "./utils/dates.js"
 import { pipelineFromQuery } from "./utils/pipelineFromQuery.js"
@@ -55,17 +56,7 @@ export const getMeetings = async (
   return Ok(preparedMeetings(result))
 }
 
-export const getFacets = async (): Promise<
-  Ok<{
-    categories: {
-      communities: ActiveCommunity[]
-      features: ActiveFeature[]
-      formats: ActiveFormat[]
-      type: ActiveType[]
-    }
-    languages: ActiveLanguage[]
-  }>
-> => {
+export const getFacets = async (): Promise<Ok<MeetingFacets>> => {
   Logger.debug("Getting facets (categories and languages)")
   const [activeTypes, languages] = await Promise.all([
     meetingStore.getActiveTypes(),
