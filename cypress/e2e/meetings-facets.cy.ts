@@ -15,11 +15,15 @@ describe("Meetings Facets API", () => {
       expect(response.body).to.have.property("languages")
 
       // Verify categories and languages are arrays
-      expect(response.body.categories).to.be.an("array")
+      expect(response.body.categories).to.be.an("object")
+      expect(response.body.categories).to.have.all.keys(
+        "communities",
+        "features",
+        "formats",
+        "type",
+      )
       expect(response.body.languages).to.be.an("array")
 
-      // Verify arrays are not empty (assuming you have data)
-      expect(response.body.categories.length).to.be.greaterThan(0)
       expect(response.body.languages.length).to.be.greaterThan(0)
     })
   })

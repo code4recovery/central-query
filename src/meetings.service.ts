@@ -1,6 +1,19 @@
 import { Err, Ok } from "ts-results-es"
 
 import Logger from "./common/logger.js"
+import {
+  ActiveCommunity,
+  ActiveFeature,
+  ActiveFormat,
+  COMMUNITIES,
+  Community,
+  Feature,
+  FEATURES,
+  Format,
+  FORMATS,
+  Type,
+  TYPE,
+} from "./common/types.js"
 import { MeetingsOptions } from "./endpoint-options.types.js"
 import { Group, GroupDetails, Meeting } from "./endpoints.types.js"
 import * as groupStore from "./storage/group.mongodb.service.js"
@@ -10,7 +23,7 @@ import {
   ActiveType,
   MeetingView,
 } from "./storage/storage.types.js"
-import { categorizedMeeting } from "./utils/categorizeMeeting.js"
+import { categorizedMeeting, intersection } from "./utils/categorizeMeeting.js"
 import { convertRTCtoUTC, lowerUpperLimits } from "./utils/dates.js"
 import { pipelineFromQuery } from "./utils/pipelineFromQuery.js"
 
@@ -43,15 +56,47 @@ export const getMeetings = async (
 }
 
 export const getFacets = async (): Promise<
-  Ok<{ categories: ActiveType[]; languages: ActiveLanguage[] }>
+  Ok<{
+    categories: {
+      communities: ActiveCommunity[]
+      features: ActiveFeature[]
+      formats: ActiveFormat[]
+      type: ActiveType[]
+    }
+    languages: ActiveLanguage[]
+  }>
 > => {
   Logger.debug("Getting facets (categories and languages)")
-  const [categories, languages] = await Promise.all([
+  const [activeTypes, languages] = await Promise.all([
     meetingStore.getActiveTypes(),
     meetingStore.getActiveLanguages(),
   ])
+
+  const categories = {
+    communities: activeTypes
+      .filter((t) => intersection([t.code], [...COMMUNITIES]).length > 0)
+      .map((t) => ({
+        code: t.code as Community,
+        desc: t.desc,
+      })) as ActiveCommunity[],
+    features: activeTypes
+      .filter((t) => intersection([t.code], [...FEATURES]).length > 0)
+      .map((t) => ({
+        code: t.code as Feature,
+        desc: t.desc,
+      })) as ActiveFeature[],
+    formats: activeTypes
+      .filter((t) => intersection([t.code], [...FORMATS]).length > 0)
+      .map((t) => ({ code: t.code as Format, desc: t.desc })) as ActiveFormat[],
+    type: activeTypes
+      .filter((t) => intersection([t.code], [...TYPE]).length > 0)
+      .map((t) => ({ code: t.code as Type, desc: t.desc })) as ActiveType[],
+  }
+
   Logger.debug(
-    `Facets result: categories=${categories.length}, languages=${languages.length}`,
+    `Facets result: categories=${JSON.stringify(categories)}, languages=${
+      languages.length
+    }`,
   )
 
   return Ok({
