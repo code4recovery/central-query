@@ -1,6 +1,6 @@
 import { type ObjectId } from "mongodb"
 
-import { OptionalStorageData } from "../common/types.js"
+import { Category, OptionalStorageData } from "../common/types.js"
 
 export interface MeetingView extends OptionalStorageData {
   groupID: ObjectId
@@ -9,7 +9,7 @@ export interface MeetingView extends OptionalStorageData {
   rtc: string
   slug: string
   timezone: string
-  types?: string[] // Optional, used for categorization
+  types?: Category[] // Optional, used for categorization
 }
 
 // Use format of data in groups.json file to provide an interface for the group
@@ -19,4 +19,14 @@ export interface GroupView {
   website?: string
   phone?: string
   notes?: string
+}
+
+export interface ActiveType {
+  code: string
+  desc: string
+}
+
+export interface ActiveLanguage {
+  English: string
+  alpha2: string
 }

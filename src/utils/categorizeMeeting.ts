@@ -1,28 +1,40 @@
 import {
-  Category,
   COMMUNITIES,
+  Community,
+  Feature,
   FEATURES,
+  Format,
   FORMATS,
   Type,
   TYPE,
 } from "../common/types.js"
 import { MeetingView } from "../storage/storage.types.js"
 
-function intersection<T>(arr1: T[], arr2: T[]): T[] {
+export function intersection<T>(arr1: T[], arr2: T[]): T[] {
   const set1 = new Set(arr1)
   return arr2.filter((value) => set1.has(value))
 }
 
-export function categorizedMeeting(meeting: MeetingView) {
+export function categorizedMeeting(meeting: MeetingView): Omit<
+  MeetingView,
+  "types"
+> & {
+  communities: Community[]
+  features: Feature[]
+  formats: Format[]
+  type: Type
+} {
   const { types } = meeting
 
   delete meeting.types
 
   return {
     ...meeting,
-    communities: intersection<Category>(types, COMMUNITIES),
-    features: intersection<Category>(types, FEATURES),
-    formats: intersection<Category>(types, FORMATS),
-    type: intersection<Category>(types, TYPE)[0] as Type,
+    communities: intersection<Community>(types as Community[], [
+      ...COMMUNITIES,
+    ]),
+    features: intersection<Feature>(types as Feature[], [...FEATURES]),
+    formats: intersection<Format>(types as Format[], [...FORMATS]),
+    type: intersection<Type>(types as Type[], [...TYPE])[0] as Type,
   }
 }

@@ -16,6 +16,8 @@ router.route("/").get(
   meetingsController.meetings,
 )
 
+router.route("/facets").get(meetingsController.meetingsFacets)
+
 router.route("/:slug").get(meetingsController.bySlug)
 
 router

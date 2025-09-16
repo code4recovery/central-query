@@ -128,6 +128,22 @@ export const relatedGroupInfo = async (
   }
 }
 
+export const meetingsFacets = async (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction,
+) => {
+  Logger.debug("Request for meetingsFacets")
+  const { ok, val } = await meetingsService.getFacets()
+  if (ok) {
+    Logger.info(`fetch result being returned includes ${JSON.stringify(val)}.`)
+    res.status(200).json(val)
+  } else {
+    Logger.error(`${JSON.stringify(val)}`)
+    next(val)
+  }
+}
+
 /** The following functions are not fully implemented yet. */
 // export const byDay = async (
 //   req: express.Request,

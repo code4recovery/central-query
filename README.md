@@ -62,6 +62,14 @@ To Do:
 - [ ] If the fetched results are <10 meetings, re-fetch for the next two hours.
 - [ ] Ensure API can handle fractional `hours` and then set default to 45 minutes.
 
+### `api/v1/meetings/facets`
+
+Provides an object containing the active categories and languages associated with meetings in the database. These are only those values associated with active meetings, and not a complete list of all languages or categories that might exist.
+
+See the [specific interface](src/endpoints.types.ts) of the `MeetingFacets` object.
+
+See the [specifics of the languages and categories interfaces](src/storage/storage.types.ts).
+
 ### `/api/v1/meetings/:slug`
 
 Uses the slug to determine and provide details from a meeting and associated group. See `MeetingGroup` interface.

@@ -1,4 +1,4 @@
-export const TYPE = ["O", "C"] // 2
+export const TYPE = ["O", "C"] as const // 2
 export const FORMATS = [
   "11",
   "12x12",
@@ -16,7 +16,7 @@ export const FORMATS = [
   "SP",
   "ST",
   "TR",
-] // 16
+] as const // 16
 export const FEATURES = [
   "AL-AN",
   "AL",
@@ -34,7 +34,7 @@ export const FEATURES = [
   "FF",
   "RSL",
   "TC",
-] // 15
+] as const // 15
 export const COMMUNITIES = [
   "M",
   "W",
@@ -53,14 +53,23 @@ export const COMMUNITIES = [
   "BV-I",
   "D-HOH",
   "LO-I",
-] // 18
+] as const // 18
 
-export type Community = (typeof COMMUNITIES)[keyof typeof COMMUNITIES]
-export type Feature = (typeof FEATURES)[keyof typeof FEATURES]
-export type Format = (typeof FORMATS)[keyof typeof FORMATS]
-export type Type = (typeof TYPE)[keyof typeof TYPE]
+export type Community = (typeof COMMUNITIES)[number]
+export type Feature = (typeof FEATURES)[number]
+export type Format = (typeof FORMATS)[number]
+export type Type = (typeof TYPE)[number]
 
 export type Category = Community | Feature | Format | Type
+
+export interface ActiveCategory<T extends string> {
+  code: T
+  desc: string
+}
+export type ActiveCommunity = ActiveCategory<Community>
+export type ActiveFeature = ActiveCategory<Feature>
+export type ActiveFormat = ActiveCategory<Format>
+export type ActiveType = ActiveCategory<Type>
 
 type Categories = {
   communities: Community[]
