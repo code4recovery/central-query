@@ -164,16 +164,3 @@ export const dayLimits = (weekday: number, offset: number) => {
     },
   ]
 }
-
-export const convertRTCtoUTC = (
-  rtc: string,
-  now: DateTime = DateTime.utc(),
-) => {
-  const [rtcWeekDay, hour, mins] = rtc.split(":").map(Number)
-  const base = now.set({ second: 0, millisecond: 0 })
-
-  const daysToAdd = (rtcWeekDay - base.weekday + 7) % 7
-  const candidate = base.plus({ days: daysToAdd }).set({ hour, minute: mins })
-
-  return candidate < base ? candidate.plus({ days: 7 }) : candidate
-}

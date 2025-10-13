@@ -6,6 +6,7 @@ export interface MeetingView extends OptionalStorageData {
   groupID: ObjectId
   languages: string[]
   name: string
+  nextEventUTC: string
   rtc: string
   slug: string
   timezone: string

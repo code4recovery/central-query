@@ -11,10 +11,6 @@ export const meetingCollection = useCollection<MeetingView>("meeting")(
   configuredMongoDatabase,
 )
 
-const meetingView = useCollection<MeetingView>("meeting-view")(
-  configuredMongoDatabase,
-)
-
 const meetingViewSorted = useCollection<MeetingView>("meeting-view-sorted-rtc")(
   configuredMongoDatabase,
 )
@@ -30,7 +26,8 @@ const loadPipelineView = (pipeline: MongoDB.Document[]) =>
 export const query = async (queryPipeline: MongoDB.Document[]) =>
   loadPipelineView(queryPipeline)
 
-export const bySlug = async (slug: string) => meetingView.findOne({ slug })
+export const bySlug = async (slug: string) =>
+  meetingViewSorted.findOne({ slug })
 
 /** The following are not fully implemented yet. */
 export const byDay = async (day: Weekdays) => {
@@ -43,7 +40,7 @@ export const byDay = async (day: Weekdays) => {
 }
 
 export const byGroup = async (groupID: string) =>
-  meetingView.find({ groupID: new MongoDB.ObjectId(groupID) }).toArray()
+  meetingViewSorted.find({ groupID: new MongoDB.ObjectId(groupID) }).toArray()
 
 const meetingLanguages = useCollection<ActiveLanguage>("unique-languages-view")(
   configuredMongoDatabase,

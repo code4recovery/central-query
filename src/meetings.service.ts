@@ -25,14 +25,14 @@ import * as groupStore from "./storage/group.mongodb.service.js"
 import * as meetingStore from "./storage/meeting.mongodb.service.js"
 import { ActiveType, MeetingView } from "./storage/storage.types.js"
 import { categorizedMeeting, intersection } from "./utils/categorizeMeeting.js"
-import { convertRTCtoUTC, lowerUpperLimits } from "./utils/dates.js"
+import { lowerUpperLimits } from "./utils/dates.js"
 import { pipelineFromQuery } from "./utils/pipelineFromQuery.js"
 
 const preparedMeetings = (meetings: MeetingView[]): Meeting[] =>
   meetings.map(categorizedMeeting).map(({ groupID, ...rest }) => ({
     ...rest,
     groupID: groupID.toString(),
-    timeUTC: convertRTCtoUTC(rest.rtc).toString(),
+    timeUTC: rest.nextEventUTC,
   }))
 
 export const getMeetings = async (
@@ -109,7 +109,7 @@ export const getBySlug = async (
 
   const meeting = {
     ...categorizedMeeting(result),
-    timeUTC: convertRTCtoUTC(result.rtc).toString(),
+    timeUTC: result.nextEventUTC,
     groupID: result.groupID.toString(),
   } as Meeting
 
