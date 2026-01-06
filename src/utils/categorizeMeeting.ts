@@ -22,7 +22,7 @@ export function categorizedMeeting(meeting: MeetingView): Omit<
   communities: Community[]
   features: Feature[]
   formats: Format[]
-  type: Type
+  type?: Type
 } {
   const { types } = meeting
 
