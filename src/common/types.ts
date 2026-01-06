@@ -75,7 +75,7 @@ type Categories = {
   communities: Community[]
   features: Feature[]
   formats: Format[]
-  type: Type
+  type?: Type
 }
 
 type ConferenceOptions = {
