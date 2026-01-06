@@ -1,11 +1,11 @@
 import * as MongoDB from "mongodb"
 
-import { Weekdays } from "../utils/dates.js"
+import { ActiveLanguage, ActiveType, MeetingView } from "./storage.types.js"
+
 import {
   configuredMongoDatabase,
   useCollection,
 } from "./mongodb-storage-service.js"
-import { ActiveLanguage, ActiveType, MeetingView } from "./storage.types.js"
 
 export const meetingCollection = useCollection<MeetingView>("meeting")(
   configuredMongoDatabase,
@@ -28,16 +28,6 @@ export const query = async (queryPipeline: MongoDB.Document[]) =>
 
 export const bySlug = async (slug: string) =>
   meetingViewSorted.findOne({ slug })
-
-/** The following are not fully implemented yet. */
-export const byDay = async (day: Weekdays) => {
-  const searchDay = day.toString()
-  return loadPipelineView([
-    {
-      $match: { rtc: { $regex: `^${searchDay}` } },
-    },
-  ])
-}
 
 export const byGroup = async (groupID: string) =>
   meetingViewSorted.find({ groupID: new MongoDB.ObjectId(groupID) }).toArray()

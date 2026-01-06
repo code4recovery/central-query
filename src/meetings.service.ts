@@ -1,6 +1,5 @@
 import { Err, Ok } from "ts-results-es"
 
-import Logger from "./common/logger.js"
 import {
   ActiveCommunity,
   ActiveFeature,
@@ -14,19 +13,23 @@ import {
   Type,
   TYPE,
 } from "./common/types.js"
-import { MeetingsOptions } from "./endpoint-options.types.js"
+import Logger from "./common/logger.js"
+
+import { ActiveType, MeetingView } from "./storage/storage.types.js"
+import * as groupStore from "./storage/group.mongodb.service.js"
+import * as meetingStore from "./storage/meeting.mongodb.service.js"
+
+import { categorizedMeeting, intersection } from "./utils/categorizeMeeting.js"
+import { lowerUpperLimits } from "./utils/dates.js"
+import { pipelineFromQuery } from "./utils/pipelineFromQuery.js"
+
 import {
   Group,
   GroupDetails,
   Meeting,
   MeetingFacets,
 } from "./endpoints.types.js"
-import * as groupStore from "./storage/group.mongodb.service.js"
-import * as meetingStore from "./storage/meeting.mongodb.service.js"
-import { ActiveType, MeetingView } from "./storage/storage.types.js"
-import { categorizedMeeting, intersection } from "./utils/categorizeMeeting.js"
-import { lowerUpperLimits } from "./utils/dates.js"
-import { pipelineFromQuery } from "./utils/pipelineFromQuery.js"
+import { MeetingsOptions } from "./endpoint-options.types.js"
 
 const preparedMeetings = (meetings: MeetingView[]): Meeting[] =>
   meetings.map(categorizedMeeting).map(({ groupID, ...rest }) => ({
@@ -142,27 +145,3 @@ export const getRelatedGroupInfo = async (slug: string) => {
     groupMeetings: preparedMeetings(groupMeetings) as Meeting[],
   } as GroupDetails)
 }
-
-/** The following functions are not fully implemented yet. */
-// export const getDay = async (options: DayOptions) => {
-//   Logger.debug(`Getting all meetings for day ${options.weekday}`)
-//   const limits = dayLimits(options.weekday, options.offset)
-//   const result = await meetingStore.query(
-//     pipelineFromQuery({
-//       rtcRanges: limits,
-//     }),
-//   )
-//   Logger.debug(`meetingStore fetch ${result.length} meetings.`)
-//   return Ok(result)
-// }
-
-// export const getByGroup = async (groupID: string) => {
-//   Logger.debug(`Getting all meetings for group ${groupID}`)
-//   const result = await meetingStore.byGroup(groupID)
-//   if (!result) {
-//     Logger.error(`Group with ID ${groupID} not found`)
-//     return Err("Group not found")
-//   }
-//   Logger.debug(`Meetings for group ${groupID}: ${JSON.stringify(result)}`)
-//   return Ok(result)
-// }
