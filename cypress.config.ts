@@ -5,6 +5,6 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "http://localhost:5000/api/v1",
+    baseUrl: "http://localhost:5001/api/v1",
   },
 })

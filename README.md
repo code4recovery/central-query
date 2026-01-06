@@ -106,8 +106,8 @@ To use Cypress to run tests during dev, start the api server using `npm run star
 
 ```sh
 1/13/2024, 10:54:41 PM debug: Routes registered.
-1/13/2024, 10:54:41 PM info: Server listening on port 5000 with database connected to central-exp.
-listening on port 5000
+1/13/2024, 10:54:41 PM info: Server listening on port 5001 with database connected to central-exp.
+listening on port 5001
 ```
 
 In another terminal, execute `npx cypress open`. You may be presented with some configuration options, but then get a screen asking you to select E2E Testing. Do that, and then chose which browser to use. I use FireFox.
