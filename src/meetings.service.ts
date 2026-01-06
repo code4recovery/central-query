@@ -31,13 +31,6 @@ import {
 } from "./endpoints.types.js"
 import { MeetingsOptions } from "./endpoint-options.types.js"
 
-const preparedMeetings = (meetings: MeetingView[]): Meeting[] =>
-  meetings.map(categorizedMeeting).map(({ groupID, ...rest }) => ({
-    ...rest,
-    groupID: groupID.toString(),
-    timeUTC: rest.nextEventUTC,
-  }))
-
 export const getMeetings = async (
   options: MeetingsOptions,
 ): Promise<Ok<Meeting[]>> => {
@@ -145,3 +138,10 @@ export const getRelatedGroupInfo = async (slug: string) => {
     groupMeetings: preparedMeetings(groupMeetings) as Meeting[],
   } as GroupDetails)
 }
+
+const preparedMeetings = (meetings: MeetingView[]): Meeting[] =>
+  meetings.map(categorizedMeeting).map(({ groupID, ...rest }) => ({
+    ...rest,
+    groupID: groupID.toString(),
+    timeUTC: rest.nextEventUTC,
+  }))
