@@ -37,16 +37,20 @@ export const getMeetings = async (
   Logger.debug(`Time is now: ${options.start}`)
   Logger.debug(`Hours is: ${options.hours}`)
   Logger.debug(`Getting meetings with options: ${JSON.stringify(options)}`)
-  const limits = options.start
-    ? lowerUpperLimits(options.start, options.hours)
-    : []
+
+  const scheduleType = options.scheduled === false ? "unscheduled" : "scheduled"
+  const limits =
+    scheduleType === "scheduled" && options.start
+      ? lowerUpperLimits(options.start, options.hours)
+      : []
+
   Logger.debug(`Limits: ${JSON.stringify(limits)}`)
   const pipeline = pipelineFromQuery({
     ...options,
     rtcRanges: limits,
   })
   Logger.debug(`Pipeline: ${JSON.stringify(pipeline)}, ${typeof pipeline}`)
-  const result = await meetingStore.query(pipeline)
+  const result = await meetingStore.query(pipeline, scheduleType)
   Logger.debug(`meetingStore fetch ${result.length} meetings.`)
 
   return Ok(preparedMeetings(result))
