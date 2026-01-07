@@ -3,17 +3,14 @@ import fs from "fs"
 /** TODO: Replace this file with Integration test through Cypress, otherwise update from server-side-demo */
 import { jest } from "@jest/globals"
 
-import {
-  bySlug,
-  meetingCollection,
-  query,
-} from "./meeting.mongodb.service.js"
+import { MeetingView } from "./storage.types.js"
+
+import { bySlug, meetingCollection, query } from "./meeting.mongodb.service.js"
 import {
   configuredMongoDatabase,
   mongoClient,
   useCollection,
 } from "./mongodb-storage-service.js"
-import { MeetingView } from "./storage.types.js"
 
 const testData = JSON.parse(
   fs.readFileSync(
@@ -22,33 +19,26 @@ const testData = JSON.parse(
   ),
 )
 
-// Copilot: Process meetingsTestData and groupsTestData to strip out $oid and associated braces
-// const cleanedMeetingsTestData = meetingsTestData.map((meeting) => {
-//   meeting.groupID = meeting.groupID.$oid
-//   return meeting
-// })
-
-const meetingView = useCollection<MeetingView>("meeting-view")(
-  configuredMongoDatabase,
-)
-const meetingViewSorted = useCollection<MeetingView>("meeting-view-sorted-rtc")(
+const scheduled = useCollection<MeetingView>("scheduled-meetings")(
   configuredMongoDatabase,
 )
 
 async function resetDatabase() {
   await meetingCollection.deleteMany({})
+  await scheduled.deleteMany({})
 }
 
-beforeAll(async () => {
+beforeEach(async () => {
   await resetDatabase()
 })
+
 afterAll(async () => {
   await mongoClient.close()
   jest.useRealTimers()
 })
 
 test("bySlug returns a single document", async () => {
-  await meetingView.insertMany(testData)
+  await scheduled.insertMany(testData)
   const result = await bySlug("vegas-women-in-the-big-book-1")
 
   expect(result).not.toBeNull()
@@ -56,7 +46,7 @@ test("bySlug returns a single document", async () => {
 })
 
 test("query returns multiple documents", async () => {
-  await meetingViewSorted.insertMany(testData)
+  await scheduled.insertMany(testData)
   const result = await query([
     { $match: { rtc: { $gte: "2:14:48" } } },
     { $limit: 25 },
