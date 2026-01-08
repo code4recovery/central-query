@@ -1,8 +1,8 @@
-export function parsedQueryParams(
+export function parsedQueryParams<T extends Record<string, unknown>>(
   query: Record<string, string>,
   keys: string[],
   types: Record<string, "string" | "number" | "array"> = {},
-) {
+): Partial<T> {
   return keys.reduce(
     (acc, key) => {
       const value = query[key]
@@ -21,5 +21,5 @@ export function parsedQueryParams(
       return acc
     },
     {} as Record<string, unknown>,
-  )
+  ) as Partial<T>
 }
