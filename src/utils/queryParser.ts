@@ -1,4 +1,4 @@
-export function parsedQueryParams<T extends Record<string, unknown>>(
+export function parsedQueryParams<T>(
   query: Record<string, string>,
   keys: string[],
   types: Record<string, "string" | "number" | "array"> = {},
