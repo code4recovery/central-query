@@ -64,7 +64,7 @@ export const meetings = async (
       "languages",
       "nameQuery",
     ],
-    { hours: "number" },
+    { hours: "number", scheduled: "boolean" },
   )
 
   const {
