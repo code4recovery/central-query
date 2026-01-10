@@ -49,7 +49,11 @@ export const getMeetings = async (
     ...options,
     rtcRanges: limits,
   })
-  Logger.debug(`Pipeline: ${JSON.stringify(pipeline)}, ${typeof pipeline}`)
+  Logger.debug(
+    `Pipeline: ${JSON.stringify(
+      pipeline,
+    )}, ${typeof pipeline} and scheduleType: ${scheduleType}`,
+  )
   const result = await meetingStore.query(pipeline, scheduleType)
   Logger.debug(`meetingStore fetch ${result.length} meetings.`)
 
