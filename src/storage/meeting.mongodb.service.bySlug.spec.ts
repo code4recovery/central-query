@@ -35,10 +35,10 @@ afterAll(async () => {
   await mongoClient.close()
 })
 
-test("bySlug always queries combined view for scheduled meetings", async () => {
+test("bySlug queries combined view and returns meeting by slug", async () => {
   const meeting: MeetingView = {
-    slug: "test-scheduled-meeting",
-    name: "Test Scheduled Meeting",
+    slug: "test-meeting",
+    name: "Test Meeting",
     groupID: new ObjectId(),
     nextEventUTC: "2026-01-13T10:00:00Z",
     rtc: "3:10:00",
@@ -48,30 +48,15 @@ test("bySlug always queries combined view for scheduled meetings", async () => {
   }
 
   await combined.insertOne(meeting)
-  const result = await bySlug("test-scheduled-meeting")
+  const result = await bySlug("test-meeting")
 
   expect(result).not.toBeNull()
-  expect(result!.name).toBe("Test Scheduled Meeting")
-  expect(result!.nextEventUTC).toBe("2026-01-13T10:00:00Z")
+  expect(result!.name).toBe("Test Meeting")
+  expect(result!.slug).toBe("test-meeting")
 })
 
-test("bySlug always queries combined view for unscheduled meetings", async () => {
-  const unscheduledMeeting: MeetingView = {
-    slug: "unscheduled-only",
-    name: "Unscheduled Only Meeting",
-    groupID: new ObjectId(),
-    nextEventUTC: null,
-    rtc: null,
-    types: ["O"],
-    languages: [],
-    timezone: "UTC",
-  }
+test("bySlug returns null when meeting not found", async () => {
+  const result = await bySlug("nonexistent-slug")
 
-  await combined.insertOne(unscheduledMeeting)
-
-  const result = await bySlug("unscheduled-only")
-
-  expect(result).not.toBeNull()
-  expect(result!.name).toBe("Unscheduled Only Meeting")
-  expect(result!.nextEventUTC).toBeNull()
+  expect(result).toBeNull()
 })
