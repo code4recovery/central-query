@@ -18,11 +18,8 @@ export const query = async (
   viewType: MeetingViewType = "combined",
 ) => loadPipelineView(queryPipeline, viewType)
 
-export const bySlug = async (
-  slug: string,
-  viewType: MeetingViewType = "combined",
-): Promise<MeetingView | null> => {
-  return getCollection(viewType).findOne({ slug })
+export const bySlug = async (slug: string): Promise<MeetingView | null> => {
+  return combined.findOne({ slug })
 }
 
 export const byGroup = async (
