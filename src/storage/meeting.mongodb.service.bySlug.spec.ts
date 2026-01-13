@@ -35,7 +35,7 @@ afterAll(async () => {
   await mongoClient.close()
 })
 
-test("bySlug returns a single scheduled meeting", async () => {
+test("bySlug always queries combined view for scheduled meetings", async () => {
   const meeting: MeetingView = {
     slug: "test-scheduled-meeting",
     name: "Test Scheduled Meeting",
@@ -47,14 +47,15 @@ test("bySlug returns a single scheduled meeting", async () => {
     timezone: "UTC",
   }
 
-  await scheduled.insertOne(meeting)
-  const result = await bySlug("test-scheduled-meeting", "scheduled")
+  await combined.insertOne(meeting)
+  const result = await bySlug("test-scheduled-meeting")
 
   expect(result).not.toBeNull()
   expect(result!.name).toBe("Test Scheduled Meeting")
+  expect(result!.nextEventUTC).toBe("2026-01-13T10:00:00Z")
 })
 
-test("bySlug without viewType should query combined (both scheduled and unscheduled)", async () => {
+test("bySlug always queries combined view for unscheduled meetings", async () => {
   const unscheduledMeeting: MeetingView = {
     slug: "unscheduled-only",
     name: "Unscheduled Only Meeting",
@@ -72,94 +73,5 @@ test("bySlug without viewType should query combined (both scheduled and unschedu
 
   expect(result).not.toBeNull()
   expect(result!.name).toBe("Unscheduled Only Meeting")
-})
-
-test("bySlug with viewType=scheduled should query only scheduled view", async () => {
-  const scheduledMeeting: MeetingView = {
-    slug: "test-meeting",
-    name: "Scheduled Meeting",
-    groupID: new ObjectId(),
-    nextEventUTC: "2026-01-13T10:00:00Z",
-    rtc: "3:10:00",
-    types: ["O"],
-    languages: [],
-    timezone: "UTC",
-  }
-
-  const unscheduledMeeting: MeetingView = {
-    slug: "unscheduled-meeting",
-    name: "Unscheduled Meeting",
-    groupID: new ObjectId(),
-    nextEventUTC: null,
-    rtc: null,
-    types: ["O"],
-    languages: [],
-    timezone: "UTC",
-  }
-
-  await scheduled.insertOne(scheduledMeeting)
-  await unscheduled.insertOne(unscheduledMeeting)
-
-  const result = await bySlug("test-meeting", "scheduled")
-
-  expect(result).not.toBeNull()
-  expect(result!.name).toBe("Scheduled Meeting")
-
-  const notFound = await bySlug("unscheduled-meeting", "scheduled")
-  expect(notFound).toBeNull()
-})
-
-test("bySlug with viewType=unscheduled should query only unscheduled view", async () => {
-  const scheduledMeeting: MeetingView = {
-    slug: "scheduled-meeting",
-    name: "Scheduled Meeting",
-    groupID: new ObjectId(),
-    nextEventUTC: "2026-01-13T10:00:00Z",
-    rtc: "3:10:00",
-    types: ["O"],
-    languages: [],
-    timezone: "UTC",
-  }
-
-  const unscheduledMeeting: MeetingView = {
-    slug: "test-meeting",
-    name: "Unscheduled Meeting",
-    groupID: new ObjectId(),
-    nextEventUTC: null,
-    rtc: null,
-    types: ["O"],
-    languages: [],
-    timezone: "UTC",
-  }
-
-  await scheduled.insertOne(scheduledMeeting)
-  await unscheduled.insertOne(unscheduledMeeting)
-
-  const result = await bySlug("test-meeting", "unscheduled")
-
-  expect(result).not.toBeNull()
-  expect(result!.name).toBe("Unscheduled Meeting")
-
-  const notFound = await bySlug("scheduled-meeting", "unscheduled")
-  expect(notFound).toBeNull()
-})
-
-test("bySlug with viewType=combined should query combined view", async () => {
-  const testMeeting: MeetingView = {
-    slug: "combined-test",
-    name: "Combined Test Meeting",
-    groupID: new ObjectId(),
-    nextEventUTC: "2026-01-13T10:00:00Z",
-    rtc: "3:10:00",
-    types: ["O"],
-    languages: [],
-    timezone: "UTC",
-  }
-
-  await combined.insertOne(testMeeting)
-
-  const result = await bySlug("combined-test", "combined")
-
-  expect(result).not.toBeNull()
-  expect(result!.name).toBe("Combined Test Meeting")
+  expect(result!.nextEventUTC).toBeNull()
 })

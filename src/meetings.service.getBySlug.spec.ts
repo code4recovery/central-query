@@ -71,29 +71,6 @@ test("should return error when meeting not found", async () => {
   expect(result.val).toBe("Meeting not found")
 })
 
-test("should always call bySlug with combined view", async () => {
-  const mockMeeting: MeetingView = {
-    slug: "test-default",
-    name: "Test Default Meeting",
-    groupID: new ObjectId("507f1f77bcf86cd799439011"),
-    nextEventUTC: "2026-01-06T10:00:00Z",
-    rtc: "3:10:00",
-    types: ["O"],
-    languages: [],
-    timezone: "UTC",
-  }
-
-  mockMeetingStore.bySlug.mockResolvedValue(mockMeeting)
-
-  const result = await meetingsService.getBySlug("test-default")
-
-  assertOk(result)
-  expect(mockMeetingStore.bySlug).toHaveBeenCalledWith(
-    "test-default",
-    "combined",
-  )
-})
-
 test("should map null nextEventUTC to null timeUTC in return value", async () => {
   const mockMeeting: MeetingView = {
     slug: "unscheduled-meeting",
