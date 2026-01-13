@@ -5,6 +5,7 @@ const jestConfig: JestConfigWithTsJest = {
   globalTeardown: "../testEnv/teardown.ts",
   verbose: true,
   rootDir: "src",
+  maxWorkers: 1,
   extensionsToTreatAsEsm: [".ts"],
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
