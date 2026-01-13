@@ -35,8 +35,8 @@ afterAll(async () => {
   await mongoClient.close()
 })
 
-test("query returns multiple scheduled meetings", async () => {
-  const meetings: MeetingView[] = [
+test("query with viewType=scheduled should query only scheduled view", async () => {
+  const scheduledMeetings: MeetingView[] = [
     {
       slug: "meeting-1",
       name: "Meeting 1",
@@ -59,11 +59,26 @@ test("query returns multiple scheduled meetings", async () => {
     },
   ]
 
-  await scheduled.insertMany(meetings)
+  const unscheduledMeetings: MeetingView[] = [
+    {
+      slug: "unscheduled-1",
+      name: "Unscheduled Meeting 1",
+      groupID: new ObjectId(),
+      nextEventUTC: null,
+      rtc: null,
+      types: ["O"],
+      languages: [],
+      timezone: "UTC",
+    },
+  ]
+
+  await scheduled.insertMany(scheduledMeetings)
+  await unscheduled.insertMany(unscheduledMeetings)
+
   const result = await query([{ $match: { types: "O" } }], "scheduled")
 
-  expect(result).not.toBeNull()
   expect(result.length).toBe(2)
+  expect(result.every((m) => m.nextEventUTC !== null)).toBe(true)
 })
 
 test("query without viewType should query combined view", async () => {
@@ -141,35 +156,4 @@ test("query with viewType=unscheduled should query only unscheduled view", async
 
   expect(result.length).toBe(2)
   expect(result.every((m) => m.nextEventUTC === null)).toBe(true)
-})
-
-test("query with viewType=combined should query combined view", async () => {
-  const combinedMeetings: MeetingView[] = [
-    {
-      slug: "combined-1",
-      name: "Combined Meeting 1",
-      groupID: new ObjectId(),
-      nextEventUTC: "2026-01-13T10:00:00Z",
-      rtc: "3:10:00",
-      types: ["O"],
-      languages: [],
-      timezone: "UTC",
-    },
-    {
-      slug: "combined-2",
-      name: "Combined Meeting 2",
-      groupID: new ObjectId(),
-      nextEventUTC: null,
-      rtc: null,
-      types: ["O"],
-      languages: [],
-      timezone: "UTC",
-    },
-  ]
-
-  await combined.insertMany(combinedMeetings)
-
-  const result = await query([{ $match: { types: "O" } }], "combined")
-
-  expect(result.length).toBe(2)
 })
