@@ -6,11 +6,11 @@ export interface MeetingView extends OptionalStorageData {
   groupID: ObjectId
   languages: string[]
   name: string
-  nextEventUTC: string
-  rtc: string
+  nextEventUTC: string | null
+  rtc: string | null
   slug: string
   timezone: string
-  types?: Category[] // Optional, used for categorization
+  types?: Category[]
 }
 
 // Use format of data in groups.json file to provide an interface for the group
