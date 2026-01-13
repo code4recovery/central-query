@@ -89,10 +89,7 @@ test("should return group info and group meetings", async () => {
   expect(result.val.groupMeetings[1].timeUTC).toBe("2026-01-07T10:00:00Z")
   expect(result.val.groupMeetings[1].groupID).toBe("507f1f77bcf86cd799439011")
 
-  expect(mockMeetingStore.bySlug).toHaveBeenCalledWith(
-    "test-meeting",
-    "combined",
-  )
+  expect(mockMeetingStore.bySlug).toHaveBeenCalledWith("test-meeting")
   expect(mockGroupStore.byId).toHaveBeenCalledWith("507f1f77bcf86cd799439011")
   expect(mockMeetingStore.byGroup).toHaveBeenCalledWith(
     "507f1f77bcf86cd799439011",
@@ -111,7 +108,7 @@ test("should return error when meeting not found", async () => {
   expect(mockMeetingStore.byGroup).not.toHaveBeenCalled()
 })
 
-test("should pass scheduled viewType to bySlug and byGroup", async () => {
+test("should pass scheduled viewType to byGroup", async () => {
   const mockMeeting: MeetingView = {
     slug: "scheduled-meeting",
     name: "Scheduled Meeting",
@@ -138,17 +135,13 @@ test("should pass scheduled viewType to bySlug and byGroup", async () => {
   )
 
   assertOk(result)
-  expect(mockMeetingStore.bySlug).toHaveBeenCalledWith(
-    "scheduled-meeting",
-    "scheduled",
-  )
   expect(mockMeetingStore.byGroup).toHaveBeenCalledWith(
     "507f1f77bcf86cd799439011",
     "scheduled",
   )
 })
 
-test("should pass unscheduled viewType to bySlug and byGroup", async () => {
+test("should pass unscheduled viewType to byGroup", async () => {
   const mockMeeting: MeetingView = {
     slug: "unscheduled-meeting",
     name: "Unscheduled Meeting",
@@ -175,10 +168,6 @@ test("should pass unscheduled viewType to bySlug and byGroup", async () => {
   )
 
   assertOk(result)
-  expect(mockMeetingStore.bySlug).toHaveBeenCalledWith(
-    "unscheduled-meeting",
-    "unscheduled",
-  )
   expect(mockMeetingStore.byGroup).toHaveBeenCalledWith(
     "507f1f77bcf86cd799439011",
     "unscheduled",
