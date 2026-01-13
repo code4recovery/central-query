@@ -18,6 +18,7 @@ import Logger from "./common/logger.js"
 import { ActiveType, MeetingView } from "./storage/storage.types.js"
 import * as groupStore from "./storage/group.mongodb.service.js"
 import * as meetingStore from "./storage/meeting.mongodb.service.js"
+import { MeetingViewType } from "./storage/meeting.mongodb.service.js"
 
 import { categorizedMeeting, intersection } from "./utils/categorizeMeeting.js"
 import { lowerUpperLimits } from "./utils/dates.js"
@@ -120,7 +121,10 @@ export const getBySlug = async (
   return Ok(meeting)
 }
 
-export const getRelatedGroupInfo = async (slug: string) => {
+export const getRelatedGroupInfo = async (
+  slug: string,
+  viewType: MeetingViewType = "combined",
+) => {
   const { err, val } = await getBySlug(slug)
   if (err) {
     Logger.error(`Meeting with slug ${slug} not found`)
@@ -134,7 +138,7 @@ export const getRelatedGroupInfo = async (slug: string) => {
       groupInfo,
     )} using groupID ${groupID}`,
   )
-  const groupMeetings = await meetingStore.byGroup(groupID)
+  const groupMeetings = await meetingStore.byGroup(groupID, viewType)
   Logger.debug(
     `Group meetings for group with ID ${groupID}: ${JSON.stringify(
       groupMeetings,
