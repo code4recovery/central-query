@@ -5,6 +5,7 @@ interface BasicFilter {
   types?: string[]
 }
 export interface MeetingsOptions extends BasicFilter {
+  scheduled?: boolean
   rtcRanges?: RTCRange[]
   start?: ISOString
   hours?: number

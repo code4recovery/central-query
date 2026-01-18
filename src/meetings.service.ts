@@ -18,6 +18,7 @@ import Logger from "./common/logger.js"
 import { ActiveType, MeetingView } from "./storage/storage.types.js"
 import * as groupStore from "./storage/group.mongodb.service.js"
 import * as meetingStore from "./storage/meeting.mongodb.service.js"
+import { MeetingViewType } from "./storage/meeting.mongodb.service.js"
 
 import { categorizedMeeting, intersection } from "./utils/categorizeMeeting.js"
 import { lowerUpperLimits } from "./utils/dates.js"
@@ -31,29 +32,30 @@ import {
 } from "./endpoints.types.js"
 import { MeetingsOptions } from "./endpoint-options.types.js"
 
-const preparedMeetings = (meetings: MeetingView[]): Meeting[] =>
-  meetings.map(categorizedMeeting).map(({ groupID, ...rest }) => ({
-    ...rest,
-    groupID: groupID.toString(),
-    timeUTC: rest.nextEventUTC,
-  }))
-
 export const getMeetings = async (
   options: MeetingsOptions,
 ): Promise<Ok<Meeting[]>> => {
   Logger.debug(`Time is now: ${options.start}`)
   Logger.debug(`Hours is: ${options.hours}`)
   Logger.debug(`Getting meetings with options: ${JSON.stringify(options)}`)
-  const limits = options.start
-    ? lowerUpperLimits(options.start, options.hours)
-    : []
+
+  const scheduleType = options.scheduled === false ? "unscheduled" : "scheduled"
+  const limits =
+    scheduleType === "scheduled" && options.start
+      ? lowerUpperLimits(options.start, options.hours)
+      : []
+
   Logger.debug(`Limits: ${JSON.stringify(limits)}`)
   const pipeline = pipelineFromQuery({
     ...options,
     rtcRanges: limits,
   })
-  Logger.debug(`Pipeline: ${JSON.stringify(pipeline)}, ${typeof pipeline}`)
-  const result = await meetingStore.query(pipeline)
+  Logger.debug(
+    `Pipeline: ${JSON.stringify(
+      pipeline,
+    )}, ${typeof pipeline} and scheduleType: ${scheduleType}`,
+  )
+  const result = await meetingStore.query(pipeline, scheduleType)
   Logger.debug(`meetingStore fetch ${result.length} meetings.`)
 
   return Ok(preparedMeetings(result))
@@ -119,7 +121,10 @@ export const getBySlug = async (
   return Ok(meeting)
 }
 
-export const getRelatedGroupInfo = async (slug: string) => {
+export const getRelatedGroupInfo = async (
+  slug: string,
+  viewType: MeetingViewType = "combined",
+) => {
   const { err, val } = await getBySlug(slug)
   if (err) {
     Logger.error(`Meeting with slug ${slug} not found`)
@@ -133,7 +138,7 @@ export const getRelatedGroupInfo = async (slug: string) => {
       groupInfo,
     )} using groupID ${groupID}`,
   )
-  const groupMeetings = await meetingStore.byGroup(groupID)
+  const groupMeetings = await meetingStore.byGroup(groupID, viewType)
   Logger.debug(
     `Group meetings for group with ID ${groupID}: ${JSON.stringify(
       groupMeetings,
@@ -145,3 +150,10 @@ export const getRelatedGroupInfo = async (slug: string) => {
     groupMeetings: preparedMeetings(groupMeetings) as Meeting[],
   } as GroupDetails)
 }
+
+const preparedMeetings = (meetings: MeetingView[]): Meeting[] =>
+  meetings.map(categorizedMeeting).map(({ groupID, ...rest }) => ({
+    ...rest,
+    groupID: groupID.toString(),
+    timeUTC: rest.nextEventUTC,
+  }))

@@ -7,38 +7,29 @@ import {
   useCollection,
 } from "./mongodb-storage-service.js"
 
+export type MeetingViewType = "scheduled" | "unscheduled" | "combined"
+
 export const meetingCollection = useCollection<MeetingView>("meeting")(
   configuredMongoDatabase,
 )
 
-const meetingViewSorted = useCollection<MeetingView>("meeting-view-sorted-rtc")(
-  configuredMongoDatabase,
-)
+export const query = async (
+  queryPipeline: MongoDB.Document[],
+  viewType: MeetingViewType = "combined",
+) => loadPipelineView(queryPipeline, viewType)
 
-const pipelineView = (pipeline: MongoDB.Document[]) =>
-  meetingViewSorted.aggregate(
-    pipeline,
-  ) as MongoDB.AggregationCursor<MeetingView>
+export const bySlug = async (slug: string): Promise<MeetingView | null> => {
+  return combined.findOne({ slug })
+}
 
-const loadPipelineView = (pipeline: MongoDB.Document[]) =>
-  pipelineView(pipeline).toArray()
-
-export const query = async (queryPipeline: MongoDB.Document[]) =>
-  loadPipelineView(queryPipeline)
-
-export const bySlug = async (slug: string) =>
-  meetingViewSorted.findOne({ slug })
-
-export const byGroup = async (groupID: string) =>
-  meetingViewSorted.find({ groupID: new MongoDB.ObjectId(groupID) }).toArray()
-
-const meetingLanguages = useCollection<ActiveLanguage>("unique-languages-view")(
-  configuredMongoDatabase,
-)
-
-const meetingTypes = useCollection<ActiveType>("unique-types-view")(
-  configuredMongoDatabase,
-)
+export const byGroup = async (
+  groupID: string,
+  viewType: MeetingViewType = "combined",
+): Promise<MeetingView[]> => {
+  return getCollection(viewType)
+    .find({ groupID: new MongoDB.ObjectId(groupID) })
+    .toArray()
+}
 
 export const getActiveTypes = async (): Promise<ActiveType[]> => {
   return meetingTypes.find({}, { projection: { _id: 0 } }).toArray() as Promise<
@@ -51,3 +42,44 @@ export const getActiveLanguages = async (): Promise<ActiveLanguage[]> => {
     .find({}, { projection: { _id: 0 } })
     .toArray() as Promise<ActiveLanguage[]>
 }
+
+const scheduled = useCollection<MeetingView>("scheduled-meetings")(
+  configuredMongoDatabase,
+)
+
+const unscheduled = useCollection<MeetingView>("unscheduled-meetings")(
+  configuredMongoDatabase,
+)
+
+const combined = useCollection<MeetingView>("combined-meetings")(
+  configuredMongoDatabase,
+)
+
+const meetingLanguages = useCollection<ActiveLanguage>("unique-languages-view")(
+  configuredMongoDatabase,
+)
+
+const meetingTypes = useCollection<ActiveType>("unique-types-view")(
+  configuredMongoDatabase,
+)
+
+const getCollection = (viewType: MeetingViewType) =>
+  viewType === "scheduled"
+    ? scheduled
+    : viewType === "unscheduled"
+    ? unscheduled
+    : combined
+
+const pipelineView = (
+  pipeline: MongoDB.Document[],
+  viewType: MeetingViewType,
+) => {
+  return getCollection(viewType).aggregate(
+    pipeline,
+  ) as MongoDB.AggregationCursor<MeetingView>
+}
+
+const loadPipelineView = (
+  pipeline: MongoDB.Document[],
+  viewType: MeetingViewType,
+) => pipelineView(pipeline, viewType).toArray()

@@ -52,6 +52,7 @@ Options include:
 - `languages`: An Array element of alpha2 language codes based on ISO 639-1
 - `limit`: A number representing how many meetings will be returned. Defaults to 1000 if not included. (Note: It is unclear if this option useful to a client, and it may be deprecated.)
 - `nameQuery`: A case-insensitive string used to search for meetings by name. Partial matches are supported.
+- `scheduled`: A boolean to filter meetings by schedule status. Defaults to `true` (scheduled meetings). Set to `false` to retrieve unscheduled meetings without `nextEventUTC`.
 - `start`: A timestamp reflecting the start time for meetings to be returned. For example, to get the next meeting starting after 2300 UTC: `/api/v1/meetings/next?limit=1&start=20240113T230000Z`
 - `type`: A string, either O (for Open) or C (for Closed)
 
