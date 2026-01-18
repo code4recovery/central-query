@@ -29,7 +29,11 @@ export function categorizedMeeting(meeting: MeetingView): Omit<
   delete meeting.types
 
   const typeIntersection = intersection<Type>(types as Type[], [...TYPE])
-  const meetingType = typeIntersection.includes("C") ? "C" : typeIntersection[0]
+  const meetingType = typeIntersection.includes("C")
+    ? "C"
+    : typeIntersection.includes("O")
+    ? "O"
+    : undefined
 
   return {
     ...meeting,
