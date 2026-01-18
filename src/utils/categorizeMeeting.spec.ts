@@ -99,6 +99,23 @@ test("deletes types property from input meeting", () => {
   expect(meetingData.types).toBeUndefined()
 })
 
+test("prefers closed ('C') over open ('O') when both types are present", () => {
+  const meetingData: MeetingView = {
+    slug: "meeting-5",
+    name: "Meeting 5",
+    timezone: "America/New_York",
+    rtc: "1:10:00",
+    duration: 60,
+    languages: ["en"],
+    types: ["C", "O"],
+    nextEventUTC: null,
+    groupID: new ObjectId("123456789012345678901234"),
+  }
+
+  const result = categorizedMeeting(meetingData)
+
+  expect(result.type).toBe("C")
+})
 test("returns first type when multiple values for the type category are present", () => {
   const meetingData: MeetingView = {
     slug: "meeting-5",
