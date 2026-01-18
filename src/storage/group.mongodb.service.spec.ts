@@ -1,5 +1,6 @@
-import fs from "fs"
 import { ObjectId } from "mongodb"
+
+import { GroupView } from "./storage.types.js"
 
 import { byId } from "./group.mongodb.service.js"
 import {
@@ -7,39 +8,75 @@ import {
   mongoClient,
   useCollection,
 } from "./mongodb-storage-service.js"
-import { GroupView } from "./storage.types.js"
 
-const groupsTestData = JSON.parse(
-  fs.readFileSync("cypress/fixtures/groups.json", "utf-8"),
-)
-const cleanedGroupsTestData = groupsTestData.map((group) => {
-  group._id = new ObjectId(group._id.$oid)
-  return group
-})
-const testGroupsCollection = useCollection<GroupView>("group")(
+const testGroupViewCollection = useCollection<GroupView>("group-view")(
   configuredMongoDatabase,
 )
 
-async function resetDatabase() {
-  await testGroupsCollection.deleteMany({})
-}
+beforeEach(async () => {
+  await testGroupViewCollection.deleteMany({})
+})
 
-describe("group.mongodb.service - byId", () => {
-  beforeEach(async () => {
-    await resetDatabase()
+afterAll(async () => {
+  await mongoClient.close()
+})
+
+test("returns group when valid ID exists", async () => {
+  const testId = new ObjectId()
+  await testGroupViewCollection.insertOne({
+    _id: testId,
+    name: "Test Group",
+    email: "test@example.com",
+    website: "https://example.com",
   })
 
-  afterEach(async () => {
-    await mongoClient.close()
+  const result = await byId(testId.toString())
+
+  expect(result).not.toBeNull()
+  expect(result!._id).toEqual(testId)
+  expect(result!.name).toBe("Test Group")
+  expect(result!.email).toBe("test@example.com")
+})
+
+test("returns null when ID does not exist", async () => {
+  const nonExistentId = new ObjectId()
+
+  const result = await byId(nonExistentId.toString())
+
+  expect(result).toBeNull()
+})
+
+test("handles invalid ObjectId format gracefully", async () => {
+  await expect(byId("invalid-id")).rejects.toThrow()
+})
+
+test("returns group with only required fields when optional fields absent", async () => {
+  const testId = new ObjectId()
+  await testGroupViewCollection.insertOne({
+    _id: testId,
+    name: "Minimal Group",
   })
 
-  test("should return a group when a valid ID is provided", async () => {
-    await testGroupsCollection.insertMany(cleanedGroupsTestData)
-    const testGroupId = cleanedGroupsTestData[0]._id
+  const result = await byId(testId.toString())
 
-    const result = await byId(testGroupId.toString())
+  expect(result).not.toBeNull()
+  expect(result!.name).toBe("Minimal Group")
+  expect(result!.email).toBeUndefined()
+  expect(result!.website).toBeUndefined()
+})
 
-    expect(result).not.toBeNull()
-    expect(result!.name).toBe("Global Men's Meditation")
+test("queries group-view collection not group collection", async () => {
+  const groupCollection = useCollection<GroupView>("group")(
+    configuredMongoDatabase,
+  )
+  const testId = new ObjectId()
+
+  await groupCollection.insertOne({
+    _id: testId,
+    name: "Should Not Be Found",
   })
+
+  const result = await byId(testId.toString())
+
+  expect(result).toBeNull()
 })
