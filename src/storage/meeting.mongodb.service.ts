@@ -31,16 +31,44 @@ export const byGroup = async (
     .toArray()
 }
 
-export const getActiveTypes = async (): Promise<ActiveType[]> => {
-  return meetingTypes.find({}, { projection: { _id: 0 } }).toArray() as Promise<
+export const getActiveTypes = async (
+  viewType: MeetingViewType = "combined",
+): Promise<ActiveType[]> => {
+  let collection: MongoDB.Collection<ActiveType>
+  switch (viewType) {
+    case "scheduled":
+      collection = meetingTypesScheduled
+      break
+    case "unscheduled":
+      collection = meetingTypesUnscheduled
+      break
+    case "combined":
+    default:
+      collection = meetingTypes
+  }
+  return collection.find({}, { projection: { _id: 0 } }).toArray() as Promise<
     ActiveType[]
   >
 }
 
-export const getActiveLanguages = async (): Promise<ActiveLanguage[]> => {
-  return meetingLanguages
-    .find({}, { projection: { _id: 0 } })
-    .toArray() as Promise<ActiveLanguage[]>
+export const getActiveLanguages = async (
+  viewType: MeetingViewType = "combined",
+): Promise<ActiveLanguage[]> => {
+  let collection: MongoDB.Collection<ActiveLanguage>
+  switch (viewType) {
+    case "scheduled":
+      collection = meetingLanguagesScheduled
+      break
+    case "unscheduled":
+      collection = meetingLanguagesUnscheduled
+      break
+    case "combined":
+    default:
+      collection = meetingLanguages
+  }
+  return collection.find({}, { projection: { _id: 0 } }).toArray() as Promise<
+    ActiveLanguage[]
+  >
 }
 
 const scheduled = useCollection<MeetingView>("scheduled-meetings")(
@@ -59,9 +87,25 @@ const meetingLanguages = useCollection<ActiveLanguage>("unique-languages-view")(
   configuredMongoDatabase,
 )
 
+const meetingLanguagesScheduled = useCollection<ActiveLanguage>(
+  "unique-languages-scheduled",
+)(configuredMongoDatabase)
+
+const meetingLanguagesUnscheduled = useCollection<ActiveLanguage>(
+  "unique-languages-unscheduled",
+)(configuredMongoDatabase)
+
 const meetingTypes = useCollection<ActiveType>("unique-types-view")(
   configuredMongoDatabase,
 )
+
+const meetingTypesScheduled = useCollection<ActiveType>(
+  "unique-types-scheduled",
+)(configuredMongoDatabase)
+
+const meetingTypesUnscheduled = useCollection<ActiveType>(
+  "unique-types-unscheduled",
+)(configuredMongoDatabase)
 
 const getCollection = (viewType: MeetingViewType) =>
   viewType === "scheduled"

@@ -28,7 +28,7 @@ import {
   Group,
   GroupDetails,
   Meeting,
-  MeetingFacets,
+  MeetingsFacetsResponse,
 } from "./endpoints.types.js"
 import { MeetingsOptions } from "./endpoint-options.types.js"
 
@@ -61,43 +61,82 @@ export const getMeetings = async (
   return Ok(preparedMeetings(result))
 }
 
-export const getFacets = async (): Promise<Ok<MeetingFacets>> => {
+export const getFacets = async (): Promise<Ok<MeetingsFacetsResponse>> => {
   Logger.debug("Getting facets (categories and languages)")
-  const [activeTypes, languages] = await Promise.all([
-    meetingStore.getActiveTypes(),
-    meetingStore.getActiveLanguages(),
+  const [
+    scheduledActiveTypes,
+    scheduledLanguages,
+    unscheduledActiveTypes,
+    unscheduledLanguages,
+  ] = await Promise.all([
+    meetingStore.getActiveTypes("scheduled"),
+    meetingStore.getActiveLanguages("scheduled"),
+    meetingStore.getActiveTypes("unscheduled"),
+    meetingStore.getActiveLanguages("unscheduled"),
   ])
 
-  const categories = {
-    communities: activeTypes
+  const scheduledCategories = {
+    communities: scheduledActiveTypes
       .filter((t) => intersection([t.code], [...COMMUNITIES]).length > 0)
       .map((t) => ({
         code: t.code as Community,
         desc: t.desc,
       })) as ActiveCommunity[],
-    features: activeTypes
+    features: scheduledActiveTypes
       .filter((t) => intersection([t.code], [...FEATURES]).length > 0)
       .map((t) => ({
         code: t.code as Feature,
         desc: t.desc,
       })) as ActiveFeature[],
-    formats: activeTypes
+    formats: scheduledActiveTypes
       .filter((t) => intersection([t.code], [...FORMATS]).length > 0)
       .map((t) => ({ code: t.code as Format, desc: t.desc })) as ActiveFormat[],
-    type: activeTypes
+    type: scheduledActiveTypes
+      .filter((t) => intersection([t.code], [...TYPE]).length > 0)
+      .map((t) => ({ code: t.code as Type, desc: t.desc })) as ActiveType[],
+  }
+
+  const unscheduledCategories = {
+    communities: unscheduledActiveTypes
+      .filter((t) => intersection([t.code], [...COMMUNITIES]).length > 0)
+      .map((t) => ({
+        code: t.code as Community,
+        desc: t.desc,
+      })) as ActiveCommunity[],
+    features: unscheduledActiveTypes
+      .filter((t) => intersection([t.code], [...FEATURES]).length > 0)
+      .map((t) => ({
+        code: t.code as Feature,
+        desc: t.desc,
+      })) as ActiveFeature[],
+    formats: unscheduledActiveTypes
+      .filter((t) => intersection([t.code], [...FORMATS]).length > 0)
+      .map((t) => ({ code: t.code as Format, desc: t.desc })) as ActiveFormat[],
+    type: unscheduledActiveTypes
       .filter((t) => intersection([t.code], [...TYPE]).length > 0)
       .map((t) => ({ code: t.code as Type, desc: t.desc })) as ActiveType[],
   }
 
   Logger.debug(
-    `Facets result: categories=${JSON.stringify(categories)}, languages=${
-      languages.length
-    }`,
+    `Scheduled Facets result: categories=${JSON.stringify(
+      scheduledCategories,
+    )}, languages=${scheduledLanguages.length}`,
+  )
+  Logger.debug(
+    `Unscheduled Facets result: categories=${JSON.stringify(
+      unscheduledCategories,
+    )}, languages=${unscheduledLanguages.length}`,
   )
 
   return Ok({
-    categories,
-    languages,
+    scheduled: {
+      categories: scheduledCategories,
+      languages: scheduledLanguages,
+    },
+    unscheduled: {
+      categories: unscheduledCategories,
+      languages: unscheduledLanguages,
+    },
   })
 }
 
