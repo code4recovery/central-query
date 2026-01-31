@@ -1,5 +1,5 @@
 describe("Meetings Facets API", () => {
-  it("returns facets with categories and languages", () => {
+  it("returns scheduled and unscheduled facets with categories and languages", () => {
     cy.request({
       method: "GET",
       url: "/meetings/facets",
@@ -10,21 +10,40 @@ describe("Meetings Facets API", () => {
       expect(response.body).to.be.an("object")
       expect(response.body).to.not.be.empty
 
-      // Verify the structure contains categories and languages
-      expect(response.body).to.have.property("categories")
-      expect(response.body).to.have.property("languages")
+      // Verify the structure contains scheduled and unscheduled facets
+      expect(response.body).to.have.property("scheduled")
+      expect(response.body).to.have.property("unscheduled")
 
-      // Verify categories and languages are arrays
-      expect(response.body.categories).to.be.an("object")
-      expect(response.body.categories).to.have.all.keys(
+      const scheduled = response.body.scheduled
+      const unscheduled = response.body.unscheduled
+
+      // Verify the structure contains categories and languages
+      expect(scheduled).to.have.property("categories")
+      expect(scheduled).to.have.property("languages")
+      expect(unscheduled).to.have.property("categories")
+      expect(unscheduled).to.have.property("languages")
+
+      // Verify scheduled categories and languages are arrays
+      expect(scheduled.categories).to.be.an("object")
+      expect(scheduled.categories).to.have.all.keys(
         "communities",
         "features",
         "formats",
         "type",
       )
-      expect(response.body.languages).to.be.an("array")
+      expect(scheduled.languages).to.be.an("array")
+      expect(scheduled.languages.length).to.be.greaterThan(0)
 
-      expect(response.body.languages.length).to.be.greaterThan(0)
+      // Verify unscheduled categories and languages are arrays
+      expect(unscheduled.categories).to.be.an("object")
+      expect(unscheduled.categories).to.have.all.keys(
+        "communities",
+        "features",
+        "formats",
+        "type",
+      )
+      expect(unscheduled.languages).to.be.an("array")
+      expect(unscheduled.languages.length).to.be.greaterThan(0)
     })
   })
 
