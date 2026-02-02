@@ -1,6 +1,12 @@
 import { ObjectId } from "mongodb"
 
-import { COMMUNITIES, FEATURES, FORMATS, TYPE } from "../common/types.js"
+import {
+  Category,
+  COMMUNITIES,
+  FEATURES,
+  FORMATS,
+  TYPE,
+} from "../common/types.js"
 import { MeetingView } from "../storage/storage.types"
 import { categorizedMeeting } from "./categorizeMeeting"
 
@@ -63,7 +69,7 @@ test("Category bins created from all types list", () => {
   const meetingData: MeetingView = {
     slug: "meeting-1",
     name: "Meeting 1",
-    types: Object.getOwnPropertyNames(oiaaTypes),
+    types: Object.getOwnPropertyNames(oiaaTypes).map((key) => key as Category),
     timezone: "America/New_York",
     rtc: "1:10:00",
     duration: 60,
@@ -72,14 +78,17 @@ test("Category bins created from all types list", () => {
     formats: [],
     communities: [],
     groupID: new ObjectId("123456789012345678901234"),
+    nextEventUTC: null,
   }
 
   const newMeetingData = categorizedMeeting(meetingData)
 
   expect(newMeetingData.type).toStrictEqual(TYPE)
-  expect(newMeetingData.communities.sort()).toStrictEqual(COMMUNITIES.sort())
-  expect(newMeetingData.features.sort()).toStrictEqual(FEATURES.sort())
-  expect(newMeetingData.formats.sort()).toStrictEqual(FORMATS.sort())
+  expect(newMeetingData.communities.sort()).toStrictEqual(
+    [...COMMUNITIES].sort(),
+  )
+  expect(newMeetingData.features.sort()).toStrictEqual([...FEATURES].sort())
+  expect(newMeetingData.formats.sort()).toStrictEqual([...FORMATS].sort())
 })
 
 test("Gracefully handles null `types`", () => {
@@ -95,6 +104,7 @@ test("Gracefully handles null `types`", () => {
     communities: [],
     type: "O",
     groupID: new ObjectId("123456789012345678901234"),
+    nextEventUTC: null,
   }
   const newMeetingData = categorizedMeeting(meetingData)
 
