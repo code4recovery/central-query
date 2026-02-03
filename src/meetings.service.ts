@@ -75,47 +75,29 @@ export const getFacets = async (): Promise<Ok<MeetingsFacetsResponse>> => {
     meetingStore.getActiveLanguages("unscheduled"),
   ])
 
-  const scheduledCategories = {
-    communities: scheduledActiveTypes
+  const mapCategories = (activeTypes: ActiveType[]) => ({
+    communities: activeTypes
       .filter((t) => intersection([t.code], [...COMMUNITIES]).length > 0)
       .map((t) => ({
         code: t.code as Community,
         desc: t.desc,
       })) as ActiveCommunity[],
-    features: scheduledActiveTypes
+    features: activeTypes
       .filter((t) => intersection([t.code], [...FEATURES]).length > 0)
       .map((t) => ({
         code: t.code as Feature,
         desc: t.desc,
       })) as ActiveFeature[],
-    formats: scheduledActiveTypes
+    formats: activeTypes
       .filter((t) => intersection([t.code], [...FORMATS]).length > 0)
       .map((t) => ({ code: t.code as Format, desc: t.desc })) as ActiveFormat[],
-    type: scheduledActiveTypes
+    type: activeTypes
       .filter((t) => intersection([t.code], [...TYPE]).length > 0)
       .map((t) => ({ code: t.code as Type, desc: t.desc })) as ActiveType[],
-  }
+  })
 
-  const unscheduledCategories = {
-    communities: unscheduledActiveTypes
-      .filter((t) => intersection([t.code], [...COMMUNITIES]).length > 0)
-      .map((t) => ({
-        code: t.code as Community,
-        desc: t.desc,
-      })) as ActiveCommunity[],
-    features: unscheduledActiveTypes
-      .filter((t) => intersection([t.code], [...FEATURES]).length > 0)
-      .map((t) => ({
-        code: t.code as Feature,
-        desc: t.desc,
-      })) as ActiveFeature[],
-    formats: unscheduledActiveTypes
-      .filter((t) => intersection([t.code], [...FORMATS]).length > 0)
-      .map((t) => ({ code: t.code as Format, desc: t.desc })) as ActiveFormat[],
-    type: unscheduledActiveTypes
-      .filter((t) => intersection([t.code], [...TYPE]).length > 0)
-      .map((t) => ({ code: t.code as Type, desc: t.desc })) as ActiveType[],
-  }
+  const scheduledCategories = mapCategories(scheduledActiveTypes)
+  const unscheduledCategories = mapCategories(unscheduledActiveTypes)
 
   Logger.debug(
     `Scheduled Facets result: categories=${JSON.stringify(
