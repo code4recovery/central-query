@@ -26,31 +26,33 @@ export const byGroup = async (
   groupID: string,
   viewType: MeetingViewType = "combined",
 ): Promise<MeetingView[]> => {
-  return getCollection(viewType)
+  return getCollectionByCategoryAndViewType("meetings", viewType)
     .find({ groupID: new MongoDB.ObjectId(groupID) })
     .toArray()
 }
 
-export const getActiveTypes = async (): Promise<ActiveType[]> => {
-  return meetingTypes.find({}, { projection: { _id: 0 } }).toArray() as Promise<
-    ActiveType[]
-  >
+export const getActiveTypes = async (
+  viewType: MeetingViewType = "combined",
+): Promise<ActiveType[]> => {
+  return getCollectionByCategoryAndViewType("types", viewType)
+    .find({}, { projection: { _id: 0 } })
+    .toArray()
 }
 
-export const getActiveLanguages = async (): Promise<ActiveLanguage[]> => {
-  return meetingLanguages
+export const getActiveLanguages = async (
+  viewType: MeetingViewType = "combined",
+): Promise<ActiveLanguage[]> => {
+  return getCollectionByCategoryAndViewType("languages", viewType)
     .find({}, { projection: { _id: 0 } })
-    .toArray() as Promise<ActiveLanguage[]>
+    .toArray()
 }
 
 const scheduled = useCollection<MeetingView>("scheduled-meetings")(
   configuredMongoDatabase,
 )
-
 const unscheduled = useCollection<MeetingView>("unscheduled-meetings")(
   configuredMongoDatabase,
 )
-
 const combined = useCollection<MeetingView>("combined-meetings")(
   configuredMongoDatabase,
 )
@@ -58,23 +60,56 @@ const combined = useCollection<MeetingView>("combined-meetings")(
 const meetingLanguages = useCollection<ActiveLanguage>("unique-languages-view")(
   configuredMongoDatabase,
 )
+const meetingLanguagesScheduled = useCollection<ActiveLanguage>(
+  "unique-languages-scheduled",
+)(configuredMongoDatabase)
+const meetingLanguagesUnscheduled = useCollection<ActiveLanguage>(
+  "unique-languages-unscheduled",
+)(configuredMongoDatabase)
 
 const meetingTypes = useCollection<ActiveType>("unique-types-view")(
   configuredMongoDatabase,
 )
+const meetingTypesScheduled = useCollection<ActiveType>(
+  "unique-types-scheduled",
+)(configuredMongoDatabase)
+const meetingTypesUnscheduled = useCollection<ActiveType>(
+  "unique-types-unscheduled",
+)(configuredMongoDatabase)
 
-const getCollection = (viewType: MeetingViewType) =>
-  viewType === "scheduled"
-    ? scheduled
-    : viewType === "unscheduled"
-    ? unscheduled
-    : combined
+const collections = {
+  meetings: {
+    scheduled,
+    unscheduled,
+    combined,
+  },
+  types: {
+    scheduled: meetingTypesScheduled,
+    unscheduled: meetingTypesUnscheduled,
+    combined: meetingTypes,
+  },
+  languages: {
+    scheduled: meetingLanguagesScheduled,
+    unscheduled: meetingLanguagesUnscheduled,
+    combined: meetingLanguages,
+  },
+} as const
+
+const getCollectionByCategoryAndViewType = <
+  K extends keyof typeof collections,
+  V extends keyof (typeof collections)[K],
+>(
+  category: K,
+  viewType: V,
+) => {
+  return collections[category][viewType]
+}
 
 const pipelineView = (
   pipeline: MongoDB.Document[],
   viewType: MeetingViewType,
 ) => {
-  return getCollection(viewType).aggregate(
+  return getCollectionByCategoryAndViewType("meetings", viewType).aggregate(
     pipeline,
   ) as MongoDB.AggregationCursor<MeetingView>
 }
