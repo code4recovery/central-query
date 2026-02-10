@@ -28,6 +28,13 @@ export function categorizedMeeting(meeting: MeetingView): Omit<
 
   delete meeting.types
 
+  const typeIntersection = intersection<Type>(types as Type[], [...TYPE])
+  const meetingType = typeIntersection.includes("C")
+    ? "C"
+    : typeIntersection.includes("O")
+    ? "O"
+    : undefined
+
   return {
     ...meeting,
     communities: intersection<Community>(types as Community[], [
@@ -35,6 +42,6 @@ export function categorizedMeeting(meeting: MeetingView): Omit<
     ]),
     features: intersection<Feature>(types as Feature[], [...FEATURES]),
     formats: intersection<Format>(types as Format[], [...FORMATS]),
-    type: intersection<Type>(types as Type[], [...TYPE])[0] as Type,
+    type: meetingType as Type,
   }
 }
