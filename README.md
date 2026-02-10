@@ -65,7 +65,7 @@ To Do:
 
 ### `api/v1/meetings/facets`
 
-Provides an object containing the active categories and languages associated with meetings in the database. These are only those values associated with active meetings, and not a complete list of all languages or categories that might exist.
+Provides an object containing the active categories and languages associated with scheduled and unscheduled meetings in the database. These are only those values associated with active meetings, and not a complete list of all languages or categories that might exist.
 
 See the [specific interface](src/endpoints.types.ts) of the `MeetingFacets` object.
 
