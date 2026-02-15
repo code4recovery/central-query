@@ -277,3 +277,31 @@ test("pipeline should combine nameQuery with types and languages", () => {
     },
   ])
 })
+
+test("pipeline should transform nameQuery with quotes to match both straight and curly variants", () => {
+  const testOptions: MeetingsOptions = {
+    nameQuery: "Joe's Place",
+  }
+
+  expect(pipelineFromQuery(testOptions)).toStrictEqual([
+    {
+      $match: {
+        name: { $regex: "Joe['']s Place", $options: "i" },
+      },
+    },
+  ])
+})
+
+test("pipeline should escape regex special characters in nameQuery", () => {
+  const testOptions: MeetingsOptions = {
+    nameQuery: "Meeting (Group)",
+  }
+
+  expect(pipelineFromQuery(testOptions)).toStrictEqual([
+    {
+      $match: {
+        name: { $regex: "Meeting \\(Group\\)", $options: "i" },
+      },
+    },
+  ])
+})
