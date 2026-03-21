@@ -15,12 +15,6 @@ const eventView = useCollection<EventModel>("events-view")(
   configuredMongoDatabase,
 )
 
-// export const addMeetings = async (resources: Meeting[]) =>
-//   await meetingCollection.insertMany(resources)
-
-// export const dayOfWeek = async (day: number) =>
-//   await meetingCollection.find({ day: day }).toArray()
-
 const pipelineView = (pipeline: MongoDB.Document[], options = {}) =>
   eventView.aggregate(pipeline, options)
 
