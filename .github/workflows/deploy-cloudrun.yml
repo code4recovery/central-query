@@ -1,7 +1,7 @@
 # GitHub Actions workflow for deploying to Google Cloud Run
 #
 # This workflow builds a Docker image, pushes it to Google Artifact Registry,
-# and deploys to Cloud Run, injecting secrets as environment variables.
+# and deploys to Cloud Run, providing secrets at runtime via Google Secret Manager (not GitHub Secrets).
 
 name: Deploy to Google Cloud Run
 
@@ -17,8 +17,6 @@ jobs:
       PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
       REGION: ${{ secrets.GCP_REGION }}
       SERVICE_NAME: ${{ secrets.CLOUD_RUN_SERVICE }}
-      MONGO_DB_NAME: ${{ secrets.MONGO_DB_NAME }}
-      MONGO_URI: ${{ secrets.MONGO_URI }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
