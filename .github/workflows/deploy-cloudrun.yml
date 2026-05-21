@@ -17,7 +17,7 @@ jobs:
       PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
       REGION: ${{ secrets.GCP_REGION }}
       SERVICE_NAME: ${{ secrets.CLOUD_RUN_SERVICE }}
-      MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
+      MONGO_DB_NAME: ${{ secrets.MONGO_DB_NAME }}
       MONGO_URI: ${{ secrets.MONGO_URI }}
     steps:
       - name: Checkout code
@@ -48,5 +48,6 @@ jobs:
             --image=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/cloud-run-source-deploy/${{ env.SERVICE_NAME }}:${{ github.sha }} \
             --region=${{ env.REGION }} \
             --platform=managed \
-            --set-env-vars=MONGODB_DB_NAME=${{ env.MONGODB_DB_NAME }},MONGO_URI=${{ env.MONGO_URI }} \
+            --set-env-vars=NODE_ENV=development \
+            --set-secrets=MONGO_DB_NAME=MONGO_DB_NAME:latest,MONGO_URI=MONGO_URI:latest \
             --allow-unauthenticated
