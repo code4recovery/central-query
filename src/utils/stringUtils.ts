@@ -7,8 +7,8 @@ export const arrayToUpper = (arr?: string[]) =>
 export function makeQuoteFlexibleRegex(query: string): string {
   let escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
-  escaped = escaped.replace(/'/g, "['']")  // straight apostrophe → matches both ' and '
-  escaped = escaped.replace(/"/g, '[""]')  // straight quote → matches both " and "
+  escaped = escaped.replace(/['\u2018\u2019]/g, "['\u2018\u2019]")
+  escaped = escaped.replace(/["\u201C\u201D]/g, '["\u201C\u201D]')
 
   return escaped
 }
