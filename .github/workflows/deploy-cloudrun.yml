@@ -32,6 +32,12 @@ jobs:
         run: |
           gcloud auth configure-docker --quiet ${{ env.REGION }}-docker.pkg.dev
 
+      - name: Verify gcloud authentication and Artifact Registry access
+        run: |
+          gcloud auth list
+          gcloud config list
+          gcloud artifacts repositories list --location=us-central1 --project=$PROJECT_ID
+
       - name: Build Docker image
         run: |
           docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/cloud-run-source-deploy/${{ env.SERVICE_NAME }}:${{ github.sha }} .
