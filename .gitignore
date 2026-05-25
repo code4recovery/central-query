@@ -4,3 +4,4 @@ dist/
 .env*
 Makefile
 src/coverage/*
+CLAUDE.md
