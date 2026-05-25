@@ -2,6 +2,7 @@ import * as MongoDB from "mongodb"
 
 import Logger from "../common/logger.js"
 import { MeetingsOptions } from "../endpoint-options.types.js"
+import { makeQuoteFlexibleRegex } from "./stringUtils.js"
 
 const normalizeToArray = (input: string | string[] | undefined): string[] => {
   if (!input) return []
@@ -112,9 +113,10 @@ export const pipelineFromQuery = (query: MeetingsOptions) => {
   if (Object.keys(match).length) pipeline.push({ $match: match })
 
   if (nameQuery) {
+    const quoteFlexiblePattern = makeQuoteFlexibleRegex(nameQuery)
     pipeline.push({
       $match: {
-        name: { $regex: nameQuery, $options: "i" },
+        name: { $regex: quoteFlexiblePattern, $options: "i" },
       },
     })
   }
