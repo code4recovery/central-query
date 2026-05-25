@@ -17,7 +17,7 @@ const { version } = JSON.parse(
 )
 
 dotenv.config()
-const port = 5001
+const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080
 
 try {
   app.listen(port, () => {
