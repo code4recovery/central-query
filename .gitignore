@@ -4,4 +4,5 @@ dist/
 .env*
 Makefile
 src/coverage/*
+CLAUDE.md
 central-query-api*
