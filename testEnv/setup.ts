@@ -15,6 +15,9 @@ export default async function globalSetup() {
     process.env.MONGO_URI = `mongodb://${dbConfig.IP}:${dbConfig.Port}`
   }
 
+  // Set the database name for tests
+  process.env.MONGO_DB_NAME = dbConfig.Database
+
   // The following is to make sure the database is clean before an test starts
   const connection = await MongoDB.MongoClient.connect(
     `${process.env.MONGO_URI}`,
