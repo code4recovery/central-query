@@ -19,6 +19,10 @@ const { version } = JSON.parse(
 dotenv.config()
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080
 
+process.on("unhandledRejection", (reason) => {
+  Logger.error(`Unhandled rejection: ${reason instanceof Error ? reason.stack : reason}`)
+})
+
 try {
   app.listen(port, () => {
     Logger.info(

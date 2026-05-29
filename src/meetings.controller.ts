@@ -8,15 +8,27 @@ import { parsedQueryParams } from "./utils/queryParser.js"
 import { MeetingsOptions } from "./endpoint-options.types.js"
 import * as meetingsService from "./meetings.service.js"
 
+const parseIntOrDefault = (
+  raw: unknown,
+  fallback: number,
+  min: number,
+  max: number,
+): number => {
+  const s = Array.isArray(raw) ? raw[0] : raw // Duplicate query paramter comes as array, take first value
+  const n = typeof s === "string" ? Number.parseInt(s, 10) : NaN
+  if (!Number.isInteger(n) || n < min || n > max) return fallback
+  return n
+}
+
 const validateTemporalParams = (
   queryParams: Partial<MeetingsOptions>,
-  rawLimit?: string,
+  rawLimit?: string | string[],
 ) => {
   if (queryParams.scheduled === false) {
     return {
       validatedStart: undefined,
       validatedHours: undefined,
-      limit: rawLimit ? parseInt(rawLimit) : 1000,
+      limit: parseIntOrDefault(rawLimit, 1000, 1, 1000),
     }
   }
 
@@ -32,16 +44,19 @@ const validateTemporalParams = (
 
   const validatedHours =
     typeof queryParams.hours === "number" && !isNaN(queryParams.hours)
-      ? queryParams.hours
+      ? parseIntOrDefault(queryParams.hours, 24, 1, 168)
       : (onlyStartDefined || noneDefined) && validatedStart
       ? 1
       : undefined
 
-  const limit = rawLimit
-    ? parseInt(rawLimit)
-    : [validatedStart, validatedHours].every((param) => param === undefined)
-    ? 300
-    : 1000
+  const limit = parseIntOrDefault(
+    rawLimit,
+    [validatedStart, validatedHours].every((param) => param === undefined)
+      ? 300
+      : 1000,
+    1,
+    1000,
+  )
 
   return { validatedStart, validatedHours, limit }
 }
@@ -81,7 +96,7 @@ export const meetings = async (
 
   const { validatedStart, validatedHours, limit } = validateTemporalParams(
     queryParams,
-    req.query.limit as string | undefined,
+    req.query.limit as string | string[] | undefined,
   )
 
   if (validatedStart) {
