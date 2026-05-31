@@ -1,0 +1,378 @@
+[{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b639"
+  },
+  "code": "LS",
+  "desc": "Living Sober"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b630"
+  },
+  "code": "DD",
+  "desc": "Dual Diagnosis"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b627"
+  },
+  "code": "BA",
+  "desc": "Babysitting Available"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b622"
+  },
+  "code": "A",
+  "desc": "Secular"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b628"
+  },
+  "code": "BE",
+  "desc": "Newcomer"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b629"
+  },
+  "code": "BI",
+  "desc": "Bisexual"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b638"
+  },
+  "code": "LIT",
+  "desc": "Literature"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b637"
+  },
+  "code": "LGBTQ",
+  "desc": "LGBTQIAA+"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b63c"
+  },
+  "code": "N",
+  "desc": "Native American"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b64e"
+  },
+  "code": "X",
+  "desc": "Wheelchair Access"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b62e"
+  },
+  "code": "D",
+  "desc": "Discussion"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b635"
+  },
+  "code": "H",
+  "desc": "Birthday"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b634"
+  },
+  "code": "GR",
+  "desc": "Grapevine"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b646"
+  },
+  "code": "SM",
+  "desc": "Smoking Permitted"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b64f"
+  },
+  "code": "XB",
+  "desc": "Wheelchair-Accessible Bathroom"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b648"
+  },
+  "code": "SPD",
+  "desc": "Speaker/Discussion"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b623"
+  },
+  "code": "ABSI",
+  "desc": "As Bill Sees It"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b61e"
+  },
+  "code": "AL-AN",
+  "desc": "Concurrent with Al-Anon"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b61c"
+  },
+  "code": "11",
+  "desc": "11th Step Meditation"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b620"
+  },
+  "code": "D-HOH",
+  "desc": "Deaf / Hard of Hearing"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b632"
+  },
+  "code": "FF",
+  "desc": "Fragrance Free"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b649"
+  },
+  "code": "ST",
+  "desc": "Step Study"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b647"
+  },
+  "code": "SP",
+  "desc": "Speaker"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b64c"
+  },
+  "code": "TR",
+  "desc": "Tradition Study"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b645"
+  },
+  "code": "SEN",
+  "desc": "Seniors"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b62d"
+  },
+  "code": "CF",
+  "desc": "Child-Friendly"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b625"
+  },
+  "code": "ASL",
+  "desc": "American Sign Language"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b61f"
+  },
+  "code": "BV-I",
+  "desc": "Blind / Visually Impaired"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b643"
+  },
+  "code": "QSL",
+  "desc": "Quebec Sign Language"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b63d"
+  },
+  "code": "NDG",
+  "desc": "Indigenous"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b642"
+  },
+  "code": "POC",
+  "desc": "People of Color"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b621"
+  },
+  "code": "LO-I",
+  "desc": "Loners / Isolationists"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b62a"
+  },
+  "code": "BRK",
+  "desc": "Breakfast"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b62b"
+  },
+  "code": "C",
+  "desc": "Closed"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b62c"
+  },
+  "code": "CAN",
+  "desc": "Candlelight"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b63e"
+  },
+  "code": "O",
+  "desc": "Open"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b64d"
+  },
+  "code": "W",
+  "desc": "Women"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b62f"
+  },
+  "code": "DB",
+  "desc": "Digital Basket"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b63b"
+  },
+  "code": "MED",
+  "desc": "Meditation"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b63f"
+  },
+  "code": "OUT",
+  "desc": "Outdoor"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b64a"
+  },
+  "code": "T",
+  "desc": "Transgender"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b63a"
+  },
+  "code": "M",
+  "desc": "Men"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b61d"
+  },
+  "code": "12x12",
+  "desc": "12 Steps & 12 Traditions"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b640"
+  },
+  "code": "P",
+  "desc": "Professionals"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b641"
+  },
+  "code": "POA",
+  "desc": "Proof of Attendance"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b633"
+  },
+  "code": "G",
+  "desc": "Gay"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b644"
+  },
+  "code": "RSL",
+  "desc": "Russian Sign Language"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b64b"
+  },
+  "code": "TC",
+  "desc": "Location Temporarily Closed"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b624"
+  },
+  "code": "AL",
+  "desc": "Concurrent with Alateen"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b636"
+  },
+  "code": "L",
+  "desc": "Lesbian"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b631"
+  },
+  "code": "DR",
+  "desc": "Daily Reflections"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b626"
+  },
+  "code": "B",
+  "desc": "Big Book"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b650"
+  },
+  "code": "XT",
+  "desc": "Cross Talk Permitted"
+},
+{
+  "_id": {
+    "$oid": "65a5f3a0509e61b24732b651"
+  },
+  "code": "Y",
+  "desc": "Young People"
+}]

@@ -1,635 +1,3865 @@
-[
-  {
-    "_id": {
-      "$oid": "648e5056b291ed6c5135eff9"
-    },
-    "name": "Global Men's Meditation",
-    "recordID": "36",
-    "email": "globalmensmeditation@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:31:18.813Z"
-    },
-    "updatedAt": {
-      "$date": "2024-01-24T18:46:43.050Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e5057b291ed6c5135effa"
-      }
-    ],
-    "notes": "This a meditation meeting which has a different form of meditation every day of the week. \nIt meets from 8:30am to 9:30am PST, 11:30am EST\n\nPublic Email Contact: kkcbmeetings@gmail.com"
+[{
+  "_id": {
+    "$oid": "648e5056b291ed6c5135eff9"
   },
-  {
-    "_id": {
-      "$oid": "648e5060b291ed6c5135f006"
-    },
-    "name": "Vaqueritos Virtual",
-    "recordID": "162",
-    "email": "vaqueritos.aa@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:31:28.079Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-18T00:31:28.079Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e5060b291ed6c5135f007"
-      },
-      {
-        "$oid": "648e5060b291ed6c5135f008"
-      }
-    ]
+  "name": "Global Men's Meditation",
+  "recordID": "36",
+  "email": "globalmensmeditation@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
   },
-  {
-    "_id": {
-      "$oid": "648e5072b291ed6c5135f017"
-    },
-    "name": "Warner Springs AA Discussion",
-    "recordID": "182",
-    "email": "janiem1983@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:31:46.478Z"
-    },
-    "updatedAt": {
-      "$date": "2024-12-05T02:19:27.754Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e5072b291ed6c5135f018"
-      },
-      {
-        "$oid": "648e5073b291ed6c5135f019"
-      }
-    ],
-    "notes": "Wednesday AA Open Discussion Meeting 6PM PST \n\n\nAA members to share experience strength and home. Leader picks a topic related to alcohol then shares and opens the meeting for discussion about the topic.  Every Wednesday at 6pm, we are a small back County group. \n\nVerification is required.  \nWe are trying to keep our meeting safe.  \nPlease email early at least 15 to 20 minutes before the meeting starts.  We ask for your patience.\n\nPlease make sure you mention in your email which meeting Passcode you are requesting as well as sending us your phone number for a return call for verification.  We will call back before the next meeting and give you the password verbally. \n\nPlease make sure your first name appears in your video when you log on and contact the secretary/host via chat when you arrive to let him know you received password via phone from a member.\nSorry for this lengthy process.\nStay safe one day at a time.  \n\nAnd please write/email Serenityinpines@gmail.com"
+  "createdAt": {
+    "$date": "2023-06-18T00:31:18.813Z"
   },
-  {
-    "_id": {
-      "$oid": "648e5074b291ed6c5135f01b"
-    },
-    "name": "AA A New Beginning",
-    "recordID": "189",
-    "email": "",
-    "website": "http://xat.com/AAnonymous_Room?p-0&ss-0;",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:31:48.187Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-18T00:31:48.187Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e5074b291ed6c5135f01c"
-      },
-      {
-        "$oid": "648e5074b291ed6c5135f01d"
-      }
-    ]
+  "updatedAt": {
+    "$date": "2024-01-24T18:46:43.050Z"
   },
-  {
-    "_id": {
-      "$oid": "648e507bb291ed6c5135f028"
-    },
-    "name": "1DAAT Living Sober Tuesday’s (1DAAT)",
-    "recordID": "226",
-    "email": "",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:31:55.606Z"
-    },
-    "updatedAt": {
-      "$date": "2024-10-23T00:24:08.411Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e69a5b291ed6c51360d8d"
-      },
-      {
-        "$oid": "64bc1e73b804f284134a2691"
-      },
-      {
-        "$oid": "65f8caf76962eb5c51c7a1ab"
-      },
-      {
-        "$oid": "65f8cb1b6962eb5c51c7a1ad"
-      }
-    ],
-    "website": "https://1daatweb.wixsite.com/1daat",
-    "notes": "We welcome beginners, long-timers, and everyone in-between. The meeting features a lead and group participation on selected passages from the book Living Sober.\n\nClosed meeting. Attendance at closed meetings is limited to persons who have a desire to stop drinking. If you think you have a problem with alcohol, you are welcome to attend this meeting.\n\nWe abide by the 12 Traditions and ask attendees to not take screenshots or recording of any kind. We do not sign court slips or offer proof of attendance. \n\n\n"
+  "userIDs": [
+    {
+      "$oid": "648e5057b291ed6c5135effa"
+    }
+  ],
+  "notes": "This a meditation meeting which has a different form of meditation every day of the week. \nIt meets from 8:30am to 9:30am PST, 11:30am EST\n\nPublic Email Contact: kkcbmeetings@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "648e5145b291ed6c5135f120"
   },
-  {
-    "_id": {
-      "$oid": "648e507db291ed6c5135f02b"
-    },
-    "name": "Sunday's Best",
-    "recordID": "246",
-    "email": "sundaysbestbuffalony@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:31:56.944Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-18T00:31:56.944Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e507db291ed6c5135f02c"
-      }
-    ]
+  "name": "How It Works Las Vegas Thursday Book Study Open",
+  "recordID": "843",
+  "email": "hiwaalv@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
   },
-  {
-    "_id": {
-      "$oid": "648e507eb291ed6c5135f02e"
-    },
-    "name": "Life After 10 Tuesdays",
-    "recordID": "263",
-    "email": "LA10_Tues_INFO@protonmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:31:58.560Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-18T00:31:58.560Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e507eb291ed6c5135f02f"
-      },
-      {
-        "$oid": "648e507fb291ed6c5135f030"
-      }
-    ]
+  "createdAt": {
+    "$date": "2023-06-18T00:35:17.225Z"
   },
-  {
-    "_id": {
-      "$oid": "648e5081b291ed6c5135f032"
-    },
-    "name": "Young Peoples' Participation",
-    "recordID": "287",
-    "email": "young.peoples.participation@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:01.013Z"
-    },
-    "updatedAt": {
-      "$date": "2024-01-03T03:29:12.411Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e5081b291ed6c5135f033"
-      },
-      {
-        "$oid": "648e5081b291ed6c5135f034"
-      }
-    ],
-    "notes": "A weekly discussion meeting over Zoom. Open to all; everyone is welcome to attend! Meets at 7:45pm PST. \n\nEmail us for the password and you will be responded to promptly."
+  "updatedAt": {
+    "$date": "2023-10-06T03:17:31.327Z"
   },
-  {
-    "_id": {
-      "$oid": "648e5082b291ed6c5135f036"
+  "userIDs": [
+    {
+      "$oid": "648e5138b291ed6c5135f114"
     },
-    "name": "Serenity Sundays",
-    "recordID": "297",
-    "email": "sereneandwell@outlook.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:02.703Z"
-    },
-    "updatedAt": {
-      "$date": "2023-11-26T18:54:08.707Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e5082b291ed6c5135f037"
-      },
-      {
-        "$oid": "648e5083b291ed6c5135f038"
-      }
-    ],
-    "notes": "Serenity Sunday’s is a women’s topic discussion group to share our experience, strength, and hope surrounding various topics. We use the Zoom app to run this meeting. \n\nOne tap mobile - click on PHONE above\nFind your local number: https://us02web.zoom.us/u/kdoQjGuWH4"
+    {
+      "$oid": "648e5139b291ed6c5135f115"
+    }
+  ],
+  "website": "https://hiwaalv.wordpress.com/2020/05/17/the-journey-begins/"
+},
+{
+  "_id": {
+    "$oid": "648e524bb291ed6c5135f254"
   },
-  {
-    "_id": {
-      "$oid": "648e5084b291ed6c5135f03a"
-    },
-    "name": "30 at night",
-    "recordID": "351",
-    "email": "",
-    "website": "",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:04.882Z"
-    },
-    "updatedAt": {
-      "$date": "2023-11-21T00:13:08.827Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e5085b291ed6c5135f03b"
-      }
-    ],
-    "notes": "A daily Telephone meeting till Covid -19 is done\n\nFrom: 6:45pm - 6:50pm ET each night before the meeting to welcome new folks."
+  "name": "An all night place",
+  "recordID": "2175",
+  "email": "anallnightplace@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
   },
-  {
-    "_id": {
-      "$oid": "648e508ab291ed6c5135f043"
-    },
-    "name": "Saturday Back to Basics Bigbook Study",
-    "recordID": "393",
-    "email": "threeriversbigbook@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:10.609Z"
-    },
-    "updatedAt": {
-      "$date": "2024-09-21T14:58:48.879Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e508ab291ed6c5135f044"
-      },
-      {
-        "$oid": "648e508bb291ed6c5135f045"
-      }
-    ],
-    "notes": "In Depth Big Book Study Group / Meeting\n\nOur Group follows the Traditions and define our objectives with the Preamble\n\nAA PREAMBLE\nAlcoholics Anonymous is a fellowship of people who share their experience, strength and hope with each other, that they may solve their common problem and help others to recover from alcoholism. The only requirement for membership is a desire to stop drinking. There are no dues or fees for AA membership; we are self-supporting through our own contributions. AA is not allied with any sect, denomination, politics, organization or institution; does not wish to engage in any controversy; neither endorses nor opposes any causes. Our primary purpose is to stay sober and help other alcoholics to achieve sobriety."
+  "createdAt": {
+    "$date": "2023-06-18T00:39:39.709Z"
   },
-  {
-    "_id": {
-      "$oid": "648e508cb291ed6c5135f047"
-    },
-    "name": "Pigboys",
-    "recordID": "395",
-    "email": "threeriversbigbook@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:12.814Z"
-    },
-    "updatedAt": {
-      "$date": "2024-12-05T15:19:54.971Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e508ab291ed6c5135f044"
-      }
-    ],
-    "notes": "Men's Closed AA Meeting / Focusing on the  Solution\n\nEmail: threeriversbigbook@gmail.com \n"
+  "updatedAt": {
+    "$date": "2023-06-18T00:39:39.709Z"
   },
-  {
-    "_id": {
-      "$oid": "648e508eb291ed6c5135f049"
-    },
-    "name": "Just for Today",
-    "recordID": "433",
-    "email": "24hoursaday@protonmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:14.837Z"
-    },
-    "updatedAt": {
-      "$date": "2024-11-22T19:34:15.638Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e508fb291ed6c5135f04a"
-      }
-    ],
-    "notes": "Meeting Description: Just For Today.  A meeting based on AA Thought for the day, AA Meditation for the day to close with AA prayer for the day.\n"
+  "userIDs": [
+    {
+      "$oid": "648e524bb291ed6c5135f255"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e5282b291ed6c5135f2ab"
   },
-  {
-    "_id": {
-      "$oid": "648e5099b291ed6c5135f057"
-    },
-    "name": "Vegas High Noon Gamble",
-    "recordID": "460",
-    "email": "zoomintoaa@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:25.785Z"
-    },
-    "updatedAt": {
-      "$date": "2023-11-07T20:16:57.038Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e509ab291ed6c5135f058"
-      },
-      {
-        "$oid": "648e509ab291ed6c5135f059"
-      }
-    ],
-    "notes": "Step in to Las Vegas and pick a number from some of our favorite Recovery Sayings books or draw a card from The Big Book Deck for your turn at collecting a winning hand of Experience, Strength and Hope every afternoon!\n"
+  "name": "Queer and Anonymous",
+  "recordID": "2542",
+  "email": "info.queerandanon@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
   },
-  {
-    "_id": {
-      "$oid": "648e50a1b291ed6c5135f061"
-    },
-    "name": "Vegas Daily Reflections",
-    "recordID": "461",
-    "email": "zoomintoaa@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:33.411Z"
-    },
-    "updatedAt": {
-      "$date": "2024-01-02T17:52:22.598Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50a1b291ed6c5135f062"
-      }
-    ],
-    "notes": "This is a Monday through Saturday meeting based in Las Vegas, NV. Topic is the Daily Reflection. Join our lively discussion, with members welcomed from all coffee pots in the world!"
+  "createdAt": {
+    "$date": "2023-06-18T00:40:34.807Z"
   },
-  {
-    "_id": {
-      "$oid": "648e50a9b291ed6c5135f06c"
-    },
-    "name": "Vegas Drama Queens",
-    "recordID": "464",
-    "email": "zoomintoaa@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:40.973Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-18T00:32:40.973Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50a1b291ed6c5135f062"
-      }
-    ]
+  "updatedAt": {
+    "$date": "2024-11-24T16:14:31.050Z"
   },
-  {
-    "_id": {
-      "$oid": "648e50b2b291ed6c5135f074"
+  "userIDs": [
+    {
+      "$oid": "648e5283b291ed6c5135f2ac"
     },
-    "name": "Vegas PANDEMIC! at the disco",
-    "recordID": "490",
-    "email": "zoomintoaa@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:50.221Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-18T00:32:50.221Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50a1b291ed6c5135f062"
-      },
-      {
-        "$oid": "648e50b2b291ed6c5135f075"
-      }
-    ]
+    {
+      "$oid": "648e5283b291ed6c5135f2ad"
+    }
+  ],
+  "notes": "Meditation and Participation - 15 minute meditation followed by open sharing. Open Meeting, LGBTQIA focused. \n"
+},
+{
+  "_id": {
+    "$oid": "648e52a7b291ed6c5135f2df"
   },
-  {
-    "_id": {
-      "$oid": "648e50b9b291ed6c5135f07d"
-    },
-    "name": "Solution 62",
-    "recordID": "494",
-    "email": "aasolution62@gmail.com",
-    "website": "http://solution62.org/",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:32:57.827Z"
-    },
-    "updatedAt": {
-      "$date": "2025-02-18T15:54:30.208Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50bab291ed6c5135f07e"
-      },
-      {
-        "$oid": "648e50bab291ed6c5135f07f"
-      },
-      {
-        "$oid": "648e50c7b291ed6c5135f088"
-      }
-    ],
-    "notes": "We are not saints, but we have a solution. Various AA meetings everyday. We have 1 hour meetings with 30 minutes of fellowship before and after meetings. The only requirement for membership is a desire to stop drinking.\n\n8:30 am-10 am est and 8:30 pm-10 pm est Monday-Sunday\nMen's meeting every Wednesday 6:30 PM-8:00 PM est.\nWomen’s meeting every Sunday 6:30 PM- 8:00 PM est\nOn-Line Meeting link above and on website"
+  "name": "Conscious Contact Online",
+  "recordID": "2703",
+  "email": "wsm.twelve@gmail.com",
+  "website": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
   },
-  {
-    "_id": {
-      "$oid": "648e50c6b291ed6c5135f087"
-    },
-    "name": "Solution 62",
-    "recordID": "495",
-    "email": "aasolution62@gmail.com",
-    "website": "http://solution62.org/",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:33:10.867Z"
-    },
-    "updatedAt": {
-      "$date": "2025-02-18T13:07:02.580Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50c7b291ed6c5135f088"
-      },
-      {
-        "$oid": "648e50bab291ed6c5135f07f"
-      }
-    ],
-    "notes": "We are not saints, but we have a solution. Various AA meetings everyday. We have 1 hour meetings with 30 minutes of fellowship before and after meetings. The only requirement for membership is a desire to stop drinking.\n\n8:30 am-10 am est and 8:30 pm-10 pm est Monday-Sunday\nMen's meeting every Wednesday 6:30 PM-8:00 PM est.\nWomen’s meeting every Sunday 6:30 PM- 8:00 PM est\nOn-Line Meeting link above and on website"
+  "createdAt": {
+    "$date": "2023-06-18T00:41:11.277Z"
   },
-  {
-    "_id": {
-      "$oid": "648e50d3b291ed6c5135f090"
-    },
-    "name": "Wednesday Night Candlelight",
-    "recordID": "500",
-    "email": "candlelightaajp@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:33:23.873Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-18T00:33:23.873Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50d4b291ed6c5135f091"
-      }
-    ]
+  "updatedAt": {
+    "$date": "2024-03-11T17:53:06.861Z"
   },
-  {
-    "_id": {
-      "$oid": "648e50d6b291ed6c5135f093"
+  "userIDs": [
+    {
+      "$oid": "648e52a7b291ed6c5135f2e0"
     },
-    "name": "Vegas Women In The Big Book",
-    "recordID": "501",
-    "email": "zoomintoaa@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:33:26.034Z"
-    },
-    "updatedAt": {
-      "$date": "2024-06-28T00:04:52.910Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50a1b291ed6c5135f062"
-      },
-      {
-        "$oid": "648e50d6b291ed6c5135f094"
-      }
-    ],
-    "notes": "ZOOM in to our Monday through Friday WOMEN'S Big Book study 5PM PST. \n\nWaiting Room enabled, voice verified female attendance.\n \n"
+    {
+      "$oid": "648e52a7b291ed6c5135f2e1"
+    }
+  ],
+  "notes": "Conscious Contact Online meets on Sundays at 8PM EST. The first 40 minutes are open discussion and the last 20 minutes are spent in guided meditation. No special knowledge of meditation is needed and we are theologically agnostic. We deeply embrace the concepts of a loving Higher Power, a respect for each persons journey and believe that the Steps are not something we do so much as something that we become. Our meetings are informal and all are welcome to attend!\n\nWe are the online Sister group of the in-person Conscious Contact group which meets in York, PA on Wednesdays at 8PM."
+},
+{
+  "_id": {
+    "$oid": "648e52aeb291ed6c5135f2ea"
   },
-  {
-    "_id": {
-      "$oid": "648e50deb291ed6c5135f09a"
-    },
-    "name": "Vegas Quarantined",
-    "recordID": "504",
-    "email": "contact@zoomintoaa.org",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:33:34.222Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-18T00:33:34.222Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50a1b291ed6c5135f062"
-      },
-      {
-        "$oid": "648e50d6b291ed6c5135f094"
-      }
-    ]
+  "name": "24hr International Marathon Meeting",
+  "recordID": "2729",
+  "email": "the24hourmeeting@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
   },
-  {
-    "_id": {
-      "$oid": "648e50e5b291ed6c5135f0a2"
-    },
-    "name": "NZ Daily Online into the World of the Spirit",
-    "recordID": "506",
-    "email": "aanz.wosdaily@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:33:41.738Z"
-    },
-    "updatedAt": {
-      "$date": "2024-11-24T16:04:10.384Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50e5b291ed6c5135f0a3"
-      },
-      {
-        "$oid": "643f3ea82f62ba14cf32c3a6"
-      }
-    ],
-    "notes": "A daily 30 minute zoom meeting based in New Zealand that focuses on reading and discussing Steps 10 & 11 from AA Big Book.  \nOpen to all; Everyone welcome to attend; Meets at 6:30 AM NZT 7 days a week. We love overseas visitors.\n"
+  "createdAt": {
+    "$date": "2023-06-18T00:41:18.916Z"
   },
-  {
-    "_id": {
-      "$oid": "648e50edb291ed6c5135f0ac"
-    },
-    "name": "AA CUC del Valle",
-    "recordID": "534",
-    "email": "chayanne.11.cpr@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
-    },
-    "createdAt": {
-      "$date": "2023-06-18T00:33:49.663Z"
-    },
-    "updatedAt": {
-      "$date": "2023-06-27T17:38:39.470Z"
-    },
-    "userIDs": [
-      {
-        "$oid": "648e50edb291ed6c5135f0ad"
-      },
-      {
-        "$oid": "648e50eeb291ed6c5135f0ae"
-      }
-    ],
-    "notes": "Grupo CUC del Valle es un grupo tradicional cuyo único propósito es mantenernos sobrios y ayudar a otros alcohólicos a alcanzar el estado de sobriedad, tal como lo indica el enunciado de AA.\nLa sesión es abierta con 15 min de tribuna por participante.\n\nSesionamos todos los días.\nLos jueves tenemos junta de estudio\n",
-    "website": "https://bluejeans.com/804826334"
+  "updatedAt": {
+    "$date": "2024-01-11T14:41:02.085Z"
   },
-  {
-    "_id": {
-      "$oid": "648e50f5b291ed6c5135f0b6"
+  "userIDs": [
+    {
+      "$oid": "64d2f1303ec2cd8c6302e73a"
     },
-    "name": "Better with Age",
-    "recordID": "544",
-    "email": "2020betterwithage@gmail.com",
-    "accountID": {
-      "$oid": "6436f5a3f03fdecef8459055"
+    {
+      "$oid": "64d3bbcf015e6c509777befe"
+    }
+  ],
+  "notes": "A popular safe meeting for Newcomers and Old Timers alike.\nWe have become a family here and are grounded in the Steps & Traditions of Alcoholics Anonymous.\nIf you want to get sober, you can stay with us 24 hours a day if needed.\nIf you cannot sleep, stay with us, if you’re feeling tempted, talk with us If you just want to listen, listen.\nWe share our Experience Strength and Hope with you To help you beat this Cunning, Baffling & Powerful disease.\n"
+},
+{
+  "_id": {
+    "$oid": "648e531ab291ed6c5135f379"
+  },
+  "name": "4th Dimensioners 9 PM Eastern Online AA Meeting",
+  "recordID": "3270",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:43:05.985Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-02T10:51:46.703Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e531ab291ed6c5135f37a"
+    }
+  ],
+  "notes": "Log In Early and Stay Late for the Meeting Before and After the Meeting!\n\nMeeting Verification Provided for Attendees of Every Meeting!\n\nMeeting Format: Nightly Discussion of the Topic of the Chairperson’s\nChoosing and a Speaker Every Saturday!\n\nMust Log Into a Free Zoom.us Account to Access\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e532bb291ed6c5135f390"
+  },
+  "name": "Woodland Online Group Daily Reflections Tues. & Living Sober Thurs.",
+  "recordID": "3299",
+  "email": "Woodlandonlinegroup@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:43:23.780Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-30T18:43:59.768Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e532cb291ed6c5135f391"
+    }
+  ],
+  "notes": "Meetings Tuesdays and Thursdays at 9:00 AM PST -  open early for fellowship.\nEvery Tuesday - Daily Reflections/discussion\nEvery Thursday - Living Sober book study/discussion\n\n\nPublic Email : Woodlandonlinegroup@gmail.com\n\n\n",
+  "website": "http://Woodlandonlinegroup.org"
+},
+{
+  "_id": {
+    "$oid": "648e5350b291ed6c5135f3c0"
+  },
+  "name": "Recovery in da House",
+  "recordID": "3370",
+  "email": "recoveryindahouse@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:44:00.317Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-03T04:37:35.411Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5350b291ed6c5135f3c1"
+    }
+  ],
+  "notes": "Zoom meeting, speaker/discussion group with a reading from the Big Book or the 12X12.  Meets at 9pm Hawaii Standard Time, 7 days a week for one hour.\n"
+},
+{
+  "_id": {
+    "$oid": "648e5388b291ed6c5135f40e"
+  },
+  "name": "Wake Up World Wide",
+  "recordID": "3612",
+  "email": "pdxwakeup@yahoo.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:44:56.190Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-26T15:27:54.218Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5388b291ed6c5135f40f"
     },
-    "createdAt": {
-      "$date": "2023-06-18T00:33:57.224Z"
+    {
+      "$oid": "69a986401799127ce7f51b9f"
+    }
+  ],
+  "notes": "Our format includes a number of AA daily readings as well as a few pages in the Big Book. We typically allow for 30 mins of group sharing.\n"
+},
+{
+  "_id": {
+    "$oid": "648e53a1b291ed6c5135f430"
+  },
+  "name": "On Awakening",
+  "recordID": "3808",
+  "email": "step11pdx@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:45:21.050Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-24T13:18:01.139Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e53a1b291ed6c5135f431"
+    }
+  ],
+  "notes": "11th step format AA meeting with a 15 min meditation, daily reflections and sharing.\nPublic Email : step11pdx@gmail.com\n"
+},
+{
+  "_id": {
+    "$oid": "648e5539b291ed6c5135f632"
+  },
+  "name": "aaonlineen.fr",
+  "recordID": "5569",
+  "email": "webmaster@aaonlineen.fr",
+  "website": "https://www.aaonlineen.fr",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:52:09.034Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T00:52:09.034Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5539b291ed6c5135f633"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e5543b291ed6c5135f645"
+  },
+  "name": "VEGAS Deliver us From Ego",
+  "recordID": "5663",
+  "email": "zoomintoaa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:52:19.347Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-16T04:31:36.984Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e50a1b291ed6c5135f062"
     },
-    "updatedAt": {
-      "$date": "2024-09-26T17:22:33.831Z"
+    {
+      "$oid": "648e509ab291ed6c5135f058"
+    }
+  ],
+  "notes": "Zoom on in to VEGAS for our nightly 10PM (pacific) meeting Deliver Us From Ego.  \nLively topic discussions with a different flair every night from our revolving selection of hosts.  \n"
+},
+{
+  "_id": {
+    "$oid": "648e5554b291ed6c5135f660"
+  },
+  "name": "Rise and Shine",
+  "recordID": "5804",
+  "email": "pathfinders.recovery@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:52:36.599Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-30T23:59:44.320Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5554b291ed6c5135f661"
     },
-    "userIDs": [
-      {
-        "$oid": "648e50f5b291ed6c5135f0b7"
-      },
-      {
-        "$oid": "648e50f5b291ed6c5135f0b8"
-      }
-    ],
-    "notes": "This is an open AA meeting oriented toward Older Adult (55+) issues, but all ages are welcomed.\nFormat: Open discussion based on the day’s reading from Daily Reflections.\n\nThis is a recurring meeting on- \nMondays 10:30 - 11:30 AM EST\nThursdays 2:00 - 3:00 PM EST\nSaturdays 10:30 - 11:30AM EST \n\nQuestions?  Please contact 2020betterwithage@gmail.com"
+    {
+      "$oid": "648e5555b291ed6c5135f662"
+    }
+  ],
+  "notes": "Daily Reflections Meeting \nNo password required - waiting room enabled."
+},
+{
+  "_id": {
+    "$oid": "648e55adb291ed6c5135f6d2"
+  },
+  "name": "A Vision for You Pacific",
+  "recordID": "6167",
+  "email": "psims4u@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:54:05.411Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-22T02:27:53.232Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e53fab291ed6c5135f4aa"
+    },
+    {
+      "$oid": "648e55adb291ed6c5135f6d3"
+    }
+  ],
+  "notes": "A Vision for You is a meeting of Alcoholics Anonymous that meets 5pm Pacific Time 5 nights a week Monday through Friday. Our primary purpose is to carry the message of Alcoholics Anonymous and practice the principles of the 12 steps in all our affairs. Our group is guided by the 12 traditions of AA as outlined in the 12 steps and 12 traditions. A Vision for You has no affiliation with any outside enterprises or denominational affiliations nor opposes nor endorses any other cause our primary purpose is to stay sober and help other alcoholics achieve sobriety according to the same principles of the founders of AA.\n\nMeeting has a waiting room\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e56a2b291ed6c5135f7f5"
+  },
+  "name": "Serenity Now Group",
+  "recordID": "6980",
+  "email": "serenitynowgroupaa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:58:10.117Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-26T00:11:40.667Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "6818eeefe44703f61988f674"
+    },
+    {
+      "$oid": "6937096165a3994ae8a7de0d"
+    }
+  ],
+  "notes": "The Serenity Now group of Alcoholics Anonymous is an online only. All are welcome. We ask that sharing your experience, strength and hope be limited only to those who seek to achieve or maintain sobriety. \n\nThis group is LGBTQ+ friendly and no alcoholic will be turned away. We ask that you attend this zoom meeting as you would present yourself at an in person meeting. This meeting is to be a safe place for everyone. We meet seven days a week at 7pm EST. \n\nA valid Zoom account is required to access this meeting."
+},
+{
+  "_id": {
+    "$oid": "648e5701b291ed6c5135f86f"
+  },
+  "name": "WGAT Virtual - Discussion",
+  "recordID": "7777",
+  "email": "info@wgatvirtual.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T00:59:45.483Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-19T21:42:29.374Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "66b007386152b03dbd858a8c"
+    }
+  ],
+  "notes": "This one-hour meeting is an open discussion meeting of Alcoholics Anonymous where the topic is always \"What's Good About Today.\"\n\nWhat's Good About Today Virtual (WGAT Virtual) meets morning and evening, seven days a week, and is hosted by a variety of group members from all over the United States & Canada.\n\nWe provide time for sharing any burning desires and support for newcomers. Come join our family of unconditional love. We hope to see you soon!\n\nVisit our website for additional information.",
+  "website": "http://www.wgatvirtual.com"
+},
+{
+  "_id": {
+    "$oid": "648e5746b291ed6c5135f8d6"
+  },
+  "name": "AA Alternativo",
+  "recordID": "8193",
+  "email": "gordy_1978@hotmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:00:54.883Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-07T03:10:52.251Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5747b291ed6c5135f8d7"
+    },
+    {
+      "$oid": "648e5747b291ed6c5135f8d8"
+    }
+  ],
+  "notes": "Una reunion de aplicacion zoom diaria que se centra en leer y discutir temas de los Libros de ALcoholicos Anonimos. Reunion abiertas a todos que buscan informacion y quienes buscab ayuda referente a su problema con el alcohol... Se reune todos los dias a las 8:30 pm horario de California.."
+},
+{
+  "_id": {
+    "$oid": "648e587bb291ed6c5135fab8"
+  },
+  "name": "One Day at a Time in CNY Woman's Meeting",
+  "recordID": "10761",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:06:03.588Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-19T15:39:07.933Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e587bb291ed6c5135fab9"
+    },
+    {
+      "$oid": "648e587cb291ed6c5135faba"
+    },
+    {
+      "$oid": "648e5cefb291ed6c513600e2"
+    }
+  ],
+  "notes": "Eastern Standard time Lunch Hour closed discussion meeting for woman.  \nLet us take a few minutes out of our day to have our vitamin AA and give each other life perspective while we share our experience strength and hope.  \nThis meeting is closed discussion with daily topics.\n"
+},
+{
+  "_id": {
+    "$oid": "648e59b7b291ed6c5135fc6a"
+  },
+  "name": "Shivering Denizens Daily Beginners",
+  "recordID": "12808",
+  "email": "shivdenaa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:11:19.672Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-31T03:33:13.229Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e59b2b291ed6c5135fc61"
+    },
+    {
+      "$oid": "648e59b2b291ed6c5135fc62"
+    },
+    {
+      "$oid": "687694e723c98e3721995292"
+    }
+  ],
+  "notes": "A daily Beginners meeting focusing on offering newcomers practical REAL help in getting through the tricky early days. \nEach day a guest speaker discusses topics taken from Living Sober. \n\nCount your days with the Denizens.\nEveryone gets a warm welcome.\n\nEvery afternoon at 4:30 PM GMT\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e5a47b291ed6c5135fd22"
+  },
+  "name": "7 & Sober",
+  "recordID": "13674",
+  "email": "7sober@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:13:43.654Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T01:13:43.654Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5a47b291ed6c5135fd23"
+    },
+    {
+      "$oid": "648e5a48b291ed6c5135fd24"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e5aafb291ed6c5135fdac"
+  },
+  "name": "Eye Openers Online",
+  "recordID": "14076",
+  "email": "eyeopenersonline@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:15:27.810Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-17T14:18:20.315Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5ab0b291ed6c5135fdae"
+    },
+    {
+      "$oid": "67c5dffd7e0274c16ffc0174"
+    }
+  ],
+  "notes": "Open AA meeting established March 2020 with daily meetings originating from New Orleans at 7:15 am CST. \nAttendance verification is provided upon request.\n\nDaily Meetings include:\nTuesday, Wednesday and Sunday are AA Literature meetings.\nMonday, Thursday, Friday and Saturday are speaker discussion meetings or moderator's choice, usually emphasizing the principles of the program or other AA tools.\n\nAll are Invited to attend, listeners are welcomed, and sharing is voluntary. \nWe welcome all who wish to join us as we carry the message of recovery to fellow alcoholics."
+},
+{
+  "_id": {
+    "$oid": "648e5b1cb291ed6c5135fe47"
+  },
+  "name": "Happy Hour Red Deer",
+  "recordID": "14796",
+  "email": "centraloffice@reddeeraa.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:17:16.812Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-02T22:23:27.825Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5b1db291ed6c5135fe48"
+    },
+    {
+      "$oid": "648e5b1db291ed6c5135fe49"
+    }
+  ],
+  "notes": "Step & Topic Group 5:15 MST"
+},
+{
+  "_id": {
+    "$oid": "648e5b43b291ed6c5135fe84"
+  },
+  "name": "Sunday Morning Reading Room",
+  "recordID": "15263",
+  "email": "sundaymorningreadingroom@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:17:55.789Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T12:51:54.724Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5b44b291ed6c5135fe85"
+    },
+    {
+      "$oid": "648e5b44b291ed6c5135fe86"
+    }
+  ],
+  "notes": "Sunday Morning Reading Room is a closed meeting of Alcoholics Anonymous. \nEach week we read and discuss a specific selection from AA approved literature. \nWe believe active participation and honest sharing will enhance our understanding of the program of Alcoholics Anonymous, and lead to personal growth.\n\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e5b57b291ed6c5135fea1"
+  },
+  "name": "Hero AA Zen Zone",
+  "recordID": "15342",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:18:15.408Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-26T00:40:10.333Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5b57b291ed6c5135fea2"
+    },
+    {
+      "$oid": "648e5b57b291ed6c5135fea3"
+    }
+  ],
+  "notes": "We close the night with \"On Retiring\" from page 86 of the beautiful Big Book and we get in the Zen zone with music and guided meditation! Great way to close the night :)"
+},
+{
+  "_id": {
+    "$oid": "648e5b94b291ed6c5135fefb"
+  },
+  "name": "On the Grid AA Meeting",
+  "recordID": "15979",
+  "email": "onthegridaameet@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:19:16.132Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-25T19:24:22.137Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5b94b291ed6c5135fefc"
+    },
+    {
+      "$oid": "648e5b94b291ed6c5135fefd"
+    },
+    {
+      "$oid": "658cc6f4d965d3a2b4be92d4"
+    }
+  ],
+  "notes": "We are a Home Group that meets every night at 9PM EST. Every evening follows a different format.\nSunday Step Study\nMonday Topic/ Speaker\nTuesday Daily Reading\nWednesday Beginners Meeting\nThursday Speaker Series"
+},
+{
+  "_id": {
+    "$oid": "648e5bcdb291ed6c5135ff47"
+  },
+  "name": "AA Opportunity Speaker Series",
+  "recordID": "16217",
+  "email": "AAOpportunitySpeakerSeries@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:20:13.173Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-29T23:13:53.356Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5bcdb291ed6c5135ff49"
+    },
+    {
+      "$oid": "648e5bcdb291ed6c5135ff48"
+    }
+  ],
+  "website": "http://www.aaopportunity.org",
+  "notes": " This one-hour meeting is very newcomer friendly, especially those needing attendance verification. Voluntary sharing only at this meeting, no one will be called upon to share. \nCameras are not required but must be on to be unmuted. If you would like your camera on at any time during the meeting, please turn it on during the pre-meeting before the speaker begins. No new videos will be allowed on once the meeting begins. \nEveryone is welcome to attend. Attendance verification given on request . Every meeting is a speaker meeting with recommended speakers from around the world. \nWe meet every Thursday, Friday, Saturday and Sunday at 5:30 pm ET, 4:30 pm CT, 3:30 pm MT, 2:30 pm pacific, 1:30 pm AST, and 11:30 am HST \nInternational times: 9:30 pm GMT, 10:30 pm BST, 11:30 pm CEST, 12:30 am EEST, 7:30 am AEST"
+},
+{
+  "_id": {
+    "$oid": "648e5befb291ed6c5135ff76"
+  },
+  "name": "Morning Meetings",
+  "recordID": "16327",
+  "email": "morningmeetings88@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:20:47.051Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-23T12:48:28.071Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5befb291ed6c5135ff77"
+    },
+    {
+      "$oid": "648e5befb291ed6c5135ff78"
+    }
+  ],
+  "notes": "Morning Meetings meets Monday through Friday from 830am - 930am EST over Zoom. \n\nOur meeting is a closed meeting of Alcoholics Anonymous. Attendance at closed meetings is limited to those who have a desire to stop drinking.\n\nOur meeting format changes daily:\n\nMonday “A Vision for You” - Topic Meeting with Speaker \nTuesday “Quarantine Promises” - Speaker Meeting\nWednesday “There is a Solution” - Big Book Meeting with Speaker \nThursday  “Quarantine Promises” - Speaker Meeting\nFriday “There is a Solution” - Step Meeting with Speaker\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e5cd6b291ed6c513600bc"
+  },
+  "name": "Nameless Bunch of Drunks International",
+  "recordID": "17957",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:24:38.167Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T01:24:38.167Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5cd6b291ed6c513600bd"
+    },
+    {
+      "$oid": "648e5cd6b291ed6c513600be"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e5ceeb291ed6c513600e0"
+  },
+  "name": "Back To Basic's Upstate NY",
+  "recordID": "18088",
+  "email": "newhartfordbacktobasics@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:25:02.660Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T01:25:02.660Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5ceeb291ed6c513600e1"
+    },
+    {
+      "$oid": "648e5cefb291ed6c513600e2"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e5d77b291ed6c51360193"
+  },
+  "name": "Get Sober Win Prizes",
+  "recordID": "18626",
+  "email": "getsoberwinprizes@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:27:19.456Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-22T01:29:31.458Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "64b53a3163ed2cb38d85b423"
+    },
+    {
+      "$oid": "64dd012178e64ad095bdda72"
+    }
+  ],
+  "notes": "In our meeting, we read AA literature except for the last Monday. Literature  can be AA  pamphlets, grapevines, living sober, etc.  The last Monday we celebrate sobriety milestones with a speaker meeting, and you can “take a chip” presented by a loved one . We celebrate 24 hrs, 30/60/90 days, 6/9 months every week. Our focus is on a comprehensive intro to AA and having fun! Come get a chip and a PRIZE! (will be mailed),  Closed caption.\n\n",
+  "website": "https://getsoberwinprizes.com/"
+},
+{
+  "_id": {
+    "$oid": "648e5d97b291ed6c513601c6"
+  },
+  "name": "Dream Team Equipo de Ensueño",
+  "recordID": "18974",
+  "email": "DreamTeamAAnonimos@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:27:51.149Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T01:27:51.149Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5d97b291ed6c513601c7"
+    },
+    {
+      "$oid": "648e5d97b291ed6c513601c8"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e5df4b291ed6c51360234"
+  },
+  "name": "Renfrew International 12 and 12",
+  "recordID": "19291",
+  "email": "renfrewinternational12and12@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:29:24.220Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-01T16:38:10.269Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "6849c75017ddb5d10d9ba545"
+    }
+  ],
+  "notes": "Renfrew International 12 and 12 is a Scottish-based meeting with an international collective of attendees. \nThe group reads from the Twelve Steps and Twelve Traditions six nights a week Monday-Saturday and concludes the week with a speaker meeting on Sundays. \nOur meeting has been running since the 23rd of March 2020. So wherever you are in the world please join us for fellowship. \nFor safety, please enable your video and use a real name when entering the meeting. \nNo password required."
+},
+{
+  "_id": {
+    "$oid": "648e5e5eb291ed6c513602b5"
+  },
+  "name": "On Awakening Group",
+  "recordID": "19836",
+  "email": "weekdayonawakening@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:31:09.957Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-13T11:37:28.817Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5e5eb291ed6c513602b6"
+    },
+    {
+      "$oid": "648e5e5eb291ed6c513602b7"
+    }
+  ],
+  "notes": "On Awakening (OA) is an open Alcoholics Anonymous (AA) meeting. We are an opening and friendly bunch that welcomes beginners, long-timers, and everyone in-between especially newcomers!!! OA meets every day using the tools of the AA program to get and stay sober. We have a different format each day with our group conscience meeting the first Friday of the month after the meeting. \n\nSunday: As Bill Sees It\nMonday: Daily Reflections \nTuesday: Open Discussion \nWednesday: Big Book \nThursday: Living Sober \nFriday: Steps & Traditions \nSaturday: Step11/Meditation \n\nOnce you have entered the meeting please press *6 to mute/share, *9 to raise your hand.\n\nDon’t be shy and come on in! \n"
+},
+{
+  "_id": {
+    "$oid": "648e5ea1b291ed6c51360312"
+  },
+  "name": "AA After Hours",
+  "recordID": "20359",
+  "email": "AHPword@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:32:17.027Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-04T17:01:13.442Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67001d70be65afbca793d4c9"
+    }
+  ],
+  "notes": "A daily online support  Zoom meeting with readings & open discussion from The Daily Reflection, AA Big Book, & more. We are not a glum lot. Grounded in the Steps & Traditions of AA, we share our Experience Strength & Hope with Newcomers & Old Timers alike.\n\nTradition #3 in Alcoholics Anonymous states, \"The only requirement for membership is the desire to stop drinking.\" Open to all; everyone is welcome to attend. Meets daily from 10 pm to 12 am USA EST. If you want to get sober or if you’re feeling tempted, talk with us. If you just want to listen in, come on in.\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e6275b291ed6c513604a4"
+  },
+  "name": "East meets West As Bill Sees It",
+  "recordID": "21796",
+  "email": "eastmeetswest85@yahoo.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:48:37.093Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T01:48:37.093Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6275b291ed6c513604a5"
+    },
+    {
+      "$oid": "648e6275b291ed6c513604a6"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6277b291ed6c513604a8"
+  },
+  "name": "Friday Night Speakers Meeting",
+  "recordID": "21801",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:48:39.348Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T01:48:39.348Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6277b291ed6c513604a9"
+    },
+    {
+      "$oid": "648e6277b291ed6c513604aa"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6294b291ed6c513604bb"
+  },
+  "name": "Sober Sunrise",
+  "recordID": "22145",
+  "email": "sobersunrisegroup@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:49:08.248Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-07T14:47:10.986Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "66c7e856abb3f7fc7ccd1b2e"
+    },
+    {
+      "$oid": "648e6294b291ed6c513604bc"
+    }
+  ],
+  "notes": "Open meeting on Zoom, 5 days per week Monday through Friday at 6:45 MST. Everyone is welcome.\nPlease turn your video on briefly in order to be admitted to the meeting.\nMonday - Stories from the Big Book \nTuesday - 12 & 12 Step Study \nWednesday - Big Book Study \nThursday - Daily Reflections \nFriday - Traditions, Speaker, History, Grapevine, or As Bill Sees It "
+},
+{
+  "_id": {
+    "$oid": "648e62aeb291ed6c513604d3"
+  },
+  "name": "Women's HOW Online",
+  "recordID": "22266",
+  "email": "Womenszoomhow@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:49:34.214Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-16T17:37:37.109Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e62aeb291ed6c513604d5"
+    },
+    {
+      "$oid": "673617412c7f07cb730e9c7f"
+    }
+  ],
+  "notes": "Women's Closed Step Study Discussion (LGBT FRIENDLY). Join us as we read the 12 Steps and 12 traditions and The Little Red Book for Women.\nSaturdays, 6:30 am PST.\n\nThis is a closed meeting of Alcoholics Anonymous. Attendance is limited to those with a desire to stop drinking.\n\nIf you’re new to AA and think you have a problem with alcohol, welcome! You’re in the right place."
+},
+{
+  "_id": {
+    "$oid": "648e62b8b291ed6c513604e4"
+  },
+  "name": "SPIRIT OF THE UNIVERSE A.A.",
+  "recordID": "22306",
+  "email": "SteveSOTU1234@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:49:44.331Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-07T12:59:35.138Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e62b8b291ed6c513604e5"
+    },
+    {
+      "$oid": "698736c2e43cbb768e13418a"
+    }
+  ],
+  "website": "https://spiritaa.org/",
+  "notes": "Spirit of the Universe A.A. \nJoin our warm and compassionate community dedicated to recovery. We welcome everyone with open arms.\nDiscover a variety of meetings, including Big Book readings, Speaker sessions, Traditions discussions, as well as Men's and Women's meetings, and more. Visit our website for meeting schedules.\nBecome a part of our recovery family. We follow the Big Book, work with sponsors, embrace the 12 steps and 12 traditions, and carry the spirit of altruism in our hearts to help fellow Alcoholics take back their lives with serenity.\nWith love,\nThe Spirit AA Team\nSPIRIT OF THE UNIVERSE\nDaily 9:00 AM meeting: Prayer and Meditation Meeting, open to alcoholics and non-alcoholics. All Higher Powers are welcome. \nSaturday 6:30 PM meeting: Open AA meeting. \nAll other listed meetings are closed AA meetings. E-mail verification is provided at all meetings. \n*** \n1X a Week:\nWOMENS- MON 6:30PM\nMENS- THURS 6:30PM"
+},
+{
+  "_id": {
+    "$oid": "648e6356b291ed6c513605a5"
+  },
+  "name": "It Works It Really Does 6pm Men's Open AA Meeting",
+  "recordID": "22915",
+  "email": "itworksonzoom@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:52:22.172Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-26T22:12:58.656Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6356b291ed6c513605a6"
+    },
+    {
+      "$oid": "648e6356b291ed6c513605a7"
+    }
+  ],
+  "notes": "A daily Men's Meeting of Alcoholics Anonymous, Format is Chairpersons choice including Big Book readings, Speaker, Steps, etc... Open to all Men. Meets from 6pm-7pm  EST daily, 7 days a week duration."
+},
+{
+  "_id": {
+    "$oid": "648e644bb291ed6c513606fd"
+  },
+  "name": "A.A. GRUPO SOARES MORENO",
+  "recordID": "24688",
+  "email": "distrito-01@area27ce.aa.org.br",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:56:27.168Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T17:23:34.486Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e644bb291ed6c513606fe"
+    }
+  ],
+  "notes": "Visão geral da reunião: por exemplo. \"Uma reunião POR VIDEOCONFERÊNCIA que se concentra na leitura de Livros de A.A., de capa a capa. Aberta a todos; todos (as) são bem-vindos (as).\nPara ver mais números de telefone, clique neste link: https://meet.google.com/nas-kgzx-met"
+},
+{
+  "_id": {
+    "$oid": "648e648cb291ed6c51360748"
+  },
+  "name": "We Need Each Other",
+  "recordID": "24915",
+  "email": "wneo2021@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T01:57:32.041Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-29T03:59:56.401Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e648cb291ed6c51360749"
+    },
+    {
+      "$oid": "648e648cb291ed6c5136074a"
+    }
+  ],
+  "notes": "7:30pm, meets weekdays. Each night brings a new host and topic or meeting style, open to all and everyone is welcome to attend! :)"
+},
+{
+  "_id": {
+    "$oid": "648e6545b291ed6c51360839"
+  },
+  "name": "Worldwide Primary Purpose Beginners Meeting",
+  "recordID": "25778",
+  "email": "wwppg@yahoo.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:00:37.232Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-27T12:22:57.544Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67856aea93072283bbefbc54"
+    },
+    {
+      "$oid": "6785803a1b59eedb38e09ff5"
+    }
+  ],
+  "notes": "Once a beginner, always a beginner. If you have a desire to stop drinking, please join us as we share our experience, strength, and hope on the first three steps of the Big Book and reach out to the newcomers. 5:00 p.m. CST 7 days a week.\n\nClosed Meeting\nWaiting Room enabled"
+},
+{
+  "_id": {
+    "$oid": "648e654bb291ed6c51360843"
+  },
+  "name": "Worldwide Primary Purpose Daily Reflections",
+  "recordID": "25779",
+  "email": "wwppg@yahoo.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:00:43.121Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-13T19:02:51.672Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67856aea93072283bbefbc54"
+    },
+    {
+      "$oid": "6786c0ad7c0ee8d24fc16e20"
+    }
+  ],
+  "notes": "Come join us! We have someone read the \"Daily Reflections\" and give a short lead. We then breakout into smaller\ngroups to allow everyone the opportunity to share. \nWe meet 7 days a week.\nCourt Verification Available\nClosed Meeting"
+},
+{
+  "_id": {
+    "$oid": "648e6552b291ed6c5136084b"
+  },
+  "name": "Worldwide Primary Purpose Gratitude Meeting",
+  "recordID": "25781",
+  "email": "wwppg@yahoo.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:00:50.546Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-26T18:21:08.122Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67856aea93072283bbefbc54"
+    },
+    {
+      "$oid": "6786c0ad7c0ee8d24fc16e20"
+    }
+  ],
+  "notes": "Join our Daily Gratitude Meeting! We take turns giving a short lead on what we are grateful for, followed by discussion.\nCome and share what you are grateful for on a daily basis.\n(closed meeting)\n\nNo court verification signatures."
+},
+{
+  "_id": {
+    "$oid": "648e6566b291ed6c5136085f"
+  },
+  "name": "Unidad sin Fronteras",
+  "recordID": "25790",
+  "email": "UnidadsunFronteras@outlook.com",
+  "website": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:01:10.831Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T14:21:30.715Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6567b291ed6c51360860"
+    }
+  ],
+  "notes": "Lunes A Viernes 6:30 am  ,Sabados Y Domingos  7:00 am   \nHorario base de California  con diferencia de horario a la Republica Mexicana y otros Paises          \nNumero de California 1 (872) 240-3212  clave 535594645#   \nColombia tel:+5716009954,,535594645#\nConectarse de Mexico: 52-55-1-500-3598\nNos Guiamos con el Programa De Los 12 Pasos De AA y LAs 12 Tradiciones De AA  nos Unimos A LA Solucion\n\n Modo de conectarse bajando la Aplicación Go to meetings vía Internet de clave de Meeting 535594645#"
+},
+{
+  "_id": {
+    "$oid": "648e65adb291ed6c513608b1"
+  },
+  "name": "Puerto Rico Sobriety Network",
+  "recordID": "26200",
+  "email": null,
+  "website": "https://puertoricosobrietynetwork.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:02:21.430Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T03:43:28.468Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5450b291ed6c5135f51a"
+    },
+    {
+      "$oid": "648e65adb291ed6c513608b2"
+    },
+    {
+      "$oid": "67f964109aefda0010c70277"
+    }
+  ],
+  "notes": "We are  the Puerto Rico Sobriety Network offering English AA meetings in San Juan, Puerto Rico. \nOur morning meetings are based on the Daily Reflections. \nEvening meetings are as follows: \nMonday | Format: Step and Tradition\nTuesday | Format: Topic Discussion \nWednesday | Format: As Bill Sees It \nThursday | Format: Big Book \nFriday | Format: Beginners \nSaturday | Format: Grapevine \nSunday | Format: Reflections on AA Literature\n"
+},
+{
+  "_id": {
+    "$oid": "648e6613b291ed6c51360938"
+  },
+  "name": "Warsaw English Speaking Meeting of AA",
+  "recordID": "26808",
+  "email": "warsawenglishspeakingaa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:04:03.689Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:04:03.689Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6610b291ed6c51360931"
+    },
+    {
+      "$oid": "648e6610b291ed6c51360932"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6684b291ed6c513609cc"
+  },
+  "name": "Solo por hoy",
+  "recordID": "27963",
+  "email": "grupoaavirtual@hotmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:05:56.148Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:05:56.148Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6684b291ed6c513609cd"
+    },
+    {
+      "$oid": "648e6684b291ed6c513609ce"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6740b291ed6c51360abb"
+  },
+  "name": "Orchard Beach Online AA",
+  "recordID": "28626",
+  "email": "orchardbeachzoom@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:09:04.642Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:09:04.642Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6740b291ed6c51360abc"
+    },
+    {
+      "$oid": "648e6741b291ed6c51360abd"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6769b291ed6c51360af3"
+  },
+  "name": "AA Zoo Crew22 - The Morning Zoo",
+  "recordID": "28757",
+  "email": "zoocrewthe@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:09:45.426Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:09:45.426Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6769b291ed6c51360af4"
+    },
+    {
+      "$oid": "648e676ab291ed6c51360af5"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e678ab291ed6c51360b14"
+  },
+  "name": "AA Zoo Crew22 - Prayer & Meditation Made Simple",
+  "recordID": "28765",
+  "email": "zoocrewthe@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:10:17.927Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:10:17.927Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6769b291ed6c51360af4"
+    },
+    {
+      "$oid": "648e676ab291ed6c51360af5"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e67a4b291ed6c51360b2e"
+  },
+  "name": "AA Zoo Crew22 - The No Matter What Club",
+  "recordID": "28774",
+  "email": "zoocrewthe@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:10:44.047Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:10:44.047Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6769b291ed6c51360af4"
+    },
+    {
+      "$oid": "648e676ab291ed6c51360af5"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e67e5b291ed6c51360b76"
+  },
+  "name": "Beggars, Tramps & Queers",
+  "recordID": "28918",
+  "email": "btqzoom@yahoo.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:11:48.994Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-05T00:33:16.855Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e67e5b291ed6c51360b78"
+    },
+    {
+      "$oid": "67c67f279965a0d79f33a8f5"
+    }
+  ],
+  "notes": "Beggars, Tramps & Queers is an open meeting of Alcoholics Anonymous that meets 7 days a week at 8:30 pm ET. \nWe welcome anyone with a desire to stop drinking, including LGBTQIA+ and allies. \nAnd, we take care to respect diverse opinions about the practice and interpretation of AA principles. All our meetings allow time for discussion.\n\nSunday – Came to Believe\nMonday – Glad Day Affirmations\nTuesday – Soundtrack for Sobriety\nWednesday – Wheel of Sobriety\nThursday – Literature for Recovery\nFriday – Agnostic Sobriety\nSaturday – Newcomer Meeting"
+},
+{
+  "_id": {
+    "$oid": "648e6828b291ed6c51360bbc"
+  },
+  "name": "Tri-Cities Group",
+  "recordID": "29126",
+  "email": "lamplightersclub21@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:12:56.288Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:12:56.288Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6819b291ed6c51360baa"
+    },
+    {
+      "$oid": "648e6819b291ed6c51360bab"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e684fb291ed6c51360be8"
+  },
+  "name": "AA Zoo Crew22 - A Fresh Start Beginner's Meeting",
+  "recordID": "28776",
+  "email": "zoocrewthe@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:13:35.347Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:13:35.347Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6769b291ed6c51360af4"
+    },
+    {
+      "$oid": "648e67b7b291ed6c51360b3f"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e689cb291ed6c51360c46"
+  },
+  "name": "Adirondack 12 & 12",
+  "recordID": "29539",
+  "email": "essexaa12@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:14:52.601Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:14:52.601Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e57cbb291ed6c5135f99e"
+    },
+    {
+      "$oid": "648e689db291ed6c51360c47"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e689eb291ed6c51360c49"
+  },
+  "name": "Virtual Sober Start",
+  "recordID": "29557",
+  "email": "soberstartmembership@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:14:54.215Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-28T13:23:44.562Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e689eb291ed6c51360c4a"
+    },
+    {
+      "$oid": "648e689eb291ed6c51360c4b"
+    }
+  ],
+  "website": "http://virtualsoberstart.org/",
+  "notes": "Virtual Sober Start is an online platform literature base A.A. group.\nWe meet seven days a week at 6:30am Eastern Standard Time on zoom with access through our website as well as via the blue button provided. \nPlease visit our website for free resources, including pdf versions of the Big Book, 12x12, Living Sober and other AA-approved literature and AA audio speaker recordings."
+},
+{
+  "_id": {
+    "$oid": "648e68f8b291ed6c51360cba"
+  },
+  "name": "Everynighters Online",
+  "recordID": "30256",
+  "email": "everynightersonline@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:16:24.133Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-02T04:29:31.101Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e68f8b291ed6c51360cbb"
+    },
+    {
+      "$oid": "648e68f8b291ed6c51360cbc"
+    }
+  ],
+  "notes": "Big Book Discussion on the reading covered out of the first 164 pgs. including roman numerals. The room usually opens 30 mins prior to meeting time. Randomized list of shares made until the start of the meeting. 3 minute shares. Burning desire before names are called."
+},
+{
+  "_id": {
+    "$oid": "648e69afb291ed6c51360d9b"
+  },
+  "name": "AA_Bidari",
+  "recordID": "31294",
+  "email": "aa.bidari2022@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:19:27.538Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:19:27.538Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e69afb291ed6c51360d9c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6a01b291ed6c51360e05"
+  },
+  "name": "Choose Wisely Campaign",
+  "recordID": "31793",
+  "email": "choosewiselycampaignaagroup@outlook.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:20:49.122Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-03T19:50:13.702Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e69cbb291ed6c51360dc6"
+    },
+    {
+      "$oid": "6596e77a1d4bf2768ff71783"
+    }
+  ],
+  "notes": "Our group is located in Minot ND. We are 12 Step and or Big Book Driven. We choose a different topic everyday. Our objective is to carry the AA message to the alcoholic who still suffers. We provide a safe place for newcomers and long timers to share their experience, strength and hope. We are not a glum lot. Our Meeting Schedule is 7 days a week. All times are Central Times. \nSunday (Big Book Study) 2:00pm Central\nMonday through Friday 12pm Central\nSaturday at 10:00am Central\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e6a2bb291ed6c51360e3d"
+  },
+  "name": "Morning Hope",
+  "recordID": "32182",
+  "email": "morninghopers@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:21:30.919Z"
+  },
+  "updatedAt": {
+    "$date": "2024-08-25T18:04:15.637Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "66cb70d96297f8c351860bf2"
+    },
+    {
+      "$oid": "66cb70e56297f8c351860bf4"
+    }
+  ],
+  "notes": "A daily meeting - no passcode required.\n\nMonday: Daily Reflection\n\nTuesday: Steps/Traditions\n\nWednesday: Chairpersons Choice AA Approved Literature\n\nThursday: Daily Reflection\n\nFriday: Speaker Meeting\n\nSaturday: Big Book\n\nSunday: Open Discussion Topic (AA APPROVED)"
+},
+{
+  "_id": {
+    "$oid": "648e6a44b291ed6c51360e58"
+  },
+  "name": "Sunrise Group",
+  "recordID": "32223",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:21:56.371Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-07T17:43:13.446Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6a44b291ed6c51360e5a"
+    },
+    {
+      "$oid": "67e4831617b83bd24b512729"
+    }
+  ],
+  "notes": "This is an open meeting of Alcoholics Anonymous which is all-inclusive and attended by people from all over the world. We welcome women, men, members of the LGBTQIA++ community, newcomers and long timers alike. We use a different AA meeting format for every day of the week using AA approved literature only, including topic discussion, Big Book study, speaker meeting, 12 and 12 study, and Big Book story read.\nMeets at 7:00am ET daily, duration is 45 minutes.\n\nThis meeting is Waiting Room enabled. It is locked at 7:00 am, so please join us by 6:50am by using the first name/last Initial format to identify yourself on your Zoom account and use your live video to introduce yourself (you can turn it off later)."
+},
+{
+  "_id": {
+    "$oid": "648e6a9db291ed6c51360eb5"
+  },
+  "name": "Agnostics In Progress",
+  "recordID": "32586",
+  "email": "agnosticsinprogress@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:23:25.607Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-26T19:02:58.061Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6a9db291ed6c51360eb6"
+    },
+    {
+      "$oid": "648e6a9eb291ed6c51360eb7"
+    }
+  ],
+  "notes": "Agnostics in Progress meets Tuesdays at noon PST.  \nAnyone with a desire to stop drinking is welcome, believer or not! \n\nWe share our stories and the ways we have made progress in the program.  In this meeting you are free to speak your truth.\n\nOur only wish is to assure you that anyone may achieve recovery in AA without having to deny their own beliefs.\n\nWe are here to lift each other up and find strength in the fellowship.  We seek progress, not perfection.\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e6b67b291ed6c51360fcd"
+  },
+  "name": "Україно - та російськомовна група з України",
+  "recordID": "34039",
+  "email": "apelsin1935@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:26:47.479Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:26:47.479Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6b67b291ed6c51360fce"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6b82b291ed6c51360ff8"
+  },
+  "name": "On Awakening",
+  "recordID": "34102",
+  "email": "women.onawakening@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:27:14.364Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-08T14:54:13.470Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6b82b291ed6c51360ff9"
+    },
+    {
+      "$oid": "654eb493fea4453cf01da4e0"
+    }
+  ],
+  "notes": "On Awakening is a daily, closed women's 11th step meeting with a focus on meditation and journaling. The format of this meeting is that we read a few brief excerpts related to Step 11 from the Big Book and 12 & 12, then have eleven minutes of silence to meditate & journal. After the period of mediation, people may share their journal entries and/or thoughts as they relate to the 11th step or recovery from alcoholism. \n "
+},
+{
+  "_id": {
+    "$oid": "648e6ba5b291ed6c51361024"
+  },
+  "name": "AA Atlas",
+  "recordID": "34446",
+  "email": "atlasaa12@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:27:49.112Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-11T23:33:08.041Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6ba5b291ed6c51361025"
+    },
+    {
+      "$oid": "648e6ba5b291ed6c51361026"
+    }
+  ],
+  "notes": "All who desire to get sober are welcome - new, old, and returning. Meets daily.\nGroup will include -daily shares, reflections, big book readings, 12 Steps and Traditions, and more concepts to help you map out your design for living.\n"
+},
+{
+  "_id": {
+    "$oid": "648e6bb7b291ed6c5136103c"
+  },
+  "name": "The NYC Workshop 7:15AM Meeting",
+  "recordID": "34593",
+  "email": "thenycworkshoponline@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:28:06.948Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-22T12:25:11.946Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6bb7b291ed6c5136103d"
+    }
+  ],
+  "notes": "A virtual meeting focusing on Literature topics.\nNo password required.  Waiting room enabled."
+},
+{
+  "_id": {
+    "$oid": "648e6bd8b291ed6c51361065"
+  },
+  "name": "AA Serenity Hour Virtual",
+  "recordID": "34762",
+  "email": "aa.serenity.hour@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:28:40.596Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-22T21:07:44.778Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6bd8b291ed6c51361066"
+    },
+    {
+      "$oid": "66e1af41f9a942f050e467f4"
+    },
+    {
+      "$oid": "66e1af66f9a942f050e467f6"
+    }
+  ],
+  "notes": "A daily on-line meeting that focuses on reading and discussing topics related to alcoholism followed by an open discussion.  Open to all; everyone is welcome to attend.  Meets 5:30 pm EST daily, 7 days a week for 1 hour. \n\nDaily focus is as follows:  \nMonday:  Beginner's Meeting on Steps 1, 2, & 3 or a reading from Living Sober; \nTuesday:  A reading/share from As Bill Sees It; \nWednesday: A reading/share from the Big Book; \nThursday: A reading of one step (rotating) each week, with the last week of the month being a Tradition ; \nFriday:  Open discussion/Principal 1st Friday; Anniversary Night on 4th Friday; \nSaturday:  Speaker, Experience Strength and Hope (Speaker meeting); \nSunday:  A reading/share from the Daily Reflections. \n\nNo passcode required"
+},
+{
+  "_id": {
+    "$oid": "648e6c31b291ed6c513610d9"
+  },
+  "name": "AA Visionaries",
+  "recordID": "47497",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:30:09.567Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-06T09:40:43.793Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6c31b291ed6c513610da"
+    },
+    {
+      "$oid": "648e6c32b291ed6c513610db"
+    }
+  ],
+  "notes": "AA Visionaries Meets Every Day, (7 Days a Week) at 7pm PST/ 9pm CST/ 10pm EST.\n\n*Come and share your vision of experience, strength and hope with this casual crew! Visionaries is an Open Meeting, Welcome to all lengths of sobriety from newcomers to old timers…We have a Tradition of The Month and super cool new format for every day of the week. \nEACH NIGHT WE MEET TO GAIN A BETTER UNDERSTANDING OF ONLY AA APPROVED LITERATURE.\n\nMonday - Tradition Night (12 & 12 or Illustrated Traditions)\n• Tuesday- Big Book Study - 1st 164 Pages\n• Wednesday- Living Sober\n• Thursday- Stories from the Back of the Big Book\n• Friday - STEP Night (12&12)\n• Saturday- GAME NIGHT! Daily Reflections Spin Wheel\n• Sunday- Illustrated Concepts\n\n***After the meeting we do have a parking lot for fellowship. Our Group Conscience meets the First Friday of Every Month after the meeting . Come Share your Vision of What Sobriety is like for you!"
+},
+{
+  "_id": {
+    "$oid": "648e6c5fb291ed6c51361126"
+  },
+  "name": "TGIF Thank God I'm Free",
+  "recordID": "47605",
+  "email": "debra.timothy@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:30:55.357Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-25T15:45:03.254Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6c5fb291ed6c51361127"
+    },
+    {
+      "$oid": "648e6c5fb291ed6c51361128"
+    }
+  ],
+  "notes": "Mondays-Fridays at NOON Eastern Time\nMon: BB Study\nTue: Speaker/Discussion\nWed: Step Study (12&12)\nThu: Beginners\nFri: Daily Reflections\nPublic Email : debra.timothy@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "648e6d04b291ed6c51361225"
+  },
+  "name": "AA Atheists and Agnostics",
+  "recordID": "50052",
+  "email": "aa-atheists-and-agnostics@googlegroups.com",
+  "website": "https://groups.google.com/forum/?hl=en&fromgroups;#!forum/aa-atheists-and-agnostics",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:33:40.458Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:33:40.458Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6d04b291ed6c51361226"
+    },
+    {
+      "$oid": "648e6d05b291ed6c51361227"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6d06b291ed6c51361229"
+  },
+  "name": "AA Chats",
+  "recordID": "50053",
+  "email": "",
+  "website": "https://aachats.org/contact",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:33:42.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:33:42.392Z"
   }
-]
+},
+{
+  "_id": {
+    "$oid": "648e6d13b291ed6c51361240"
+  },
+  "name": "AA Fellowship and Chat",
+  "recordID": "50057",
+  "email": "",
+  "website": "http://www.paltalk.com/g2/group/1493874586/",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:33:55.736Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:33:55.736Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6d13b291ed6c51361241"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6d1db291ed6c51361254"
+  },
+  "name": "AA Acceptance and Gratitude",
+  "recordID": "50063",
+  "email": "aaacceptanceandgratitude@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:34:05.452Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-29T05:14:17.510Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6d1db291ed6c51361255"
+    }
+  ],
+  "notes": "All Welcome to Attend an Open Discussion Meeting. All Traditions followed and Anonymity is the Spiritual Foundation of all our Traditions. \nThis will be an English Speaking Meeting. Please stop by a few minutes early to chat. \n\nIf Password is enabled, please use email to get it.\n\nSunday - Thursday:  8am Eastern -- Open Discussion\nFriday: 8am Eastern -- Beginners Meeting\nSaturday: 8am Eastern -- Open Discussion\n\n"
+},
+{
+  "_id": {
+    "$oid": "648e6d23b291ed6c5136125d"
+  },
+  "name": "AA Friends World Wide",
+  "recordID": "50064",
+  "email": "AAFriendsWorldWide-subscribe@egroups.com",
+  "website": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:34:10.945Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:34:10.945Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6d23b291ed6c5136125e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6d2ab291ed6c5136126c"
+  },
+  "name": "AA Loners",
+  "recordID": "50069",
+  "email": "",
+  "website": "http://oso-aa.org/loners",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:34:17.988Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:34:17.988Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6d2ab291ed6c5136126d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6d5bb291ed6c513612bd"
+  },
+  "name": "AA Women's Meeting",
+  "recordID": "50086",
+  "email": "aawomensmeeting@gmail.com",
+  "website": "http://www.aa-europe.net/meetings.php?Where=AA+On+Line+Meetings",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:35:07.791Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:35:07.791Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6d5cb291ed6c513612be"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6d9db291ed6c5136130c"
+  },
+  "name": "AAL",
+  "recordID": "50101",
+  "email": "inheaven1@mac.com",
+  "website": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:36:13.112Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:36:13.112Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6d9db291ed6c5136130d"
+    },
+    {
+      "$oid": "648e6d9db291ed6c5136130e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6e18b291ed6c513613d2"
+  },
+  "name": "Early Risers",
+  "recordID": "50154",
+  "email": "earlyrisershudson@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:38:16.306Z"
+  },
+  "updatedAt": {
+    "$date": "2024-08-22T00:51:58.265Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6dc6b291ed6c51361353"
+    },
+    {
+      "$oid": "66c68b9949934e2e0b5874dc"
+    }
+  ],
+  "notes": "This group meets virtually, via Zoom conference, Monday - Friday at 7:00 AM, and at 9:00 AM on Saturday. Eastern Time\nOur meetings are as follows:\nMonday - Daily Reflections\nTuesday - Living Sober\nWednesday - Big Book (On the last Wednesday of the month, we will read from the Personal Stories section) \nThursday - Open Topic \nFriday - Step Meeting (On the First Friday of the month we will read that month’s Tradition) \nSaturday - Speaker Meeting\n\nAll are welcome!"
+},
+{
+  "_id": {
+    "$oid": "648e6e68b291ed6c51361454"
+  },
+  "name": "Grupo Centinela Talca - Chile",
+  "recordID": "50184",
+  "email": "contacto@aatalca.org",
+  "website": "http://www.aatalca.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:39:35.975Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:39:35.975Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6e68b291ed6c51361455"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6e98b291ed6c513614a1"
+  },
+  "name": "JCMC Group",
+  "recordID": "50201",
+  "email": "Rooodee2@aol.com",
+  "website": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:40:24.771Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:40:24.771Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6e99b291ed6c513614a2"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6e9bb291ed6c513614a7"
+  },
+  "name": "Kerman AA Meeting",
+  "recordID": "50203",
+  "email": "kerman.aa1395@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:40:27.472Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-23T13:01:43.119Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6e9bb291ed6c513614a8"
+    }
+  ],
+  "notes": "The kerman AA online meeting is held on: Saturdays, Mondays, wednesdays and fridays in Iran from 5 PM to 6 PM (dates and times may change in the future). Every men and women and all genders and races can participate from all around the world provided that they speak persian ( Farsi ). You can join the following free-conference link below to join us\n\nبه ما بپیوندید در گروه الکلی های گمنام  آنلاین کرمان به وقت ایران تحت نرم افزار فری کانفرنس، لینک زیر،  چهار روز در هفته یعنی روزهای شنبه، دوشنبه، چهارشنبه و جمعه از ساعت ۱۷ الی ۱۸ \n\n"
+},
+{
+  "_id": {
+    "$oid": "648e6ea6b291ed6c513614b4"
+  },
+  "name": "La réunion entre les réunions",
+  "recordID": "50206",
+  "email": "valeunjouralafois@yahoo.fr",
+  "website": "https://framalistes.org/sympa/info/lareunionentrelesreunions",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:40:38.271Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:40:38.271Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6ea6b291ed6c513614b5"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6ef8b291ed6c51361537"
+  },
+  "name": "Never Alone Again",
+  "recordID": "50236",
+  "email": "neveraloneagaingroup@gmail.com",
+  "website": "https://sites.google.com/view/neveralonegroup",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:42:00.042Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-28T13:55:18.805Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "685ec6f962e76cc9aa9f52b0"
+    }
+  ],
+  "notes": "The Never Alone Again is a one hour Speaker/Discussion meeting open to anyone with the desire to stop drinking.  Originally born out of downtown Boston meetings, we now welcome members from all across the world. The virtual discussion room is open 15 minutes before and after the meeting for fellowship.\n\n\nPlease visit our website for details about the meeting, links to other meetings and to sign up as a speaker (90 days sobriety requested). We would love to hear from you."
+},
+{
+  "_id": {
+    "$oid": "648e6f48b291ed6c513615be"
+  },
+  "name": "Rebellion Dogs",
+  "recordID": "50262",
+  "email": "rebelliondogs7@gmail.com",
+  "website": "https://rebelliondogs7.wixsite.com/website",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:43:20.902Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-02T20:13:54.378Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6f49b291ed6c513615bf"
+    }
+  ],
+  "notes": "Rebellion Dogs is a daily closed men's AA meeting limited to those who have a desire to stop drinking.  The group holds a closed literature meeting on Zoom every day from 12 noon to 1 PM Eastern time. We open each meeting with a reading from conference-approved literature.  \n\nTo join the meeting please click on the blue zoom button or go to the meeting website by clicking on the website button e or email us for the link by clicking on the email button - rebelliondogs7@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "648e6f9eb291ed6c5136163e"
+  },
+  "name": "Sober Voices Group",
+  "recordID": "50290",
+  "email": "aatelephonemeetings@gmail.com",
+  "website": "https://sites.google.com/site/aatelephonemeetings/home",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:44:46.538Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:44:46.538Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6f9eb291ed6c5136163f"
+    },
+    {
+      "$oid": "648e6f9fb291ed6c51361640"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6fe8b291ed6c513616bf"
+  },
+  "name": "The New Reality",
+  "recordID": "50321",
+  "email": "info@newrealityaa.org",
+  "website": "http://www.newrealityaa.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:46:00.828Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:46:00.828Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e6fe9b291ed6c513616c0"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e6fecb291ed6c513616c5"
+  },
+  "name": "The Program Works Group",
+  "recordID": "50322",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:46:04.531Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:46:04.531Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e5161b291ed6c5135f14b"
+    },
+    {
+      "$oid": "648e6fedb291ed6c513616c6"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e7022b291ed6c51361714"
+  },
+  "name": "Woodland Online Group",
+  "recordID": "50341",
+  "email": "woodlandgrouponline@gmail.com",
+  "website": "https://aawoodland.org/virtual-meetings-woodland",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:46:58.226Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T13:55:05.960Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e7015b291ed6c5136170c"
+    }
+  ],
+  "notes": "Daily 6:30 AM PST: \nMeditation (Sun)\nAs Bill Sees It (M, W, F)\nBig Book (Tue, Sat) \n12/12 (Thurs)"
+},
+{
+  "_id": {
+    "$oid": "648e708cb291ed6c51361788"
+  },
+  "name": "A Check-Up from the Neck UP (Get Your Mind Right)",
+  "recordID": "35060",
+  "email": "Zoom247AA@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:48:44.508Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-11T12:28:28.462Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e55f2b291ed6c5135f736"
+    },
+    {
+      "$oid": "648e708db291ed6c51361789"
+    }
+  ],
+  "website": null,
+  "notes": "Our Beginner's Literature and Step Meeting is 7 days a week at 5 pm EST. Come jumpstart your recovery and get your mind right.\n\nThe Zoo Crew has been on Zoom since March of 2020.  When the world shut down during the pandemic, we opened our Virtual Doors!\n\nWe are going on a Sober Cruise in May of 2023. Join us.\n\nAlcoholism centers in the mind. It is cunning, baffling and powerful and unless the obsession to drink is removed we are defenseless against that first sucker drink. (BB pg. 37) “Our behavior is as absurd and incomprehensible with respect to the first drink as that of an individual with a passion, say, for jay-walking.” Come get your mind right for sobriety!\n\n(BB pg. 24) \"At a certain point in the drinking of every alcoholic, he passes into a state where the most powerful desire to stop drinking is of absolutely no avail.\" There is a solution and it's in the literature and the 12 Steps.\n\nSun - Living Sober (Will answer many questions newcomers have about sobriety.) For example: Can I go to a party? Can I keep liquor in the house? What about sex? What about drinking dreams?\n\nMon/Wed - Steps 1, 2, 3 & 10, 11, 12 (Stop doing the 1, 2, 3 shuffle. Start living in Steps 10, 11 & 12 while you do Steps 1 thru 9!)\n\nTues - Drop the Rock (Find out about our Character Defects. Letting go of what's weighing us down emotionally and mentally.)\n\nThurs - Big Book Study (We read and discuss the BB line by line to pg. 164.)\n\nFri - Beginner's Step Meeting (We cover Steps 1 thru 12 in order. A different step each week.)\n\nSat - Big Book Stories (We listen to and discuss a BB story each week)\n\nJoin us every month as we go thru the 12 Steps in 4 hours on Zoom. We also have a 1-hour Recovery Workshop every month. Our other workshops are now on Podcast. \n\nCome get Virtual Chips and tell us how many days/months/years you have! How about a Zoo Crew Pink Cloud or Rule 62 Chip? Everyone's time is important!\n\nJoin the Zoo Crew Service Team. We will train you. E-mail: Zoom247AA@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "648e70deb291ed6c513617e6"
+  },
+  "name": "AA Daily Meditation Meeting",
+  "recordID": "9350",
+  "email": "aadailymeditation@gmail.com",
+  "website": "http://www.aageneva.org/",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:50:05.901Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-03T04:11:15.800Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e70deb291ed6c513617e7"
+    },
+    {
+      "$oid": "648e70deb291ed6c513617e8"
+    }
+  ],
+  "notes": "Please click on the email link to receive an email with the login information for this meeting.\n\nThe AA Daily Meditation Meetings on Zoom are based on the AA Daily Reflections. \nThe meetings start with 15 minutes of meditation followed by the reading of the AA Daily Reflection and shares. \nOur meetings are closed. \nFellows are free to share in English or French since our common language is the language of the heart. \nOur primary purpose is to stay sober and to help other alcoholics to achieve sobriety.\n"
+},
+{
+  "_id": {
+    "$oid": "648e71adb291ed6c513618e4"
+  },
+  "name": "Vision for Us 24/7",
+  "recordID": "36112",
+  "email": "3legacies4us@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:53:33.421Z"
+  },
+  "updatedAt": {
+    "$date": "2024-08-06T01:11:16.799Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "66b1772f05944a8568bcb164"
+    }
+  ],
+  "notes": "WELCOME Vision for Us MEETING Etiquettes:\n1. Our singleness of purpose which states that, we ask that all who participate confine your discussion to your problems with alcohol.\n2. Each meeting has but one primary purpose - to carry its message to the alcoholic who still suffers.\n3. Share on YOUR recovery! Using “I” statements. Follow AA Traditions and read AA literature.\n4. Five-minute shares, Chair will minimize their comments between shares.\n5. Absolutely NO criticism (INCLUDING IN CHAT).\n6. If you have a problem with the meeting, you can find another one at: aa.org\n7. If you have a problem with a person in the meeting, do not bring it into the meeting.\n\n**If you would like to share please raise your virtual hand and turn your camera on for verification. You may turn it off after verification.**"
+},
+{
+  "_id": {
+    "$oid": "648e7247b291ed6c513619b9"
+  },
+  "name": "Dearborn Plus",
+  "recordID": "38543",
+  "email": "dearbornplus@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:56:07.175Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-28T23:32:50.946Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e7247b291ed6c513619ba"
+    },
+    {
+      "$oid": "648e7247b291ed6c513619bb"
+    }
+  ],
+  "notes": "This is a closed discussion meeting for anyone who has a desire to stop drinking."
+},
+{
+  "_id": {
+    "$oid": "648e724ab291ed6c513619be"
+  },
+  "name": "9 pm A Check-Up from the Neck Up Beginner's - Get Your Mind Right",
+  "recordID": "38599",
+  "email": "zoom247aa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:56:10.065Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-11T15:00:12.366Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e55f2b291ed6c5135f736"
+    },
+    {
+      "$oid": "648e65c6b291ed6c513608d3"
+    }
+  ],
+  "notes": "We meet 7 days a week at 9 pm EST for a Topic Discussion. Beginners and Old-Timers are welcome! We make sobriety FUN!\n\nOriginated out of the USA but we are International. We are now open 24 hours 7 days a week! The Zoo Crew has been on Zoom since March of 2020. When the world shut down during the pandemic, we opened our Virtual Doors! \n\nAlcoholism centers in the mind. It is cunning, baffling and powerful and unless the obsession to drink is removed we are defenseless against that first sucker drink. (BB pg. 37) “Our behavior is as absurd and incomprehensible with respect to the first drink as that of an individual with a passion, say, for jay-walking.” Come get your mind right for sobriety!\n\nCome get a Virtual White, Pink Cloud or Rule 62 Chip and tell us how many days/months/years you have! Get a 1-Minute Chip! Everyone's time is important!",
+  "website": null
+},
+{
+  "_id": {
+    "$oid": "648e72b7b291ed6c51361a21"
+  },
+  "name": "Turning Point",
+  "recordID": "39173",
+  "email": "turningpoint@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T02:57:59.331Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T02:57:59.331Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e72b7b291ed6c51361a22"
+    },
+    {
+      "$oid": "648e72b7b291ed6c51361a23"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e733db291ed6c51361acb"
+  },
+  "name": "Redeye",
+  "recordID": "40060",
+  "email": "aachatsdiscord@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:00:13.802Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T03:00:13.802Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e733eb291ed6c51361acc"
+    },
+    {
+      "$oid": "648e733eb291ed6c51361acd"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e736ab291ed6c51361af8"
+  },
+  "name": "100 Men And Women Alcoholics Anonymous Meeting",
+  "recordID": "2174",
+  "email": "",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:00:58.864Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-25T11:38:20.227Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e736bb291ed6c51361af9"
+    },
+    {
+      "$oid": "648e736bb291ed6c51361afa"
+    }
+  ],
+  "notes": "100 Men And Women AA meeting is a daily Zoom meeting that follows the AA Steps and Traditions \"To show other alcoholics precisely how we have recovered from a seemingly hopeless state of mind and body\" is the main purpose of this meeting! Closed Meeting. Topic/Literature\n"
+},
+{
+  "_id": {
+    "$oid": "648e73d1b291ed6c51361b6a"
+  },
+  "name": "6 am EST Check-up from the Neck Up Early Bird",
+  "recordID": "40645",
+  "email": "zoom247AA@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:02:41.098Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-11T15:01:25.163Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e55f2b291ed6c5135f736"
+    },
+    {
+      "$oid": "648e65c6b291ed6c513608d3"
+    }
+  ],
+  "notes": "We meet 7 days a week at 6 am EST. Get the Early Bird Special with the Original Zoo Crew! Come get your mind right for the day!\n\nThe Zoo Crew has been on Zoom since March of 2020. When the world shut down during the pandemic, we opened our Virtual Doors!\n\nWe are based in the USA but we are truly international. Our first meeting is at 6 am EST and the last one finishes at midnight with fellowship into the late morning. We are open over 24 hours for all the drinking holidays and the major\nholidays. You NEVER have to be alone!\n\nWe are going on a Sober Cruise in May of 2023. Join us.\n\nAlcoholism centers in the mind. It is cunning, baffling and powerful and unless the obsession to drink is removed we are defenseless against that first sucker drink. (BB pg. 37) “Our behavior is as absurd and incomprehensible with respect to the first drink as that of an individual with a passion, say, for jay-walking.”\n\nM/T/W - On Awakening & Daily Reflections\nTh/F - No Matter What (We don't drink)\nSat/Sun - Check-up from the Neck Up (Get your mind right)\n\nJoin us every month as we go thru the 12 Steps in 2 hours on Zoom. Come to our 12 Traditions Workshop every 2 months.\n\nWe also have a 1-hour Recovery Workshop every month. Our other workshops are now on Podcast. \n\nJoin the Zoo Crew Service Team. We will train you. E-mail: Zoom247AA@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "648e74d7b291ed6c51361c92"
+  },
+  "name": "Queer & Sober: Monday - Friday",
+  "recordID": "41630",
+  "email": "triangle6pm@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:07:03.199Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-12T02:19:09.390Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e74d7b291ed6c51361c93"
+    },
+    {
+      "$oid": "648e74d7b291ed6c51361c94"
+    }
+  ],
+  "notes": "Queer & Sober is a weekday virtual AA Meeting where all are welcome, and LGBTQIA+ folks with a desire to stop drinking can feel free to be themselves.\n\nMonday — Queer and Sober: AA Big Book Meeting;\nTuesday — Queer and Sober: AA Discussion Meeting with ASL Interpreter;\nWednesday — Queer and Sober: AA Beginner’s Meeting;\nThursday — Queer and Sober: AA Living Sober Meeting;\nFriday — Queer and Sober: AA Steps 1-4 Discussion Meeting;\n\nSame link every day."
+},
+{
+  "_id": {
+    "$oid": "648e74f2b291ed6c51361cad"
+  },
+  "name": "A New Thought, New Choices",
+  "recordID": "41901",
+  "email": "newthoughts.newchoices@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:07:30.340Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-24T18:04:02.821Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e74f2b291ed6c51361caf"
+    },
+    {
+      "$oid": "65a52b311dbff9ff539ac4b1"
+    }
+  ],
+  "notes": "We are an open meeting of Alcoholics Anonymous. All are welcome. \nWe offer a loving and safe community focused on RECOVERY using the 12 STEPS and the 12 TRADITIONS.\nWe do open the meeting 30 minutes prior for fellowship. \nSun: Speaker Meeting\nMon: Daily Reflection\nTue: Daily Reflection\nWed: Daily Reflection\nThu: Daily Reflections\n"
+},
+{
+  "_id": {
+    "$oid": "648e75afb291ed6c51361da9"
+  },
+  "name": "Women Supporting Women",
+  "recordID": "41979",
+  "email": "womenswomen2023@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:10:38.918Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T03:10:38.918Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e75afb291ed6c51361daa"
+    },
+    {
+      "$oid": "648e75afb291ed6c51361dab"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e761db291ed6c51361e1c"
+  },
+  "name": "Sisters in Recovery HOW",
+  "recordID": "42926",
+  "email": "sistersinrecoveryhow@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:12:29.494Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-21T15:07:49.890Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e761db291ed6c51361e1d"
+    }
+  ],
+  "notes": "AA Zoom Women's Meeting - Well rounded solid AA Group Started in March of 2020 as Sisters in Sobriety NTX\nOpen Literature meeting"
+},
+{
+  "_id": {
+    "$oid": "648e764bb291ed6c51361e46"
+  },
+  "name": "Jwala Beginners Malayalam Online AA Group",
+  "recordID": "43354",
+  "email": "shibujoy608@gmail.com",
+  "website": null,
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:13:15.050Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T03:27:03.135Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e7638b291ed6c51361e34"
+    },
+    {
+      "$oid": "648e764bb291ed6c51361e47"
+    },
+    {
+      "$oid": "67c124200d32cb701e029f96"
+    }
+  ],
+  "notes": "Morning Recovery ( രാവിലെ ) \n7 days a week at 6.30 am-8.30 am "
+},
+{
+  "_id": {
+    "$oid": "648e7785b291ed6c51361fc5"
+  },
+  "name": "Grave Emotional and Mental Disorders",
+  "recordID": "44786",
+  "email": "graveemotional@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:18:29.325Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-18T03:18:29.325Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e7785b291ed6c51361fc6"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "648e77b8b291ed6c51361ffd"
+  },
+  "name": "Breakfast Reflections",
+  "recordID": "32493",
+  "email": "admin@breakfastreflections.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-06-18T03:19:20.163Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-26T19:29:08.746Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e77b8b291ed6c51361ffe"
+    },
+    {
+      "$oid": "648e77b8b291ed6c51361fff"
+    }
+  ],
+  "notes": "A daily reflections meeting focusing on the day's reading, and supporting each other. \nOpen to all. Meets on Friday, Saturday and Sunday at 7am EST for one hour.\n\n"
+},
+{
+  "_id": {
+    "$oid": "64ca8396f88bf8b47eeab04e"
+  },
+  "name": "AA NEJC",
+  "notes": "Northeast Johnson County Zoom Meetings; 10 AM Central, Tuesdays, Thursdays, Saturdays and Sundays.  Lots of great sobriety attending this meeting.",
+  "recordID": "43371",
+  "email": "nejohnsoncountyaa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-08-02T16:25:58.380Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-02T16:25:58.380Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "64ca83bef88bf8b47eeab050"
+    },
+    {
+      "$oid": "64ca83dbf88bf8b47eeab052"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65161833197a335ed4d7c76d"
+  },
+  "name": "Hampstead Women's Meeting",
+  "notes": "This is a women’s closed AA Big Book lead meeting. We meet Sundays at 5pm London UK time on zoom and welcome all women, anywhere in the world, who have a desire to stop drinking. We ask that your video be\non when you enter the room.",
+  "recordID": "44879",
+  "email": "hampsteadwomens@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-09-29T00:20:03.765Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-29T00:20:03.765Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "65161846197a335ed4d7c76f"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "651dd16d1dedd98a269658fc"
+  },
+  "name": "Pimlico Keep It Simple Online meeting",
+  "notes": "Pimlico London “Keep it Simple” is a weekly AA zoom meeting with an invited chair/speaker, focusing on “keep it simple”everyone is welcome to attend. The Meeting opens every Tuesday at 12.45 pm starting at 1pm, GMT UK time duration “1hour” In the recovery world, “Keep It Simple” has been a familiar phrase since Alcoholics Anonymous began in 1939. It was the favorite phrase of Dr. Bob, one of the cofounders of AA. During his last speech at the national AA convention in 1950, he spoke of the simplicity of the AA solution.",
+  "recordID": "45131",
+  "email": "pimlicotues1pm@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-10-04T20:56:13.926Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-04T20:56:13.926Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "651dd1941dedd98a269658fe"
+    },
+    {
+      "$oid": "651dd1b21dedd98a26965900"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6523f9a3c073388ebefa35fd"
+  },
+  "name": "Sisters of Serenity ",
+  "notes": "Hello and Welcome to SOS!\nWe, here at SOS, like to offer a safe place for women to continue to recover together. We come from all walks of life and continue to engage in love, patience and tolerance. To another day being sober! \nFor more information or gaining access to our meeting room / calendar, please access our website: \nhttps://lafwomen.wixsite.com/sistersofserenity \nSisters of Serenity Meetings \nSunday 8am est (5am pst) On Awakening \nMonday 1pm est (10am pst) Grapevine stories \nTuesday 6pm est (3pm pst) Emotional Sobriety \nFriday 6pm est (3pm pst) Book study: Voices of Women in AA \nSaturday 8am est (5am pst) On Awakening \nSaturday 11am est (8am pst) Grapevine Stories \nWe look forward to connecting with you soon!\n~ SOS Trusted Servant \nFor attendance verification: \n1. Please have your video on throughout the meeting  \n2. During the meeting send the chairperson a message in the chat, informing her that you are looking for verification during the meeting. \n3. Soon after the meeting, send an email to SistersOfSerenitySOS@gmail.com with your name and what meeting attended for verification. One of the admins will respond to your request in a timely manner.\nThank you, we look forward to Trudging the Road of Happy Destiny with you\n-Sisters of Serenity-",
+  "recordID": "45152",
+  "email": "SistersOfSerenitySOS@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-10-09T13:01:23.370Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-15T15:26:21.018Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "6523f9b9c073388ebefa35ff"
+    },
+    {
+      "$oid": "6523f9c7c073388ebefa3601"
+    }
+  ],
+  "website": "https://lafwomen.wixsite.com/sistersofserenity"
+},
+{
+  "_id": {
+    "$oid": "6525a49f272b7e760e1ac964"
+  },
+  "name": "Daily Reflection Coffee Connection ",
+  "notes": "A Zoom meeting that focuses on reading and discussing from the book Daily Reflections.\nWe Know Only a Little Meeting Directory\n\nMonday through Friday\nDaily Reflections & Coffee, Connection 11am EST\n\nMonday-Discussions of Grapevine 8pm EST\nTuesday- Step Study 9PM EST\nWednesday- Literature 8pm EST\nThursday – Big Book 9pm EST\nFriday- Newcomers 8pm EST\nSaturday- Saturday Night Live 9PM EST\n\nPer our Group Conscious we do not provide verification. ",
+  "recordID": "45196",
+  "email": "aasg2020@yahoo.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-10-10T19:23:11.118Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T17:46:32.193Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "6525a4c7272b7e760e1ac966"
+    },
+    {
+      "$oid": "6525a4e9272b7e760e1ac968"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "653ae07689c2951bc7b24a02"
+  },
+  "name": "Just for Today Virtual AA",
+  "notes": "Daily Virtual AA Meeting (7 days); Hosted via zoom\n6 am (45 minutes)\n7 am (60 minutes)\n- Closed\n- Literature Based Discussion\nClosed meetings are for A.A. members only, or for those who have a drinking problem and “have a desire to stop drinking.”\nIn the interest of safety -  send a request for access to our virtual meetings to:  JFTContactList@gmail.com\nYour contact information will remain confidential until, and unless ,you choose to opt-in to our group contact list.\n",
+  "recordID": "45541",
+  "email": "jftcontactlist@gmail.com",
+  "website": null,
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-10-26T21:56:06.653Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-29T04:45:44.371Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "653ae08789c2951bc7b24a04"
+    },
+    {
+      "$oid": "653ae09589c2951bc7b24a06"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "654da9fc3f366c1752e0dd6b"
+  },
+  "name": "UK AA Morning Reading / Sharing",
+  "notes": "At this meeting we usually read the daily reflection and upon awakening. Then we open the meeting for solution based sharing.",
+  "recordID": "45995",
+  "email": "ecomm.seanglian@aamail.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2023-11-10T03:56:44.213Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-10T03:56:44.213Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "654da9723f366c1752e0dd65"
+    },
+    {
+      "$oid": "654da97f3f366c1752e0dd67"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65b7fa24a75476990d2a86c3"
+  },
+  "name": "AA Beginners Meeting: Serenity Seekers",
+  "notes": "Join \"Serenity Seekers Beginners Meeting\" – a warm, inclusive AA gathering for newcomers. \n\nWe embrace all with open arms and offer support to those seeking serenity on their journey to recovery. No one is ever turned away; all that's required is the desire to stop drinking.\n\nWelcome home!",
+  "recordID": "47817",
+  "email": "serenityseekers24@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-01-29T19:19:00.427Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-29T19:19:00.427Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "65b7fa3aa75476990d2a86c5"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f3310176404fe3897c0e3f"
+  },
+  "name": "The Pickle Jar Women's AA Meetings",
+  "notes": "\"Once a cucumber becomes a pickle, it can never be a cucumber again!\n\nProud Pickles gather 7 days a week, 11 am EST and @ 8 pm EST\n\nMeeting formats will vary from Host to Host. Still, they will include Big Book Studies, Daily Reflections, Inspirational Stories, readings from Women in Recovery, and anything else our pickled minds can come up with. We pickles like to color outside the jar!\n\nThe opposite of addiction is connection, and with the singleness of purpose in mind, we hope to build a community where all women in recovery feel safe, loved, and supported. We don't do this alone!\n\nCheck out our website for meeting access, resources, and a private community page.",
+  "recordID": "49002",
+  "email": "jarofthepickles@gmail.com",
+  "website": "https://www.jarofthepickles.com/",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-03-14T17:16:49.891Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-11T11:28:56.877Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "65f3311476404fe3897c0e41"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "660b4f1a7ecf98b2d57a3166"
+  },
+  "name": "Exconvento AA",
+  "notes": "Es una Reunion de apoyo para AA",
+  "recordID": "49364",
+  "email": "grupoexconvento@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-04-02T00:19:38.669Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-02T00:19:38.669Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "651c2f208682ef69a1b3abc0"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6639a82574a80970dbf56564"
+  },
+  "name": "A Checkup From the Neck Up - Music & More Beginner's Meeting",
+  "notes": "We meet 7 days a week at 2:30 pm EST. Beginners and old-timers are Welcome! Sobriety is not boring. Get your mind right!\n\nWe play music in this meeting and then discuss it. Songs that had a positive impact on your sobriety. Join us for fun and fellowship!\n\nThe Zoo Crew has been on Zoom since March of 2020. We have picnics around the country for meet and greets. Come join our community.\n\n\nJoin the Zoo Crew Service Team. Watch our training video: https://youtu.be/5ivUO0PK3j8",
+  "recordID": "50450",
+  "email": "zoom247aa@gmail.com",
+  "website": null,
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-05-07T04:03:49.569Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-11T12:46:24.606Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e55f2b291ed6c5135f736"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "667cf3e7c03bb77ad3eb714a"
+  },
+  "name": "Shoulder to Shoulder",
+  "notes": "Shoulder to Shoulder is a closed meeting of Alcoholics Anonymous. All who have a desire to stop drinking are welcome to join us. We meet online every Sunday at 9:00am ET to study the text of the Big Book of Alcoholics Anonymous to get a better understanding of the ideas, principles and steps of AA. We also like to enjoy ourselves while we do this and, if\nwe are blessed, make a friend or two!\nWe read paragraph by paragraph and participants can come in at any time to share. We encourage cross talk which fosters a friendly and emotionally connected meeting. We offer fellowship with understanding, support and humor. AND, free verification of attendance.\nNewcomers and Oldtimers alike are welcome!",
+  "recordID": "52072",
+  "email": "gtal.zoom@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-06-27T05:08:55.896Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-27T05:08:55.896Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "667cf3f7c03bb77ad3eb714c"
+    },
+    {
+      "$oid": "667cf405c03bb77ad3eb714e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "668ed337fedcda8a8aa8bd9a"
+  },
+  "name": "Meeker Group",
+  "notes": "Daily open meetings at 6AM and 6PM PST",
+  "recordID": "52507",
+  "email": "meekerzoom@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-07-10T18:30:15.288Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-10T18:30:15.288Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "668ed353fedcda8a8aa8bd9c"
+    },
+    {
+      "$oid": "668ed388fedcda8a8aa8bd9e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66b3dcc79ac96c59528354ff"
+  },
+  "name": "Grupo AA La Red",
+  "notes": "Tenemos reuniones abiertas de estructuración y paso doce y cerradas de compartires.\n\nNuestro propósito principal es llevar el mensaje al alcohólico que aun esta sufriendo Trad. 5\nSi necesitas ayuda con el tema del alcohol, estamos para ayudarte, comunícate con nosotros al WhatsApp\nTeléfono Whatsapp: +57 3142174160\nhttps://chat.whatsapp.com/IkqS1OfyiObLl8SuPGOSMr",
+  "recordID": "53378",
+  "email": "informacion@grupoaalared.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-08-07T20:44:55.574Z"
+  },
+  "updatedAt": {
+    "$date": "2024-08-16T21:36:37.256Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "66b3dce39ac96c5952835501"
+    },
+    {
+      "$oid": "66b3dd129ac96c5952835503"
+    }
+  ],
+  "website": "http://www.grupoaalared.org"
+},
+{
+  "_id": {
+    "$oid": "66c77929958ad81675726543"
+  },
+  "name": "Out to Breakfast Men's Meeting",
+  "notes": "Welcome to our men's closed meeting of Alcoholics Anonymous! \nOur format includes a speaker/topic session, and everyone is encouraged to share. \nWe're here to support each other on our journey to recovery.\n\nFor safety and anonymity, it is a group conscious decision to ask attendees to turn on their camera, if you have one, and if possible, leave it on for the meeting.\n",
+  "recordID": "54477",
+  "email": "otbonlinepdx@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-08-22T17:45:13.556Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-15T14:25:10.817Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "66c77934958ad81675726545"
+    },
+    {
+      "$oid": "66c77943958ad81675726547"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66fb7262ca3a5db55628bbca"
+  },
+  "name": "InsomniAA",
+  "notes": "Join \"InsomniAA\" – a warm, inclusive meeting of Alcoholics Anonymous for newcomers and old timers alike at 11:30 pm pacific time in the USA every night.\nWe embrace all with open arms and offer support to those seeking sobriety on their journey to recovery.\nNo one is ever turned away; all that's required to participate is the desire to stop drinking.\nOur primary purpose is to stay sober and help other alcoholics achieve sobriety, and we follow the 12 Traditions of A.A.\nDifferent format each night. Welcome! ",
+  "recordID": "57017",
+  "email": "insomniaa2024@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-10-01T03:54:10.188Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-01T03:54:10.188Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "66fb726fca3a5db55628bbcc"
+    },
+    {
+      "$oid": "66de185756f52b6bdba4de26"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6714f73f1e06b4d209fa9a84"
+  },
+  "name": "Into Action Online",
+  "notes": "A daily Zoom discussion meeting focusing on the 12 steps of Alcoholics Anonymous. \nIt is an open meeting, and all are welcome! \n\nWe meet Monday-Friday 6:30-7:30 am MST\nSaturday 8:00-9:00 am MST\nSunday 7:30-8:30 am MST\n\nTuesday is a step study\nFriday is a traditions meeting.",
+  "recordID": "59342",
+  "email": "intoactiononline@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-10-20T12:27:43.418Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-20T12:27:43.418Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "6714f7541e06b4d209fa9a86"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "673bf017f40de20d27821262"
+  },
+  "name": "5 O'Clock Sober",
+  "notes": "5 O'Clock Sober in an open AA meeting that meets 7-days a week at 5:00 p.m. EST including various topics and formats:\n\nMonday - Daily Reflection Discussion Meeting\nTuesday - Guest Speaker Meeting\nWednesday - Big Book Study (Reading & Discussion)\nThursday - Tag Discussion\nFriday - 12 Steps & 12 Traditions (Reading & Discussion)\nSaturday - Tag Discussion\nSunday - Emotional Sobriety (Reading & Discussion)",
+  "recordID": "62398",
+  "email": "125oclocksober@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-11-19T01:55:35.933Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-19T01:55:35.933Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "673bedf0f40de20d27821237"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "674fa694fa11b20aead939e0"
+  },
+  "name": "Hollywood Squares Men's ",
+  "recordID": "62531",
+  "email": "wfhs32920@hollywoodsquares.org",
+  "website": "https://www.hollywoodsquares.org/",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-12-04T00:47:16.716Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-04T00:58:33.333Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "674fa6a4fa11b20aead939e2"
+    },
+    {
+      "$oid": "674fa6b3fa11b20aead939e4"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "676d74cd3275ac0fe0ef7657"
+  },
+  "name": "Solstice Group AA",
+  "notes": "Weekly closed-discussion meeting. Recovery topics from Daily Reflections readings. \nOpen to all who have the desire to stop drinking.\nPagan-friendly, LGBTQ-friendly.",
+  "recordID": "63246",
+  "email": "solsticegroupaa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-12-26T15:22:53.343Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-26T15:22:53.343Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "676d74dd3275ac0fe0ef7659"
+    },
+    {
+      "$oid": "676d74e93275ac0fe0ef765b"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "676de7b5a39894812a327925"
+  },
+  "name": "Bentonville Noon",
+  "notes": "Our meetings are literature based focused on the Big Book and the 12&12. We share our experience, strength and hope in an effort to share the message of recovery. \nThis is an open meeting held every weekday at 12 to 1PM CST.\nMonday - Big Book\nTuesday - 12 & 12\nWednesday - Stories\nThursday - Big Book\nFriday - Big Book, Newcomer",
+  "recordID": "63332",
+  "email": "bentonville-noon-aa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2024-12-26T23:33:09.696Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-26T23:33:09.696Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67679dd5ff74d5cb2ef77cf2"
+    },
+    {
+      "$oid": "676de7d1a39894812a327928"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "677a83557e98738c334761e5"
+  },
+  "name": "Oasis Group",
+  "notes": "A 4x a week meeting in which everyone can share! \nYou do not have to raise hands to be called on. \nFriday is our speaker meeting. The other days are a check in meeting where you may discuss or share anything you wish. \n2 pm PST/ 5 pm EST",
+  "recordID": "63496",
+  "email": "AAOasis@outlook.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-01-05T13:04:21.448Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-05T13:04:21.448Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "677a83617e98738c334761e7"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "678860daf513dd9121727b9b"
+  },
+  "name": "Mornings With Bill W.",
+  "notes": "We meet every day at 7:30 AM Eastern time. We’re glad you’re here! Our current meeting lineup is: Monday- Big Book, Tuesday- As Bill Sees It, Wednesday- speaker, Thursday-step meetings, Friday- Tradition/Grapevine/celebration, Weekends-chairs choice. Wednesday and Friday are open meetings, with all others days closed. \n\nWhen you join the meeting, you will be placed in the waiting room. Please be patient as our greeter is managing the meeting safety. Be prepared to turn on your camera as soon as you enter the meeting. If your camera is not working, we suggest using the phone  option listed above. Hope to see you soon!",
+  "recordID": "63883",
+  "email": "morningswithbillw@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-01-16T01:28:58.168Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-30T21:12:22.218Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "678860f2f513dd9121727b9d"
+    },
+    {
+      "$oid": "67886109f513dd9121727b9f"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67b341661a06778ae1bbc8f1"
+  },
+  "name": "Grupo Nuevo Renacer, de AA de Cienaga (Magdalena)/Colombia",
+  "notes": "Necesita una reunión? Vengase para acá! lo estamos esperando! Mente Abierta, mente alerta.",
+  "recordID": "64643",
+  "email": "a.anuevorenacervirtual@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-02-17T14:02:14.670Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T14:02:14.670Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67b341721a06778ae1bbc8f3"
+    },
+    {
+      "$oid": "67b3417e1a06778ae1bbc8f5"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67b6586125969dc4bc61a754"
+  },
+  "name": "Alcoholics Anonymous Recovery with Challenges (AARC)",
+  "notes": "Alcoholics Anonymous Recovery with Challenges (AARC)  is dedicated to providing a welcoming and supportive environment for individuals recovering from alcoholism who also face challenges related to mental and physical health, including trauma and chronic conditions.\nWe meet every Sunday at 3: 00 EST, Tuesday at 8 pm EST, Wednesday at 3 PM EST and Thursday at 9:00 PM EST on Zoom to listen to a speaker share their own story or read a story from AA-approved literature that focuses on our needs. Relevant topics are discussed during the sharing portion of the meeting. ",
+  "recordID": "55905",
+  "email": "AAzoomaccess@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-02-19T22:17:05.796Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-15T15:47:51.265Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67b6587a25969dc4bc61a756"
+    },
+    {
+      "$oid": "67b6589325969dc4bc61a758"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67bb3ad065343d3a4736125b"
+  },
+  "name": "Grupo No Estamos Solos de AA",
+  "notes": "Nos reunimos por ZOOM. Abierto a compañeros/as alcohólicos/as de todo el mundo.\nReunión TODOS LOS DÍAS DE LA SEMANA a las 7.00 am España /22:00 Obregón (México) Duración: una hora y media. En ESPAÑOL.\n\nEl funcionamiento del grupo es en base al seguimiento y respeto de las DOCE TRADICIONES.\nTenemos una programación semanal, según la cual, cada día tratamos un tema: Conceptos, Tradiciones, Pasos o temas de la literatura de AA.\nParticipaciones de 10 minutos. Reuniones especiales los domingos con un orador.",
+  "recordID": "64875",
+  "email": "a.anoestamossolos@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-02-23T15:12:16.580Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T15:16:09.464Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67b3417e1a06778ae1bbc8f5"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67e6b4c2d4a11e73d11f5529"
+  },
+  "name": "Everyday Living",
+  "notes": "Meets every Tuesday, Thursday, and Friday 12:00 - 1:00 EST\nFocus is on reading a portion of the 12 Steps and 12 Traditions, followed by discussion.\nAll are welcome to attend.\nNo password needed.\n",
+  "recordID": "65552",
+  "email": "everydayliving24zoom@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-03-28T14:40:02.684Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-28T14:40:02.684Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67e6b4cfd4a11e73d11f552b"
+    },
+    {
+      "$oid": "67e6b4dcd4a11e73d11f552d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67f329e8336bae1cadece2b0"
+  },
+  "name": "Friday Night Live Every Night",
+  "notes": "FNLEN is here every night 8pm EST.\nMonday - Big Book study\nTuesday - open discussion\nWednesday - 12 & 12 study\nThursday - speaker night\nFriday - As Bill Sees It\nSaturday - open discussion\nSunday - open discussion\nStick with the winners, keep coming back",
+  "recordID": "65613",
+  "email": "fnleverynight@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T01:27:04.103Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T01:27:04.103Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67f329f3336bae1cadece2b2"
+    },
+    {
+      "$oid": "67f32a00336bae1cadece2b4"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67f445900ddae0ef43e31515"
+  },
+  "name": "AA Aussie Worldwide",
+  "notes": "Sun Spiritual Concepts\nMon. Big Book\nTues Beginners\nWed Living Sober\nWed Living Sober\nThurs Daily Reflections\nFri ID\nSat Topic\n\n",
+  "recordID": "65984",
+  "email": "AAaussieworldwide@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T21:37:20.296Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:38:38.474Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "67f445a50ddae0ef43e31517"
+    },
+    {
+      "$oid": "67f445b20ddae0ef43e31519"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "680df6b838adecaead033d57"
+  },
+  "name": "Sunrise Online",
+  "notes": "The Sunrise Online Group is an online, literature-based, discussion meeting that offers daily-changing topics and references a multitude of AA-approved literature. We are a group of recovering alcoholics that understand and maintain the integrity of the 12 traditions. We have no outside affiliation and our primary purpose is to stay sober and help other alcoholics achieve sobriety.",
+  "recordID": "66469",
+  "email": "mcgowansunrise@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-04-27T09:19:52.256Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-28T16:09:07.941Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "680df6d038adecaead033d59"
+    },
+    {
+      "$oid": "680df6f338adecaead033d5b"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6845f0f9c9da0f1f978eb3df"
+  },
+  "name": "Turn The Page",
+  "notes": "Solution focused.\nBased out of Knoxville TN\nSeven days a week at 6 PM EST\nMonday: Open Topic\nTuesday: Big Book Speaker\nWednesday: Big Book Cards\nThursday: Open Topic\nFriday:  - Open Chair\nSaturday: Dealers Choice\nSunday: Big Book Stories\n",
+  "recordID": "66880",
+  "email": "turnthepageknoxville@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-06-08T20:22:17.951Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-29T04:57:30.736Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "6845f107c9da0f1f978eb3e1"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "686afe05067679b030d37376"
+  },
+  "name": "Step Sisters",
+  "notes": "Open Women’s meeting  Sunday thru Thursday at 7pm PST.\nSunday is a Big Book Study.\nThursday is a Twelve Steps and Twelve Traditions Study.\nSaturday will be a Living Sober night.\n \nOne hour,  Sunday thru Thursday at 7pm PST.",
+  "recordID": "67446",
+  "email": "Wmninaa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-07-06T22:51:49.095Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-08T21:11:40.455Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "686afe10067679b030d37378"
+    },
+    {
+      "$oid": "686afe1c067679b030d3737a"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "686ed9f47e7f6a95f3684209"
+  },
+  "name": "Iran Mornings woman",
+  "notes": "A daily virtual telephone meeting held from 10:00 AM to 11:30 AM Tehran time (IRST, UTC +3:30), every Monday through Thursday. We follow the AA Big Book sequentially, reading one section at a time and discussing its meaning together. The meeting is open to all—whether you’re new to the program or have long been in recovery. Sessions last 90 minutes and include group reading turns, thoughtful reflections, personal sharing, and warm fellowship. No prior registration is required. Anonymity is respected, and newcomers are always welcomed. Join us to deepen your understanding and strengthen your recovery journey.",
+  "recordID": "67971",
+  "email": "aairan.site@gmail.com",
+  "website": "https://aairan.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-07-09T21:07:00.404Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-09T21:07:00.404Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "686eda167e7f6a95f368420b"
+    },
+    {
+      "$oid": "6819499c5ce6a62ad3ad198b"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6882124950489ed721fb4c7f"
+  },
+  "name": "Pacific Northwest Fellowship",
+  "notes": "PNWF is a fellowship rooted firmly in the Big Book of Alcoholics Anonymous and guided by the Twelve Traditions. This is a space where newcomers and old-timers alike can come together in unity, service, and recovery. \n\nOur primary purpose is to stay sober and help other alcoholics achieve sobriety, just as outlined in the program of Alcoholics Anonymous. We read directly from the Big Book, share personal experience, strength, and hope, and keep our group grounded in the spiritual principles that have helped millions find freedom from alcoholism.\n\nThough we meet online, we’re not just a digital group — we encourage members to connect locally as well.",
+  "recordID": "68475",
+  "email": "pnwfellowshipaa@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-07-24T11:00:25.754Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-24T11:00:25.754Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "6882126550489ed721fb4c81"
+    },
+    {
+      "$oid": "6882127e50489ed721fb4c83"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "68853293184b4fd775da5106"
+  },
+  "name": "The Unfortunates Group",
+  "notes": "Open Discussion Mon-Sun 7am CST\n",
+  "recordID": "68481",
+  "email": "info@unfortunates.org",
+  "website": "https://www.unfortunates.org/",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-07-26T19:54:59.394Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-26T19:54:59.394Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "688532e2184b4fd775da5108"
+    },
+    {
+      "$oid": "68853307184b4fd775da510a"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "688c22c989e410d4d73f5061"
+  },
+  "name": "Chelsea Nooners Remote",
+  "notes": "A twice-weekly video meeting with a speaker followed by sharing. \nThis is a closed meeting. If you are an alcoholic, or have a desire to stop drinking, you are welcome to attend. \nMeets every Monday and Wednesday for 1 hour from 12pm till 1pm EST.",
+  "recordID": "68436 ",
+  "email": "noonersremote@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-08-01T02:13:29.546Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-01T02:13:29.546Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "688c22d589e410d4d73f5063"
+    },
+    {
+      "$oid": "688c22df89e410d4d73f5065"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "68c5724a997a6caa2ff723a0"
+  },
+  "name": "GRUPO CENTINEL ONLINE",
+  "notes": "Somos un grupo online de Chile que se reúne todos los días al mediodía para llevar el mensaje al alcohólico que aún sufre. Además, contamos con dos reuniones semanales en horario nocturno.\nExtendemos una cordial invitación a todas las personas que deseen unirse a nuestras reuniones. Lunes a domingos a las 13:00 Horas de Chile\nMartes y Jueves a las 21:00 Horas de Chile\n\n🔺CENTINELA ONLINE🔺\nToda la información actualizada se encuentra en:\nhttps://www.centinelaonline.cl",
+  "recordID": "70450",
+  "email": "centinelaonline@aachile.cl",
+  "website": "https://www.centinelaonline.cl/",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-09-13T13:31:54.188Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-13T13:31:54.188Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "68c57265997a6caa2ff723a2"
+    },
+    {
+      "$oid": "68c5727d997a6caa2ff723a4"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "68ea49ee50a24f515cc88a0e"
+  },
+  "name": "A New Beginning (UK based)",
+  "notes": "We meet on a Monday, Wednesday, Friday and Sunday (12noon to 1pm UK time) and Tuesday (7pm to 8pm UK time). An AA Open meeting - all welcome. Each meeting has a theme - (room opens 15 minutes prior for fellowship)\n\n Sunday is  A New Beginning Experience, Strength and Hope\n Monday is Daily Reflections\n Tuesday is Keep it Simple;\n Wednesday is  As Bill Sees It \n Friday is Living Sober.",
+  "recordID": "71730",
+  "email": "anewbeginningzoom@outlook.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-10-11T12:13:34.393Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-01T04:38:16.430Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "68ea4a4350a24f515cc88a10"
+    },
+    {
+      "$oid": "68ea4abf50a24f515cc88a12"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "68fc16d04d5b1d870f5890db"
+  },
+  "name": "K.I.S.S. ( Keep It Simply Spiritual ) A.A. GROUP",
+  "notes": "Our commitment is: • Solutions offered • Spiritually purposeful • Literature A.A. driven • Praying:  Recognizing that there is something bigger than ourselves\n\nThis SOLUTION focused group meets 7 days per week - 2x daily. • 12 noon (12pm ) EASTERN USA • 8:15pm EASTERN\n\nAll meetings are Open Discussion\n\n• SUNDAY– 12pm EASTERN - Emotional Sobriety\n• MONDAY - SATURDAY - 12pm EASTERN – Live in the Solution\n• SUNDAY - 8:15pm EASTERN – Guest Speaker\n• MONDAY - 8:15pm EASTERN – Literature (Big Book, 12&12, etc)\n• TUESDAY - 8:15pm EASTERN – Hot Topic Meeting\n• WEDNESDAY - 8:15pm EASTERN – Newcomer’s Meeting\n• THURSDAY - 8:15pm EASTERN – Old-Timer’s Meeting\n• FRIDAY - 8:15pm EASTERN - Women's Meeting (EMAIL US FOR THE PASSCODE)\n• SATURDAY - 8:15pm EASTERN – Literature Night\n",
+  "recordID": "72525",
+  "email": "keepitsimplyspirituala.a.tampafl@gmail.com",
+  "website": "https://www.aakiss4youfl.com/",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-10-25T00:16:16.249Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-25T00:16:16.249Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "68fc16f64d5b1d870f5890dd"
+    },
+    {
+      "$oid": "68fc171d4d5b1d870f5890df"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "693a05f4a2d575c7639e6c75"
+  },
+  "name": "AA The Way Out",
+  "notes": "Co-Ed Meeting's daily @ 6am EST\nWomen's Meeting's @ 10am & 6:15pm EST daily\nMen's Meeting 8pm EST on Sunday's\n\nAA The Way Out is a welcoming and solution-focused group dedicated to providing a safe and supportive environment for men and women seeking recovery. We offer a variety of meetings to accommodate different needs and schedules. Our daily coed meeting is held at 6:00 AM, providing early morning options for connection and support. Additionally, we host a women's meeting at 10:00 AM EST and another at 6:15 PM EST, creating a focused space for women in recovery.  A new Sunday 8PM EST meeting for Men has been created for men in recovery.\n\nOur group is a place to call home, where members find strength, understanding, and hope as they walk the path of sobriety together. Through shared experience, spiritual growth, and daily connection, we offer consistent meetings that support healing, personal growth, and community. Alcoholism affects us all, but by sharing our experiences and supporting one another, we find hope and a common solution.\n\nMeeting Schedule:\n6:00 AM Coed \n10:00 AM Women \n6:15 PM Women\n\n10:00 AM Women's EST Meetings:\n    Monday: Stories of AA\n    Tuesday: Ask-It-Basket\n    Wednesday: Prayer & Meditation\n    Thursday: AA Literature\n    Friday: Step Meeting\n    Saturday: Big Book Study\n    Sunday: Super Speaker Sunday\n\n6:15 PM Women's EST. Meetings\n    Monday - Wednesday - Daily Reflection\n    Thursday - AA Literature\n    Friday - Music Meeting\n    Saturday - Music Meeting\n    Sunday - Super Speaker",
+  "recordID": "76517",
+  "email": "aathewayout@gmail.com",
+  "website": "https://www.aathewayout.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-12-10T23:44:52.837Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-23T05:03:46.242Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "648e72a8b291ed6c51361a19"
+    },
+    {
+      "$oid": "693a0622a2d575c7639e6c78"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "694ebf0f48a5af89b314f2bd"
+  },
+  "name": "Unity and Belonging",
+  "notes": "Unity & Belonging is an open online AA meeting focused on the LGBTQ+ community and our allies. All alcoholics are welcome! Meetings are held daily at 5pm Eastern. The primary purpose of the group Unity & Belonging is to follow the guideline of Tradition 5. We do this by providing a supportive space for individuals seeking recovery from alcoholism, adhering to the AA Principles, and ensuring the AA traditions guide the decisions of the group.\nSunday: Big Book Reading/ Discussion\nMonday: Living Sober Reading/ Discussion\nTuesday: AA Grapevine Reading/ Discussion\nWednesday: Meditation/Daily Reflection/ Discussion\nThursday: Chair’s Choice\nFriday: Speaker Traditions meeting/ Discussion\nSaturday: Speaker Step meeting/ Discussion",
+  "recordID": "76799",
+  "email": "recovery@unityandbelonging.org",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2025-12-26T16:59:59.618Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-23T00:19:23.353Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "694ebf3448a5af89b314f2bf"
+    },
+    {
+      "$oid": "694ebf4648a5af89b314f2c1"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "697e3f1c0ab958b259f8f2e7"
+  },
+  "name": " Riverdale Group Online",
+  "notes": "Thursdays at 6:30-7:30 PM. Big Book Meeting.\nMembers read Big Book cover-to-cover and share on the reading, (round robin)\n\n",
+  "recordID": "77780",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2026-01-31T17:42:52.738Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-20T12:14:36.524Z"
+  },
+  "email": "RiverdaleOnlineAA@gmail.com",
+  "userIDs": [
+    {
+      "$oid": "69e61891a31ac9d88779ca41"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699242ff5349b75bab292697"
+  },
+  "name": "WISH Group of Alcoholics Anonymous",
+  "notes": "WISH - Women In Service Here\nA women's group of Alcoholics Anonymous where we celebrate women in recovery through fellowship, service and recovery.\n\nWe host a variety of meetings each day, some of which change every three-six months and hold a monthly Group Conscience meeting.\n\nOur regular meetings are as follows (all times are EST)...\n\n6am On Awakening - Daily\n7am Living Sober - Sundays\n10am Living Sober - Mondays\n6pm Big Book Study - Tuesdays & Saturdays\n6pm 12&12 - Thursdays\n7pm AA Literature - Sundays & Wednesdays\n\nThe Parking Lot is open after most meetings for fellowship and Rule 62!\n\nMany more meetings available via our weekly schedule which is provided\nat the meeting.",
+  "recordID": "78111",
+  "email": "womeninservicehere@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2026-02-15T22:04:47.498Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-15T22:04:47.498Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "699244875349b75bab292699"
+    },
+    {
+      "$oid": "699244f15349b75bab29269b"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a8870324c744a64ae9d7f0"
+  },
+  "name": "AA FELLOWSHIP AT SUNSET SERENITY",
+  "notes": "We are an open AA fellowship meeting 2 times daily. Weather you have few days or many years in sobriety, we invite you to join us in recovery, unity, and service. We also encourage discussions about mental and physical health affecting alcoholism and addiction. \n☆\" ONCE YOU FIND US YOU NEVER LEAVE US \"☆ \nMonday: Gratitude Day\nTuesday: Open Topic Day\nWednesday:  : Big Book study/Share\nThursday: Daily Reflection\nFriday: Music & Share\nSat: Speaker / Topic Share\nSun: Speaker / bring a friend\n* Court Card V Available *\n♡ 12 Pacific (3 Eastern) / 6 Pacific Daily (9 Eastern)  ♡",
+  "recordID": "78475",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2026-03-04T19:24:51.149Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-12T17:17:58.700Z"
+  },
+  "email": "sunsetserenity9@gmail.com",
+  "userIDs": [
+    {
+      "$oid": "69a8876724c744a64ae9d7f4"
+    },
+    {
+      "$oid": "69a8877c24c744a64ae9d7f6"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69dfbda18081d3f14b3ebc30"
+  },
+  "name": "Grupo el milagro",
+  "notes": "Grupo el milagro es un grupo tradicional que estudie la literatura de AA. Abierta a todos; todo el mundo es bienvenido. Hay reuniones todos los días a las 12PM hora Miami (EST) y la duración es una hora. Papeles de la corte disponible. \nLunes: Estudio Libro Azul\nMartes: Serie de tradiciones\nMiércoles: Libro Viviendo Sobrio\nJueves: Orador\nViernes: Libro, Como Lo Ve Bill\nSábado: Reunión de temas\nDomingo: Serie de Pasos\nPor razones de seguridad, la conciencia del group acordó que por favor entren con sus cámaras abiertas.",
+  "recordID": "79346",
+  "email": "aagrupoelmilagro@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2026-04-15T16:32:33.500Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-15T16:32:33.500Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "69dfbdb78081d3f14b3ebc32"
+    },
+    {
+      "$oid": "69dfbdce8081d3f14b3ebc34"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f37fe17b11d3ea6570f723"
+  },
+  "name": "A.A. KASTORIA",
+  "notes": "Είμαστε μια διαδικτυακή ομάδα που επικεντρώνεται στην ανάγνωση και τα μοιράσματα πάνω στην βιβλιογραφία των Α.Α. \nΕίμαστε ανοιχτοί σε όλους· όλοι είναι ευπρόσδεκτοι να συμμετάσχουν. \nΣυναντιόμαστε στις 8 μ.μ. (ώρα Ανατολικής Ευρώπης) 4 ημέρες την εβδομάδα. \nΤο τελευταίο Σάββατο κάθε μήνα, η συνάντηση είναι ανοιχτή σε μη μέλη των Α.Α. ",
+  "recordID": "80103",
+  "email": "aakastoria@gmail.com",
+  "accountID": {
+    "$oid": "6436f5a3f03fdecef8459055"
+  },
+  "createdAt": {
+    "$date": "2026-04-30T16:14:24.989Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-30T16:14:24.989Z"
+  },
+  "userIDs": [
+    {
+      "$oid": "69f37ffa7b11d3ea6570f725"
+    },
+    {
+      "$oid": "69f380127b11d3ea6570f727"
+    }
+  ]
+}]
