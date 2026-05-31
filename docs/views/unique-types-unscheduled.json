@@ -1,0 +1,91 @@
+[
+  {
+    "$match": {
+      "$or": [
+        {
+          "day": {
+            "$exists": false
+          }
+        },
+        {
+          "day": {
+            "$not": {
+              "$type": "number"
+            }
+          }
+        },
+        {
+          "day": null
+        },
+        {
+          "time": {
+            "$exists": false
+          }
+        },
+        {
+          "time": {
+            "$not": {
+              "$type": "string"
+            }
+          }
+        },
+        {
+          "time": ""
+        },
+        {
+          "time": null
+        },
+        {
+          "timezone": {
+            "$exists": false
+          }
+        },
+        {
+          "timezone": {
+            "$not": {
+              "$type": "string"
+            }
+          }
+        },
+        {
+          "timezone": ""
+        },
+        {
+          "timezone": null
+        }
+      ]
+    }
+  },
+  {
+    "$unwind": "$types"
+  },
+  {
+    "$group": {
+      "_id": "$types"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "type",
+      "localField": "_id",
+      "foreignField": "code",
+      "as": "details"
+    }
+  },
+  {
+    "$unwind": "$details"
+  },
+  {
+    "$replaceRoot": {
+      "newRoot": {
+        "$mergeObjects": ["$$ROOT", "$details"]
+      }
+    }
+  },
+  {
+    "$project": {
+      "details": 0,
+      "_id": 0
+    }
+  }
+]
