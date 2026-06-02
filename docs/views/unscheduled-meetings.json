@@ -1,0 +1,123 @@
+[
+  {
+    "$match": {
+      "$or": [
+        {
+          "day": {
+            "$exists": false
+          }
+        },
+        {
+          "day": {
+            "$not": {
+              "$type": "number"
+            }
+          }
+        },
+        {
+          "day": null
+        },
+        {
+          "time": {
+            "$exists": false
+          }
+        },
+        {
+          "time": {
+            "$not": {
+              "$type": "string"
+            }
+          }
+        },
+        {
+          "time": ""
+        },
+        {
+          "time": null
+        },
+        {
+          "timezone": {
+            "$exists": false
+          }
+        },
+        {
+          "timezone": {
+            "$not": {
+              "$type": "string"
+            }
+          }
+        },
+        {
+          "timezone": ""
+        },
+        {
+          "timezone": null
+        }
+      ]
+    }
+  },
+  {
+    "$lookup": {
+      "from": "group",
+      "localField": "groupID",
+      "foreignField": "_id",
+      "as": "groupInfo",
+      "pipeline": [
+        {
+          "$project": {
+            "email": 1,
+            "website": 1,
+            "phone": 1,
+            "notes": 1,
+            "_id": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "$replaceRoot": {
+      "newRoot": {
+        "$mergeObjects": [
+          {
+            "groupEmail": {
+              "$arrayElemAt": [
+                "$groupInfo.email",
+                0
+              ]
+            },
+            "groupWebsite": {
+              "$arrayElemAt": [
+                "$groupInfo.website",
+                0
+              ]
+            },
+            "groupPhone": {
+              "$arrayElemAt": [
+                "$groupInfo.phone",
+                0
+              ]
+            },
+            "groupNotes": {
+              "$arrayElemAt": [
+                "$groupInfo.notes",
+                0
+              ]
+            }
+          },
+          "$$ROOT"
+        ]
+      }
+    }
+  },
+  {
+    "$unset": [
+      "_id",
+      "groupInfo",
+      "createdAt",
+      "accountID",
+      "archived",
+      "updatedAt"
+    ]
+  }
+]

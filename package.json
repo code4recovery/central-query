@@ -8,8 +8,13 @@
     "start-dev": "tsx --watch -- src/index.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "test-dev": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
     "build:clean": "rm -rf dist/*",
-    "build": "npm run build:clean && tsc --project tsconfig.json"
+    "build": "npm run build:clean && tsc --project tsconfig.json",
+    "e2e:start": "tsx scripts/start-e2e-server.ts",
+    "e2e:run": "cypress run",
+    "e2e:open": "cypress open"
   },
   "keywords": [],
   "author": "Tim Rohrer",

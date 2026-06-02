@@ -12,22 +12,23 @@ This project serves as a proof-of-concept for Code for Recovery, demonstrating c
 
 ### Installation for Development
 
-1. Request access to a MongoDB collection of meeting data set up for testing and development.
-2. Add a `.env` file containing:
+1. Clone the repo and run `npm install`
 
+2. For local development with a real database, create a `.env` file (see `.env.example`):
    ```sh
+   MONGO_URI=mongodb://localhost:27017
+   MONGO_DB_NAME=central-query-dev
+   PORT=5001
    NODE_ENV=development
-   MONGO_DB_NAME=central-exp
-   # Example for local MongoDB server:
-   # MONGO_URI=mongodb://root:example@localhost:27017/?authSource=admin&readPreference=primary&directConnection=true&ssl=false
-   MONGO_URI=mongodb+srv://<username>:<password>@<databaseURL>
    ```
 
-3. Clone the repo, and run `npm install` inside the root folder.
+3. Run tests: `npm test` (uses MongoDB Memory Server - no setup needed)
 
-4. Run `npm run test` to see the results of the unit tests.
+4. Run the server:
+   - `npm run start-dev` - Development mode with hot reload
+   - `npm run build && npm run start` - Production build
 
-5. Run the server, using `npm run build && npm run start` or `npm run start-dev` to execute a version that will reload upon saving code changes.
+**Note:** Unit and e2e tests use MongoDB Memory Server and don't require a `.env` file or external database.
 
 Please note: This app uses "pure" ES modules and not the older CommonJS modules. Please stick with this approach.
 
@@ -93,11 +94,36 @@ Ignore, unless testing server-side proof of concept. These were added for testin
 
 ## Testing
 
-`central-query` comes with jest for unit tests and Cypress for integration tests. Please continue to write tests for new code.
+### Unit Tests
 
-### Unit
+Run unit tests with Jest:
+```bash
+npm test              # Run all tests
+npm run test-dev      # Watch mode
+```
 
-To make node work with ES modules, the node option of `--experimental-vm-modules` must be used as of node 18. This requirement should go away in the future.
+Unit tests use MongoDB Memory Server, so no external database is needed.
+
+### E2E Tests
+
+E2E tests use Cypress with MongoDB Memory Server for a zero-dependency setup:
+
+```bash
+# Terminal 1: Start the e2e environment
+npm run e2e:start     # Starts Memory Server + seeds data + runs app on :5001
+
+# Terminal 2: Run Cypress
+npm run e2e:open      # Interactive mode
+npm run e2e:run       # Headless mode
+```
+
+The e2e server automatically:
+- Starts MongoDB Memory Server (in-memory, temporary)
+- Seeds test data from `cypress/fixtures/`
+- Starts the application on port 5001
+- Cleans up everything on exit (Ctrl+C)
+
+**No Docker, MongoDB installation, or .env file needed** - everything runs in memory with predictable fixture data.
 
 To check coverage, execute `NODE_OPTION=--experimental-vm-modules npx jest --coverage` in the terminal. Currently 100% of the `utils` and `common` functions are covered by tests. A smaller percentage of the `storage` functions are covered in unit tests, but more of them are covered through Cypress.
 
