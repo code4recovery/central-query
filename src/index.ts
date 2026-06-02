@@ -20,7 +20,20 @@ dotenv.config()
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080
 
 process.on("unhandledRejection", (reason) => {
-  Logger.error(`Unhandled rejection: ${reason instanceof Error ? reason.stack : reason}`)
+  const msg =
+    reason instanceof Error
+      ? reason.stack ?? reason.message
+      : typeof reason === "string"
+        ? reason
+        : (() => {
+            try {
+              return JSON.stringify(reason)
+            } catch {
+              return String(reason)
+            }
+          })()
+
+  Logger.error(`Unhandled rejection: ${msg}`)
 })
 
 try {
