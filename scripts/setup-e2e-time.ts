@@ -4,10 +4,10 @@
  * This preload script mocks the global Date constructor to return a fixed timestamp
  * for predictable e2e test results. Only loaded when running e2e tests via --import flag.
  * 
- * Fixed time: Friday 2026-06-11 at 11:30 UTC
- * - Friday has 27 meetings (busiest day in fixture)
- * - Hour 11 UTC has 15 meetings (peak hour)
+ * Fixed time: 2026-06-11T11:30:00.000Z (UTC)
+ * - Chosen to produce consistent, non-empty query results from the e2e fixtures
  * - Ensures consistent, non-empty query results
+ *
  */
 
 const FIXED_TIME = process.env.FIXED_TIME || "2026-06-11T11:30:00.000Z"
