@@ -21,9 +21,9 @@ const OriginalDate = Date
 class MockDate extends OriginalDate {
   constructor(...args: any[]) {
     if (args.length === 0) {
-      super(fixedTimestamp);
+      super(fixedTimestamp)
     } else {
-      super(...(args as [any]));
+      super(...(args as any[]))
     }
   }
 
