@@ -9,10 +9,6 @@ import {
 
 export type MeetingViewType = "scheduled" | "unscheduled" | "combined"
 
-export const meetingCollection = useCollection<MeetingView>("meeting")(
-  configuredMongoDatabase,
-)
-
 export const query = async (
   queryPipeline: MongoDB.Document[],
   viewType: MeetingViewType = "combined",

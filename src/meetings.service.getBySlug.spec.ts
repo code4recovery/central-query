@@ -5,7 +5,6 @@ import { jest } from "@jest/globals"
 import { MeetingView } from "./storage/storage.types.js"
 
 const mockMeetingStore = {
-  meetingCollection: {} as unknown,
   query: jest.fn(),
   bySlug: jest.fn<(slug: string) => Promise<MeetingView | null>>(),
   byGroup: jest.fn(),

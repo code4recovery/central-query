@@ -8,7 +8,6 @@ import { Group } from "./endpoints.types.js"
 import { MeetingsOptions } from "./endpoint-options.types.js"
 
 const mockMeetingStore = {
-  meetingCollection: {} as unknown,
   query:
     jest.fn<
       (queryPipeline: unknown[], viewType?: string) => Promise<MeetingView[]>

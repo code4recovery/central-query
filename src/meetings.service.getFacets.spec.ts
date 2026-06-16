@@ -1,7 +1,6 @@
 import { jest } from "@jest/globals"
 
 const mockMeetingStore = {
-  meetingCollection: {} as unknown,
   query: jest.fn(),
   bySlug: jest.fn(),
   byGroup: jest.fn(),
