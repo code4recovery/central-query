@@ -33,6 +33,6 @@ class MockDate extends OriginalDate {
 }
 
 // Replace global Date with mock
-(globalThis as any).Date = MockDate;
+(globalThis as any).Date = MockDate
 
-console.log(`🕐 Fixed time enabled: ${FIXED_TIME}`);
+console.log(`🕐 Fixed time enabled: ${FIXED_TIME}`)
