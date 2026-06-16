@@ -52,7 +52,7 @@ const validateTemporalParams = (
       : (onlyStartDefined || noneDefined) && validatedStart
       ? 1
       : undefined
-
+  
   const limit = parseIntOrDefault(
     rawLimit,
     [validatedStart, validatedHours].every((param) => param === undefined)
