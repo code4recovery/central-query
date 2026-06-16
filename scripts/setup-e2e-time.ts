@@ -10,9 +10,9 @@
  * - Ensures consistent, non-empty query results
  */
 
-const FIXED_TIME = process.env.FIXED_TIME || "2026-06-11T11:30:00.000Z";
-const fixedDate = new Date(FIXED_TIME);
-const fixedTimestamp = fixedDate.getTime();
+const FIXED_TIME = process.env.FIXED_TIME || "2026-06-11T11:30:00.000Z"
+const fixedDate = new Date(FIXED_TIME)
+const fixedTimestamp = fixedDate.getTime()
 
 // Store the original Date constructor
 const OriginalDate = Date;
