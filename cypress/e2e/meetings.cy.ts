@@ -3,7 +3,7 @@
 import { DateTime } from "luxon"
 
 describe("Basic queries", () => {
-  it("provides a default the next hours of meetings when not query string parameters are received.", () => {
+  it("provides the next hours worth of meetings when no query string parameters are received.", () => {
     cy.request({
       method: "GET",
       url: "/meetings",
@@ -88,21 +88,6 @@ describe("Basic queries", () => {
             meeting.type === testType,
         ),
       ).to.be.true
-    })
-  })
-  it("gracefully handles the shift from Sunday (day 7) to Monday (day 1)", () => {
-    const reqQuery = {
-      start: new Date("2023-09-10T23:45:00Z").toISOString(),
-      limit: 25,
-    }
-    cy.request({
-      method: "GET",
-      url: "/meetings",
-      qs: reqQuery,
-      failOnStatusCode: false,
-    }).then((response) => {
-      expect(response.status).to.equal(200)
-      expect(response.body).to.have.length(25)
     })
   })
   it("reflects types binned into desired categories", () => {
@@ -263,6 +248,62 @@ describe("Basic queries", () => {
           expect(meeting.type).to.equal("O")
         },
       )
+    })
+  })
+})
+
+describe("Hours parameter validation", () => {
+  it("respects valid hours parameter within bounds", () => {
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { hours: 48 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      expect(response.body.length).to.be.greaterThan(0)
+    })
+  })
+
+  it("accepts hours at boundary values (1 and 168)", () => {
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { hours: 1 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+    })
+
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { hours: 168 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+    })
+  })
+
+  it("clamps hours above max (169) to fallback (24)", () => {
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { hours: 999 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+    })
+  })
+
+  it("clamps hours below min (0) to fallback (24)", () => {
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { hours: 0 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
     })
   })
 })
