@@ -60,7 +60,7 @@ describe("Malformed query parameter handling", () => {
   })
 
   describe("hours parameter validation", () => {
-    it("handles excessive hours value by capping at maximum (168)", () => {
+    it("handles excessive hours value by falling back to default (24)", () => {
       const now = new Date().toISOString()
       cy.request({
         method: "GET",
