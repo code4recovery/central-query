@@ -173,10 +173,18 @@ async function startE2EEnvironment() {
     await createViews(uri, dbName)
 
     console.log("\n🚀 Starting application server...")
-    console.log("   Port: 5001\n")
+    console.log("   Port: 5001")
+    console.log("   Fixed time: 2026-06-11T11:30:00.000Z\n")
     
-    // Start the application with the in-memory database
-    appProcess = spawn("npm", ["run", "start-dev"], {
+    // Start the application with the in-memory database and fixed time
+    appProcess = spawn("npx", [
+      "tsx",
+      "--import",
+      "./scripts/setup-e2e-time.ts",
+      "--watch",
+      "--",
+      "src/index.ts"
+    ], {
       stdio: "inherit",
       env: {
         ...process.env,
