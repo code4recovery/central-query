@@ -265,45 +265,145 @@ describe("Hours parameter validation", () => {
     })
   })
 
-  it("accepts hours at boundary values (1 and 168)", () => {
-    cy.request({
-      method: "GET",
-      url: "/meetings",
-      qs: { hours: 1 },
-      failOnStatusCode: false,
-    }).then((response) => {
-      expect(response.status).to.equal(200)
-    })
+  it("accepts hours at boundary value 1 and returns meetings within 1 hour", () => {
+    const now = DateTime.utc()
+    const oneHourLater = now.plus({ hours: 1 })
 
     cy.request({
       method: "GET",
       url: "/meetings",
-      qs: { hours: 168 },
+      qs: { start: now.toISO(), hours: 1 },
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
+
+          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= oneHourLater
+        }),
+      ).to.be.true
     })
   })
 
-  it("clamps hours above max (169) to fallback (24)", () => {
+  it("accepts hours at boundary value 168 and returns meetings within 168 hours", () => {
+    const now = DateTime.utc()
+    const maxHoursLater = now.plus({ hours: 168 })
+
     cy.request({
       method: "GET",
       url: "/meetings",
-      qs: { hours: 999 },
+      qs: { start: now.toISO(), hours: 168 },
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
+
+          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= maxHoursLater
+        }),
+      ).to.be.true
+    })
+  })
+
+  it("clamps hours above max (999) to fallback (24)", () => {
+    const now = DateTime.utc()
+    const twentyFourHoursLater = now.plus({ hours: 24 })
+
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { start: now.toISO(), hours: 999 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
+
+          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= twentyFourHoursLater
+        }),
+      ).to.be.true
     })
   })
 
   it("clamps hours below min (0) to fallback (24)", () => {
+    const now = DateTime.utc()
+    const twentyFourHoursLater = now.plus({ hours: 24 })
+
     cy.request({
       method: "GET",
       url: "/meetings",
-      qs: { hours: 0 },
+      qs: { start: now.toISO(), hours: 0 },
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.equal(200)
+      const meetings = response.body
+
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
+
+          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= twentyFourHoursLater
+        }),
+      ).to.be.true
     })
   })
 })
