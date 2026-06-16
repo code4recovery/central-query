@@ -35,16 +35,20 @@ const validateTemporalParams = (
   const validatedStart = queryParams.start ?? new Date().toISOString()
 
   const onlyStartDefined =
-    Object.keys(queryParams).filter((k) => queryParams[k] !== undefined)
+    Object.keys(queryParams).filter((k) => queryParams[k as keyof MeetingsOptions] !== undefined)
       .length === 1 && queryParams.start !== undefined
 
-  const noneDefined = Object.keys(queryParams).every(
-    (k) => queryParams[k] === undefined,
+  const allQueryParamsUndefined = Object.keys(queryParams).every(
+    (k) => queryParams[k as keyof MeetingsOptions] === undefined,
   )
+
+  const noneDefined = allQueryParamsUndefined && rawLimit === undefined
 
   const validatedHours =
     typeof queryParams.hours === "number" && !isNaN(queryParams.hours)
-      ? parseIntOrDefault(queryParams.hours, 24, 1, 168)
+      ? queryParams.hours >= 1 && queryParams.hours <= 168
+        ? queryParams.hours
+        : 24
       : (onlyStartDefined || noneDefined) && validatedStart
       ? 1
       : undefined
