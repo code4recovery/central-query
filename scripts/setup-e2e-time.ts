@@ -15,7 +15,7 @@ const fixedDate = new Date(FIXED_TIME)
 const fixedTimestamp = fixedDate.getTime()
 
 // Store the original Date constructor
-const OriginalDate = Date;
+const OriginalDate = Date
 
 // Create a mock Date class
 class MockDate extends OriginalDate {
