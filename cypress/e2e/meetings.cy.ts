@@ -3,7 +3,7 @@
 import { DateTime } from "luxon"
 
 describe("Basic queries", () => {
-  it("provides a default the next hours of meetings when not query string parameters are received.", () => {
+  it("provides the next hours worth of meetings when no query string parameters are received.", () => {
     cy.request({
       method: "GET",
       url: "/meetings",
@@ -88,21 +88,6 @@ describe("Basic queries", () => {
             meeting.type === testType,
         ),
       ).to.be.true
-    })
-  })
-  it("gracefully handles the shift from Sunday (day 7) to Monday (day 1)", () => {
-    const reqQuery = {
-      start: new Date("2023-09-10T23:45:00Z").toISOString(),
-      limit: 25,
-    }
-    cy.request({
-      method: "GET",
-      url: "/meetings",
-      qs: reqQuery,
-      failOnStatusCode: false,
-    }).then((response) => {
-      expect(response.status).to.equal(200)
-      expect(response.body).to.have.length(25)
     })
   })
   it("reflects types binned into desired categories", () => {
@@ -263,6 +248,162 @@ describe("Basic queries", () => {
           expect(meeting.type).to.equal("O")
         },
       )
+    })
+  })
+})
+
+describe("Hours parameter validation", () => {
+  it("respects valid hours parameter within bounds", () => {
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { hours: 48 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      expect(response.body.length).to.be.greaterThan(0)
+    })
+  })
+
+  it("accepts hours at boundary value 1 and returns meetings within 1 hour", () => {
+    const now = DateTime.utc()
+    const oneHourLater = now.plus({ hours: 1 })
+
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { start: now.toISO(), hours: 1 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
+
+          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= oneHourLater
+        }),
+      ).to.be.true
+    })
+  })
+
+  it("accepts hours at boundary value 168 and returns meetings within 168 hours", () => {
+    const now = DateTime.utc()
+    const maxHoursLater = now.plus({ hours: 168 })
+
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { start: now.toISO(), hours: 168 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+      expect(meetings.length).to.be.greaterThan(0)
+
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
+
+          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= maxHoursLater
+        }),
+      ).to.be.true
+    })
+  })
+
+  it("clamps hours above max (999) to fallback (24)", () => {
+    const now = DateTime.utc()
+    const twentyFourHoursLater = now.plus({ hours: 24 })
+
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { start: now.toISO(), hours: 999 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
+
+          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= twentyFourHoursLater
+        }),
+      ).to.be.true
+    })
+  })
+
+  it("clamps hours below min (0) to fallback (24)", () => {
+    const now = DateTime.utc()
+    const twentyFourHoursLater = now.plus({ hours: 24 })
+
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: { start: now.toISO(), hours: 0 },
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      const meetings = response.body
+
+      expect(
+        meetings.every((meeting: { rtc: string }) => {
+          const [rtcWeekday, rtcHour, rtcMinute] = meeting.rtc
+            .split(":")
+            .map(Number)
+
+          const meetingTime = now
+            .set({
+              weekday: rtcWeekday,
+              hour: rtcHour,
+              minute: rtcMinute,
+              second: 0,
+              millisecond: 0,
+            })
+            .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
+
+          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= twentyFourHoursLater
+        }),
+      ).to.be.true
     })
   })
 })

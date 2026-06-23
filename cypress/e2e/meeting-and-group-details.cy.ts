@@ -2,7 +2,7 @@ describe("bySlug endpoint", () => {
   it("provides the correct information for a legitimate slug", () => {
     cy.request({
       method: "GET",
-      url: "/meetings/global-mens-meditation-6",
+      url: "/meetings/global-mens-meditation-1",
       failOnStatusCode: false,
     }).then((response) => {
       console.log(response.body)
@@ -33,7 +33,7 @@ describe("relatedGroupInfo endpoint", () => {
   it("provides the remaining group information and other group meetings for a legitimate slug", () => {
     cy.request({
       method: "GET",
-      url: "/meetings/global-mens-meditation-6/related-group-info",
+      url: "/meetings/global-mens-meditation-1/related-group-info",
       failOnStatusCode: false,
     }).then((response) => {
       const { groupInfo, groupMeetings } = response.body
