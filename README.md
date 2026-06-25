@@ -15,6 +15,7 @@ This project serves as a proof-of-concept for Code for Recovery, demonstrating c
 1. Clone the repo and run `npm install`
 
 2. For local development with a real database, create a `.env` file (see `.env.example`):
+
    ```sh
    MONGO_URI=mongodb://localhost:27017
    MONGO_DB_NAME=central-query-dev
@@ -27,6 +28,30 @@ This project serves as a proof-of-concept for Code for Recovery, demonstrating c
 4. Run the server:
    - `npm run start-dev` - Development mode with hot reload
    - `npm run build && npm run start` - Production build
+
+### Bootstrap Mongo Views
+
+The API depends on 10 managed MongoDB views. The source of truth for those
+definitions is [docs/views](./docs/views).
+
+For a fresh developer database or disaster recovery, set `MONGO_URI` and
+`MONGO_DB_NAME` in the same `.env` file used for local development, or export
+them in the shell before running the command. For example:
+
+```sh
+MONGO_URI=mongodb://localhost:27017
+MONGO_DB_NAME=central-query-dev
+```
+
+Then run:
+
+```sh
+npm run migrate:views
+```
+
+This command drops and recreates the managed views, so it is safe to rerun for
+setup and recovery. It is intended to be an explicit maintenance step rather
+than something the API does automatically on startup.
 
 **Note:** Unit and e2e tests use MongoDB Memory Server and don't require a `.env` file or external database.
 
@@ -97,6 +122,7 @@ Ignore, unless testing server-side proof of concept. These were added for testin
 ### Unit Tests
 
 Run unit tests with Jest:
+
 ```bash
 npm test              # Run all tests
 npm run test-dev      # Watch mode
@@ -118,6 +144,7 @@ npm run e2e:run       # Headless mode
 ```
 
 The e2e server automatically:
+
 - Starts MongoDB Memory Server (in-memory, temporary)
 - Seeds test data from `cypress/fixtures/`
 - Starts the application on port 5001
@@ -153,155 +180,11 @@ Prefer to use the [Udacity style guide](https://udacity.github.io/git-styleguide
 
 Some, but not all, of the coding style choices are included in `.prettierrc`. This needs to be updated as we go along. For example, my `vscode` settings enforce two spaces for indents as I find it more readable with modern fonts. I'm also in the camp that agrees semi-colons are unnecessary. All of these style choices can be discussed, of course.
 
-## Aggregation Pipeline for View
+## Managed View Definitions
 
-Using MongoDB's Compass app connected to the local database, create an aggregation against the `meeting` collection and then create the view `meeting-view` using Save->Create view.
-
-```json
-[
-  {
-    "$lookup": {
-      "from": "group",https://code4recovery.slack.com/files/U010NSRGL31/F08PFNSH7AL/screenshot_2025-04-18_at_8.46.03___am.png
-    "$addFields": {
-      "groupEmail": {
-        "$arrayElemAt": ["$groupInfo.email", 0]
-      },
-      "groupWebsite": {
-        "$arrayElemAt": ["$groupInfo.website", 0]
-      },
-      "groupPhone": {
-        "$arrayElemAt": ["$groupInfo.phone", 0]
-      },
-      "groupNotes": {
-        "$arrayElemAt": ["$groupInfo.notes", 0]
-      }
-    }
-  },
-  {
-    "$addFields": {
-      "timeUTC": {
-        "$dateFromParts": {
-          "year": {
-            "$year": {
-              "date": "$$NOW",
-              "timezone": "$timezone"
-            }
-          },
-          "month": {
-            "$month": {
-              "date": "$$NOW",
-              "timezone": "$timezone"
-            }
-          },
-          "day": {
-            "$dayOfMonth": {
-              "date": "$$NOW",
-              "timezone": "$timezone"
-            }
-          },
-          "hour": {
-            "$hour": {
-              "date": "$startDateUTC",
-              "timezone": "$timezone"
-            }
-          },
-          "minute": {
-            "$minute": {
-              "date": "$startDateUTC",
-              "timezone": "$timezone"
-            }
-          },
-          "timezone": "$timezone"
-        }
-      },
-      "nowWeekday": {
-        "$toInt": {
-          "$dateToString": {
-            "date": "$$NOW",
-            "format": "%u"
-          }
-        }
-      },
-      "rtcWeekday": {
-        "$toInt": {
-          "$dateToString": {
-            "date": "$startDateUTC",
-            "format": "%u"
-          }
-        }
-      },
-      "dayOfWeekStr": {
-        "$dateToString": {
-          "date": "$startDateUTC",
-          "format": "%u"
-        }
-      }
-    }
-  },
-  {
-    "$addFields": {
-      "sortRTCDay": {
-        "$cond": {
-          "if": {
-            "$gte": ["$rtcWeekday", "$nowWeekday"]
-          },
-          "then": {
-            "$subtract": ["$rtcWeekday", 7]
-          },
-          "else": "$rtcWeekday"
-        }
-      },
-      "sortRTCTime": {
-        "$dateToString": {
-          "date": "$timeUTC",
-          "format": "%H:%M"
-        }
-      },
-      "rtc": {
-        "$concat": [
-          "$dayOfWeekStr",
-          ":",
-          {
-            "$dateToString": {
-              "date": "$timeUTC",
-              "format": "%H:%M"
-            }
-          }
-        ]
-      }
-    }
-  },
-  {
-    "$project": {
-      "_id": 0,
-      "startDateUTC": 0,
-      "time": 0,
-      "day": 0,
-      "archived": 0,
-      "accountID": 0,
-      "groupInfo": 0,
-      "createdAt": 0,
-      "updatedAt": 0,
-      "nowWeekday": 0,
-      "rtcWeekday": 0,
-      "dayOfWeekStr": 0
-    }
-  },
-  {
-    "$sort": {
-      "sortRTCDay": 1,
-      "sortRTCTime": 1,
-      "name": 1
-    }
-  },
-  {
-    "$project": {
-      "sortRTCDay": 0,
-      "sortRTCTime": 0
-    }
-  }
-]
-```
+The current MongoDB view definitions live in
+[docs/views](./docs/views). Each JSON file is self-contained and includes the managed view name, its `viewOn` source
+collection, and the aggregation `pipeline` used to recreate it.
 
 ## To-Do
 
