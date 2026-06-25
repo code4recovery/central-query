@@ -1,53 +1,57 @@
-[
-  {
-    "$match": {
-      "day": {
-        "$exists": true,
-        "$type": "number",
-        "$ne": null
-      },
-      "time": {
-        "$exists": true,
-        "$type": "string",
-        "$ne": ""
-      },
-      "timezone": {
-        "$exists": true,
-        "$type": "string",
-        "$ne": ""
+{
+  "name": "unique-languages-scheduled",
+  "viewOn": "meeting",
+  "pipeline": [
+    {
+      "$match": {
+        "day": {
+          "$exists": true,
+          "$type": "number",
+          "$ne": null
+        },
+        "time": {
+          "$exists": true,
+          "$type": "string",
+          "$ne": ""
+        },
+        "timezone": {
+          "$exists": true,
+          "$type": "string",
+          "$ne": ""
+        }
+      }
+    },
+    {
+      "$unwind": "$languages"
+    },
+    {
+      "$group": {
+        "_id": "$languages"
+      }
+    },
+    {
+      "$lookup": {
+        "from": "language",
+        "localField": "_id",
+        "foreignField": "alpha2",
+        "as": "details"
+      }
+    },
+    {
+      "$unwind": "$details"
+    },
+    {
+      "$replaceRoot": {
+        "newRoot": {
+          "$mergeObjects": ["$$ROOT", "$details"]
+        }
+      }
+    },
+    {
+      "$project": {
+        "_id": 0,
+        "details": 0
       }
     }
-  },
-  {
-    "$unwind": "$languages"
-  },
-  {
-    "$group": {
-      "_id": "$languages"
-    }
-  },
-  {
-    "$lookup": {
-      "from": "language",
-      "localField": "_id",
-      "foreignField": "alpha2",
-      "as": "details"
-    }
-  },
-  {
-    "$unwind": "$details"
-  },
-  {
-    "$replaceRoot": {
-      "newRoot": {
-        "$mergeObjects": ["$$ROOT", "$details"]
-      }
-    }
-  },
-  {
-    "$project": {
-      "_id": 0,
-      "details": 0
-    }
-  }
-]
+  ]
+}

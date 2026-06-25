@@ -1,205 +1,187 @@
-[
-  {
-    "$lookup": {
-      "from": "group",
-      "localField": "groupID",
-      "foreignField": "_id",
-      "as": "groupInfo",
-      "pipeline": [
-        {
-          "$project": {
-            "email": 1,
-            "website": 1,
-            "phone": 1,
-            "notes": 1,
-            "_id": 0
-          }
-        }
-      ]
-    }
-  },
-  {
-    "$replaceRoot": {
-      "newRoot": {
-        "$mergeObjects": [
+{
+  "name": "combined-meetings",
+  "viewOn": "meeting",
+  "pipeline": [
+    {
+      "$lookup": {
+        "from": "group",
+        "localField": "groupID",
+        "foreignField": "_id",
+        "as": "groupInfo",
+        "pipeline": [
           {
-            "groupEmail": {
-              "$arrayElemAt": [
-                "$groupInfo.email",
-                0
-              ]
-            },
-            "groupWebsite": {
-              "$arrayElemAt": [
-                "$groupInfo.website",
-                0
-              ]
-            },
-            "groupPhone": {
-              "$arrayElemAt": [
-                "$groupInfo.phone",
-                0
-              ]
-            },
-            "groupNotes": {
-              "$arrayElemAt": [
-                "$groupInfo.notes",
-                0
-              ]
+            "$project": {
+              "email": 1,
+              "website": 1,
+              "phone": 1,
+              "notes": 1,
+              "_id": 0
             }
-          },
-          "$$ROOT"
+          }
         ]
       }
-    }
-  },
-  {
-    "$addFields": {
-      "nowLocalWeekday": {
-        "$toInt": {
+    },
+    {
+      "$replaceRoot": {
+        "newRoot": {
+          "$mergeObjects": [
+            {
+              "groupEmail": {
+                "$arrayElemAt": ["$groupInfo.email", 0]
+              },
+              "groupWebsite": {
+                "$arrayElemAt": ["$groupInfo.website", 0]
+              },
+              "groupPhone": {
+                "$arrayElemAt": ["$groupInfo.phone", 0]
+              },
+              "groupNotes": {
+                "$arrayElemAt": ["$groupInfo.notes", 0]
+              }
+            },
+            "$$ROOT"
+          ]
+        }
+      }
+    },
+    {
+      "$addFields": {
+        "nowLocalWeekday": {
+          "$toInt": {
+            "$dateToString": {
+              "date": "$$NOW",
+              "format": "%u",
+              "timezone": "$timezone"
+            }
+          }
+        },
+        "nowLocalDate": {
           "$dateToString": {
             "date": "$$NOW",
-            "format": "%u",
+            "format": "%Y-%m-%d",
+            "timezone": "$timezone"
+          }
+        },
+        "nowMinusGrace": {
+          "$dateSubtract": {
+            "startDate": "$$NOW",
+            "unit": "minute",
+            "amount": 10
+          }
+        }
+      }
+    },
+    {
+      "$addFields": {
+        "baseEventLocalDateTime": {
+          "$dateFromString": {
+            "dateString": {
+              "$concat": ["$nowLocalDate", "T", "$time"]
+            },
             "timezone": "$timezone"
           }
         }
-      },
-      "nowLocalDate": {
-        "$dateToString": {
-          "date": "$$NOW",
-          "format": "%Y-%m-%d",
-          "timezone": "$timezone"
-        }
-      },
-      "nowMinusGrace": {
-        "$dateSubtract": {
-          "startDate": "$$NOW",
-          "unit": "minute",
-          "amount": 10
-        }
       }
-    }
-  },
-  {
-    "$addFields": {
-      "baseEventLocalDateTime": {
-        "$dateFromString": {
-          "dateString": {
-            "$concat": [
-              "$nowLocalDate",
-              "T",
-              "$time"
-            ]
-          },
-          "timezone": "$timezone"
-        }
-      }
-    }
-  },
-  {
-    "$addFields": {
-      "daysUntilNext": {
-        "$let": {
-          "vars": {
-            "daysDiff": {
-              "$mod": [
+    },
+    {
+      "$addFields": {
+        "daysUntilNext": {
+          "$let": {
+            "vars": {
+              "daysDiff": {
+                "$mod": [
+                  {
+                    "$add": [
+                      {
+                        "$subtract": ["$day", "$nowLocalWeekday"]
+                      },
+                      7
+                    ]
+                  },
+                  7
+                ]
+              }
+            },
+            "in": {
+              "$cond": [
                 {
-                  "$add": [
+                  "$eq": ["$$daysDiff", 0]
+                },
+                {
+                  "$cond": [
                     {
-                      "$subtract": [
-                        "$day",
-                        "$nowLocalWeekday"
-                      ]
+                      "$gt": ["$baseEventLocalDateTime", "$nowMinusGrace"]
                     },
+                    0,
                     7
                   ]
                 },
-                7
+                "$$daysDiff"
               ]
             }
-          },
-          "in": {
-            "$cond": [
-              {
-                "$eq": ["$$daysDiff", 0]
-              },
-              {
-                "$cond": [
-                  {
-                    "$gt": [
-                      "$baseEventLocalDateTime",
-                      "$nowMinusGrace"
-                    ]
-                  },
-                  0,
-                  7
-                ]
-              },
-              "$$daysDiff"
-            ]
           }
         }
       }
-    }
-  },
-  {
-    "$addFields": {
-      "nextEventUTC": {
-        "$dateAdd": {
-          "startDate": "$baseEventLocalDateTime",
-          "unit": "day",
-          "amount": "$daysUntilNext"
+    },
+    {
+      "$addFields": {
+        "nextEventUTC": {
+          "$dateAdd": {
+            "startDate": "$baseEventLocalDateTime",
+            "unit": "day",
+            "amount": "$daysUntilNext"
+          }
         }
       }
-    }
-  },
-  {
-    "$addFields": {
-      "rtc": {
-        "$concat": [
-          {
-            "$dateToString": {
-              "date": "$nextEventUTC",
-              "format": "%u"
+    },
+    {
+      "$addFields": {
+        "rtc": {
+          "$concat": [
+            {
+              "$dateToString": {
+                "date": "$nextEventUTC",
+                "format": "%u"
+              }
+            },
+            ":",
+            {
+              "$dateToString": {
+                "date": "$nextEventUTC",
+                "format": "%H:%M"
+              }
             }
-          },
-          ":",
-          {
-            "$dateToString": {
-              "date": "$nextEventUTC",
-              "format": "%H:%M"
-            }
-          }
-        ]
+          ]
+        }
       }
+    },
+    {
+      "$unset": [
+        "_id",
+        "groupInfo",
+        "nowLocalWeekday",
+        "nowLocalDate",
+        "nowLocalTime",
+        "baseEventLocalDateTime",
+        "nowMinusGrace",
+        "daysUntilNext",
+        "dayOfWeekStr",
+        "startDateUTC",
+        "time",
+        "day",
+        "archived",
+        "accountID",
+        "createdAt"
+      ]
+    },
+    {
+      "$sort": {
+        "nextEventUTC": 1,
+        "updatedAt": -1
+      }
+    },
+    {
+      "$unset": "updatedAt"
     }
-  },
-  {
-    "$unset": [
-      "_id",
-      "groupInfo",
-      "nowLocalWeekday",
-      "nowLocalDate",
-      "nowLocalTime",
-      "baseEventLocalDateTime",
-      "nowMinusGrace",
-      "daysUntilNext",
-      "dayOfWeekStr",
-      "startDateUTC",
-      "time",
-      "day",
-      "archived",
-      "accountID",
-      "createdAt"
-    ]
-  },
-  {
-    "$sort": {
-      "nextEventUTC": 1,
-      "updatedAt": -1
-    }
-  },
-  {
-    "$unset": "updatedAt"
-  }
-]
+  ]
+}

@@ -1,11 +1,15 @@
-[
-  {
-    "$project": {
-      "recordID": 0,
-      "accountID": 0,
-      "userIDs": 0,
-      "createdAt": 0,
-      "updatedAt": 0
+{
+  "name": "group-view",
+  "viewOn": "group",
+  "pipeline": [
+    {
+      "$project": {
+        "recordID": 0,
+        "accountID": 0,
+        "userIDs": 0,
+        "createdAt": 0,
+        "updatedAt": 0
+      }
     }
-  }
-]
+  ]
+}
