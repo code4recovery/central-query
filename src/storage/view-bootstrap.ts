@@ -15,6 +15,18 @@ const isNamespaceNotFound = (error: unknown) => {
 }
 
 const dropManagedViewIfPresent = async (db: MongoDB.Db, name: string) => {
+  const [info] = await db.listCollections({ name }).toArray()
+
+  if (!info) {
+    return false
+  }
+
+  if (info.type !== "view") {
+    throw new Error(
+      `Refusing to drop non-view namespace "${name}" while bootstrapping managed views.`,
+    )
+  }
+
   try {
     await db.collection(name).drop()
     return true
