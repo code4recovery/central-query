@@ -222,13 +222,23 @@ test("pipeline should reflect nameQuery as a case-insensitive regex match", () =
     nameQuery: "serenity",
   }
 
-  expect(pipelineFromQuery(testOptions)).toStrictEqual([
+  const pipeline = pipelineFromQuery(testOptions)
+
+  // Assert the stage shape, not the regex bytes — the pattern is built by
+  // makeFlexibleRegex (quote/accent flexible) and is covered behaviorally in
+  // stringUtils.spec.ts. Pinning the literal pattern here re-couples this
+  // structural test to regex internals (see central-query #31).
+  expect(pipeline).toStrictEqual([
     {
       $match: {
-        name: { $regex: "serenity", $options: "i" },
+        name: { $regex: expect.any(String), $options: "i" },
       },
     },
   ])
+
+  // ...but the stage must still functionally match the query, case-insensitively.
+  const { $regex, $options } = (pipeline[0].$match as { name: { $regex: string; $options: string } }).name
+  expect(new RegExp($regex, $options).test("Serenity Group")).toBe(true)
 })
 
 test("pipeline should combine nameQuery with rtcRanges", () => {
@@ -250,7 +260,7 @@ test("pipeline should combine nameQuery with rtcRanges", () => {
     },
     {
       $match: {
-        name: { $regex: "step", $options: "i" },
+        name: { $regex: expect.any(String), $options: "i" },
       },
     },
   ])
@@ -272,7 +282,7 @@ test("pipeline should combine nameQuery with types and languages", () => {
     },
     {
       $match: {
-        name: { $regex: "hope", $options: "i" },
+        name: { $regex: expect.any(String), $options: "i" },
       },
     },
   ])
