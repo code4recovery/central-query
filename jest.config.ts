@@ -24,6 +24,14 @@ const jestConfig: JestConfigWithTsJest = {
     enableGlobally: true,
     doNotFake: ["nextTick", "setImmediate"],
   },
+  coverageThreshold: {
+    global: {
+      branches: 70,
+      functions: 85,
+      lines: 90,
+      statements: 90,
+    },
+  },
 }
 
 export default jestConfig

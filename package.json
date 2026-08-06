@@ -9,6 +9,7 @@
     "migrate:views": "tsx scripts/create-views.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "test-dev": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
+    "typecheck": "tsc --noEmit --project tsconfig.json",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "build:clean": "rm -rf dist/*",

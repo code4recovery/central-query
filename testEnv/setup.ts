@@ -1,7 +1,11 @@
 import * as MongoDB from "mongodb"
-import { MongoMemoryServer } from "mongodb-memory-server"
 
+import { MongoMemoryServer } from "mongodb-memory-server"
 import dbConfig from "./dbConfig"
+
+type GlobalWithMongoInstance = typeof globalThis & {
+  __MONGOINSTANCE?: MongoMemoryServer
+}
 
 export default async function globalSetup() {
   if (dbConfig.Memory) {
@@ -9,11 +13,12 @@ export default async function globalSetup() {
     // it's needed in global space, because we don't want to create a new instance every test-suite
     const instance = await MongoMemoryServer.create()
     const uri = instance.getUri()
-    ;(global as any).__MONGOINSTANCE = instance
+    ;(global as GlobalWithMongoInstance).__MONGOINSTANCE = instance
     process.env.MONGO_URI = uri.slice(0, uri.lastIndexOf("/"))
   } else {
     process.env.MONGO_URI = `mongodb://${dbConfig.IP}:${dbConfig.Port}`
   }
+  process.env.MONGO_DB_NAME = dbConfig.Database
 
   // Set the database name for tests
   process.env.MONGO_DB_NAME = dbConfig.Database
