@@ -42,6 +42,32 @@ describe("Basic queries", () => {
       console.log(response.body)
     })
   })
+  it("does not apply default hours when start and limit are provided", () => {
+    const reqQuery = {
+      start: "2026-05-30T00:00:00Z",
+      limit: 25,
+    }
+    cy.request({
+      method: "GET",
+      url: "/meetings",
+      qs: reqQuery,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      expect(response.body).to.have.length(25)
+    })
+  })
+
+  it("auto-applies start when hours is provided without start", () => {
+    cy.request({
+      method: "GET",
+      url: "/meetings?hours=2",
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      expect(response.body).to.be.an("array")
+    })
+  })
   it("handles a single format with more than one character in the value.", () => {
     const reqQuery = {
       formats: "LIT",
@@ -295,7 +321,10 @@ describe("Hours parameter validation", () => {
             })
             .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
 
-          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= oneHourLater
+          return (
+            meetingTime >= now.minus({ minutes: 9 }) &&
+            meetingTime <= oneHourLater
+          )
         }),
       ).to.be.true
     })
@@ -331,7 +360,10 @@ describe("Hours parameter validation", () => {
             })
             .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
 
-          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= maxHoursLater
+          return (
+            meetingTime >= now.minus({ minutes: 9 }) &&
+            meetingTime <= maxHoursLater
+          )
         }),
       ).to.be.true
     })
@@ -366,7 +398,10 @@ describe("Hours parameter validation", () => {
             })
             .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
 
-          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= twentyFourHoursLater
+          return (
+            meetingTime >= now.minus({ minutes: 9 }) &&
+            meetingTime <= twentyFourHoursLater
+          )
         }),
       ).to.be.true
     })
@@ -401,7 +436,10 @@ describe("Hours parameter validation", () => {
             })
             .plus({ days: rtcWeekday < now.weekday ? 7 : 0 })
 
-          return meetingTime >= now.minus({ minutes: 9 }) && meetingTime <= twentyFourHoursLater
+          return (
+            meetingTime >= now.minus({ minutes: 9 }) &&
+            meetingTime <= twentyFourHoursLater
+          )
         }),
       ).to.be.true
     })

@@ -1,14 +1,26 @@
 describe("Malformed query parameter handling", () => {
+  const expectProblemDocument = (response: Cypress.Response<unknown>) => {
+    expect(response.status).to.equal(400)
+    expect(response.body).to.have.property("status", 400)
+    expect(response.body).to.have.property(
+      "title",
+      "Malformed or missing request parameters",
+    )
+    expect(response.body).to.have.property("detail").that.is.a("string")
+    expect(response.body).to.have.property(
+      "type",
+      "/errors/req-param-format-error",
+    )
+  }
+
   describe("limit parameter validation", () => {
-    it("handles non-numeric limit by using default value", () => {
+    it("returns 400 for non-numeric limit", () => {
       cy.request({
         method: "GET",
         url: "/meetings?limit=abc",
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
-        expect(response.body.length).to.be.at.most(1000)
+        expectProblemDocument(response)
       })
     })
 
@@ -24,135 +36,123 @@ describe("Malformed query parameter handling", () => {
       })
     })
 
-    it("handles limit below minimum by using default", () => {
+    it("returns 400 for limit below minimum", () => {
       cy.request({
         method: "GET",
         url: "/meetings?limit=0",
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
 
-    it("handles limit above maximum (1000) by using default", () => {
+    it("returns 400 for limit above maximum (1000)", () => {
       cy.request({
         method: "GET",
         url: "/meetings?limit=5000",
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
-        expect(response.body.length).to.be.at.most(1000)
+        expectProblemDocument(response)
       })
     })
 
-    it("handles negative limit by using default", () => {
+    it("returns 400 for negative limit", () => {
       cy.request({
         method: "GET",
         url: "/meetings?limit=-50",
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
   })
 
   describe("hours parameter validation", () => {
-    it("handles excessive hours value by falling back to default (24)", () => {
+    it("returns 400 for excessive hours value", () => {
       const now = new Date().toISOString()
       cy.request({
         method: "GET",
         url: `/meetings?hours=999&start=${now}`,
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
 
-    it("handles non-numeric hours by using default (24)", () => {
+    it("returns 400 for non-numeric hours", () => {
       const now = new Date().toISOString()
       cy.request({
         method: "GET",
         url: `/meetings?hours=abc&start=${now}`,
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
 
-    it("handles hours below minimum by using default", () => {
+    it("returns 400 for hours below minimum", () => {
       const now = new Date().toISOString()
       cy.request({
         method: "GET",
         url: `/meetings?hours=0&start=${now}`,
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
 
-    it("handles negative hours by using default", () => {
+    it("returns 400 for negative hours", () => {
       const now = new Date().toISOString()
       cy.request({
         method: "GET",
         url: `/meetings?hours=-10&start=${now}`,
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
   })
 
   describe("start parameter validation", () => {
-    it("handles malformed start date gracefully", () => {
+    it("returns 400 for malformed start date", () => {
       cy.request({
         method: "GET",
         url: "/meetings?start=garbage",
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
 
-    it("handles completely invalid ISO string", () => {
+    it("returns 400 for invalid ISO string", () => {
       cy.request({
         method: "GET",
         url: "/meetings?start=not-a-date",
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
 
-    it("handles partial ISO date string", () => {
+    it("returns 400 for partial ISO date string", () => {
       cy.request({
         method: "GET",
         url: "/meetings?start=2024-13",
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
   })
 
   describe("combined malformed parameters", () => {
-    it("handles multiple malformed parameters without crashing", () => {
+    it("returns 400 for multiple malformed parameters", () => {
       cy.request({
         method: "GET",
         url: "/meetings?limit=abc&hours=xyz&start=garbage",
         failOnStatusCode: false,
       }).then((response) => {
-        expect(response.status).to.equal(200)
-        expect(response.body).to.be.an("array")
+        expectProblemDocument(response)
       })
     })
 
@@ -185,8 +185,7 @@ describe("Malformed query parameter handling", () => {
           url,
           failOnStatusCode: false,
         }).then((response) => {
-          expect(response.status).to.equal(200)
-          expect(response.body).to.be.an("array")
+          expect(response.status).to.be.oneOf([200, 400])
         })
       })
     })
