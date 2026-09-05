@@ -6,12 +6,12 @@
  * Usage: npm run e2e:start
  */
 
-import { dirname, join } from "path"
-import { fileURLToPath } from "url"
+import { ChildProcess, spawn } from "child_process"
+import { readFile } from "fs/promises"
 import { MongoClient, ObjectId } from "mongodb"
 import { MongoMemoryServer } from "mongodb-memory-server"
-import { readFile } from "fs/promises"
-import { spawn } from "child_process"
+import { dirname, join } from "path"
+import { fileURLToPath } from "url"
 
 import { createManagedViewsForDatabase } from "../src/storage/view-bootstrap.ts"
 
@@ -19,10 +19,10 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 let memoryServer: MongoMemoryServer | null = null
-let appProcess: any = null
+let appProcess: ChildProcess | null = null
 
 // Convert MongoDB extended JSON to native JavaScript objects
-function convertExtendedJSON(obj: any): any {
+function convertExtendedJSON(obj: unknown): unknown {
   if (obj === null || obj === undefined) return obj
 
   if (Array.isArray(obj)) {
@@ -30,13 +30,15 @@ function convertExtendedJSON(obj: any): any {
   }
 
   if (typeof obj === "object") {
+    const objectRecord = obj as Record<string, unknown>
+
     // Handle MongoDB extended JSON types
-    if (obj.$oid) return new ObjectId(obj.$oid)
-    if (obj.$date) return new Date(obj.$date)
+    if (typeof objectRecord.$oid === "string") return new ObjectId(objectRecord.$oid)
+    if (typeof objectRecord.$date === "string") return new Date(objectRecord.$date)
 
     // Recursively convert nested objects
-    const converted: any = {}
-    for (const [key, value] of Object.entries(obj)) {
+    const converted: Record<string, unknown> = {}
+    for (const [key, value] of Object.entries(objectRecord)) {
       converted[key] = convertExtendedJSON(value)
     }
     return converted
@@ -48,8 +50,9 @@ function convertExtendedJSON(obj: any): any {
 async function loadFixture(filename: string) {
   const path = join(__dirname, "..", "cypress", "fixtures", filename)
   const content = await readFile(path, "utf-8")
-  const parsed = JSON.parse(content)
-  return convertExtendedJSON(parsed)
+  const parsed = JSON.parse(content) as unknown
+  const converted = convertExtendedJSON(parsed)
+  return Array.isArray(converted) ? converted : []
 }
 
 async function seedDatabase(uri: string, dbName: string) {
@@ -113,16 +116,9 @@ async function verifyViews(uri: string, dbName: string) {
     await client.connect()
     const db = client.db(dbName)
 
-    // Verify views are working
-    const scheduledCount = await db
-      .collection("scheduled-meetings")
-      .countDocuments()
-    const unscheduledCount = await db
-      .collection("unscheduled-meetings")
-      .countDocuments()
-    console.log(
-      `   ✅ Verified: ${scheduledCount} scheduled, ${unscheduledCount} unscheduled meetings`,
-    )
+    const scheduledCount = await db.collection("scheduled-meetings").countDocuments()
+    const unscheduledCount = await db.collection("unscheduled-meetings").countDocuments()
+    console.log(`   ✅ Verified: ${scheduledCount} scheduled, ${unscheduledCount} unscheduled meetings`)
   } finally {
     await client.close()
   }
@@ -209,3 +205,4 @@ process.on("SIGINT", cleanup)
 process.on("SIGTERM", cleanup)
 
 startE2EEnvironment()
+

@@ -1,6 +1,6 @@
 export default abstract class BaseError extends Error {
   name: string
-  readonly stack: any
+  readonly stack?: string
 
   constructor(detail?: string) {
     super(detail)

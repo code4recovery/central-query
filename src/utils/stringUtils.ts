@@ -48,7 +48,7 @@ export function makeFlexibleRegex(query: string): string {
   let escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 
   escaped = escaped.replace(/['‘’]/g, "['‘’]")
-  escaped = escaped.replace(/["“”]/g, '["“”]')
+  escaped = escaped.replace(/["“”]/g, "[\"“”]")
 
   escaped = escaped.replace(
     accentCharPattern,

@@ -38,12 +38,12 @@ describe("makeFlexibleRegex — single quotes", () => {
 
 describe("makeFlexibleRegex — double quotes", () => {
   test("straight-quote input matches straight-quote target", () => {
-    expect(buildRegex('"Hello"').test('Say "Hello" now')).toBe(true)
+    expect(buildRegex("\"Hello\"").test("Say \"Hello\" now")).toBe(true)
   })
 
   test("straight-quote input matches curly-quote target", () => {
     expect(
-      buildRegex('"Hello"').test(
+      buildRegex("\"Hello\"").test(
         `Say ${CURLY_OPEN_DOUBLE}Hello${CURLY_CLOSE_DOUBLE} now`
       )
     ).toBe(true)
@@ -53,7 +53,7 @@ describe("makeFlexibleRegex — double quotes", () => {
     expect(
       buildRegex(
         `${CURLY_OPEN_DOUBLE}Hello${CURLY_CLOSE_DOUBLE}`
-      ).test('Say "Hello" now')
+      ).test("Say \"Hello\" now")
     ).toBe(true)
   })
 })
@@ -67,8 +67,8 @@ describe("makeFlexibleRegex — pattern shape", () => {
   })
 
   test("double-quote character class includes both straight and curly codepoints", () => {
-    const pattern = makeFlexibleRegex('"')
-    expect(pattern).toContain('"')
+    const pattern = makeFlexibleRegex("\"")
+    expect(pattern).toContain("\"")
     expect(pattern).toContain(CURLY_OPEN_DOUBLE)
     expect(pattern).toContain(CURLY_CLOSE_DOUBLE)
   })

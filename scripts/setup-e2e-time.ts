@@ -17,22 +17,27 @@ const fixedTimestamp = fixedDate.getTime()
 // Store the original Date constructor
 const OriginalDate = Date
 
+type DateConstructorArgs =
+  | []
+  | [string | number | Date]
+  | [number, number, number?, number?, number?, number?, number?]
+
 // Create a mock Date class
 class MockDate extends OriginalDate {
-  constructor(...args: any[]) {
+  constructor(...args: DateConstructorArgs) {
     if (args.length === 0) {
       super(fixedTimestamp)
     } else {
-      super(...(args as any[]))
+      super(...args)
     }
   }
 
   static now(): number {
-    return fixedTimestamp;
+    return fixedTimestamp
   }
 }
 
 // Replace global Date with mock
-(globalThis as any).Date = MockDate
+(globalThis as { Date: DateConstructor }).Date = MockDate
 
 console.log(`🕐 Fixed time enabled: ${FIXED_TIME}`)
