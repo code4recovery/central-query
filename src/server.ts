@@ -1,27 +1,24 @@
 import cookieParser from "cookie-parser"
 import cors from "cors"
+import {
+  DefaultMappingStrategy,
+  MapperRegistry,
+} from "http-problem-details-mapper"
 import express, {
   ErrorRequestHandler,
   NextFunction,
   Request,
   Response,
 } from "express"
-import { HttpProblemResponse } from "express-http-problem-details"
 import helmet from "helmet"
-import {
-  DefaultMappingStrategy,
-  MapperRegistry,
-} from "http-problem-details-mapper"
+import { HttpProblemResponse } from "express-http-problem-details"
 import morgan from "morgan"
 
-import AuthorizationErrorMapper
-  from "./common/error_mappers/AuthorizationErrorMapper.js"
-import DbOperationErrorMapper
-  from "./common/error_mappers/DbOperationErrorMapper.js"
-import ReqParamFormatErrorMapper
-  from "./common/error_mappers/ReqParamFormatErrorMapper.js"
+import AuthorizationErrorMapper from "./common/error_mappers/AuthorizationErrorMapper.js"
+import DbOperationErrorMapper from "./common/error_mappers/DbOperationErrorMapper.js"
 import Logger from "./common/logger.js"
-import events from "./events.route.js"
+import ReqParamFormatErrorMapper from "./common/error_mappers/ReqParamFormatErrorMapper.js"
+
 import meetings from "./meetings.route.js"
 
 const app = express()
@@ -47,7 +44,6 @@ app.use(express.urlencoded({ extended: false }))
 
 // Register api routes
 app.use("/api/v1/meetings", meetings)
-app.use("/api/v1/events", events)
 Logger.debug("Routes registered.")
 app.use("*", (req: Request, res: Response) => {
   res.status(404).send("Sorry, can't find that!")
