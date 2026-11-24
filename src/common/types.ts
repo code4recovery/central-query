@@ -44,6 +44,7 @@ export const COMMUNITIES = [
   "N",
   "BI",
   "T",
+  "NB",
   "SEN",
   "POC",
   "P",
