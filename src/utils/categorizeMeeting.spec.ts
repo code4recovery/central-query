@@ -40,6 +40,26 @@ test("Category bins created from all types list", () => {
   expect(newMeetingData.formats.sort()).toStrictEqual([...FORMATS].sort())
 })
 
+test("keeps NB (Non-Binary) in communities", () => {
+  const meetingData: MeetingView = {
+    slug: "meeting-nb",
+    name: "Meeting NB",
+    types: ["O", "NB", "D"],
+    timezone: "America/New_York",
+    rtc: "1:10:00",
+    duration: 60,
+    languages: ["en"],
+    nextEventUTC: null,
+    groupID: new ObjectId("123456789012345678901234"),
+  }
+
+  const newMeetingData = categorizedMeeting(meetingData)
+
+  expect(newMeetingData.communities).toStrictEqual(["NB"])
+  expect(newMeetingData.features).toStrictEqual([])
+  expect(newMeetingData.formats).toStrictEqual(["D"])
+})
+
 test("Gracefully handles null `types`", () => {
   const meetingData: MeetingView = {
     slug: "meeting-2",

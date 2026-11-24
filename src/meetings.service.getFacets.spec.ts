@@ -44,6 +44,7 @@ test("should return categorized facets and languages", async () => {
     { code: "ONLINE", desc: "Online" },
     { code: "WHEELCHAIR", desc: "Wheelchair Accessible" },
     { code: "LGBTQ", desc: "LGBTQ" },
+    { code: "NB", desc: "Non-Binary" },
   ]
   const mockUnscheduledActiveTypes = [
     { code: "C", desc: "Closed" },
@@ -73,6 +74,10 @@ test("should return categorized facets and languages", async () => {
   expect(result.val.scheduled.categories.formats).toBeDefined()
   expect(result.val.scheduled.categories.features).toBeDefined()
   expect(result.val.scheduled.categories.communities).toBeDefined()
+  expect(result.val.scheduled.categories.communities).toContainEqual({
+    code: "NB",
+    desc: "Non-Binary",
+  })
   expect(result.val.scheduled.languages).toEqual(mockScheduledLanguages)
 
   expect(result.val.unscheduled.categories).toBeDefined()
