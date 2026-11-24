@@ -129,7 +129,8 @@
           "$dateAdd": {
             "startDate": "$baseEventLocalDateTime",
             "unit": "day",
-            "amount": "$daysUntilNext"
+            "amount": "$daysUntilNext",
+            "timezone": "$timezone"
           }
         }
       }
