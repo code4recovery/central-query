@@ -1,5 +1,5 @@
 # The build image
-FROM node:latest AS build
+FROM node:20.5.1-bookworm-slim AS build
 
 RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
 WORKDIR /build
